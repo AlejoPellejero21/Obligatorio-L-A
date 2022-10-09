@@ -1,0 +1,52 @@
+body{
+    margin: 0px;
+}
+
+/*INICIO Login Page INICIO*/
+
+.father-login-container-al{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffdcf6; /*Pink*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.login-white-container-al{    
+    /* border-bottom: 1px solid #ffdfdf; */
+    background-color: #ffb59d; /*Orange*/
+    height: 8%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container-al{
+    width: 34%;
+    background: #ffb59d;
+    display: flex;
+    height: 100vh;
+}
+
+.main-login-container-al{
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    background-color: #ffffff45;
+    margin: 0 auto;    
+}
+
+
+.main-header-container-al{
+    display: flex;
+    justify-content: center;
+    width: 97%;
+    background-color: #ffffff45;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+
+/*FIN Login Page FIN*/
