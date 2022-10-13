@@ -1,52 +1,129 @@
-body{
+body {
     margin: 0px;
 }
 
+/*Usuario Empresa*/
+.background-sky-blue{
+    background-color: #9ddeff !important;
+}
+
+.color-sky-blue {
+    color: #9ddeff;
+}
+
+/*Usuario Empresa*/
+
 /*INICIO Login Page INICIO*/
 
-.father-login-container-al{
+.father-login-container-al {
     width: 100%;
-    height: 100vh;
-    background-color: #ffdcf6; /*Pink*/
+    height: 100vh;    
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.login-white-container-al{    
-    /* border-bottom: 1px solid #ffdfdf; */
-    background-color: #ffb59d; /*Orange*/
-    height: 8%;
+/*Header*/
+.login-white-container-al {
+    background-color: #ff9df3;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.login-container-al{
-    width: 34%;
-    background: #ffb59d;
+.main-header-container-al {
+    justify-content: flex-start;
+    width: 100%;
     display: flex;
-    height: 100vh;
-}
-
-.main-login-container-al{
-    display: flex;
-    justify-content: center;
-    width: 95%;
-    background-color: #ffffff45;
-    margin: 0 auto;    
-}
-
-
-.main-header-container-al{
-    display: flex;
-    justify-content: center;
-    width: 97%;
     background-color: #ffffff45;
     border-radius: 2px;
     padding: 10px;
+    margin-bottom: 6px;
 }
 
+.title-user {
+    margin: 0px;
+}
 
+/*Column Right LOGIN*/
+.login-container-al {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    background-color: #ff9df3;
+    justify-content: flex-end;
+}
+
+.main-login-container-al {
+    display: flex;
+    width: 35%;
+    background-color: #ffffff45;
+    border-radius: 30px 0 0 0;
+}
+
+/*Main FORM*/
+.main-form-container-al{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+
+.login-title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 4% 0 6%;
+    color: #ffffffe6;
+}
+
+.general-input{
+    height: 60px;
+    border: 0px;
+    font-size: 18px;
+    outline: none;
+    border-radius: 4px;
+    background-color: #ff9df3;
+    margin-bottom: 5%;
+    padding-left: 50px;
+    color: #ffffffe6;
+}
+
+.general-input::placeholder{
+    color: #ffffffe6;
+}
+
+.span-text-login{
+    font-size: 8px;
+    text-align: center;
+    padding: 0px 25px;
+    color: #ff9df3;
+    margin-bottom: 10%;
+}
+
+.button-login{
+    height: 60px;
+    border: 0px;
+    font-size: 21px;
+    font-weight: bold;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 4%;
+    background-color: #ffffffe6;
+    color: #ff9df3;
+}
+
+.select-account-login{
+    cursor: pointer;
+    height: 40px;
+    border: 0px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+    font-weight: 500;
+    margin-bottom: 10%;
+}
 /*FIN Login Page FIN*/
