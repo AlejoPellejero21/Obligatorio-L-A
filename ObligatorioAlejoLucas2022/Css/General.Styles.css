@@ -2,17 +2,6 @@ body {
     margin: 0px;
 }
 
-/*Usuario Empresa*/
-.background-sky-blue{
-    background-color: #9ddeff !important;
-}
-
-.color-sky-blue {
-    color: #9ddeff;
-}
-
-/*Usuario Empresa*/
-
 /*INICIO Login Page INICIO*/
 
 .father-login-container-al {
@@ -126,4 +115,28 @@ body {
     font-weight: 500;
     margin-bottom: 10%;
 }
+/*Login Register Buttons Top*/
+.login-register-link{
+    display: none;
+    justify-content: flex-end;
+}
+
+.go-to-login-page{
+    color: #ffffffe6;
+    cursor: pointer;
+    background-color: #9ddeff;
+    border-radius: 6px 0px 0px;
+    padding: 2px 0 2px 5px;
+}
+
+.go-to-register-page{
+    color: #ffffffe6;
+    background-color: #9ddeff;
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 0px 6px 0px 0px;
+}
+
+/*Login Register Buttons Top*/
+
 /*FIN Login Page FIN*/
