@@ -6,7 +6,7 @@ body {
 
 .father-login-container-al {
     width: 100%;
-    height: 100vh;    
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -52,14 +52,15 @@ body {
 }
 
 /*Main FORM*/
-.main-form-container-al{
+.main-form-container-al,
+.main-form-container-al {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 20px;
 }
 
-.login-title{
+.login-title {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -67,7 +68,7 @@ body {
     color: #ffffffe6;
 }
 
-.general-input{
+.general-input {
     height: 60px;
     border: 0px;
     font-size: 18px;
@@ -79,11 +80,11 @@ body {
     color: #ffffffe6;
 }
 
-.general-input::placeholder{
+.general-input::placeholder {
     color: #ffffffe6;
 }
 
-.span-text-login{
+.span-text-login {
     font-size: 8px;
     text-align: center;
     padding: 0px 25px;
@@ -91,7 +92,7 @@ body {
     margin-bottom: 10%;
 }
 
-.button-login{
+.button-login {
     height: 60px;
     border: 0px;
     font-size: 21px;
@@ -104,7 +105,7 @@ body {
     color: #ff9df3;
 }
 
-.select-account-login{
+.select-account-login {
     cursor: pointer;
     height: 40px;
     border: 0px;
@@ -115,13 +116,18 @@ body {
     font-weight: 500;
     margin-bottom: 10%;
 }
+
 /*Login Register Buttons Top*/
-.login-register-link{
+.login-register-link {
     display: none;
     justify-content: flex-end;
 }
 
-.go-to-login-page{
+.show-link-2 {
+    display: flex;
+}
+
+.go-to-login-page {
     color: #ffffffe6;
     cursor: pointer;
     background-color: #9ddeff;
@@ -129,7 +135,7 @@ body {
     padding: 2px 0 2px 5px;
 }
 
-.go-to-register-page{
+.go-to-register-page {
     color: #ffffffe6;
     background-color: #9ddeff;
     cursor: pointer;
@@ -138,5 +144,26 @@ body {
 }
 
 /*Login Register Buttons Top*/
+
+/*Register Page IMPORTADOR*/
+.is-color-sky-blue,
+.register-blue-button {
+    color: #9ddeff;
+}
+
+.register-blue {
+    background-color: #9ddeff;
+}
+
+.general-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-register-al {
+    display: none;
+    flex-direction: column;
+}
+/*Register Page IMPORTDOR*/
 
 /*FIN Login Page FIN*/

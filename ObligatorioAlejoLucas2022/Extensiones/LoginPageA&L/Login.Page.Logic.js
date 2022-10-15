@@ -15,9 +15,16 @@ function onSelectChange() {
     const DivColorSkyBlue = getQuerySelector('.', 'color-sky-blue', false);
     const H1LoginTitle = getQuerySelector('#', 'user-type-account', true);
     const LoginRegisterButtons = getQuerySelector('#', 'show-login-register-link', true);
+    const RegisterLink = getQuerySelector('#', 'go-to-register', true);
+    const LoginLink = getQuerySelector('#', 'go-to-login', true);
 
+    /*Agregar Evento Para Register Page*/
+    RegisterLink.addEventListener('click', onLinkRegisterClick);
+    LoginLink.addEventListener('click', onLinkLoginClick)
+
+
+    /*Colores de la pagina*/
     let selectLoginValue = SelectLogin.value;
-
     DivSkyBlueLight.forEach(function (value) {
         if (selectLoginValue == 2) {
             value.style = 'background-color: #9ddeff;';
@@ -40,6 +47,23 @@ function onSelectChange() {
     } else {
         setDisplay(LoginRegisterButtons, false);
         H1LoginTitle.innerHTML = AccountEmpresario;
-    }
+    }    
 
+}
+
+
+function onLinkRegisterClick() {    
+    const LoginPage = getQuerySelector('#', 'main-login-form-al', true);
+    const RegisterPage = getQuerySelector('#', 'main-register-form-al', true);
+    
+    setDisplay(LoginPage, false);
+    setDisplay(RegisterPage, true);
+}
+
+function onLinkLoginClick() {
+    const LoginPage = getQuerySelector('#', 'main-login-form-al', true);
+    const RegisterPage = getQuerySelector('#', 'main-register-form-al', true);
+    
+    setDisplay(LoginPage, true);
+    setDisplay(RegisterPage, false);
 }

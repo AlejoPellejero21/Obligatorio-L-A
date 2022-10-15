@@ -17,8 +17,7 @@ function setDisplay(attr, display) {
     //attr === 'El atributo'
     //display === true || false
 
-    if (display) {
-        console.log(attr);
+    if (display) {        
         attr.style.display = 'flex';
     } else {
         attr.style.display = 'none';

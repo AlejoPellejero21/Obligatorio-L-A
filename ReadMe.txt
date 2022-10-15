@@ -1,6 +1,6 @@
 MANUAL DEL PROYECTO [ALEJO PELLEJERO && LUCAS ALVAREZ]
 
-1. Nombre de FUNCIONS
+1. Nombre de ARCHIVOS JS || HTML|| CSS 
 
 Para los nombre de funciones utilizamos como regla general del proyecto colorar el nombre separado por puntos.
 
