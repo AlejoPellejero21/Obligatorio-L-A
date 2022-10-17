@@ -1,82 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../Css/General.Styles.css" />
-    <script
-      type="text/javascript"
-      src="../LoginAndRegisterPages/Index.Login.Page.Logic.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="../GlobalFunctions/Global.Functios.A&L.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/chart.js"
-    ></script>
-    <script type="text/javascript" src="./Dashboard.charts.js"></script>
-    <title>Login Page</title>
-  </head>
 
-  <body>
-    <div class="father-login-container-al">
-      <div class="login-white-container-al change-color-0">
-        <div class="main-header-container-al">
-          <div class="header-logo"></div>
-          <h1 class="title-user">Bienvenido!</h1>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../Css/General.Styles.css" />
+  <script type="text/javascript" src="../LoginAndRegisterPages/Index.Login.Page.Logic.js"></script>
+  <script type="text/javascript" src="../GlobalFunctions/Global.Functios.A&L.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="text/javascript" src="./Dashboard.charts.js"></script>
+  <title>Login Page</title>
+</head>
+
+<body>
+  <div class="father-login-container-al">
+    <div class="login-white-container-al change-color-0">
+      <div class="main-header-container-al">
+        <h1 class="header-logo">A&L</h1>
+        <h2 class="title-user">
+          <span>Bienvenido Importador:</span>
+          <span>Lucas Ex</span>
+        </h2>
       </div>
-      <div class="dashboard-container-al">
-        <nav class="main-nav-container-al"></nav>
-        <div class="main-dashboar-al">
-          <!--Inicio Tabla maestro-->
-          <!--F10 – manifiestoDeCarga-->
+    </div>
+    <div class="dashboard-container-al">
+      <nav class="main-nav-container-al"></nav>
+      <div class="main-dashboar-al">
+        <!--Inicio Tabla maestro-->
+        <!--F10 – manifiestoDeCarga-->
 
-          <div class="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Origen</th>
-                  <th>Contenedor</th>
-                  <th>Importador</th>
-                  <th>Descripción</th>
-                  <th>Tipo de mercadería</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>BUE</td>
-                  <td>1</td>
-                  <td>Juan Perez</td>
-                  <td>Juguetes</td>
-                  <td>CARGA_GENERAL</td>
-                </tr>
-                <tr>
-                  <td>MVD</td>
-                  <td>10</td>
-                  <td>Lebron James</td>
-                  <td>Pesca</td>
-                  <td>REFRIGERADO</td>
-                </tr>
-                <tr>
-                  <td>SHA</td>
-                  <td>22</td>
-                  <td>Francisco Chang</td>
-                  <td>Baterias</td>
-                  <td>CARGA_PELIGROSA</td>
-                </tr>
-              </tbody>
-            </table>
-            <!--Fin Tabla maestro-->
-            <div class="graphic-container">
-              <canvas id="myChart" width="400" height="400"></canvas>
+        <div id="show-table-manifest" class="table-container">
+          <main class="main-table-manifest">
+            <div class="first-manifest-container">
+              <h2 class="table-title">Manifiesto de Carga:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+                <table class="titles-table-manifest">
+                  <thead class="thead-manifest">
+                    <th class="column-manifest">Origen</th>
+                    <th class="column-manifest">Contenedor</th>
+                    <th class="column-manifest">Importador</th>
+                    <th class="column-manifest">Descripción</th>
+                    <th class="column-manifest">Tipo de mercadería</th>
+                  </thead>
+                </table>
+              </div>
             </div>
-          </div>
+            <div class="second-manifest-container">
+              <table class="titles-table-manifest body-table-manifest">
+                <tbody class="thead-manifest tbody-manifest">
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
