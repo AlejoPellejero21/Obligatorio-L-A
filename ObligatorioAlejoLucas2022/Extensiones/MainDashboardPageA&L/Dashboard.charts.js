@@ -43,5 +43,5 @@ function onWindowLoad() {
     },
   };
 
-  //const myChart = new Chart(document.getElementById("myChart"), config);
+  return new Chart(document.querySelector("myChart-2"), config);
 }

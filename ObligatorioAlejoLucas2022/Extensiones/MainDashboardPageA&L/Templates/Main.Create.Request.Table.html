@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../Css/General.Styles.css" />
+  <!-- <script type="text/javascript" src="../LoginAndRegisterPages/Index.Login.Page.Logic.js"></script>
+  <script type="text/javascript" src="../GlobalFunctions/Global.Functios.A&L.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="text/javascript" src="./Dashboard.charts.js"></script> -->
+  <title>Login Page</title>
+</head>
+
+<body>
+  <div class="father-login-container-al">
+    <div class="login-white-container-al change-color-0">
+      <div class="main-header-container-al">
+        <h1 class="header-logo">A&L</h1>
+        <h2 class="title-user">
+          <span>Bienvenido Importador:</span>
+          <span>Lucas Ex</span>
+        </h2>
+      </div>
+    </div>
+    <div class="dashboard-container-al">
+      <nav class="main-nav-container-al"></nav>
+      <div class="main-dashboar-al">
+        <!--Inicio Tabla maestro-->
+        <!--F10 – manifiestoDeCarga-->
+
+        <div id="show-table-manifest" class="table-container">
+          <main class="main-table-manifest">
+            <div class="first-manifest-container">
+              <h2 class="table-title">Carga de Solicitudes:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+                <table class="titles-table-manifest">
+                  <thead class="thead-manifest">
+                  </thead>
+                </table>
+              </div>
+            </div>
+            <div class="second-manifest-container display-flex-center">              
+              <form class="container-create-big-form-al">
+                <div class="container-select-big-al">
+                  <label class="label-big-al" for="select-type-shippment">Seleccione el tipo de carga:</label>
+                  <select name="type-of-shippment" id="select-type-shippment">
+                    <option value="0">CARGA_GENERAL</option>
+                    <option value="1">REFRIGERADO</option>
+                    <option value="2">CARGA_PELIGROSA</option>
+                    <option value="X" selected>-tipos de carga-</option>
+                  </select>
+                </div>
+              
+                <div class="container-quantity-big-al">
+                  <label class="label-big-al" for="input-quantity-containers">Cantidad de contenedores:</label>
+                  <input type="text" id="input-quantity-containers" />
+
+                </div>                
+                
+                <div class="container-origin-big-al">
+                  <label class="label-big-al" for="input-origin-port">Ingrese el puerto de origen:</label>
+                  <input type="text" id="input-origin-port" maxlength="3" />
+
+                </div>
+                
+                <div class="container-description-big-al">
+                  <label class="label-big-al" for="input-shippment-description">Descripción de la mercadería:</label>
+                  <textarea name="shippment-description" id="input-shippment-description"></textarea>
+                </div>
+
+                <input class="button-create-request" type="button" value="Crear solicitud de carga" id="send-shippment-request" />
+              </form>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

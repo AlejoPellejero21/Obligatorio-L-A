@@ -2,6 +2,12 @@ body {
     margin: 0px;
 }
 
+/* 
+pink:#ff9df3
+sky-blue:#9ddeff
+*/
+
+
 /*INICIO Login Page INICIO*/
 
 .father-login-container-al {
@@ -291,6 +297,62 @@ body {
     text-align: center;
     margin-right: 20px;
     cursor: none;
+}
+
+/*Extra css Third Class*/
+.body-table-delete{
+    width: 94%;
+}
+
+.column-delete{
+    background: #bd000080;
+    border-radius: 100px;
+    color: #7c0000;
+    font-size: 26px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+/*General class*/
+
+.general-sky-blue{
+    background-color: #9ddeff;
+}
+
+.label-big-al{
+    color: #ffffffde;
+    font-size: 21px;
+    padding: 5px;
+}
+
+.display-flex-center{
+    display: flex;
+    justify-content: center;
+
+}
+
+.container-select-big-al{
+    padding: 10px 0px;
+}
+
+.button-create-request{
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px 0px;
+    font-size: 22px;
+    border: 0px;
+    border-radius: 6px;
+    color: #ffffffde;
+    background-color: #ffffff3d;
+}
+
+.column-rollover{
+    background: #a000bd80;
+    border-radius: 100px;
+    color: #5a007c;
+    font-size: 26px;
+    padding: 0px;
+    cursor: pointer;
 }
 
 /*FIN Dashboard Pge FIN*/
