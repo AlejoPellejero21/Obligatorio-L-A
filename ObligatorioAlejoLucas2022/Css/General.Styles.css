@@ -355,4 +355,11 @@ sky-blue:#9ddeff
     cursor: pointer;
 }
 
+
+.container-grafics{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
 /*FIN Dashboard Pge FIN*/
