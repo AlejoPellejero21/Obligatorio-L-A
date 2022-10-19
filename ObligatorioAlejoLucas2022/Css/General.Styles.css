@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    background-color: #ff9df3;
 }
 
 /* 
@@ -12,7 +13,7 @@ sky-blue:#9ddeff
 
 .father-login-container-al {
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -44,7 +45,7 @@ sky-blue:#9ddeff
 .login-container-al {
     width: 100%;
     display: flex;
-    height: 100vh;
+    
     background-color: #ff9df3;
     justify-content: flex-end;
 }
@@ -180,14 +181,14 @@ sky-blue:#9ddeff
     display: flex;
     width: 25%;
     border-radius: 0 30px 0 0;
-    background-color: #ffffff45;
+    background-color: #ffffff45;    
 }
 
 
 .dashboard-container-al {
     width: 100%;
     display: flex;
-    height: 100vh;
+    
     background-color: #ff9df3;
 }
 

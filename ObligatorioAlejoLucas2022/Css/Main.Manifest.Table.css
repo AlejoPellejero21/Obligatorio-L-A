@@ -27,17 +27,26 @@
     color: #ffffffde;
 }
 
-.div-title-table-al{
+.div-title-table-al {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 30px 0 0 30px;
     background: linear-gradient(90deg, rgb(255 255 255 / 30%) 0%, rgb(255 255 255 / 4%) 70%);
 }
 
-.table-title{
-    margin: 10px 0px 10px;    
+.table-title {
+    margin: 10px 0px 10px;
 }
 
 .first-manifest-container {
     margin-bottom: 20px;
 }
+
+/*PARA EL USUARIO TIPO EMPRESA 
+
+.login-white-container-al,
+.container-general-title-page,
+.header-button-create-al,
+.dashboard-container-al {
+    background-color: #9ddeff;
+} */

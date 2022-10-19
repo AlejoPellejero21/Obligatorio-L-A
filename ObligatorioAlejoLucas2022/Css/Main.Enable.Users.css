@@ -1,0 +1,78 @@
+.container-user-available-al {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-color: #ffffff45;
+    padding: 10px 0px 2px;
+    border-radius: 30px 0 0 30px;    
+}
+
+.user-container {
+    width: 31%;
+    background-color: #ff9d9d80;
+    border-radius: 30px 6px;    
+    margin-bottom: 5px;
+}
+
+.user-enable-button {
+    width: 100%;
+    background-color: #ff9d9d80;    
+    border-radius: 0px 10px 10px 40px;
+    height: 100%;
+    border: none;
+    padding: 11px;
+    color: #ffffffde;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.user-container-top-al {
+    margin: 20px 0px;
+}
+
+.user-information-al p{
+    color: #f3f3f3;
+    background-color: #ff9df3;
+    padding: 10px;
+    border-radius: 0px 12px 12px 0px;
+    font-size: 12px;
+    margin: 6% 0px;
+    width: 94%;
+}
+
+.image-user-al{
+    background-image: url('../Imges/150417194023_einstein-lengua.jpeg');    
+    width: 88%;
+    height: 370px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mini-title{
+    color: #f3f3f3;
+    background-color: #ff9df3;
+    padding: 10px;
+    border-radius: 0px 12px 12px 0px;
+}
+
+.user-container-top-al h3 {
+    text-align: center;
+    color: #f3f3f3;
+    margin: 0px 0px 6px 0px;
+}
+
+.only-button-available {
+    border-radius: 10px 0 0 100px;
+    padding: 5px 0px 0px;
+    margin: 5px 0px 15px;
+}
+
+.button-enable-al {    
+    background-color: transparent;
+}
