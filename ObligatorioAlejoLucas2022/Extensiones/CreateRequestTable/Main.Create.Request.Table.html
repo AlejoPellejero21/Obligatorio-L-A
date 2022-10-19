@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../../Css/General.Styles.css" />
+  <link rel="stylesheet" href="../../../Css/Main.Create.Request.css" />
+  <script type="text/javascript" src="../../LoginAndRegisterPages/Index.Login.Page.Logic.js"></script>
+  <script type="text/javascript" src="../../GlobalFunctions/Global.Functios.A&L.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="text/javascript" src="../Dashboard.charts.js"></script>
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <div class="father-login-container-al">
+    <!--FINAL HEADER STYLE-->
+    <div class="login-white-container-al change-color-0">
+      <div class="main-header-container-al">
+        <div class="container-header-left">
+          <h1 class="header-logo">A&L</h1>
+          <h2 class="title-user">
+            <span class="header-welcoome-user">Bienvenido Importador:</span>
+            <span class="header-user-name-al">Lucas Ex</span>
+          </h2>
+        </div>
+        <div class="container-general-title-page">
+          <span class="general-title-page">Creación de Solicitud</span>
+        </div>
+        <div class="container-header-button">
+          <button class="header-button-create-al">CREAR UNA SOLICITUD</button>
+        </div>
+      </div>
+    </div>
+    <!--FINAL HEADER STYLE-->
+
+    <div class="dashboard-container-al">
+      <nav class="main-nav-container-al"></nav>
+      <div class="main-dashboar-al">
+
+        <div id="show-table-manifest" class="table-container">
+          <main class="main-table-manifest">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+
+            <!--FORM CREATE REQUEST-->
+            <div class="second-manifest-container display-flex-center">
+              <form class="container-create-big-form-al">
+                <div class="container-left-big-form">
+                  <h2 class="table-title">Datos de solicitud:</h2>
+                  <div class="container-select-big-al display-form-labels-al">
+                    <label class="label-big-al" for="select-type-shippment">Seleccione el tipo de carga:</label>
+                    <select name="type-of-shippment" id="select-type-shippment">
+                      <option value="0">CARGA_GENERAL</option>
+                      <option value="1">REFRIGERADO</option>
+                      <option value="2">CARGA_PELIGROSA</option>
+                      <option value="X" selected>-tipos de carga-</option>
+                    </select>
+
+                    <label class="label-big-al" for="input-quantity-containers">Cantidad de contenedores:</label>
+                    <input type="text" id="input-quantity-containers" />
+                  </div>
+
+                  <div class="container-origin-big-al display-form-labels-al">
+                    <label class="label-big-al" for="input-origin-port">Ingrese el puerto de origen:</label>
+                    <input type="text" id="input-origin-port" maxlength="3" />
+                  </div>
+                </div>
+
+                <div class="container-description-big-a display-form-labels-al">
+                  <label class="label-big-al" for="input-shippment-description">Descripción de la mercadería:</label>
+                  <textarea name="shippment-description" id="input-shippment-description"></textarea>
+                </div>
+              </form>
+            </div>
+            <!--FORM CREATE REQUEST-->
+
+            <div class="button">
+              <input class="button-create-request" type="button" value="Crear solicitud de carga"
+                id="send-shippment-request" />
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

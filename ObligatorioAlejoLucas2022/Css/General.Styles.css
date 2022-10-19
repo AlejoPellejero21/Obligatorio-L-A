@@ -28,12 +28,11 @@ sky-blue:#9ddeff
 }
 
 .main-header-container-al {
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
     display: flex;
     background-color: #ffffff45;
     border-radius: 2px;
-    padding: 10px;
     margin-bottom: 6px;
 }
 
@@ -241,6 +240,7 @@ sky-blue:#9ddeff
 
 .table-title {
     color: #ffffffde;
+    font-size: 20px;
 }
 
 .column-manifest {
@@ -256,7 +256,7 @@ sky-blue:#9ddeff
     margin-bottom: 28px;
 }
 
-.tbody-manifest{
+.tbody-manifest {
     margin: 0px;
     margin-top: 10px;
 }
@@ -269,42 +269,42 @@ sky-blue:#9ddeff
     color: #ffffffde;
 }
 
-.second-manifest-container{
+.second-manifest-container {
     display: flex;
     justify-content: flex-end;
 }
 
-.body-table-manifest{
+.body-table-manifest {
     width: 75%;
 }
 
 /*Header Styles*/
-.title-user{
+.title-user {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     font-size: 14px;
     font-weight: 400;
 }
 
-.header-logo{
+.header-logo {
     transform: rotate(180deg);
     margin: 0px;
     font-size: 20px;
     letter-spacing: -4px;
     padding: 10px;
     background-color: #ffffff3d;
-    width: 3%;
     text-align: center;
-    margin-right: 20px;
+    margin-right: 10px;
     cursor: none;
 }
 
 /*Extra css Third Class*/
-.body-table-delete{
+.body-table-delete {
     width: 94%;
 }
 
-.column-delete{
+.column-delete {
     background: #bd000080;
     border-radius: 100px;
     color: #7c0000;
@@ -313,29 +313,33 @@ sky-blue:#9ddeff
     cursor: pointer;
 }
 
+.graphic-container {
+    padding: 10px;
+}
+
 /*General class*/
 
-.general-sky-blue{
+.general-sky-blue {
     background-color: #9ddeff;
 }
 
-.label-big-al{
+.label-big-al {
     color: #ffffffde;
-    font-size: 21px;
+    font-size: 16px;
     padding: 5px;
 }
 
-.display-flex-center{
+.display-flex-center {
     display: flex;
     justify-content: center;
 
 }
 
-.container-select-big-al{
+.container-select-big-al {
     padding: 10px 0px;
 }
 
-.button-create-request{
+.button-create-request {
     width: 100%;
     margin-top: 30px;
     padding: 18px 0px;
@@ -346,7 +350,7 @@ sky-blue:#9ddeff
     background-color: #ffffff3d;
 }
 
-.column-rollover{
+.column-rollover {
     background: #a000bd80;
     border-radius: 100px;
     color: #5a007c;
@@ -356,10 +360,176 @@ sky-blue:#9ddeff
 }
 
 
-.container-grafics{
+.container-grafics {
     width: 40%;
     margin: 0 auto;
     margin-top: 30px;
 }
 
+/*Calendar Styles*/
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #1abc9c;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+.container-calendar-grafic-al {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+
+    .weekdays li,
+    .days li {
+        width: 13.1%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .weekdays li,
+    .days li {
+        width: 12.5%;
+    }
+
+    .days li .active {
+        padding: 2px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+
+    .weekdays li,
+    .days li {
+        width: 12.2%;
+    }
+}
+
 /*FIN Dashboard Pge FIN*/
+
+/*INICIO Header INICIO*/
+
+.header-welcoome-user {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.header-user-name-al {
+    color: #0000007d;
+}
+
+.container-header-left {
+    display: flex;
+    justify-content: flex-start;
+    width: 20%;
+    padding: 10px;
+}
+
+.container-header-button {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.header-button-create-al {
+    width: 100%;
+    background-color: #ff9df3;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    border: none;
+    font-weight: bolder;
+}
+
+.container-general-title-page {
+    display: flex;
+    justify-content: center;
+    background-color: #ff9df3;
+    align-items: center;
+    width: 66%;
+    border-radius: 0 100px 0 100px;
+}
+
+.general-title-page {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/*FIN Header FIN*/

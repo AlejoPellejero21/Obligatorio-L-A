@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../../Css/General.Styles.css" />
-  <script type="text/javascript" src="../LoginAndRegisterPages/Index.Login.Page.Logic.js"></script>
-  <script type="text/javascript" src="../GlobalFunctions/Global.Functios.A&L.js"></script>
+  <link rel="stylesheet" href="./Css/General.Styles.css" />
+  <link rel="stylesheet" href="./Css/Main.Create.Request.css" />
+  <link rel="stylesheet" href="./Css/Main.Manifest.Table.css" />
+  <script type="text/javascript" src="./Extensiones/LoginAndRegisterPagesA&L/Index.Login.Page.Logic.js"></script>
+  <script type="text/javascript" src="./Extensiones/GlobalFunctions/Global.Functios.A&L.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="text/javascript" src="./Dashboard.charts.js"></script>
-  <title>Login Page</title>
+  <title>Dashboard</title>
 </head>
 
 <body>
   <div class="father-login-container-al">
-    <div class="login-white-container-al change-color-0 general-sky-blue">
+    <!--FINAL HEADER STYLE-->
+    <div class="login-white-container-al change-color-0">
       <div class="main-header-container-al">
-        <h1 class="header-logo">A&L</h1>
-        <h2 class="title-user">
-          <span>Bienvenido Importador:</span>
-          <span>Lucas Ex</span>
-        </h2>
+        <div class="container-header-left">
+          <h1 class="header-logo">A&L</h1>
+          <h2 class="title-user">
+            <span class="header-welcoome-user">Bienvenido Importador:</span>
+            <span class="header-user-name-al">Lucas Ex</span>
+          </h2>
+        </div>
+        <div class="container-general-title-page">
+          <span class="general-title-page">Manifiesto de Carga</span>
+        </div>
+        <div class="container-header-button">
+          <button class="header-button-create-al">CREAR UNA SOLICITUD</button>
+        </div>
       </div>
     </div>
-    <div class="dashboard-container-al general-sky-blue">
-      <nav class="main-nav-container-al"></nav>
-      <div class="main-dashboar-al">        
-        <div id="show-table-manifest" class="table-container">     
+    <!--FINAL HEADER STYLE-->
 
+    <div class="dashboard-container-al">
+      <nav class="main-nav-container-al"></nav>
+      <div class="main-dashboar-al">
+
+        <div id="show-table-manifest" class="table-container">
           <main class="main-table-manifest">
+            <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
-              <h2 class="table-title">Manifiesto de Carga:</h2>
+              <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
                 <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
                   commodi accusamus tempora, eveniet
                   illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
                   natus
                   saepe!</p>
-                <table class="titles-table-manifest">
-                  <thead class="thead-manifest">
-                    <th class="column-manifest">Origen</th>
-                    <th class="column-manifest">Contenedor</th>
-                    <th class="column-manifest">Importador</th>
-                    <th class="column-manifest">Descripción</th>
-                    <th class="column-manifest">Tipo de mercadería</th>
-                  </thead>
-                </table>
               </div>
             </div>
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="div-title-table-al">
+              <h2 class="table-title">Manifiesto:</h2>
+            </div>
             <div class="second-manifest-container">
-              <table class="titles-table-manifest body-table-manifest">
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">
+                  <th class="column-manifest">Origen</th>
+                  <th class="column-manifest">Contenedor</th>
+                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Descripción</th>
+                  <th class="column-manifest">Tipo de mercadería</th>
+                </thead>
                 <tbody class="thead-manifest tbody-manifest">
+                  <tr class="space-between-al"></tr>
                   <tr>
                     <td class="column-manifest-td">BUE</td>
                     <td class="column-manifest-td">1</td>
@@ -83,8 +98,8 @@
                 </tbody>
               </table>
             </div>
+
           </main>
-          
         </div>
       </div>
     </div>

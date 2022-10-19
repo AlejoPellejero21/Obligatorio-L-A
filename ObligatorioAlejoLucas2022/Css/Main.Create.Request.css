@@ -1,0 +1,42 @@
+.table-container {
+    background: transparent;
+    border-radius: 30px;
+}
+
+.main-table-manifest {
+    padding: 0px;
+}
+
+.first-manifest-container,
+.second-manifest-container {
+    background-color: #ffffff45;
+    border-radius: 30px 0 0 30px;
+    padding: 10px;
+}
+
+.first-manifest-container{
+    margin-bottom: 8px;
+}
+
+.sub-manifest-container {
+    border: none;
+}
+
+.description-manifest {
+    width: 100%;
+}
+
+.container-create-big-form-al{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.table-title{
+    margin: 10px 0px 0px;
+}
+
+.display-form-labels-al{
+    display: flex;
+    flex-direction: column;
+}
