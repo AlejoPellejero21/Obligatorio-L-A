@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./Css/General.Styles.css" />
+  <link rel="stylesheet" href="./Css/Main.Manifest.Table.css" />
+  <link rel="stylesheet" href="./Css/Main.Enable.Users.css" />
+  <link rel="stylesheet" href="./Css/Main.Add.Request.css" />
+  <link rel="stylesheet" href="./Css/Main.Create.Request.css" />
+  <script type="text/javascript" src="./Extensiones/LoginAndRegisterPagesA&L/Index.Login.Page.Logic.js"></script>
+  <script type="text/javascript" src="./Extensiones/GlobalFunctions/Global.Functios.A&L.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <div class="father-login-container-al">
+    <!--FINAL HEADER STYLE-->
+    <div class="login-white-container-al change-color-0">
+      <div class="main-header-container-al">
+        <div class="container-header-left">
+          <h1 class="header-logo">A&L</h1>
+          <h2 class="title-user">
+            <span class="header-welcoome-user">Bienvenido Importador:</span>
+            <span class="header-user-name-al">Lucas Ex</span>
+          </h2>
+        </div>
+        <div class="container-general-title-page">
+          <span class="general-title-page">Asignar Solicitudes Pendientes</span>
+        </div>
+        <div class="container-header-button">
+          <button class="header-button-create-al">CREAR UNA SOLICITUD</button>
+        </div>
+      </div>
+    </div>
+    <!--FINAL HEADER STYLE-->
+
+    <div class="dashboard-container-al">
+      <nav class="main-nav-container-al"></nav>
+      <div class="main-dashboar-al">
+
+        <div id="show-table-manifest" class="table-container">
+          <main class="main-table-manifest">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+
+            <!--FORM CREATE REQUEST-->
+            <div class="second-manifest-container display-flex-center">
+              <form class="container-create-big-form-al">
+                <div class="container-left-big-form">
+                  <h2 class="table-title">Datos del viaje:</h2>
+                  <div class="container-select-big-al display-form-labels-al">
+                    <label class="label-big-al" for="input-quantity-containers">Nombre del buque:</label>
+                    <input type="text" id="input-quantity-containers" />
+
+                    <div class="container-origin-big-al display-form-labels-al">
+                      <label class="label-big-al" for="input-origin-port">Cantidad max de contenedores:</label>
+                      <input type="text" id="input-origin-port" maxlength="3" />
+                    </div>
+
+                    <label class="label-big-al" for="select-type-shippment">Empresa - Linea de carga:</label>
+                    <select name="type-of-shippment" id="select-type-shippment">
+                      <option value="0">Oasis</option>
+                      <option value="1">Acuarius</option>
+                      <option value="2">Flatland</option>
+                      <option value="X" selected>-Seleccione Empresa-</option>
+                    </select>
+
+                  </div>
+               
+                </div>
+
+                <div class="container-description-big-a display-form-labels-al">
+                  <label class="label-big-al" for="input-shippment-description">Fecha de llegada:</label>
+                  <input type="date">
+                </div>
+              </form>
+            </div>
+            <!--FORM CREATE REQUEST-->
+
+            <div class="button">
+              <input class="button-create-request" type="button" value="Crear Nuevo Viaje"
+                id="send-shippment-request" />
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
