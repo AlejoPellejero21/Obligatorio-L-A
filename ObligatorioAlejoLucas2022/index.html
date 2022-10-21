@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./Css/General.Styles.css" />
-  <link rel="stylesheet" href="./Css/Main.Manifest.Table.css" />
-  <link rel="stylesheet" href="./Css/Main.Enable.Users.css" />
-  <link rel="stylesheet" href="./Css/Main.Add.Request.css" />
-  <link rel="stylesheet" href="./Css/Main.Create.Request.css" />
-  <script type="text/javascript" src="./Extensiones/LoginAndRegisterPagesA&L/Index.Login.Page.Logic.js"></script>
-  <script type="text/javascript" src="./Extensiones/GlobalFunctions/Global.Functios.A&L.js"></script>
+  <link rel="stylesheet" href="./Css/Estilos.Generales.css" />
+  <link rel="stylesheet" href="./Css/Estilos.Añadir.Solicitud.css" />
+  <link rel="stylesheet" href="./Css/Estilos.Crear.Solicitud.css" />
+  <link rel="stylesheet" href="./Css/Estilos.Habilitar.Usuarios.css" />
+  <link rel="stylesheet" href="./Css/Estilos.Manifesto.Carga.css" />
+  <script type="text/javascript" src="./Extensiones/Scripts/LoginRegisterViews.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>Dashboard</title>
 </head>
@@ -24,93 +24,77 @@
         <div class="container-header-left">
           <h1 class="header-logo">A&L</h1>
           <h2 class="title-user">
-            <span class="header-welcoome-user">Bienvenido Importador:</span>
-            <span class="header-user-name-al">Lucas Ex</span>
+            <span id="head-welcome-user" class="header-welcoome-user">Bienvenido Importador:</span>
+            <span id="head-user-name" class="header-user-name-al">Lucas Ex</span>
           </h2>
         </div>
-        <div class="container-general-title-page">
+        <div class="container-general-title-page change-color-0">
           <span class="general-title-page">Asignar Solicitudes Pendientes</span>
         </div>
         <div class="container-header-button">
-          <button class="header-button-create-al">CREAR UNA SOLICITUD</button>
+          <button class="header-button-create-al change-color-0">CREAR UNA SOLICITUD</button>
         </div>
       </div>
     </div>
     <!--FINAL HEADER STYLE-->
 
-    <div class="dashboard-container-al">
-      <nav class="main-nav-container-al"></nav>
-      <div class="main-dashboar-al">
-
-        <div id="show-table-manifest" class="table-container">
-          <main class="main-table-manifest">
-            <!--FINAL DESCRIPTION STYLES-->
-            <div class="first-manifest-container">
-              <h2 class="table-title">Descripción:</h2>
-              <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
-              </div>
-            </div>
-            <!--FINAL DESCRIPTION STYLES-->
-            <div class="div-title-table-al">
-              <h2 class="table-title">Solicitudes:</h2>
-            </div>
-            <div class="second-manifest-container">
-              <table class="body-table-manifest">
-                <thead class="thead-manifest">
-                  <th class="column-manifest unique-column-left-al">Cancelar</th>
-                  <th class="column-manifest">Origen</th>
-                  <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
-                  <th class="column-manifest">Descripción</th>
-                  <th class="column-manifest">Tipo de mercadería</th>
-                </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">-</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">-</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">-</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">-</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </main>
-        </div>
-      </div>
+    <div id="login-page-index-view" class="login-container-al change-color-0">
+      <main class="main-login-container-al">
+        <form class="main-form-container-al">
+          <!--Login Importador : show-login-register-link-->
+          <div id="show-login-register-link" class="login-register-link">
+            <span id="go-to-login" class="go-to-login-page">Login /</span>
+            <span id="go-to-register" class="go-to-register-page">
+              Register</span>
+          </div>
+          <!--Login Page : main-login-form-al-->
+          <div id="main-login-form-al" class="general-display">
+            <h3 id="user-type-account" class="login-title">
+              Account - Empresario
+            </h3>
+            <span class="span-text-login color-sky-blue">Con el selector de más abajo usted podra seleccionar para
+              que
+              tipo de usuario quiere loguearse y en el caso de que usted
+              seleccione el tipo IMPORTADOR usted ademas de poder loguearse
+              podra registrarse como un nuevo usuario de nuestra pagina. Todos
+              los derechos de esta pagina estan reservados por Alejo Pellejero
+              y Lucas Alvarez</span>
+            <input class="general-input change-color-0" type="text" name="Name" id="input-name"
+              placeholder="Username:" />
+            <input class="general-input change-color-0" type="password" name="Password" id="input-password"
+              placeholder="Password:" />
+            <select class="select-account-login" name="Select" id="select-type-login">
+              <option value="1" selected>Account - Empresario</option>
+              <option value="2">Account - Importador</option>
+            </select>
+            <button class="button-login color-sky-blue" id="button-on-login">
+              Sign In
+            </button>
+          </div>
+          <!--Register Page : main-register-form-al-->
+          <div id="main-register-form-al" class="main-register-al general-display">
+            <h3 id="user-type-account" class="login-title">
+              Account - Importador
+            </h3>
+            <span class="span-text-login is-color-sky-blue">Con el selector de más abajo usted podra seleccionar
+              para que
+              tipo de usuario quiere loguearse y en el caso de que usted
+              seleccione el tipo IMPORTADOR usted ademas de poder loguearse
+              podra registrarse como un nuevo ususario de nuestra pagina.
+              Todos los derechos de esta pagina estan reservados por Alejo
+              Pellejero y Lucas Alvarez</span>
+            <input class="general-input register-blue" type="text" id="input-register-name" placeholder="Name:" />
+            <input class="general-input register-blue" type="text" id="input-register-username"
+              placeholder="Username:" />
+            <input class="general-input register-blue" type="password" id="input-register-password"
+              placeholder="Password:" />
+            <button class="button-login register-blue-button" id="button-on-register">
+              Register
+            </button>
+          </div>
+        </form>
+      </main>
     </div>
-  </div>
 </body>
 
 </html>
