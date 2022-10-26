@@ -5,8 +5,7 @@ window.addEventListener('load', onWindowLoad);
 function onWindowLoad() {
     OBJ1Selector['SelectLogin'] = getQuerySelector('#', 'select-type-login', true);
     OBJ1Selector['HeaderUserName'] = getQuerySelector('#', 'head-user-name', true);
-    OBJ1Selector['HeaderWelcomeUser'] = getQuerySelector('#', 'head-welcome-user', true);
-
+    OBJ1Selector['HeaderWelcomeUser'] = getQuerySelector('#', 'head-welcome-user', true);         
 
     OBJ1Selector.SelectLogin.addEventListener('change', onSelectChange);
     setDisplay(OBJ1Selector.HeaderUserName, false);
@@ -14,6 +13,7 @@ function onWindowLoad() {
 }
 
 function onSelectChange() {
+
     const DivSkyBlueLight = getQuerySelector('.', 'change-color-0', false);
     const DivColorSkyBlue = getQuerySelector('.', 'color-sky-blue', false);
     const H1LoginTitle = getQuerySelector('#', 'user-type-account', true);

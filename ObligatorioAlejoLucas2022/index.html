@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,10 +10,13 @@
   <link rel="stylesheet" href="./Css/Estilos.Crear.Solicitud.css" />
   <link rel="stylesheet" href="./Css/Estilos.Habilitar.Usuarios.css" />
   <link rel="stylesheet" href="./Css/Estilos.Manifesto.Carga.css" />
+  <link rel="stylesheet" href="./Css/Estilos.Esconder.Containers.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/Global.Variables.Constant.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/LoginRegisterViews.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
   <title>{A&L -by- L&A}</title>
 </head>
 
@@ -39,7 +43,7 @@
     <!--FINAL HEADER STYLE-->
 
     <!--Display none al estar logeado= login-page-index-view-->
-    <div id="login-page-index-view" class="login-container-al change-color-0">
+    <div id="login-page-index-view" class="login-container-al change-color-0 login-no-display">
       <main class="main-login-container-al">
         <form class="main-form-container-al">
           <!--Login Importador : show-login-register-link-->
@@ -96,6 +100,215 @@
         </form>
       </main>
     </div>
+
+    <!--Empreseraio All Views-->
+
+
+    <!--Empreseraio All Views-->
+
+
+    <!--Importador All View-->
+    <div class="dashboard-container-al">
+      <nav class="main-nav-container-al"></nav>
+      <div class="main-dashboar-al">
+
+        <div id="show-table-manifest" class="table-container">
+          <!--Main Crear una solicitud-->
+          <main class="main-table-manifest login-no-display">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+
+            <!--FORM CREATE REQUEST-->
+            <div class="display-flex-center background-tables-form">
+              <form class="container-create-big-form-al">
+                <div class="container-left-big-form">
+                  <h2 class="table-title">Datos de solicitud:</h2>
+                  <div class="container-select-big-al display-form-labels-al">
+                    <label class="label-big-al" for="select-type-shippment">Seleccione el tipo de carga:</label>
+                    <select name="type-of-shippment" id="select-type-shippment">
+                      <option value="0">CARGA_GENERAL</option>
+                      <option value="1">REFRIGERADO</option>
+                      <option value="2">CARGA_PELIGROSA</option>
+                      <option value="X" selected>-tipos de carga-</option>
+                    </select>
+
+                    <label class="label-big-al" for="input-quantity-containers">Cantidad de contenedores:</label>
+                    <input type="text" id="input-quantity-containers" />
+                  </div>
+
+                  <div class="container-origin-big-al display-form-labels-al">
+                    <label class="label-big-al" for="input-origin-port">Ingrese el puerto de origen:</label>
+                    <input type="text" id="input-origin-port" maxlength="3" />
+                  </div>
+                </div>
+
+                <div class="container-description-big-a display-form-labels-al">
+                  <label class="label-big-al" for="input-shippment-description">Descripción de la mercadería:</label>
+                  <textarea name="shippment-description" id="input-shippment-description"></textarea>
+                </div>
+              </form>
+            </div>
+            <!--FORM CREATE REQUEST-->
+
+            <div class="button">
+              <input class="button-create-request" type="button" value="Crear solicitud de carga"
+                id="send-shippment-request" />
+            </div>
+          </main>
+          <!--Main Crear una solicitud-->
+
+          <!--Main Consultar Solicitudes Pendientes-->
+          <main class="main-table-manifest login-no-display">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="div-title-table-al">
+              <h2 class="table-title">Solicitudes Pendientes:</h2>
+            </div>
+            <div class="second-manifest-container">
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">
+                  <th class="column-manifest">Origen</th>
+                  <th class="column-manifest">Contenedor</th>
+                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Descripción</th>
+                  <th class="column-manifest">Tipo de mercadería</th>
+                </thead>
+                <tbody class="thead-manifest tbody-manifest">
+                  <tr class="space-between-al"></tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+          <!--Main Consultar Solicitudes Pendientes-->
+
+          <!--Main Visualizar Informacion Estadistica-->
+          <main class="main-table-manifest login-no-display">
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+
+            <div class="container-calendar-grafic-al">
+              <div class="container-calendar-grafic">
+                <div class="month">
+                  <ul>
+                    <li class="prev">&#10094;</li>
+                    <li class="next">&#10095;</li>
+                    <li>
+                      August<br>
+                      <span style="font-size:18px">2021</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <ul class="weekdays">
+                  <li>Mo</li>
+                  <li>Tu</li>
+                  <li>We</li>
+                  <li>Th</li>
+                  <li>Fr</li>
+                  <li>Sa</li>
+                  <li>Su</li>
+                </ul>
+
+                <ul class="days">
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li><span class="active">10</span></li>
+                  <li>11</li>
+                  <li>12</li>
+                  <li>13</li>
+                  <li>14</li>
+                  <li>15</li>
+                  <li>16</li>
+                  <li>17</li>
+                  <li>18</li>
+                  <li>19</li>
+                  <li>20</li>
+                  <li>21</li>
+                  <li>22</li>
+                  <li>23</li>
+                  <li>24</li>
+                  <li>25</li>
+                  <li>26</li>
+                  <li>27</li>
+                  <li>28</li>
+                  <li>29</li>
+                  <li>30</li>
+                  <li>31</li>
+                </ul>
+              </div>
+              <div class="container-grafics">
+                <canvas id="myChart" style="width:200px;max-width:400px"></canvas>
+              </div>
+            </div>
+          </main>
+          <!--Main Visualizar Informacion Estadistica-->
+        </div>
+      </div>
+    </div>
+    <!--Importador All View-->
 
 </body>
 
