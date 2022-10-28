@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,6 +15,7 @@
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
   <title>{A&L -by- L&A}</title>
 </head>
 
@@ -103,13 +102,21 @@
     <!--Main Login View-->
 
     <!--Empreseraio All Views-->
-    <div class="dashboard-container-al dashboard-container-al-sky-blue">
-      <nav class="main-nav-container-al"></nav>
+    <div class="dashboard-container-al">
+      <nav class="main-nav-container-al">
+        <div id="go-to-crear-un-viaje" class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span class="generals-icons-left">I[M</span></div>
+        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span class="generals-icons-left">I[M</span></div>
+        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Hacer Rollover de carga</span><span class="generals-icons-left">I[M</span></div>
+        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Manifiesto de carga</span><span class="generals-icons-left">I[M</span></div>
+        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Habilitar Usuarios</span><span class="generals-icons-left">I[M</span></div>
+        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Carga Peligrosa</span><span class="generals-icons-left">I[M</span></div>        
+      </nav>
       <div class="main-dashboar-al">
 
         <div id="show-table-manifest" class="table-container">
-          <!--Main Crear una solicitud-->
-          <main class="main-table-manifest">
+
+          <!--Main Crear Un Viaje-->
+          <main id="show-this-view" class="main-table-manifest login-no-display">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -122,18 +129,379 @@
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
-            
-          </main>                  
 
+            <!--FORM CREATE REQUEST-->
+            <div class="second-manifest-container display-flex-center container-backgroud-suplier">
+              <form class="container-create-big-form-al">
+                <div class="container-left-big-form">
+                  <h2 class="table-title">Datos del viaje:</h2>
+                  <div class="container-select-big-al display-form-labels-al">
+                    <label class="label-big-al" for="input-quantity-containers">Nombre del buque:</label>
+                    <input type="text" id="input-quantity-containers" />
+
+                    <div class="container-origin-big-al display-form-labels-al">
+                      <label class="label-big-al" for="input-origin-port-2">Cantidad max de contenedores:</label>
+                      <input type="text" id="input-origin-port-2" maxlength="3" />
+                    </div>
+
+                    <label class="label-big-al" for="select-type-shippment">Empresa - Linea de carga:</label>
+                    <select name="type-of-shippment" id="select-type-shippment">
+                      <option value="0">Oasis</option>
+                      <option value="1">Acuarius</option>
+                      <option value="2">Flatland</option>
+                      <option value="X" selected>-Seleccione Empresa-</option>
+                    </select>
+
+                  </div>
+
+                </div>
+
+                <div class="container-description-big-a display-form-labels-al">
+                  <label class="label-big-al" for="input-shippment-description">Fecha de llegada:</label>
+                  <input type="date">
+                </div>
+              </form>
+            </div>
+            <!--FORM CREATE REQUEST-->
+
+            <div class="button">
+              <input class="button-create-request" type="button" value="Crear Nuevo Viaje"
+                id="send-shippment-request" />
+            </div>
+          </main>
+          <!--Main Crear Un Viaje-->
+
+          <!--Main Asignar un viaje-->
+          <main id="show-this-view" class="main-table-manifest login-no-display">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="div-title-table-al">
+              <h2 class="table-title">Solicitudes:</h2>
+            </div>
+            <div class="second-manifest-container">
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">
+                  <th class="column-manifest unique-column-left-al">Asignar</th>
+                  <th class="column-manifest">Origen</th>
+                  <th class="column-manifest">Contenedor</th>
+                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Descripción</th>
+                  <th class="column-manifest">Tipo de mercadería</th>
+                </thead>
+                <tbody class="thead-manifest tbody-manifest">
+                  <tr class="space-between-al"></tr>
+                  <tr>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+          <!--Main Asignar un viaje-->
+
+          <!--Main Rollover de carga-->
+          <main id="show-this-view" class="main-table-manifest login-no-display">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="div-title-table-al">
+              <h2 class="table-title">Solicitudes:</h2>
+            </div>
+            <div class="second-manifest-container">
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">
+                  <th class="column-manifest unique-column-left-al">Rollover</th>
+                  <th class="column-manifest">Origen</th>
+                  <th class="column-manifest">Contenedor</th>
+                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Descripción</th>
+                  <th class="column-manifest">Tipo de mercadería</th>
+                </thead>
+                <tbody class="thead-manifest tbody-manifest">
+                  <tr class="space-between-al"></tr>
+                  <tr>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+          <!--Main Rollover de carga-->
+
+          <!--Main Manifiesto de carga-->
+          <main id="show-this-view" class="main-table-manifest login-no-display">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="div-title-table-al">
+              <h2 class="table-title">Manifiesto:</h2>
+            </div>
+            <div class="second-manifest-container">
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">
+                  <th class="column-manifest">Origen</th>
+                  <th class="column-manifest">Contenedor</th>
+                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Descripción</th>
+                  <th class="column-manifest">Tipo de mercadería</th>
+                </thead>
+                <tbody class="thead-manifest tbody-manifest">
+                  <tr class="space-between-al"></tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">BUE</td>
+                    <td class="column-manifest-td">1</td>
+                    <td class="column-manifest-td">Juan Perez</td>
+                    <td class="column-manifest-td">Juguetes</td>
+                    <td class="column-manifest-td">CARGA_GENERAL</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </main>
+          <!--Main Manifiesto de carga-->
+
+          <!--Main Habilitar Usuario-->
+          <main id="show-this-view" class="main-table-manifest login-no-display">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="container-user-available-al">
+              <div class="user-container">
+                <div class="user-container-top-al">
+                  <div class="image-user-al"></div>
+                  <h3>User PeDERE</h3>
+                </div>
+                <div class="user-information-al">
+                  <span class="mini-title">Deshabilitado:</span>
+                  <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, ipsum minima! Veritatis, mollitia
+                    magnam! Sit incidunt nisi quaerat molestias nostrum tempore. Quis voluptas provident nam libero
+                    atque distinctio ullam ipsa.</P>
+                </div>
+              </div>
+              <div class="user-container">
+                <div class="user-container-top-al">
+                  <div class="image-user-al"></div>
+                  <h3>User PeDERE</h3>
+                </div>
+                <div class="user-information-al">
+                  <span class="mini-title">Deshabilitado:</span>
+                  <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, ipsum minima! Veritatis, mollitia
+                    magnam! Sit incidunt nisi quaerat molestias nostrum tempore. Quis voluptas provident nam libero
+                    atque distinctio ullam ipsa.</P>
+                </div>
+              </div>
+              <div class="user-container">
+                <div class="user-container-top-al">
+                  <div class="image-user-al"></div>
+                  <h3>User PeDERE</h3>
+                </div>
+                <div class="user-information-al">
+                  <span class="mini-title">Deshabilitado:</span>
+                  <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, ipsum minima! Veritatis, mollitia
+                    magnam! Sit incidunt nisi quaerat molestias nostrum tempore. Quis voluptas provident nam libero
+                    atque distinctio ullam ipsa.</P>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-user-available-al only-button-available">
+              <div class="user-container button-enable-al">
+                <input class="user-enable-button" data-userId="1" type="button" value="Habilitar">
+              </div>
+              <div class="user-container button-enable-al">
+                <input class="user-enable-button" data-userId="2" type="button" value="Habilitar">
+              </div>
+              <div class="user-container button-enable-al">
+                <input class="user-enable-button" data-userId="3" type="button" value="Habilitar">
+              </div>
+            </div>
+          </main>
+          <!--Main Habilitar Usuario-->
+
+          <!--Main Carga Peligrosa-->
+          <main id="show-this-view" class="main-table-manifest login-no-display">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
+                  commodi accusamus tempora, eveniet
+                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
+                  natus
+                  saepe!</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="div-title-table-al">
+              <h2 class="table-title">Carga Peligrosa:</h2>
+            </div>
+            <div class="second-manifest-container">
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">
+                  <th class="column-manifest unique-column-left-al">Tipo</th>
+                  <th class="column-manifest">Descripcion</th>
+                  <th class="column-manifest">Origen</th>
+                  <th class="column-manifest">Contenedores</th>
+                </thead>
+                <tbody class="thead-manifest tbody-manifest">
+                  <tr>
+                    <td class="column-manifest-td">CARGA PELIGROSA</td>
+                    <td class="column-manifest-td">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic unde
+                      labore.</td>
+                    <td class="column-manifest-td">Los dedos</td>
+                    <td class="column-manifest-td">7</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">CARGA PELIGROSA</td>
+                    <td class="column-manifest-td">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic unde
+                      labore.</td>
+                    <td class="column-manifest-td">Los dedos</td>
+                    <td class="column-manifest-td">12</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">CARGA PELIGROSA</td>
+                    <td class="column-manifest-td">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic unde
+                      labore.</td>
+                    <td class="column-manifest-td">Los dedos</td>
+                    <td class="column-manifest-td">3</td>
+                  </tr>
+                  <tr>
+                    <td class="column-manifest-td">CARGA PELIGROSA</td>
+                    <td class="column-manifest-td">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic unde
+                      labore.</td>
+                    <td class="column-manifest-td">Los dedos 5</td>
+                    <td class="column-manifest-td">10</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+          <!--Main Carga Peligrosa-->
         </div>
       </div>
     </div>
 
     <!--Empreseraio All Views-->
 
-
     <!--Importador All View-->
-    <div class="dashboard-container-al login-no-display">
+    <div class="dashboard-container-al dashboard-container-al-sky-blue login-no-display">
       <nav class="main-nav-container-al"></nav>
       <div class="main-dashboar-al">
 
@@ -159,16 +527,16 @@
                 <div class="container-left-big-form">
                   <h2 class="table-title">Datos de solicitud:</h2>
                   <div class="container-select-big-al display-form-labels-al">
-                    <label class="label-big-al" for="select-type-shippment">Seleccione el tipo de carga:</label>
-                    <select name="type-of-shippment" id="select-type-shippment">
+                    <label class="label-big-al" for="select-type-shippment-2">Seleccione el tipo de carga:</label>
+                    <select name="type-of-shippment" id="select-type-shippment-2">
                       <option value="0">CARGA_GENERAL</option>
                       <option value="1">REFRIGERADO</option>
                       <option value="2">CARGA_PELIGROSA</option>
                       <option value="X" selected>-tipos de carga-</option>
                     </select>
 
-                    <label class="label-big-al" for="input-quantity-containers">Cantidad de contenedores:</label>
-                    <input type="text" id="input-quantity-containers" />
+                    <label class="label-big-al" for="input-quantity-containers-2">Cantidad de contenedores:</label>
+                    <input type="text" id="input-quantity-containers-2" />
                   </div>
 
                   <div class="container-origin-big-al display-form-labels-al">

@@ -183,6 +183,7 @@ sky-blue:#9ddeff
     border-radius: 0 30px 0 0;
     background-color: #ffffff45;    
     height: 100vh;    
+    flex-direction: column;
 }
 
 
@@ -548,4 +549,29 @@ body {
 
 .dashboard-container-al-sky-blue{
     background-color: #9ddeff;
+}
+
+.container-backgroud-suplier{
+    background-color: #ffffff45 !important;
+    padding: 10px !important;
+}
+
+/*Nav Bar*/
+
+.nav-create-new-trip{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 12%;
+    cursor: pointer;
+    align-items: center;
+    padding: 10px;
+    border-top: 2px solid;
+    border-top-right-radius: 30px;
+}
+
+.generals-nav-link-title{
+    color: #ffffff;    
+    padding: 0px 12px;
+    font-weight: bold;
 }
