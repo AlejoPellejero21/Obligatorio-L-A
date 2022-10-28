@@ -19,6 +19,8 @@ function onWindowLoad() {
     true
   );
 
+  onDashboardLoad();
+
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
