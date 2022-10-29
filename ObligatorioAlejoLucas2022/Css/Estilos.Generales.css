@@ -483,6 +483,11 @@ body {
     }
 }
 
+/*Dashboard pink*/
+.container-empresario-view{
+    width: 50%;
+}
+
 /*FIN Dashboard Pge FIN*/
 
 /*INICIO Header INICIO*/
@@ -565,9 +570,17 @@ body {
     height: 12%;
     cursor: pointer;
     align-items: center;
-    padding: 10px;
-    border-top: 2px solid;
+    padding: 10px;    
+    border-top: 2px solid #ffffff;
     border-top-right-radius: 30px;
+}
+
+.nav-create-new-trip:hover{
+    background-color: #ff9df3;
+}
+
+.trip-sky-blue:hover{
+    background-color: #9ddeff;
 }
 
 .generals-nav-link-title{
