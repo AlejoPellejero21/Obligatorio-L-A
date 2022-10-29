@@ -43,7 +43,7 @@
     <!--FINAL HEADER STYLE-->
 
     <!--Main Login View al estar logeado= login-page-index-view-->
-    <div id="login-page-index-view" class="login-container-al change-color-0 ">
+    <div id="login-page-index-view" class="login-container-al change-color-0 login-no-display">
       <main class="main-login-container-al">
         <form class="main-form-container-al">
           <!--Login Importador : show-login-register-link-->
@@ -103,21 +103,21 @@
     <!--Main Login View-->
 
     <!--Empreseraio All Views-->
-    <div class="dashboard-container-al">
+    <div class="dashboard-container-al login-no-display">
       <nav class="main-nav-container-al">
-        <div id="go-to-crear-un-viaje" class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span class="generals-icons-left">I[M</span></div>
-        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span class="generals-icons-left">I[M</span></div>
-        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Hacer Rollover de carga</span><span class="generals-icons-left">I[M</span></div>
-        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Manifiesto de carga</span><span class="generals-icons-left">I[M</span></div>
-        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Habilitar Usuarios</span><span class="generals-icons-left">I[M</span></div>
-        <div class="nav-create-new-trip"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Carga Peligrosa</span><span class="generals-icons-left">I[M</span></div>        
+        <div data-view="CrearUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span class="generals-icons-left">I[M</span></div>
+        <div data-view="AsignarUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="RolloverDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Hacer Rollover de carga</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="ManifiestoDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Manifiesto de carga</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="HabilitarUsuarioView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Habilitar Usuarios</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="CargaPeligrosaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Carga Peligrosa</span><span class="generals-icons-left">I[M</span></div>        
       </nav>
       <div class="main-dashboar-al">
 
         <div id="show-table-manifest" class="table-container">
 
           <!--Main Crear Un Viaje-->
-          <main id="show-this-view" class="main-table-manifest login-no-display">
+          <main data-view="CrearUnViajeView" class="show-this-view main-table-manifest">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -130,12 +130,14 @@
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
-
+            <div class="div-title-table-al">
+              <h2 class="table-title">Viajes:</h2>
+            </div>
             <!--FORM CREATE REQUEST-->
             <div class="second-manifest-container display-flex-center container-backgroud-suplier">
               <form class="container-create-big-form-al">
-                <div class="container-left-big-form">
-                  <h2 class="table-title">Datos del viaje:</h2>
+                <div class="container-left-big-form container-empresario-view">
+                  <h2 class="table-title">Datos del viaje:</h2>                  
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-quantity-containers">Nombre del buque:</label>
                     <input type="text" id="input-quantity-containers" />
@@ -157,7 +159,7 @@
 
                 </div>
 
-                <div class="container-description-big-a display-form-labels-al">
+                <div class="container-description-big-a display-form-labels-al container-empresario-view">
                   <label class="label-big-al" for="input-shippment-description">Fecha de llegada:</label>
                   <input type="date">
                 </div>
@@ -173,7 +175,7 @@
           <!--Main Crear Un Viaje-->
 
           <!--Main Asignar un viaje-->
-          <main id="show-this-view" class="main-table-manifest login-no-display">
+          <main data-view="AsignarUnViajeView" class="show-this-view main-table-manifest login-no-display">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -240,7 +242,7 @@
           <!--Main Asignar un viaje-->
 
           <!--Main Rollover de carga-->
-          <main id="show-this-view" class="main-table-manifest login-no-display">
+          <main data-view="RolloverDeCargaView" class="show-this-view main-table-manifest login-no-display">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -307,7 +309,7 @@
           <!--Main Rollover de carga-->
 
           <!--Main Manifiesto de carga-->
-          <main id="show-this-view" class="main-table-manifest login-no-display">
+          <main data-view="ManifiestoDeCargaView" class="show-this-view main-table-manifest login-no-display">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -370,7 +372,7 @@
           <!--Main Manifiesto de carga-->
 
           <!--Main Habilitar Usuario-->
-          <main id="show-this-view" class="main-table-manifest login-no-display">
+          <main data-view="HabilitarUsuarioView" class="show-this-view main-table-manifest login-no-display">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -381,6 +383,9 @@
                   natus
                   saepe!</p>
               </div>
+            </div>
+            <div class="div-title-table-al">
+              <h2 class="table-title">Usuarios:</h2>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="container-user-available-al">
@@ -437,7 +442,7 @@
           <!--Main Habilitar Usuario-->
 
           <!--Main Carga Peligrosa-->
-          <main id="show-this-view" class="main-table-manifest login-no-display">
+          <main data-view="CargaPeligrosaView" class="show-this-view main-table-manifest login-no-display">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -502,13 +507,17 @@
     <!--Empreseraio All Views-->
 
     <!--Importador All View-->
-    <div class="dashboard-container-al dashboard-container-al-sky-blue login-no-display">
-      <nav class="main-nav-container-al"></nav>
+    <div class="dashboard-container-al dashboard-container-al-sky-blue">
+      <nav class="main-nav-container-al">
+        <div data-view="CrearUnaSolicitud" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear una solicitud</span> <span class="generals-icons-left">I[M</span></div>
+        <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes Pendientes</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Informacion Estadistica</span><span class="generals-icons-left">I[M</span></div>        
+      </nav>
       <div class="main-dashboar-al">
 
         <div id="show-table-manifest" class="table-container">
           <!--Main Crear una solicitud-->
-          <main class="main-table-manifest login-no-display">
+          <main data-view="CrearUnaSolicitud" class="show-this-view main-table-manifest">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -521,7 +530,9 @@
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
-
+            <div class="div-title-table-al">
+              <h2 class="table-title">Crear Solicitud:</h2>
+            </div>
             <!--FORM CREATE REQUEST-->
             <div class="display-flex-center background-tables-form" id="main-form-create-request">
               <form class="container-create-big-form-al">
@@ -562,7 +573,7 @@
           <!--Main Crear una solicitud-->
 
           <!--Main Consultar Solicitudes Pendientes-->
-          <main class="main-table-manifest login-no-display">
+          <main data-view="ConsultarSolicitudesPendientes" class="show-this-view main-table-manifest login-no-display">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -624,7 +635,7 @@
           <!--Main Consultar Solicitudes Pendientes-->
 
           <!--Main Visualizar Informacion Estadistica-->
-          <main class="main-table-manifest login-no-display">
+          <main data-view="VisualizarInformacionEstadistica" class="show-this-view main-table-manifest login-no-display">
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
@@ -634,6 +645,10 @@
                   natus
                   saepe!</p>
               </div>
+            </div>
+
+            <div class="div-title-table-al">
+              <h2 class="table-title">Informacion Estadistica:</h2>
             </div>
 
             <div class="container-calendar-grafic-al">
