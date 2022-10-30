@@ -12,7 +12,7 @@ let registerValidators = [
   },
   {
     id: "usernameInUse",
-    errMsg: "Por favor ingrese nombre de usuario",
+    errMsg: "Por favor ingrese nombre de usuario que no este en uso",
     fnValidate: findUser,
   },
   {
@@ -61,19 +61,51 @@ function isValidNumber(num) {
   return !isNaN(num);
 }
 
-function findUser(userAccess, userPassword) {
-  let user = null;
-  for (let exists in importadores) {
-    if (
-      importadores.userAccess == userAccess &&
-      importadores.userPassword == userPassword
-    ) {
-      exists = importadores;
-    }
+//Pruebas de validaciones - funciona con clases
+
+class Admin {
+  constructor(id, username, pass) {
+    // ejemplo
+    this.id = id;
+    this.username = username;
+    this.pass = pass;
   }
-  return console.log(exists);
 }
 
+class Empresa {
+  constructor(id, username, pass) {
+    // ejemplo
+    this.id = id;
+    this.username = username;
+    this.pass = pass;
+  }
+}
+
+// Prueba para comprobar validaciones
+// id, name, username, password
+
+const pruebaImportadores = [
+  new Admin(1, "admin", "admin.123"),
+  new Admin(2, "admin2", "admin.1234"), // prueba de usuarios
+];
+
+const pruebaEmpresas = [
+  new Empresa(1, "falopiño", "123"),
+  new Empresa(2, "falopardi", "123"), // prueba de usuarios
+];
+
+// findUser funciona para ambos usuarios
+function findUser(username, pass, arr) {
+  let user = null;
+  arr.forEach(function (admin) {
+    if (admin.username == username && admin.pass == pass) {
+      user = admin;
+    }
+  });
+  return user;
+}
+
+/*
 function formValidator(validations) {
   let iterador = 0;
 
@@ -87,4 +119,4 @@ function formValidator(validations) {
     iterador++;
   }
   return failedValidation;
-}
+}*/
