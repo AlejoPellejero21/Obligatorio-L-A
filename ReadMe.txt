@@ -2,9 +2,9 @@ MANUAL DEL PROYECTO [ALEJO PELLEJERO && LUCAS ALVAREZ]
 
 1. Nombre de ARCHIVOS JS || HTML|| CSS 
 
-Para los nombre de funciones utilizamos como regla general del proyecto colorar el nombre separado por puntos.
+Para los nombre de archivos utilizamos como regla general del proyecto colocar el nombre en Upper Camel Case y al final del mismo (.A&L.js) .
 
-Por ejemplo: Example.Mini.Ex.JS || Example.Ex.html
+Por ejemplo: Example.Mini.A&L.js || ExampleExhtml.A&L.js
 
 
 2. Nombre de VARIABLES

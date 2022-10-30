@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./Css/Estilos.Habilitar.Usuarios.css" />
   <link rel="stylesheet" href="./Css/Estilos.Manifesto.Carga.css" />
   <link rel="stylesheet" href="./Css/Estilos.Esconder.Containers.css" />
+  <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/Global.Variables.Constant.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/LoginRegisterViews.A&L.js"></script>
@@ -17,6 +18,7 @@
   <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
   <script type="text/javascript" src="./Extensiones/Login/login.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
   <title>{A&L -by- L&A}</title>
 </head>
 
@@ -36,14 +38,14 @@
           <span class="general-title-page">Bienvenido A&L Project</span>
         </div>
         <div class="container-header-button">
-          <button class="header-button-create-al change-color-0">CREAR UNA SOLICITUD</button>
+          <button id="crear-un-viaje-button" class="header-button-create-al change-color-0">CREAR UN VIAJE</button>
         </div>
       </div>
     </div>
     <!--FINAL HEADER STYLE-->
 
     <!--Main Login View al estar logeado= login-page-index-view-->
-    <div id="login-page-index-view" class="login-container-al change-color-0 login-no-display">
+    <div id="login-page-index-view" class="login-container-al change-color-0">
       <main class="main-login-container-al">
         <form class="main-form-container-al">
           <!--Login Importador : show-login-register-link-->
@@ -103,7 +105,7 @@
     <!--Main Login View-->
 
     <!--Empreseraio All Views-->
-    <div class="dashboard-container-al">
+    <div class="dashboard-container-al login-no-display">
       <nav class="main-nav-container-al">
         <div data-view="CrearUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span class="generals-icons-left">I[M</span></div>
         <div data-view="AsignarUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span class="generals-icons-left">I[M</span></div>
@@ -122,11 +124,9 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">Se deberá agregar el nombre del buque, la cantidad
+                  máxima de contenedores, la empresa (línea de carga) a la que pertenece (id), la fecha
+                  de llegada y un id autonumérico de viaje.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
@@ -139,16 +139,16 @@
                 <div class="container-left-big-form container-empresario-view">
                   <h2 class="table-title">Datos del viaje:</h2>                  
                   <div class="container-select-big-al display-form-labels-al">
-                    <label class="label-big-al" for="input-quantity-containers">Nombre del buque:</label>
-                    <input type="text" id="input-quantity-containers" />
+                    <label class="label-big-al" for="input-nombre-del-buque">Nombre del buque:</label>
+                    <input type="text" id="input-nombre-del-buque" />
 
                     <div class="container-origin-big-al display-form-labels-al">
-                      <label class="label-big-al" for="input-origin-port-2">Cantidad max de contenedores:</label>
-                      <input type="text" id="input-origin-port-2" maxlength="3" />
+                      <label class="label-big-al" for="input-cantidad-max-contenedores">Cantidad max de contenedores:</label>
+                      <input type="text" id="input-cantidad-max-contenedores" maxlength="3" />
                     </div>
 
-                    <label class="label-big-al" for="select-type-shippment">Empresa - Linea de carga:</label>
-                    <select name="type-of-shippment" id="select-type-shippment">
+                    <label class="label-big-al" for="select-line-de-carga">Empresa - Linea de carga:</label>
+                    <select name="type-of-shippment" id="select-line-de-carga">
                       <option value="0">Oasis</option>
                       <option value="1">Acuarius</option>
                       <option value="2">Flatland</option>
@@ -160,17 +160,13 @@
                 </div>
 
                 <div class="container-description-big-a display-form-labels-al container-empresario-view">
-                  <label class="label-big-al" for="input-shippment-description">Fecha de llegada:</label>
-                  <input type="date">
+                  <label class="label-big-al" for="input-fecha-de-llegada">Fecha de llegada:</label>
+                  <input id="input-fecha-de-llegada" type="date">
                 </div>
               </form>
             </div>
             <!--FORM CREATE REQUEST-->
-
-            <div class="button">
-              <input class="button-create-request" type="button" value="Crear Nuevo Viaje"
-                id="send-shippment-request" />
-            </div>
+            
           </main>
           <!--Main Crear Un Viaje-->
 
@@ -503,7 +499,6 @@
         </div>
       </div>
     </div>
-
     <!--Empreseraio All Views-->
 
     <!--Importador All View-->
