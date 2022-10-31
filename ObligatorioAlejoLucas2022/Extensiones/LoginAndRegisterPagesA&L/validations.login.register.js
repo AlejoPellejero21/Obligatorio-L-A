@@ -2,28 +2,28 @@ let registerValidators = [
   {
     id: "inputName",
     errMsg: "Por favor ingrese nombre",
-    fnValidate: emptyInput,
+    fnValidate: isEmpty,
   },
 
   {
     id: "inputUsername",
     errMsg: "Por favor ingrese nombre de usuario",
-    fnValidate: emptyInput,
+    fnValidate: isEmpty,
   },
   {
     id: "usernameInUse",
-    errMsg: "Por favor ingrese nombre de usuario",
+    errMsg: "Por favor ingrese nombre de usuario que no este en uso",
     fnValidate: findUser,
   },
   {
     id: "inputPassword",
     errMsg: "Por favor ingrese contraseña",
-    fnValidate: emptyInput,
+    fnValidate: isEmpty,
   },
   {
     id: "selectAvatar",
     errMsg: "Por favor seleccione una foto",
-    fnValidate: emptySelect,
+    fnValidate: isEmpty,
   },
 ];
 
@@ -36,16 +36,32 @@ let loginValidators = [
   {
     id: "selectAvatar",
     errMsg: "Por favor seleccione una foto",
-    fnValidate: emptyInput,
+    fnValidate: isEmpty,
   },
   {
     id: "selectAvatar",
     errMsg: "Por favor seleccione una foto",
-    fnValidate: emptyInput,
+    fnValidate: isEmpty,
   },
   {
     id: "selectAvatar",
     errMsg: "Por favor seleccione una foto",
-    fnValidate: emptyInput,
+    fnValidate: isEmpty,
   },
 ];
+
+/*
+function formValidator(validations) {
+  let iterador = 0;
+
+  let failedValidation = null;
+
+  while (iterador < validations.length && !failedValidation) {
+    const value = document.querySelector(validations[iterador].id).value;
+    if (!validations[iterador].fnValidate(value)) {
+      failedValidation = validations[iterador];
+    }
+    iterador++;
+  }
+  return failedValidation;
+}*/

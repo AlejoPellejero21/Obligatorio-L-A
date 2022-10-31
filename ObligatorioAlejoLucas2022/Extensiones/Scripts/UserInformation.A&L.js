@@ -1,3 +1,55 @@
+class Importador {
+    constructor(userId, userName, userAccess, userPassword) {
+        this.id = userId;
+        this.userName = userName;
+        this.userAccess = userAccess;
+        this.userPassword = userPassword;
+        this.userEnabled = true;
+        this.userCancelInfo = 0;
+        this.userLinesInfo = 0;
+        this.userRequest = [];
+    }
+}
+
+class Empresa {
+    constructor(supplierId, supplierName, supplierAccess, supplierPassword) {
+        this.id = supplierId;
+        this.supplierName = supplierName;
+        this.userAccess = supplierAccess;
+        this.userPassword = supplierPassword;
+        this.supplierTrips = [];
+    }
+}
+
+class Solicitud {
+    constructor(requestId, requestType, requestDescription, requestOrigin, requestQuantity, requestStatus) {
+        this.id = requestId;
+        this.requestType = requestType;
+        this.requestDescription = requestDescription;
+        this.requestOrigin = requestOrigin;
+        this.requestQuantity = requestQuantity;
+        this.requestSupplierId = 0;
+        this.requestStatus = requestStatus;
+        this.requestTravelNumber = 0;
+    }
+}
+
+class Viaje {
+    constructor(shipId, shipName, shipQuantity, shipDate) {
+        this.id = shipId;
+        this.shipName = shipName;
+        this.shipQuantity = shipQuantity;
+        this.shipQuantityAvailable = 0;
+        this.shipDate = shipDate;
+        this.shipSupplierId = 0;
+        this.shipRollover = false;
+        this.shipRequest = [];
+    }
+}
+
+
+/*EJEMPLO DE USUASRIOS Y DATOS
+
 let importadores = [
     {
         userId: 0001,//Unique
@@ -39,7 +91,7 @@ let empresas = [
                 shipId: 0047, //Unique
                 shipRollover: false,
                 shipRequest: {
-                    shipRquestId: 0013,                    
+                    shipRquestId: 0013,
                     shipRquestId: 0014,
                     shipRquestId: 0015
                 }
@@ -47,4 +99,4 @@ let empresas = [
         ]
 
     }
-];
+];*/

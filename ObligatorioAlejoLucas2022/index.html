@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,13 +11,15 @@
   <link rel="stylesheet" href="./Css/Estilos.Manifesto.Carga.css" />
   <link rel="stylesheet" href="./Css/Estilos.Esconder.Containers.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/Global.Variables.Constant.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/LoginRegisterViews.A&L.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/GlobalVariablesConstant.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Login/login.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/MainOnWindowLoadView.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
   <title>{A&L -by- L&A}</title>
 </head>
 
@@ -36,14 +39,14 @@
           <span class="general-title-page">Bienvenido A&L Project</span>
         </div>
         <div class="container-header-button">
-          <button class="header-button-create-al change-color-0">CREAR UNA SOLICITUD</button>
+          <button id="crear-un-viaje-button" class="header-button-create-al change-color-0">CREAR UN VIAJE</button>
         </div>
       </div>
     </div>
     <!--FINAL HEADER STYLE-->
 
     <!--Main Login View al estar logeado= login-page-index-view-->
-    <div id="login-page-index-view" class="login-container-al change-color-0 login-no-display">
+    <div id="login-page-index-view" class="login-container-al change-color-0">
       <main class="main-login-container-al">
         <form class="main-form-container-al">
           <!--Login Importador : show-login-register-link-->
@@ -64,7 +67,7 @@
               podra registrarse como un nuevo usuario de nuestra pagina. Todos
               los derechos de esta pagina estan reservados por Alejo Pellejero
               y Lucas Alvarez</span>
-            <input class="general-input change-color-0" type="text" name="Name" id="input-name"
+            <input class="general-input change-color-0" type="text" name="Name" id="input-username"
               placeholder="Username:" />
             <input class="general-input change-color-0" type="password" name="Password" id="input-password"
               placeholder="Password:" />
@@ -103,14 +106,26 @@
     <!--Main Login View-->
 
     <!--Empreseraio All Views-->
-    <div class="dashboard-container-al">
+    <div id="main-dashboard-container-empresario" class="dashboard-container-al login-no-display">
       <nav class="main-nav-container-al">
-        <div data-view="CrearUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span class="generals-icons-left">I[M</span></div>
-        <div data-view="AsignarUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="RolloverDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Hacer Rollover de carga</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="ManifiestoDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Manifiesto de carga</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="HabilitarUsuarioView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Habilitar Usuarios</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="CargaPeligrosaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Carga Peligrosa</span><span class="generals-icons-left">I[M</span></div>        
+        <div data-view="CrearUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span
+            class="generals-icons-left">I[M</span></div>
+        <div data-view="AsignarUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span
+            class="generals-icons-left">I[M</span></div>
+        <div data-view="RolloverDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Hacer Rollover de
+            carga</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="ManifiestoDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Manifiesto de
+            carga</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="HabilitarUsuarioView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Habilitar Usuarios</span><span
+            class="generals-icons-left">I[M</span></div>
+        <div data-view="CargaPeligrosaView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Carga Peligrosa</span><span
+            class="generals-icons-left">I[M</span></div>
       </nav>
       <div class="main-dashboar-al">
 
@@ -122,11 +137,9 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">Se deberá agregar el nombre del buque, la cantidad
+                  máxima de contenedores, la empresa (línea de carga) a la que pertenece (id), la fecha
+                  de llegada y un id autonumérico de viaje.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
@@ -137,18 +150,19 @@
             <div class="second-manifest-container display-flex-center container-backgroud-suplier">
               <form class="container-create-big-form-al">
                 <div class="container-left-big-form container-empresario-view">
-                  <h2 class="table-title">Datos del viaje:</h2>                  
+                  <h2 class="table-title">Datos del viaje:</h2>
                   <div class="container-select-big-al display-form-labels-al">
-                    <label class="label-big-al" for="input-quantity-containers">Nombre del buque:</label>
-                    <input type="text" id="input-quantity-containers" />
+                    <label class="label-big-al" for="input-nombre-del-buque">Nombre del buque:</label>
+                    <input type="text" id="input-nombre-del-buque" />
 
                     <div class="container-origin-big-al display-form-labels-al">
-                      <label class="label-big-al" for="input-origin-port-2">Cantidad max de contenedores:</label>
-                      <input type="text" id="input-origin-port-2" maxlength="3" />
+                      <label class="label-big-al" for="input-cantidad-max-contenedores">Cantidad max de
+                        contenedores:</label>
+                      <input type="text" id="input-cantidad-max-contenedores" maxlength="3" />
                     </div>
 
-                    <label class="label-big-al" for="select-type-shippment">Empresa - Linea de carga:</label>
-                    <select name="type-of-shippment" id="select-type-shippment">
+                    <label class="label-big-al" for="select-line-de-carga">Empresa - Linea de carga:</label>
+                    <select name="type-of-shippment" id="select-line-de-carga">
                       <option value="0">Oasis</option>
                       <option value="1">Acuarius</option>
                       <option value="2">Flatland</option>
@@ -160,17 +174,13 @@
                 </div>
 
                 <div class="container-description-big-a display-form-labels-al container-empresario-view">
-                  <label class="label-big-al" for="input-shippment-description">Fecha de llegada:</label>
-                  <input type="date">
+                  <label class="label-big-al" for="input-fecha-de-llegada">Fecha de llegada:</label>
+                  <input id="input-fecha-de-llegada" type="date">
                 </div>
               </form>
             </div>
             <!--FORM CREATE REQUEST-->
 
-            <div class="button">
-              <input class="button-create-request" type="button" value="Crear Nuevo Viaje"
-                id="send-shippment-request" />
-            </div>
           </main>
           <!--Main Crear Un Viaje-->
 
@@ -180,16 +190,19 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">La asignación de carga solamente se
+                  podrá procesar si ese Importador está habilitado y la cantidad de contenedores
+                  agregados no excede la cantidad de contenedores restantes permitidos en ese
+                  viaje. A efectos de conocer la cantidad de contenedores ya reservados en el
+                  buque, se debe hacer la cuenta de todas las solicitudes de carga aprobadas,
+                  nunca se modifica la cantidad máxima de contenedores del viaje. Se deberá
+                  elegir el viaje a partir de un combo desplegable de viajes que tengan llegada
+                  prevista en los días posteriores al día de hoy.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
-            <div class="div-title-table-al">
-              <h2 class="table-title">Solicitudes:</h2>
+            <div class="div-title-table-al">               
+              <h2 class="table-title">Asignar una solicitud de carga pendiente:</h2>
             </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
@@ -247,16 +260,19 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">Muchas veces ocurre que una solicitud de carga confirmada inicialmente para
+                  un viaje, finalmente no se puede cargar y se debe “rollear” a otro viaje. La línea
+                  de carga tiene que poder cambiar de viaje a la carga de sus solicitudes para un
+                  viaje posterior. TODOS los contenedores asociados a una solicitud de carga se
+                  cambian de viaje. No se admite cambios parciales de una parte de la solicitud.
+                  Es decir, si la solicitud original tenía 4 contenedores, se deben mover los 4
+                  contenedores juntos a otro viaje. El rollover deberá prever también la
+                  verificación de que en el viaje destino haya cupos suficientes disponibles.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="div-title-table-al">
-              <h2 class="table-title">Solicitudes:</h2>
+              <h2 class="table-title">Rollover de carga:</h2>
             </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
@@ -314,16 +330,16 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest"> La línea de carga tiene que poder emitir un listado de su carga para un viaje,
+                  detallando la carga con puerto de origen, la cantidad de contenedores, nombre de
+                  importador, descripción y tipo de mercadería. No hay ningún criterio de ordenación
+                  asociado a este listado. Se seleccionará de un combo desplegable el viaje y se armará
+                  el listado.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="div-title-table-al">
-              <h2 class="table-title">Manifiesto:</h2>
+              <h2 class="table-title">Manifiesto de Carga:</h2>
             </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
@@ -377,15 +393,13 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">Para ello se pasarán sus reservas de carga de “CANCELADA” a “IGNORADA”,
+                  con lo cual la regla de tres o más reservas canceladas ya no se cumple y el
+                  Importador puede volver a operar.</p>
               </div>
             </div>
             <div class="div-title-table-al">
-              <h2 class="table-title">Usuarios:</h2>
+              <h2 class="table-title">Habilitar Importadores deshabilitados:</h2>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="container-user-available-al">
@@ -447,16 +461,14 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">La Empresa podrá emitir una lista de carga peligrosa a partir de un viaje para
+                  presentar a las autoridades portuarias. Se selecciona de un combo desplegable
+                  un viaje para armar la tabla correspondiente.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="div-title-table-al">
-              <h2 class="table-title">Carga Peligrosa:</h2>
+              <h2 class="table-title">Lista de Carga Peligrosa:</h2>
             </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
@@ -503,15 +515,20 @@
         </div>
       </div>
     </div>
-
     <!--Empreseraio All Views-->
 
     <!--Importador All View-->
     <div class="dashboard-container-al dashboard-container-al-sky-blue login-no-display">
       <nav class="main-nav-container-al">
-        <div data-view="CrearUnaSolicitud" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear una solicitud</span> <span class="generals-icons-left">I[M</span></div>
-        <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes Pendientes</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Informacion Estadistica</span><span class="generals-icons-left">I[M</span></div>        
+        <div data-view="CrearUnaSolicitud" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear una solicitud</span>
+          <span class="generals-icons-left">I[M</span></div>
+        <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
+          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes
+            Pendientes</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
+          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Informacion
+            Estadistica</span><span class="generals-icons-left">I[M</span></div>
       </nav>
       <div class="main-dashboar-al">
 
@@ -534,7 +551,7 @@
               <h2 class="table-title">Crear Solicitud:</h2>
             </div>
             <!--FORM CREATE REQUEST-->
-            <div class="display-flex-center background-tables-form" id="main-form-create-request">
+            <div class="display-flex-center background-tables-form">
               <form class="container-create-big-form-al">
                 <div class="container-left-big-form">
                   <h2 class="table-title">Datos de solicitud:</h2>
@@ -635,7 +652,8 @@
           <!--Main Consultar Solicitudes Pendientes-->
 
           <!--Main Visualizar Informacion Estadistica-->
-          <main data-view="VisualizarInformacionEstadistica" class="show-this-view main-table-manifest login-no-display">
+          <main data-view="VisualizarInformacionEstadistica"
+            class="show-this-view main-table-manifest login-no-display">
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
