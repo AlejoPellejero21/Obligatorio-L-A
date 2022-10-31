@@ -1,6 +1,3 @@
-let userLogged = null;
-let typeOfUser;
-
 // Login access
 function onLoginClick(e) {
   e.preventDefault();
@@ -10,10 +7,10 @@ function onLoginClick(e) {
 
   // Selector Empresa-Importador
   if (OBJ1Selector.selectAccount === 1) {
-    userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, pruebaEmpresas);
+    userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, Empresas);
     typeOfUser = OBJ1Selector.selectAccount;
   } else {
-    userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, pruebaImportadores);
+    userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, Importadores);
     typeOfUser = OBJ1Selector.selectAccount;
   }
 
@@ -34,16 +31,4 @@ function onLoginClick(e) {
       alert("proba denuevo macarron");
     }
   }
-}
-
-// findUser funciona para ambos usuarios
-function findUser(username, pass, arr) {
-  console.log('holo')
-  let user = null;
-  arr.forEach(function (admin) {
-    if (admin.username == username && admin.pass == pass) {
-      user = admin;
-    }
-  });
-  return user;
 }

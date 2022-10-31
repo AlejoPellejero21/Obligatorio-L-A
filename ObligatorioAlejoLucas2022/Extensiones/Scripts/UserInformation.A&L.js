@@ -1,6 +1,6 @@
 class Importador {
     constructor(userId, userName, userAccess, userPassword) {
-        this.userId = userId;
+        this.id = userId;
         this.userName = userName;
         this.userAccess = userAccess;
         this.userPassword = userPassword;
@@ -11,9 +11,19 @@ class Importador {
     }
 }
 
+class Empresa {
+    constructor(supplierId, supplierName, supplierAccess, supplierPassword) {
+        this.id = supplierId;
+        this.supplierName = supplierName;
+        this.userAccess = supplierAccess;
+        this.userPassword = supplierPassword;
+        this.supplierTrips = [];
+    }
+}
+
 class Solicitud {
     constructor(requestId, requestType, requestDescription, requestOrigin, requestQuantity, requestStatus) {
-        this.requestId = requestId;
+        this.id = requestId;
         this.requestType = requestType;
         this.requestDescription = requestDescription;
         this.requestOrigin = requestOrigin;
@@ -24,26 +34,16 @@ class Solicitud {
     }
 }
 
-/* class Empresa {
-    constructor(supplierId, supplierName, supplierAccess, supplierPassword) {
-        this.supplierId = supplierId;
-        this.supplierName = supplierName;
-        this.supplierAccess = supplierAccess;
-        this.supplierPassword = supplierPassword;
-        this.supplierTrips = [];
-    }
-} */
-
 class Viaje {
     constructor(shipId, shipName, shipQuantity, shipDate) {
-        this.shipId = shipId;
+        this.id = shipId;
         this.shipName = shipName;
         this.shipQuantity = shipQuantity;
         this.shipQuantityAvailable = 0;
         this.shipDate = shipDate;
         this.shipSupplierId = 0;
         this.shipRollover = false;
-        this.shipRequest = {};
+        this.shipRequest = [];
     }
 }
 
