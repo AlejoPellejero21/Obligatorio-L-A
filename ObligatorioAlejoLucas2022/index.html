@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,12 +11,16 @@
   <link rel="stylesheet" href="./Css/Estilos.Manifesto.Carga.css" />
   <link rel="stylesheet" href="./Css/Estilos.Esconder.Containers.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script type="text/ javascript" src="./Extensiones/Scripts/User.Information.js"></script>
+  <script type="text/javascript" src="./Extensiones/Login/login.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/Global.Variables.Constant.js"></script>
+  <script type="text/javascript"
+    src="./Extensiones/LoginAndRegisterPagesA&L/Validations.login&register/validations.login.register.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/LoginRegisterViews.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
-  <script type="text/javascript" src="./Extensiones/Login/login.js"></script>
+
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
   <title>{A&L -by- L&A}</title>
 </head>
@@ -64,7 +69,7 @@
               podra registrarse como un nuevo usuario de nuestra pagina. Todos
               los derechos de esta pagina estan reservados por Alejo Pellejero
               y Lucas Alvarez</span>
-            <input class="general-input change-color-0" type="text" name="Name" id="input-name"
+            <input class="general-input change-color-0" type="text" name="Name" id="input-username"
               placeholder="Username:" />
             <input class="general-input change-color-0" type="password" name="Password" id="input-password"
               placeholder="Password:" />
@@ -103,7 +108,7 @@
     <!--Main Login View-->
 
     <!--Empreseraio All Views-->
-    <div class="dashboard-container-al login-no-display">
+    <div id="main-dashboard-container-empresario" class="dashboard-container-al login-no-display">
       <nav class="main-nav-container-al">
         <div data-view="CrearUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span class="generals-icons-left">I[M</span></div>
         <div data-view="AsignarUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span class="generals-icons-left">I[M</span></div>
@@ -534,7 +539,7 @@
               <h2 class="table-title">Crear Solicitud:</h2>
             </div>
             <!--FORM CREATE REQUEST-->
-            <div class="display-flex-center background-tables-form" id="main-form-create-request">
+            <div class="display-flex-center background-tables-form">
               <form class="container-create-big-form-al">
                 <div class="container-left-big-form">
                   <h2 class="table-title">Datos de solicitud:</h2>
