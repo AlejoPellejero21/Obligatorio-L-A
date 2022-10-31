@@ -24,7 +24,7 @@ class Solicitud {
     }
 }
 
-class Empresa {
+/* class Empresa {
     constructor(supplierId, supplierName, supplierAccess, supplierPassword) {
         this.supplierId = supplierId;
         this.supplierName = supplierName;
@@ -32,7 +32,7 @@ class Empresa {
         this.supplierPassword = supplierPassword;
         this.supplierTrips = [];
     }
-}
+} */
 
 class Viaje {
     constructor(shipId, shipName, shipQuantity, shipDate) {

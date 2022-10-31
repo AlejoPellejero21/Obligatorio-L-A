@@ -3,15 +3,14 @@
 window.addEventListener("load", onWindowLoad);
 
 function onWindowLoad() {
+  createPreUserInformation();
   OBJ1Selector["SelectLogin"] = getQuerySelector("#", "select-type-login", true);
   OBJ1Selector["HeaderUserName"] = getQuerySelector("#", "head-user-name", true);
   OBJ1Selector["HeaderWelcomeUser"] = getQuerySelector("#", "head-welcome-user", true);
-  OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);  
+  OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true); 
 
-  onDashboardLoad();
-  createPreUserInformation();
-
-  OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque);
+  getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);  
+  /* OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque); */
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
 
   setDisplay(OBJ1Selector.HeaderUserName, false);
@@ -22,11 +21,7 @@ function onSelectChange() {
   const DivSkyBlueLight = getQuerySelector(".", "change-color-0", false);
   const DivColorSkyBlue = getQuerySelector(".", "color-sky-blue", false);
   const H1LoginTitle = getQuerySelector("#", "user-type-account", true);
-  const LoginRegisterButtons = getQuerySelector(
-    "#",
-    "show-login-register-link",
-    true
-  );
+  const LoginRegisterButtons = getQuerySelector("#","show-login-register-link",true);
   const RegisterLink = getQuerySelector("#", "go-to-register", true);
   const LoginLink = getQuerySelector("#", "go-to-login", true);
 

@@ -1,12 +1,22 @@
 function onDashboardLoad() {
-  OBJ1Selector["NavBarCrearUnViaje"] = getQuerySelector("#", "go-to-crear-un-viaje", true);
-  OBJ1Selector["CrearUnViajeView"] = getQuerySelector("#", "show-this-view", true);
+  OBJ1Selector['NavBarCrearUnViaje'] = getQuerySelector('.', 'go-to-a-new-view', false);
+  OBJ1Selector['ShowThisView'] = getQuerySelector('.', 'show-this-view', false);
 
-  OBJ1Selector.NavBarCrearUnViaje.addEventListener("click", onCrearUnViajeClick);
+  OBJ1Selector.NavBarCrearUnViaje.forEach(function (button) {
+      button.addEventListener('click', onCrearUnViajeClick);
+  });;
 }
 
 function onCrearUnViajeClick() {
-  setDisplay(OBJ1Selector.CrearUnViajeView, true);
+  var viewToShowButtonClick = this.attributes[0].value;//data-view
+
+  OBJ1Selector.ShowThisView.forEach(function (view) {
+      if (viewToShowButtonClick === view.attributes[0].value) {
+          setDisplay(view, true);
+      } else {
+          setDisplay(view, false);
+      }
+  });
 }
 
 function onLoggedEmpresa() {
@@ -14,7 +24,8 @@ function onLoggedEmpresa() {
   const CreateTrip = getQuerySelector("#", "main-dashboard-container-empresario", true);
 
   setDisplay(LoginMainView, false);
-  setDisplay(CreateTrip, true);
+  setDisplay(CreateTrip, true); 
+  onDashboardLoad();
 }
 
 function onLoggedImportador() {
@@ -22,5 +33,6 @@ function onLoggedImportador() {
   const CreateRequest = getQuerySelector(".", "dashboard-container-al-sky-blue", true);
 
   setDisplay(LoginMainView, false);
-  setDisplay(CreateRequest, true);
+  setDisplay(CreateRequest, true);  
+  onDashboardLoad();
 }

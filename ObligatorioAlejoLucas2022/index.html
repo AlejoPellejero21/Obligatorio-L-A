@@ -10,18 +10,15 @@
   <link rel="stylesheet" href="./Css/Estilos.Habilitar.Usuarios.css" />
   <link rel="stylesheet" href="./Css/Estilos.Manifesto.Carga.css" />
   <link rel="stylesheet" href="./Css/Estilos.Esconder.Containers.css" />
-  <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  <script type="text/ javascript" src="./Extensiones/Scripts/User.Information.js"></script>
-  <script type="text/javascript" src="./Extensiones/Login/login.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/Global.Variables.Constant.js"></script>
-  <script type="text/javascript"
-    src="./Extensiones/LoginAndRegisterPagesA&L/Validations.login&register/validations.login.register.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/LoginRegisterViews.A&L.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
-
+  <script type="text/javascript" src="./Extensiones/Scripts/GlobalVariablesConstant.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/LoginAndRegisterPagesA&L/validations.login.register.js"></script>
+  <script type="text/javascript" src="./Extensiones/Login/login.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/LoginRegisterViews.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
   <title>{A&L -by- L&A}</title>
@@ -112,12 +109,24 @@
     <!--Empreseraio All Views-->
     <div id="main-dashboard-container-empresario" class="dashboard-container-al login-no-display">
       <nav class="main-nav-container-al">
-        <div data-view="CrearUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span class="generals-icons-left">I[M</span></div>
-        <div data-view="AsignarUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="RolloverDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Hacer Rollover de carga</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="ManifiestoDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Manifiesto de carga</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="HabilitarUsuarioView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Habilitar Usuarios</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="CargaPeligrosaView" class="nav-create-new-trip go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Carga Peligrosa</span><span class="generals-icons-left">I[M</span></div>        
+        <div data-view="CrearUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear Un Viaje</span> <span
+            class="generals-icons-left">I[M</span></div>
+        <div data-view="AsignarUnViajeView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Asignar un viaje</span><span
+            class="generals-icons-left">I[M</span></div>
+        <div data-view="RolloverDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Hacer Rollover de
+            carga</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="ManifiestoDeCargaView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Manifiesto de
+            carga</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="HabilitarUsuarioView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Habilitar Usuarios</span><span
+            class="generals-icons-left">I[M</span></div>
+        <div data-view="CargaPeligrosaView" class="nav-create-new-trip go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Ver Carga Peligrosa</span><span
+            class="generals-icons-left">I[M</span></div>
       </nav>
       <div class="main-dashboar-al">
 
@@ -142,13 +151,14 @@
             <div class="second-manifest-container display-flex-center container-backgroud-suplier">
               <form class="container-create-big-form-al">
                 <div class="container-left-big-form container-empresario-view">
-                  <h2 class="table-title">Datos del viaje:</h2>                  
+                  <h2 class="table-title">Datos del viaje:</h2>
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-nombre-del-buque">Nombre del buque:</label>
                     <input type="text" id="input-nombre-del-buque" />
 
                     <div class="container-origin-big-al display-form-labels-al">
-                      <label class="label-big-al" for="input-cantidad-max-contenedores">Cantidad max de contenedores:</label>
+                      <label class="label-big-al" for="input-cantidad-max-contenedores">Cantidad max de
+                        contenedores:</label>
                       <input type="text" id="input-cantidad-max-contenedores" maxlength="3" />
                     </div>
 
@@ -171,7 +181,7 @@
               </form>
             </div>
             <!--FORM CREATE REQUEST-->
-            
+
           </main>
           <!--Main Crear Un Viaje-->
 
@@ -509,9 +519,15 @@
     <!--Importador All View-->
     <div class="dashboard-container-al dashboard-container-al-sky-blue login-no-display">
       <nav class="main-nav-container-al">
-        <div data-view="CrearUnaSolicitud" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear una solicitud</span> <span class="generals-icons-left">I[M</span></div>
-        <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes Pendientes</span><span class="generals-icons-left">I[M</span></div>
-        <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Informacion Estadistica</span><span class="generals-icons-left">I[M</span></div>        
+        <div data-view="CrearUnaSolicitud" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span
+            class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear una solicitud</span>
+          <span class="generals-icons-left">I[M</span></div>
+        <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
+          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes
+            Pendientes</span><span class="generals-icons-left">I[M</span></div>
+        <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
+          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Informacion
+            Estadistica</span><span class="generals-icons-left">I[M</span></div>
       </nav>
       <div class="main-dashboar-al">
 
@@ -635,7 +651,8 @@
           <!--Main Consultar Solicitudes Pendientes-->
 
           <!--Main Visualizar Informacion Estadistica-->
-          <main data-view="VisualizarInformacionEstadistica" class="show-this-view main-table-manifest login-no-display">
+          <main data-view="VisualizarInformacionEstadistica"
+            class="show-this-view main-table-manifest login-no-display">
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">

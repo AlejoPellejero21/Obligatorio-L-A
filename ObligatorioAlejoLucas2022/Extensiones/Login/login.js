@@ -1,16 +1,9 @@
-window.addEventListener("load", onWindowLoad);
-
 let userLogged = null;
 let typeOfUser;
-
-function onWindowLoad() {
-  const loginBtn = getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);
-}
 
 // Login access
 function onLoginClick(e) {
   e.preventDefault();
-
   OBJ1Selector["inputUserAccess"] = document.querySelector("#input-username").value;
   OBJ1Selector["inputPassword"] = document.querySelector("#input-password").value;
   OBJ1Selector["selectAccount"] = parseInt(getQuerySelector("#", "select-type-login", "true").value);
@@ -41,4 +34,16 @@ function onLoginClick(e) {
       alert("proba denuevo macarron");
     }
   }
+}
+
+// findUser funciona para ambos usuarios
+function findUser(username, pass, arr) {
+  console.log('holo')
+  let user = null;
+  arr.forEach(function (admin) {
+    if (admin.username == username && admin.pass == pass) {
+      user = admin;
+    }
+  });
+  return user;
 }

@@ -96,6 +96,7 @@ const pruebaEmpresas = [
 
 // findUser funciona para ambos usuarios
 function findUser(username, pass, arr) {
+  console.log('holo')
   let user = null;
   arr.forEach(function (admin) {
     if (admin.username == username && admin.pass == pass) {

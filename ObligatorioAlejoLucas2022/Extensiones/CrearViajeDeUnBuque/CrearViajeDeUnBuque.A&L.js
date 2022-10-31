@@ -1,4 +1,4 @@
-function crearUnViajeDeUnBuque() {
+/* function crearUnViajeDeUnBuque() {
     const InputNombreBuque = getQuerySelector("#", "input-nombre-del-buque", true).value;
     const CantudadMaxContenedores = getQuerySelector("#", "input-cantidad-max-contenedores", true).value;
     const LineaDeCarga = getQuerySelector("#", "select-line-de-carga", true).value;
@@ -19,7 +19,7 @@ function crearUnViajeDeUnBuque() {
 
 
 
-}
+} */
 
 function idAutonumericoViaje(viajes) {
     let newId;
