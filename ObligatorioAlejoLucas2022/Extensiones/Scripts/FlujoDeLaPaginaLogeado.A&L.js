@@ -26,6 +26,7 @@ function onLoggedEmpresa() {
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true); 
   onDashboardLoad();
+  createRquestTable();
 }
 
 function onLoggedImportador() {
