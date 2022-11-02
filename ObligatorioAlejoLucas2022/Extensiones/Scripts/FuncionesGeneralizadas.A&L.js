@@ -52,12 +52,12 @@ function createPreUserInformation() {
   )
 
   Viajes.push(
-    new Viaje(0134, 'BuqueAk-74', 20, '12/15/2022'),
-    new Viaje(0237, 'BuquePurple', 15, '11/13/2022')
+    new Viaje(0134, 'BuqueAk-74', 20, '2022/02/15'),
+    new Viaje(0237, 'BuquePurple', 15, '2022/01/10')
   );
 
   Viajes[0].shipRequest.push(Solicitudes);
-  
+
   Empresas.push(
     new Empresa(0142, 'Administrador', 'Admin1', '123'),
     new Empresa(0241, 'Lucas', 'LucasA', 'Lucas123')
@@ -95,4 +95,36 @@ function isValidPass(txt) {
 }
 function isValidNumber(num) {
   return !isNaN(num);
+}
+
+
+function getIdAutonumerico() {
+  let newId;
+
+  Empresas.forEach(function (empresa) { newId = setId(empresa, newId); });
+  Importadores.forEach(function (importador) { newId = setId(importador, newId); });
+  Viajes.forEach(function (viaje) { newId = setId(viaje, newId); });
+  Solicitudes.forEach(function (solicitud) { newId = setId(solicitud, newId); });
+
+  return newId + 2;
+}
+
+
+/**
+ * 
+ * @param {object} value 
+ * @param {number} newId 
+ * @returns number
+ */
+function setId(value, newId) {  
+  if (!newId) {
+    newId = value.id;
+  } else if (value.id > newId) {
+    newId = value.id;
+  }
+  return newId;
+}
+
+function setPush(array, value) {
+  array.push(value);
 }

@@ -1,36 +1,58 @@
-/* function crearUnViajeDeUnBuque() {
-    const InputNombreBuque = getQuerySelector("#", "input-nombre-del-buque", true).value;
-    const CantudadMaxContenedores = getQuerySelector("#", "input-cantidad-max-contenedores", true).value;
-    const LineaDeCarga = getQuerySelector("#", "select-line-de-carga", true).value;
-    const FechaDeLlegada = getQuerySelector("#", "input-fecha-de-llegada", true).value;
+function crearUnViajeDeUnBuque() {
+    const InputNombreBuque = getQuerySelector("#", "input-nombre-del-buque", true)
+    const InputCantidadMaxContenedores = getQuerySelector("#", "input-cantidad-max-contenedores", true);
+    const InputLineaDeCarga = getQuerySelector("#", "select-line-de-carga", true);
+    const InputFechaDeLlegada = getQuerySelector("#", "input-fecha-de-llegada", true);
 
-    if (InputNombreBuque === null) {
-        //Validar los campos que no esten vacio
-        //Validar Select que no sea valor default
-        //Validar que la fecha sea a partir de hoy
+    const NombreBuque = InputNombreBuque.value;
+    const CantidadMaxContenedores = parseInt(InputCantidadMaxContenedores.value);
+    const LineaDeCarga = InputLineaDeCarga.value;
+    const FechaDeLlegada = InputFechaDeLlegada.value;
+    const CurrentUser = userLogged;
+    let viajeCreated;
+    let id;
+
+    if (isEmpty(NombreBuque) || isEmpty(CantidadMaxContenedores) || LineaDeCarga === 'X' || isEmpty(FechaDeLlegada)) {
+        alert(ErrorCamposCrearViaje); //Cambiar por un <p>
     } else {
-        let id = idAutonumericoViaje(Viajes);
+        const splitFechaDeLLegada = FechaDeLlegada.split('-');
+        const monthSelected = splitFechaDeLLegada[1];
+        const yearSelected = splitFechaDeLLegada[0];
+        let fechaLlegadaSplited = parseInt(yearSelected + monthSelected + String(parseFloat(splitFechaDeLLegada[2])));
 
-        //Obtener mi usuario
+        if (fechaLlegadaSplited <= parseInt(currentDate) || monthSelected < todayMonth || yearSelected < todayYear) {
+            alert(ErrorFechaPasada);//Cambiar por un <p>
+        } else {
+            id = getIdAutonumerico();
+            viajeCreated = new Viaje(id, NombreBuque, CantidadMaxContenedores, FechaDeLlegada);
+
+            /*Agregar nuevo viaje */
+            setPush(CurrentUser.supplierTrips, viajeCreated);
+            setPush(Viajes, viajeCreated);
+
+            /*Setear en Default*/
+            InputNombreBuque.value = '';
+            InputFechaDeLlegada.value = 'yyyy-MM-dd';
+            InputCantidadMaxContenedores.value = '';
+            InputLineaDeCarga.value = 'X'
+            alert(SuccesViajeCreado);//Cambiar por un <p>
+        }
     }
 
 
-    console.log(Viajes)
 
-
-
-} */
+}
 
 function idAutonumericoViaje(viajes) {
     let newId;
 
     viajes.forEach(function (viaje) {
         if (!newId) {
-            newId = viaje.shipId;
-        } else if (viaje.shipId > newId) {
-            newId = viaje.shipId;
+            newId = viaje.id;
+        } else if (viaje.id > newId) {
+            newId = viaje.id;
         }
     });
 
-    return newId
+    return newId + 2;
 }
