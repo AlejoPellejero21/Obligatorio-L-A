@@ -118,7 +118,7 @@ function getIdAutonumerico() {
  * @param {number} newId 
  * @returns number
  */
-function setId(value, newId) {  
+function setId(value, newId) {
   if (!newId) {
     newId = value.id;
   } else if (value.id > newId) {
