@@ -43,25 +43,34 @@ function onRegisterUser() {
     OBJ1Selector["userName"] = getQuerySelector('#', 'input-register-name', true)
     OBJ1Selector["userAccess"] = getQuerySelector('#', 'input-register-username', true)
     OBJ1Selector["userPassword"] = getQuerySelector('#', 'input-register-password', true)
+    OBJ1Selector["profilePicture"] = getQuerySelector('#', 'profile-icon-selector', true)
+
+    const userName = OBJ1Selector.userName.value
+    const userAcces = OBJ1Selector.userAccess.value
+    const userPassword = OBJ1Selector.userPassword.value
+    const profilePicture = OBJ1Selector.profilePicture.value
 
 
-    if (isEmpty(OBJ1Selector.userName)) {
-        alert("Por favor complete el nombre");
-    } else if (OBJ1Selector.userAccess) {
-        alert("Por favor complete el nombre de usuario");
-    } else if (isValidPass(OBJ1Selector.inputPassword)) {
-        alert("Por favor ingrese una contraseña");
-    } else {
-        //Pude logear
-        if (userLogged) {
-            if (typeOfUser === 1) {
-                onLoggedEmpresa();
-            } else {
-                onLoggedImportador();
-            }
-        } else {
-            alert("proba denuevo macarron");
-        }
-    }
+    let id = 0;
+    let registredImportador = [];
+
+    /* if (isEmpty(OBJ1Selector.userName)) {
+         alert("Por favor complete el nombre");
+     } else if (isEmpty(OBJ1Selector.userAccess)) {
+         alert("Por favor complete el nombre de usuario");
+     } else if (isValidPass(OBJ1Selector.inputPassword)) {
+         alert("Por favor ingrese una contraseña");
+     } else if {*/
+
+    /* } else {*/
+    id = idAutonumericoViaje(Importadores);
+    registredImportador = new Importador(id, userName, userAcces, userPassword, profilePicture, true, 0, 0, [])
+
+    Importadores.push(registredImportador)
+
+    console.log(Importadores)
+
+
+    //}
 }
 

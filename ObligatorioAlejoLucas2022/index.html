@@ -19,8 +19,8 @@
   <script type="text/javascript" src="./Extensiones/Scripts/MainOnWindowLoadView.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
-  <script type="text/javascript" src="./Extensiones/registrarseEnLaAplicacion/register.js"></script>
   <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/registrarseEnLaAplicacion/register.js"></script>
   <title>{A&L -by- L&A}</title>
 </head>
 
@@ -97,25 +97,29 @@
               placeholder="Username:" />
             <input class="general-input register-blue" type="password" id="input-register-password"
               placeholder="Password:" />
-              <!--Div seleccionar foto de perfil-->
-          <div>
-            <select class="register-blue login-title"  id="profile-icon-selector">
-              <option value="default-profile-icon">Seleccione una foto de perfil</option>
-              <option value="first-profile-icon">Foto de perfil 1</option>
-              <option value="second-profile-icon">Foto de perfil 2</option>
-              <option value="third-profile-icon">Foto de perfil 3</option>
-              <option value="fourth-profile-icon">Foto de perfil 4</option>
-            </select>
-            <img class="register-blue login-no-display" id="first-profile-icon" src="./Imagenes/Profile Pictures/0.jpg" height="100" width="100">
-            <img class="register-blue login-no-display" id="second-profile-icon" src="./Imagenes/Profile Pictures/1.jpg" height="100" width="100">
-            <img class="register-blue login-no-display" id="third-profile-icon" src="./Imagenes/Profile Pictures/2.jpg" height="100" width="100">
-            <img class="register-blue login-no-display" id="fourth-profile-icon" src="./Imagenes/Profile Pictures/3.jpg" height="100" width="100">
-          </div>
+            <!--Div seleccionar foto de perfil-->
+            <div>
+              <select class="register-blue login-title" id="profile-icon-selector">
+                <option value="default-profile-icon">Seleccione una foto de perfil</option>
+                <option value="first-profile-icon">Foto de perfil 1</option>
+                <option value="second-profile-icon">Foto de perfil 2</option>
+                <option value="third-profile-icon">Foto de perfil 3</option>
+                <option value="fourth-profile-icon">Foto de perfil 4</option>
+              </select>
+              <img class="register-blue login-no-display" id="first-profile-icon"
+                src="./Imagenes/Profile Pictures/0.jpg" height="100" width="100">
+              <img class="register-blue login-no-display" id="second-profile-icon"
+                src="./Imagenes/Profile Pictures/1.jpg" height="100" width="100">
+              <img class="register-blue login-no-display" id="third-profile-icon"
+                src="./Imagenes/Profile Pictures/2.jpg" height="100" width="100">
+              <img class="register-blue login-no-display" id="fourth-profile-icon"
+                src="./Imagenes/Profile Pictures/3.jpg" height="100" width="100">
+            </div>
             <button class="button-login register-blue-button" id="button-on-register">
               Register
             </button>
           </div>
-            <!--Div seleccionar foto de perfil-->
+          <!--Div seleccionar foto de perfil-->
         </form>
       </main>
     </div>
@@ -217,7 +221,7 @@
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
-            <div class="div-title-table-al">               
+            <div class="div-title-table-al">
               <h2 class="table-title">Asignar una solicitud de carga pendiente:</h2>
             </div>
             <div class="second-manifest-container">
@@ -276,7 +280,8 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Muchas veces ocurre que una solicitud de carga confirmada inicialmente para
+                <p class="description-manifest">Muchas veces ocurre que una solicitud de carga confirmada inicialmente
+                  para
                   un viaje, finalmente no se puede cargar y se debe “rollear” a otro viaje. La línea
                   de carga tiene que poder cambiar de viaje a la carga de sus solicitudes para un
                   viaje posterior. TODOS los contenedores asociados a una solicitud de carga se
@@ -346,7 +351,8 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest"> La línea de carga tiene que poder emitir un listado de su carga para un viaje,
+                <p class="description-manifest"> La línea de carga tiene que poder emitir un listado de su carga para un
+                  viaje,
                   detallando la carga con puerto de origen, la cantidad de contenedores, nombre de
                   importador, descripción y tipo de mercadería. No hay ningún criterio de ordenación
                   asociado a este listado. Se seleccionará de un combo desplegable el viaje y se armará
@@ -477,7 +483,8 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">La Empresa podrá emitir una lista de carga peligrosa a partir de un viaje para
+                <p class="description-manifest">La Empresa podrá emitir una lista de carga peligrosa a partir de un
+                  viaje para
                   presentar a las autoridades portuarias. Se selecciona de un combo desplegable
                   un viaje para armar la tabla correspondiente.</p>
               </div>
@@ -538,13 +545,16 @@
       <nav class="main-nav-container-al">
         <div data-view="CrearUnaSolicitud" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span
             class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear una solicitud</span>
-          <span class="generals-icons-left">I[M</span></div>
+          <span class="generals-icons-left">I[M</span>
+        </div>
         <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
           <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes
-            Pendientes</span><span class="generals-icons-left">I[M</span></div>
+            Pendientes</span><span class="generals-icons-left">I[M</span>
+        </div>
         <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
           <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Informacion
-            Estadistica</span><span class="generals-icons-left">I[M</span></div>
+            Estadistica</span><span class="generals-icons-left">I[M</span>
+        </div>
       </nav>
       <div class="main-dashboar-al">
 

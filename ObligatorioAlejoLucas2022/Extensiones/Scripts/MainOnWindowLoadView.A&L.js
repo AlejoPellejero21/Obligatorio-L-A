@@ -7,11 +7,12 @@ function onWindowLoad() {
   OBJ1Selector["SelectLogin"] = getQuerySelector("#", "select-type-login", true);
   OBJ1Selector["HeaderUserName"] = getQuerySelector("#", "head-user-name", true);
   OBJ1Selector["HeaderWelcomeUser"] = getQuerySelector("#", "head-welcome-user", true);
-  OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true); 
+  OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);
 
-  getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);  
+  getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);
+  getQuerySelector("#", "button-on-register", "true").addEventListener("click", onRegisterUser);
   // Selector de imagenes de perfil
-  OBJ1Selector["ProfilePictureSelector"] = getQuerySelector('#',"profile-icon-selector",true)
+  OBJ1Selector["ProfilePictureSelector"] = getQuerySelector('#', "profile-icon-selector", true)
   OBJ1Selector.ProfilePictureSelector.addEventListener('change', onChangeProfilePicture)
   /* OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque); */
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
@@ -24,7 +25,7 @@ function onSelectChange() {
   const DivSkyBlueLight = getQuerySelector(".", "change-color-0", false);
   const DivColorSkyBlue = getQuerySelector(".", "color-sky-blue", false);
   const H1LoginTitle = getQuerySelector("#", "user-type-account", true);
-  const LoginRegisterButtons = getQuerySelector("#","show-login-register-link",true);
+  const LoginRegisterButtons = getQuerySelector("#", "show-login-register-link", true);
   const RegisterLink = getQuerySelector("#", "go-to-register", true);
   const LoginLink = getQuerySelector("#", "go-to-login", true);
 
