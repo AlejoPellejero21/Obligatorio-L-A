@@ -46,18 +46,20 @@ function createPreUserInformation() {
   );
 
   Solicitudes.push(
-    new Solicitud(0304, 0, 'Esto es una desciprcion', 'Montevideo', 4, 1),
-    new Solicitud(0412, 1, 'Esto es una desciprcion', 'Punta Del Este', 2, 1),
-    new Solicitud(0311, 2, 'Esto es una desciprcion', 'Casa Pueblo', 6, 1),
+    new Solicitud(0304, 2, 'Esto es una desciprcion que no es una prueba', 'Rocha Este', 10, 0),
+    new Solicitud(0305, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto Sur', 15, 0),
+    new Solicitud(0314, 0, 'Esto es una desciprcion de prueba', 'Rio Negro', 12, 2),
+    new Solicitud(0422, 1, 'Esto es una desciprcion y ademas es una prueba', 'Punta Del Este', 20, 0),
+    new Solicitud(0316, 2, 'Esto es una desciprcion para poder hacer pruebas de soli', 'Casa Pueblo', 8, 1),
   )
 
   Viajes.push(
-    new Viaje(0134, 'BuqueAk-74', 20, '12/15/2022'),
-    new Viaje(0237, 'BuquePurple', 15, '11/13/2022')
+    new Viaje(0134, 'BuqueAk-74', 20, '2022/02/15'),
+    new Viaje(0237, 'BuquePurple', 15, '2022/01/10')
   );
 
   Viajes[0].shipRequest.push(Solicitudes);
-  
+
   Empresas.push(
     new Empresa(0142, 'Administrador', 'Admin1', '123'),
     new Empresa(0241, 'Lucas', 'LucasA', 'Lucas123')
@@ -95,4 +97,36 @@ function isValidPass(txt) {
 }
 function isValidNumber(num) {
   return !isNaN(num);
+}
+
+
+function getIdAutonumerico() {
+  let newId;
+
+  Empresas.forEach(function (empresa) { newId = setId(empresa, newId); });
+  Importadores.forEach(function (importador) { newId = setId(importador, newId); });
+  Viajes.forEach(function (viaje) { newId = setId(viaje, newId); });
+  Solicitudes.forEach(function (solicitud) { newId = setId(solicitud, newId); });
+
+  return newId + 2;
+}
+
+
+/**
+ * 
+ * @param {object} value 
+ * @param {number} newId 
+ * @returns number
+ */
+function setId(value, newId) {  
+  if (!newId) {
+    newId = value.id;
+  } else if (value.id > newId) {
+    newId = value.id;
+  }
+  return newId;
+}
+
+function setPush(array, value) {
+  array.push(value);
 }
