@@ -42,17 +42,3 @@ function crearUnViajeDeUnBuque() {
 
 
 }
-
-function idAutonumericoViaje(viajes) {
-    let newId;
-
-    viajes.forEach(function (viaje) {
-        if (!newId) {
-            newId = viaje.id;
-        } else if (viaje.id > newId) {
-            newId = viaje.id;
-        }
-    });
-
-    return newId + 2;
-}
