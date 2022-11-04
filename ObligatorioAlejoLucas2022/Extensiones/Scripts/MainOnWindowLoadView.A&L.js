@@ -10,13 +10,14 @@ function onWindowLoad() {
   OBJ1Selector["HeaderWelcomeUser"] = getQuerySelector("#", "head-welcome-user", true);
   OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);
 
-  //getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);
+  getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);
   getQuerySelector("#", "button-on-register", "true").addEventListener("click", onRegisterUser);
   OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque);
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
 
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
+
 }
 
 function onSelectChange() {
