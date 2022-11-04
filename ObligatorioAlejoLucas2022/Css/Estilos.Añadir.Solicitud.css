@@ -1,10 +1,65 @@
-.unique-column-left-al{
+.unique-column-left-al {
     width: 0%;
     padding: 0px 20px;
 }
 
-.add-plus-al{
+.add-plus-al {
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.dropdown-asignar-solicitud-viaje {
+    position: absolute;
+    left: 26%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    background-color: #810071c9;
+    /*Purple Empresa*/
+    padding: 5px 5px;
+    border-radius: 6px;
+    animation-name: example;
+    animation-duration: 1.2s;
+}
+
+.container-data-info-viajes {
+    padding: 10px 0px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 2px;
+}
+
+.container-data-info-viajes:hover {
+    background-color: #ff9df3;
+}
+
+.title-seleccione-viaje {
+    margin: 8px;
+    text-align: center;
+    color: #ffffffde;
+}
+
+@keyframes example {
+    from {
+        margin-top: 50px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        margin-top: 70px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.exit-dropdown-viajes{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #ffffffde;
 }

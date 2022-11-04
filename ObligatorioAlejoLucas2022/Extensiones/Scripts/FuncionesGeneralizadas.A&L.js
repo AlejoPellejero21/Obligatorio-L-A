@@ -56,9 +56,7 @@ function createPreUserInformation() {
   Viajes.push(
     new Viaje(0134, 'BuqueAk-74', 20, '2022/02/15'),
     new Viaje(0237, 'BuquePurple', 15, '2022/01/10')
-  );
-
-  Viajes[0].shipRequest.push(Solicitudes);
+  );  
 
   Empresas.push(
     new Empresa(0142, 'Administrador', 'Admin1', '123'),
@@ -129,4 +127,50 @@ function setId(value, newId) {
 
 function setPush(array, value) {
   array.push(value);
+}
+
+
+/**
+ * 
+ * @param {number} requestToAsign 
+ * @returns object || null
+ */
+
+function getSolicitudById(requestToAsign) {
+  let index = 0;
+  let isSolicitudFound = false;
+  let objSolicitud = null;
+
+  while (index < Solicitudes.length && !isSolicitudFound) {
+      if (Solicitudes[index].id === requestToAsign) {
+          objSolicitud = Solicitudes[index];
+          isSolicitudFound = true;
+      }
+      index++;
+  }
+
+  return objSolicitud;
+}
+
+/**
+ * 
+ * @param {number} number 
+ * @returns string || ''
+ */
+function getRequestText(number) {
+  let requestTypeText = '';
+
+  switch (number) {
+      case 0:
+          requestTypeText = 'CARGA_GENERAL'
+          break;
+      case 1:
+          requestTypeText = 'REFRIGERADO'
+          break;
+      default:
+          requestTypeText = 'CARGA_PELIGROSA'
+          break;
+  }
+
+  return requestTypeText;
 }

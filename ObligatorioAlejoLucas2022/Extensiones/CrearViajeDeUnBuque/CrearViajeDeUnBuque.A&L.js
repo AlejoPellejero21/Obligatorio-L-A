@@ -27,8 +27,7 @@ function crearUnViajeDeUnBuque() {
             viajeCreated = new Viaje(id, NombreBuque, CantidadMaxContenedores, FechaDeLlegada);
 
             /*Agregar nuevo viaje */
-            setPush(CurrentUser.supplierTrips, viajeCreated);
-            setPush(Viajes, viajeCreated);
+            setPush(CurrentUser.supplierTrips, viajeCreated);            
 
             /*Setear en Default*/
             InputNombreBuque.value = '';
