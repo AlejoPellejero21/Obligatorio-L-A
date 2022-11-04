@@ -20,6 +20,7 @@
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/AsignarSolicitudDeCarga/AsignarSolicitudDeCarga.A&L.js"></script>
   <title>{A&L -by- L&A}</title>
 </head>
 
@@ -210,45 +211,11 @@
                   <th class="column-manifest unique-column-left-al">Asignar</th>
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Status</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                </tbody>
+                <tbody id="tabla-asignar-solicitud-de-carga" class="thead-manifest tbody-manifest"></tbody>
               </table>
             </div>
           </main>

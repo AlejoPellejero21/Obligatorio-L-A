@@ -39,7 +39,7 @@ class Viaje {
         this.id = shipId;
         this.shipName = shipName;
         this.shipQuantity = shipQuantity;
-        this.shipQuantityAvailable = 0;
+        this.shipQuantityAvailable = shipQuantity;
         this.shipDate = shipDate;
         this.shipSupplierId = 0;
         this.shipRollover = false;
