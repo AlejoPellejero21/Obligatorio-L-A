@@ -7,7 +7,7 @@ class Importador {
         this.userEnabled = true;
         this.userCancelInfo = 0;
         this.userLinesInfo = 0;
-        this.userRequest = [];
+        this.userRequests = [];
     }
 }
 
@@ -22,15 +22,16 @@ class Empresa {
 }
 
 class Solicitud {
-    constructor(requestId, requestType, requestDescription, requestOrigin, requestQuantity, requestStatus) {
+    constructor(requestId, requestType, requestDescription, requestOrigin, requestQuantity, requestSupplierId, requestStatus, requestUserId) {
         this.id = requestId;
         this.requestType = requestType;
         this.requestDescription = requestDescription;
         this.requestOrigin = requestOrigin;
         this.requestQuantity = requestQuantity;
-        this.requestSupplierId = 0;
+        this.requestSupplierId = requestSupplierId;
         this.requestStatus = requestStatus;
         this.requestTravelNumber = 0;
+        this.requestUserId = requestUserId;
     }
 }
 

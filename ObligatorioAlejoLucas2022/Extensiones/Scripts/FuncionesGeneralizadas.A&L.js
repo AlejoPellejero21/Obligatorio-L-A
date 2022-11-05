@@ -56,7 +56,7 @@ function createPreUserInformation() {
   Viajes.push(
     new Viaje(0134, 'BuqueAk-74', 20, '2022/02/15'),
     new Viaje(0237, 'BuquePurple', 15, '2022/01/10')
-  );  
+  );
 
   Empresas.push(
     new Empresa(0142, 'Administrador', 'Admin1', '123'),
@@ -142,11 +142,11 @@ function getSolicitudById(requestToAsign) {
   let objSolicitud = null;
 
   while (index < Solicitudes.length && !isSolicitudFound) {
-      if (Solicitudes[index].id === requestToAsign) {
-          objSolicitud = Solicitudes[index];
-          isSolicitudFound = true;
-      }
-      index++;
+    if (Solicitudes[index].id === requestToAsign) {
+      objSolicitud = Solicitudes[index];
+      isSolicitudFound = true;
+    }
+    index++;
   }
 
   return objSolicitud;
@@ -161,16 +161,25 @@ function getRequestText(number) {
   let requestTypeText = '';
 
   switch (number) {
-      case 0:
-          requestTypeText = 'CARGA_GENERAL'
-          break;
-      case 1:
-          requestTypeText = 'REFRIGERADO'
-          break;
-      default:
-          requestTypeText = 'CARGA_PELIGROSA'
-          break;
+    case 0:
+      requestTypeText = 'CARGA_GENERAL'
+      break;
+    case 1:
+      requestTypeText = 'REFRIGERADO'
+      break;
+    default:
+      requestTypeText = 'CARGA_PELIGROSA'
+      break;
   }
 
   return requestTypeText;
+}
+
+function getLineOfChargeOnRequest() {
+  const lineOfChargeSelector = getQuerySelector('#', "select-line-of-charge", true)
+
+  Empresas.forEach(function (empresa) {
+    lineOfChargeSelector.innerHTML += `<option value="${empresa.id}">${empresa.supplierName}</option>`
+
+  });
 }

@@ -12,6 +12,7 @@ function onLoginClick(e) {
   } else {
     userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, Importadores);
     typeOfUser = OBJ1Selector.selectAccount;
+    console.log(userLogged, Importadores)
   }
 
   //Validaciones funcionando con cambio de view
@@ -25,6 +26,7 @@ function onLoginClick(e) {
       if (typeOfUser === 1) {
         onLoggedEmpresa();
       } else {
+        getLineOfChargeOnRequest()
         onLoggedImportador();
       }
     } else {

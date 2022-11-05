@@ -3,18 +3,20 @@
 window.addEventListener("load", onWindowLoad);
 
 function onWindowLoad() {
-  createPreUserInformation();  
+  createPreUserInformation();
   OBJ1Selector["SelectLogin"] = getQuerySelector("#", "select-type-login", true);
   OBJ1Selector["HeaderUserName"] = getQuerySelector("#", "head-user-name", true);
   OBJ1Selector["HeaderWelcomeUser"] = getQuerySelector("#", "head-welcome-user", true);
   OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);
 
+
   getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);
   OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque);
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
+  getQuerySelector("#", "send-shippment-request", "true").addEventListener("click", onCrearSolicitudDeCarga);
 
   setDisplay(OBJ1Selector.HeaderUserName, false);
-  OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario; 
+  OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
   createRquestTable();
 }
 
