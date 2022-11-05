@@ -177,25 +177,30 @@ function validatePassword(password) {
   let upperPass = password.toUpperCase()
   let lowerPass = password.toLowerCase()
 
+  console.log(upperPass, lowerPass)
+
   while (i < password.length) {
 
-    if (password[i] == upperPass[i]) {
+    let checkNumber = Number(alfNum[i])
+
+    if (password[i] === upperPass[i]) {
 
       existeMayus = true;
-      console.log(existeMinus, "mayus", password[i])
-    } else if (password[i] == password[i].toLowerCase()) {
+      console.log(existeMayus, "mayus", password[i], upperPass[i])
+    } else if (password[i] === lowerPass[i]) {
       existeMinus = true;
       console.log(existeMinus, "minus", password[i])
-    } else if (ParseInt(password[i]) == alfNum[i]) {
+    } /*else if (Number(password[i]) === checkNumber) {
       existeNum = true;
-      console.log(existeNum, "sapeee", password[i])
-    } else if (existeMayus && existeMinus && existeNum) {
+      console.log()*/
+    /*}*/ else if (existeMayus && existeMinus /*&& existeNum*/) {
       console.log("vapai")
       return (cumplePassword = true);
     }
 
 
     i++;
+
   }
   console.log(cumplePassword)
   return cumplePassword;

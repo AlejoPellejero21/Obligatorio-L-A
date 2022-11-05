@@ -60,7 +60,7 @@ function onRegisterUser(e) {
     alert("Por favor ingrese una contraseña");
   } else {
 
-
+    console.log(!validatePassword(userPassword))
     if (!validatePassword(userPassword)) {
       alert(
         "bueno que pinto a ver si pones bien la contraseña la concha de tu madre"
@@ -70,6 +70,7 @@ function onRegisterUser(e) {
       registredImportador = new Importador(id, userName, userAccess, userPassword,/*profilePicture,*/ true, 0, 0, []);
 
       setPush(Importadores, registredImportador)
+
       onLoggedImportador()
 
       console.log(Importadores)
