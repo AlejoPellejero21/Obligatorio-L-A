@@ -22,14 +22,14 @@ class Empresa {
 }
 
 class Solicitud {
-    constructor(requestId, requestType, requestDescription, requestOrigin, requestQuantity, requestStatus) {
+    constructor(requestId, requestType, requestDescription, requestOrigin, requestQuantity, requestStatus, requestUserId) {
         this.id = requestId;
         this.requestType = requestType;
         this.requestDescription = requestDescription;
         this.requestOrigin = requestOrigin;
         this.requestQuantity = requestQuantity;
         this.requestSupplierId = 0;
-        this.requestUserId = 0;
+        this.requestUserId = requestUserId;
         this.requestStatus = requestStatus;
         this.requestTravelNumber = 0;
     }
