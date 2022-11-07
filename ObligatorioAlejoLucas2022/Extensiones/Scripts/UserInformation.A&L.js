@@ -29,6 +29,7 @@ class Solicitud {
         this.requestOrigin = requestOrigin;
         this.requestQuantity = requestQuantity;
         this.requestSupplierId = 0;
+        this.requestUserId = 0;
         this.requestStatus = requestStatus;
         this.requestTravelNumber = 0;
     }
