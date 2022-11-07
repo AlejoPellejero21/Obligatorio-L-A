@@ -14,6 +14,8 @@ function onWindowLoad() {
   OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque);
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
   getQuerySelector("#", "send-shippment-request", "true").addEventListener("click", onCrearSolicitudDeCarga);
+  getQuerySelector("#", "pending-requests-button", "true").addEventListener("click", onConsultarSolicitudes);
+
 
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;

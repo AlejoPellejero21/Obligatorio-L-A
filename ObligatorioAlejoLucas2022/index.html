@@ -23,6 +23,9 @@
   <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
   <script type="text/javascript"
     src="./Extensiones/CrearSolicitudDeCargaConMercaderia/CrearSolicitudDeCargaConMercaderia.js"></script>
+  <script type="text/javascript"
+    src="./Extensiones/ConsultarSolicitudesPendientes/ConsultarSolicitudesPendientes.js"></script>
+  <script type="text/javascript" src="./Extensiones/CancelarSolucitudDeCarga/CancelarSolucitudDeCarga.js"></script>
 
   <title>{A&L -by- L&A}</title>
 </head>
@@ -105,11 +108,11 @@
               <select class="register-blue login-title" id="profile-icon-selector">
                 <option value="default-profile-icon">Seleccione una foto de perfil</option>
                 <option value="first-profile-icon">Foto de perfil 1</option>
-                <option value="second-profile-icon">Foto de perfil 2</option>
+                <option value="second-profile-icon">Foto de perfil 2</o ption>
                 <option value="third-profile-icon">Foto de perfil 3</option>
                 <option value="fourth-profile-icon">Foto de perfil 4</option>
               </select>
-              <img class="register-blue login-no-display" id="first-profile-icon"
+              <!--<img class="register-blue login-no-display" id="first-profile-icon"
                 src="./Imagenes/Profile Pictures/0.jpg" height="100" width="100">
               <img class="register-blue login-no-display" id="second-profile-icon"
                 src="./Imagenes/Profile Pictures/1.jpg" height="100" width="100">
@@ -117,12 +120,12 @@
                 src="./Imagenes/Profile Pictures/2.jpg" height="100" width="100">
               <img class="register-blue login-no-display" id="fourth-profile-icon"
                 src="./Imagenes/Profile Pictures/3.jpg" height="100" width="100">
+            </div>-->
+              <button class="button-login register-blue-button" id="button-on-register">
+                Register
+              </button>
             </div>
-            <button class="button-login register-blue-button" id="button-on-register">
-              Register
-            </button>
-          </div>
-          <!--Div seleccionar foto de perfil-->
+            <!--Div seleccionar foto de perfil-->
         </form>
       </main>
     </div>
@@ -233,115 +236,11 @@
                   <th class="column-manifest unique-column-left-al">Asignar</th>
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Empresa</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
                 <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </main>
-          <!--Main Asignar un viaje-->
-
-          <!--Main Rollover de carga-->
-          <main data-view="RolloverDeCargaView" class="show-this-view main-table-manifest login-no-display">
-            <!--FINAL DESCRIPTION STYLES-->
-            <div class="first-manifest-container">
-              <h2 class="table-title">Descripción:</h2>
-              <div class="sub-manifest-container">
-                <p class="description-manifest">Muchas veces ocurre que una solicitud de carga confirmada inicialmente
-                  para
-                  un viaje, finalmente no se puede cargar y se debe “rollear” a otro viaje. La línea
-                  de carga tiene que poder cambiar de viaje a la carga de sus solicitudes para un
-                  viaje posterior. TODOS los contenedores asociados a una solicitud de carga se
-                  cambian de viaje. No se admite cambios parciales de una parte de la solicitud.
-                  Es decir, si la solicitud original tenía 4 contenedores, se deben mover los 4
-                  contenedores juntos a otro viaje. El rollover deberá prever también la
-                  verificación de que en el viaje destino haya cupos suficientes disponibles.</p>
-              </div>
-            </div>
-            <!--FINAL DESCRIPTION STYLES-->
-            <div class="div-title-table-al">
-              <h2 class="table-title">Rollover de carga:</h2>
-            </div>
-            <div class="second-manifest-container">
-              <table class="body-table-manifest">
-                <thead class="thead-manifest">
-                  <th class="column-manifest unique-column-left-al">Rollover</th>
-                  <th class="column-manifest">Origen</th>
-                  <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
-                  <th class="column-manifest">Descripción</th>
-                  <th class="column-manifest">Tipo de mercadería</th>
-                </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -551,7 +450,8 @@
           <span class="generals-icons-left">I[M</span>
         </div>
         <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
-          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes
+          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title"
+            id="pending-requests-button">Solicitudes
             Pendientes</span><span class="generals-icons-left">I[M</span>
         </div>
         <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
@@ -654,40 +554,12 @@
                 <thead class="thead-manifest">
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Empresa</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
+                <tbody class="thead-manifest tbody-manifest" id="user-requests-table">
+
                 </tbody>
               </table>
             </div>

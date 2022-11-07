@@ -39,10 +39,10 @@ function setDisplay(attr, display) {
  */
 function createPreUserInformation() {
   Importadores.push(
-    new Importador(0101, 'Alfredo', 'Alfredito21', '12345'),
-    new Importador(0124, 'Rafael', 'RafaEl1', '113355'),
-    new Importador(0221, 'Lucas', 'Lucaaas', '232345'),
-    new Importador(0320, 'Nicolas', 'NicolaN', '543611A*')
+    new Importador(0101, 'Alfredo', 'Alfredito21', '12345', true, 0, 0, []),
+    new Importador(0124, 'Rafael', 'RafaEl1', '113355', true, 0, 0, []),
+    new Importador(0221, 'Lucas', 'Lucaaas', '232345', true, 0, 0, []),
+    new Importador(0320, 'Nicolas', 'NicolaN', '543611A*', true, 0, 0, [])
   );
 
   Solicitudes.push(
@@ -182,4 +182,20 @@ function getLineOfChargeOnRequest() {
     lineOfChargeSelector.innerHTML += `<option value="${empresa.id}">${empresa.supplierName}</option>`
 
   });
+}
+
+function getTypeOfCharge(TypeOfCharge) {
+  switch (TypeOfCharge) {
+    case "0":
+      typeOfChargeExpressed = "Carga_General"
+      break;
+    case "1":
+      typeOfChargeExpressed = "Refrigerado"
+      break;
+    case "2":
+      typeOfChargeExpressed = "Carga_Peligrosa"
+      break;
+  }
+
+  return typeOfChargeExpressed
 }
