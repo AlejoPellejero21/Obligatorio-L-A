@@ -15,11 +15,12 @@ function onWindowLoad() {
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
   getQuerySelector("#", "send-shippment-request", "true").addEventListener("click", onCrearSolicitudDeCarga);
   getQuerySelector("#", "pending-requests-button", "true").addEventListener("click", onConsultarSolicitudes);
+  getQuerySelector("#", "input-request-search-button", "true").addEventListener("click", onSearchRequest);
 
 
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
-  createRquestTable();
+  createRequestTable();
 }
 
 function onSelectChange() {
