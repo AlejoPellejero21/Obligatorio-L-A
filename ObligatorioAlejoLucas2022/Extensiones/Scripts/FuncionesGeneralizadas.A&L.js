@@ -79,12 +79,12 @@ function addSolicitudesToImportadores() {
 
   while (index <= Importadores.length && indexSolicitudes < Solicitudes.length) {
     if (index === Importadores.length) {
-      index = 0;
-      setPush(Importadores[index].userRequest, Solicitudes[indexSolicitudes]);
+      index = 0;     
       Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
+      setPush(Importadores[index].userRequest, Solicitudes[indexSolicitudes]);//Se asigna una solicitud al impotador
     } else {
-      setPush(Importadores[index].userRequest, Solicitudes[indexSolicitudes]);
       Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
+      setPush(Importadores[index].userRequest, Solicitudes[indexSolicitudes]);
       index++;
     };
     indexSolicitudes++;
