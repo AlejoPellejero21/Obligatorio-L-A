@@ -202,39 +202,22 @@ function onSearchRequest() {
 
   Solicitudes.forEach(function (solicitud) {
     let requestDescriptionMinus = solicitud.requestDescription.toLowerCase();
+    let requestIdSearched = solicitud.id;
 
     console.log(requestDescriptionMinus.indexOf(requestSearchMinus));
 
-    if (requestDescriptionMinus.indexOf(requestSearchMinus) !== -1) {
-      Solicitudes.forEach(function (solicitud) {
-        getLineOfChargeName(solicitud);
-
-        if (solicitud.requestUserId == userLoggedId && solicitud.requestStatus == 0) {
-          OBJ1Selector["requestTable"].innerHTML = "";
-
-          OBJ1Selector["requestTable"].innerHTML += `
-                    <tr>
-                      <td class="column-manifest-td">${solicitud.requestOrigin}</td>
-                      <td class="column-manifest-td">${solicitud.requestQuantity}</td>
-                      <td class="column-manifest-td">${supplierName}</td>
-                      <td class="column-manifest-td">${solicitud.requestDescription}</td>
-                      <td class="column-manifest-td">${solicitud.requestType}</td>
-                      <td class="column-manifest-td">
-                      <input type="button" class="cancelar-solicitud-btn" data-id="${solicitud.id}" value="Cancelar"/>
-                      </td>
-                    </tr>
-                  `;
-        }
-      });
+    if (requestDescriptionMinus.indexOf(requestSearchMinus) > -1) {      
+      buildConsultarSolicitudes(requestIdSearched);
+      /* getLineOfChargeName(solicitud); */
     }
   });
 }
 
-function getLineOfChargeName(solicitud) {
+/* function getLineOfChargeName(solicitud) {
   Empresas.forEach(function (empresa) {
     if (solicitud.requestSupplierId == empresa.id) {
       return (supplierName = empresa.supplierName);
     }
     return supplierName;
   });
-}
+} */
