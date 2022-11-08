@@ -1,8 +1,8 @@
 /**
- * 
- * @param {string} type 
- * @param {string} id 
- * @param {boolean} unique 
+ *
+ * @param {string} type
+ * @param {string} id
+ * @param {boolean} unique
  * @returns null || object
  */
 
@@ -19,20 +19,18 @@ function getQuerySelector(type, id, unique) {
 }
 
 /**
- * 
- * @param {object} attr 
- * @param {boolean} display 
+ *
+ * @param {object} attr
+ * @param {boolean} display
  */
 
 function setDisplay(attr, display) {
-
   if (display) {
-    attr.style.display = 'flex';
+    attr.style.display = "flex";
   } else {
-    attr.style.display = 'none';
+    attr.style.display = "none";
   }
 }
-
 
 /**
  * Se crean los usuarios pre-cargados
@@ -69,8 +67,11 @@ function createPreUserInformation() {
     new Empresa(0241, 'Lucas', 'LucasA', 'Lucas123')
   );
 
-  Empresas[0].supplierTrips = Viajes;
+  Viajes.push(new Viaje(0134, "BuqueAk-74", 20, "2022/02/15"), new Viaje(0237, "BuquePurple", 15, "2022/01/10"));
 
+  Empresas.push(new Empresa(0142, "Administrador", "Admin1", "123"), new Empresa(0241, "Lucas", "LucasA", "Lucas123"));
+
+  Empresas[0].supplierTrips = Viajes;
 }
 
 function addSolicitudesToImportadores() {
@@ -93,10 +94,10 @@ function addSolicitudesToImportadores() {
 
 
 /**
- * 
- * @param {string} username 
- * @param {string} pass 
- * @param {object} arr 
+ *
+ * @param {string} username
+ * @param {string} pass
+ * @param {object} arr
  * @returns null || object
  */
 
@@ -122,23 +123,29 @@ function isValidNumber(num) {
   return !isNaN(num);
 }
 
-
 function getIdAutonumerico() {
   let newId;
 
-  Empresas.forEach(function (empresa) { newId = setId(empresa, newId); });
-  Importadores.forEach(function (importador) { newId = setId(importador, newId); });
-  Viajes.forEach(function (viaje) { newId = setId(viaje, newId); });
-  Solicitudes.forEach(function (solicitud) { newId = setId(solicitud, newId); });
+  Empresas.forEach(function (empresa) {
+    newId = setId(empresa, newId);
+  });
+  Importadores.forEach(function (importador) {
+    newId = setId(importador, newId);
+  });
+  Viajes.forEach(function (viaje) {
+    newId = setId(viaje, newId);
+  });
+  Solicitudes.forEach(function (solicitud) {
+    newId = setId(solicitud, newId);
+  });
 
   return newId + 2;
 }
 
-
 /**
- * 
- * @param {object} value 
- * @param {number} newId 
+ *
+ * @param {object} value
+ * @param {number} newId
  * @returns number
  */
 function setId(value, newId) {
@@ -154,10 +161,9 @@ function setPush(array, value) {
   array.push(value);
 }
 
-
 /**
- * 
- * @param {number} requestToAsign 
+ *
+ * @param {number} requestToAsign
  * @returns object || null
  */
 
@@ -178,24 +184,75 @@ function getSolicitudById(requestToAsign) {
 }
 
 /**
- * 
- * @param {number} number 
+ *
+ * @param {number} number
  * @returns string || ''
  */
 function getRequestText(number) {
-  let requestTypeText = '';
+  let requestTypeText = "";
 
   switch (number) {
     case 0:
-      requestTypeText = 'CARGA_GENERAL'
+      requestTypeText = "CARGA_GENERAL";
       break;
     case 1:
-      requestTypeText = 'REFRIGERADO'
+      requestTypeText = "REFRIGERADO";
       break;
     default:
-      requestTypeText = 'CARGA_PELIGROSA'
+      requestTypeText = "CARGA_PELIGROSA";
       break;
   }
 
   return requestTypeText;
 }
+
+function getLineOfChargeOnRequest() {
+  const lineOfChargeSelector = getQuerySelector("#", "select-line-of-charge", true);
+
+  Empresas.forEach(function (empresa) {
+    lineOfChargeSelector.innerHTML += `<option value="${empresa.id}">${empresa.supplierName}</option>`;
+  });
+}
+
+function getTypeOfCharge(TypeOfCharge) {
+  switch (TypeOfCharge) {
+    case "0":
+      typeOfChargeExpressed = "Carga_General";
+      break;
+    case "1":
+      typeOfChargeExpressed = "Refrigerado";
+      break;
+    case "2":
+      typeOfChargeExpressed = "Carga_Peligrosa";
+      break;
+  }
+
+  return typeOfChargeExpressed;
+}
+
+function onSearchRequest() {
+  let requestSearch = getQuerySelector("#", "input-request-search", true).value;
+  let requestSearchMinus = requestSearch.toLowerCase();
+  let palabraCoincidente = "";
+
+  Solicitudes.forEach(function (solicitud) {
+    let requestDescriptionMinus = solicitud.requestDescription.toLowerCase();
+    let requestIdSearched = solicitud.id;
+
+    console.log(requestDescriptionMinus.indexOf(requestSearchMinus));
+
+    if (requestDescriptionMinus.indexOf(requestSearchMinus) > -1) {      
+      buildConsultarSolicitudes(requestIdSearched);
+      /* getLineOfChargeName(solicitud); */
+    }
+  });
+}
+
+/* function getLineOfChargeName(solicitud) {
+  Empresas.forEach(function (empresa) {
+    if (solicitud.requestSupplierId == empresa.id) {
+      return (supplierName = empresa.supplierName);
+    }
+    return supplierName;
+  });
+} */

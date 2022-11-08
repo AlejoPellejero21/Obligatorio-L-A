@@ -15,12 +15,18 @@
   <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/GlobalVariablesConstant.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
-  <script type="text/javascript" src="./Extensiones/Login/login.js"></script>
+  <script type="text/javascript" src="./Extensiones/IngresarEnLaAplicacion/IngresarEnLaAplicacion.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/MainOnWindowLoadView.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/registrarseEnLaAplicacion/registrarseEnLaAplicacion.js"></script>
   <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
-  <script type="text/javascript" src="./Extensiones/AsignarSolicitudDeCarga/AsignarSolicitudDeCarga.A&L.js"></script>
+  <script type="text/javascript"
+    src="./Extensiones/CrearSolicitudDeCargaConMercaderia/CrearSolicitudDeCargaConMercaderia.js"></script>
+  <script type="text/javascript"
+    src="./Extensiones/ConsultarSolicitudesPendientes/ConsultarSolicitudesPendientes.js"></script>
+  <script type="text/javascript" src="./Extensiones/CancelarSolucitudDeCarga/CancelarSolucitudDeCarga.js"></script>
+
   <title>{A&L -by- L&A}</title>
 </head>
 
@@ -97,10 +103,29 @@
               placeholder="Username:" />
             <input class="general-input register-blue" type="password" id="input-register-password"
               placeholder="Password:" />
-            <button class="button-login register-blue-button" id="button-on-register">
-              Register
-            </button>
-          </div>
+            <!--Div seleccionar foto de perfil-->
+            <div>
+              <select class="register-blue login-title" id="profile-icon-selector">
+                <option value="default-profile-icon">Seleccione una foto de perfil</option>
+                <option value="first-profile-icon">Foto de perfil 1</option>
+                <option value="second-profile-icon">Foto de perfil 2</o ption>
+                <option value="third-profile-icon">Foto de perfil 3</option>
+                <option value="fourth-profile-icon">Foto de perfil 4</option>
+              </select>
+              <!--<img class="register-blue login-no-display" id="first-profile-icon"
+                src="./Imagenes/Profile Pictures/0.jpg" height="100" width="100">
+              <img class="register-blue login-no-display" id="second-profile-icon"
+                src="./Imagenes/Profile Pictures/1.jpg" height="100" width="100">
+              <img class="register-blue login-no-display" id="third-profile-icon"
+                src="./Imagenes/Profile Pictures/2.jpg" height="100" width="100">
+              <img class="register-blue login-no-display" id="fourth-profile-icon"
+                src="./Imagenes/Profile Pictures/3.jpg" height="100" width="100">
+            </div>-->
+              <button class="button-login register-blue-button" id="button-on-register">
+                Register
+              </button>
+            </div>
+            <!--Div seleccionar foto de perfil-->
         </form>
       </main>
     </div>
@@ -202,7 +227,7 @@
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
-            <div class="div-title-table-al">               
+            <div class="div-title-table-al">
               <h2 class="table-title">Asignar una solicitud de carga pendiente:</h2>
             </div>
             <div class="second-manifest-container">
@@ -211,80 +236,11 @@
                   <th class="column-manifest unique-column-left-al">Asignar</th>
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Status</th>
-                  <th class="column-manifest">Descripción</th>
-                  <th class="column-manifest">Tipo de mercadería</th>
-                </thead>
-                <tbody id="tabla-asignar-solicitud-de-carga" class="thead-manifest tbody-manifest"></tbody>
-              </table>
-            </div>
-          </main>
-          <!--Main Asignar un viaje-->
-
-          <!--Main Rollover de carga-->
-          <main data-view="RolloverDeCargaView" class="show-this-view main-table-manifest login-no-display">
-            <!--FINAL DESCRIPTION STYLES-->
-            <div class="first-manifest-container">
-              <h2 class="table-title">Descripción:</h2>
-              <div class="sub-manifest-container">
-                <p class="description-manifest">Muchas veces ocurre que una solicitud de carga confirmada inicialmente para
-                  un viaje, finalmente no se puede cargar y se debe “rollear” a otro viaje. La línea
-                  de carga tiene que poder cambiar de viaje a la carga de sus solicitudes para un
-                  viaje posterior. TODOS los contenedores asociados a una solicitud de carga se
-                  cambian de viaje. No se admite cambios parciales de una parte de la solicitud.
-                  Es decir, si la solicitud original tenía 4 contenedores, se deben mover los 4
-                  contenedores juntos a otro viaje. El rollover deberá prever también la
-                  verificación de que en el viaje destino haya cupos suficientes disponibles.</p>
-              </div>
-            </div>
-            <!--FINAL DESCRIPTION STYLES-->
-            <div class="div-title-table-al">
-              <h2 class="table-title">Rollover de carga:</h2>
-            </div>
-            <div class="second-manifest-container">
-              <table class="body-table-manifest">
-                <thead class="thead-manifest">
-                  <th class="column-manifest unique-column-left-al">Rollover</th>
-                  <th class="column-manifest">Origen</th>
-                  <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Empresa</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
                 <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -297,7 +253,8 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest"> La línea de carga tiene que poder emitir un listado de su carga para un viaje,
+                <p class="description-manifest"> La línea de carga tiene que poder emitir un listado de su carga para un
+                  viaje,
                   detallando la carga con puerto de origen, la cantidad de contenedores, nombre de
                   importador, descripción y tipo de mercadería. No hay ningún criterio de ordenación
                   asociado a este listado. Se seleccionará de un combo desplegable el viaje y se armará
@@ -428,7 +385,8 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">La Empresa podrá emitir una lista de carga peligrosa a partir de un viaje para
+                <p class="description-manifest">La Empresa podrá emitir una lista de carga peligrosa a partir de un
+                  viaje para
                   presentar a las autoridades portuarias. Se selecciona de un combo desplegable
                   un viaje para armar la tabla correspondiente.</p>
               </div>
@@ -489,13 +447,17 @@
       <nav class="main-nav-container-al">
         <div data-view="CrearUnaSolicitud" class="nav-create-new-trip trip-sky-blue go-to-a-new-view"> <span
             class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Crear una solicitud</span>
-          <span class="generals-icons-left">I[M</span></div>
+          <span class="generals-icons-left">I[M</span>
+        </div>
         <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
-          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes
-            Pendientes</span><span class="generals-icons-left">I[M</span></div>
+          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title"
+            id="pending-requests-button">Solicitudes
+            Pendientes</span><span class="generals-icons-left">I[M</span>
+        </div>
         <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
           <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Informacion
-            Estadistica</span><span class="generals-icons-left">I[M</span></div>
+            Estadistica</span><span class="generals-icons-left">I[M</span>
+        </div>
       </nav>
       <div class="main-dashboar-al">
 
@@ -525,19 +487,33 @@
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="select-type-shippment-2">Seleccione el tipo de carga:</label>
                     <select name="type-of-shippment" id="select-type-shippment-2">
+                      <option value="X" selected>-Tipos de carga-</option>
                       <option value="0">CARGA_GENERAL</option>
                       <option value="1">REFRIGERADO</option>
                       <option value="2">CARGA_PELIGROSA</option>
-                      <option value="X" selected>-tipos de carga-</option>
+
                     </select>
 
                     <label class="label-big-al" for="input-quantity-containers-2">Cantidad de contenedores:</label>
                     <input type="text" id="input-quantity-containers-2" />
                   </div>
-
+                  <!--Selector de puerto de origen-->
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese el puerto de origen:</label>
-                    <input type="text" id="input-origin-port" maxlength="3" />
+                    <select name="port-of-origin" id="arrive-point">
+                      <option value="0" selected>-Puerto de origen-</option>
+                      <option value="Beijin">Beijin</option>
+                      <option value="Rio de Jainero">Rio de Jainero</option>
+                      <option value="Ciudad del Cabo">Ciudad del Cabo</option>
+                      <option value="Londres">Londres</option>
+                    </select>
+                  </div>
+                  <!--Seleccionar empresa-->
+                  <div class="container-origin-big-al display-form-labels-al">
+                    <label class="label-big-al" for="input-origin-port">Ingrese linea de carga:</label>
+                    <select name="line-of-charge" id="select-line-of-charge">
+                      <option value="0" selected>-Lineas de carga disponibles-</option>
+                    </select>
                   </div>
                 </div>
 
@@ -573,45 +549,21 @@
             <div class="div-title-table-al">
               <h2 class="table-title">Solicitudes Pendientes:</h2>
             </div>
+            <div class="div-title-table-al">
+              <input type="text" id="input-request-search">
+              <input type="button" value="Buscar" id="input-request-search-button">
+            </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
                 <thead class="thead-manifest">
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Empresa</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
+                <tbody class="thead-manifest tbody-manifest" id="user-requests-table">
+
                 </tbody>
               </table>
             </div>
