@@ -41,8 +41,7 @@ function createPreUserInformation() {
   Importadores.push(
     new Importador(0101, 'Alfredo', 'Alfredito21', '12345'),
     new Importador(0124, 'Rafael', 'RafaEl1', '113355'),
-    new Importador(0221, 'Lucas', 'Lucaaas', '232345'),
-    new Importador(0320, 'Nicolas', 'NicolaN', '543611A*')
+    new Importador(0221, 'Lucas', 'Lucaaas', '232345')
   );
 
   Solicitudes.push(
@@ -50,13 +49,20 @@ function createPreUserInformation() {
     new Solicitud(0305, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto Sur', 15, 0),
     new Solicitud(0314, 0, 'Esto es una desciprcion de prueba', 'Rio Negro', 12, 2),
     new Solicitud(0422, 1, 'Esto es una desciprcion y ademas es una prueba', 'Punta Del Este', 20, 0),
-    new Solicitud(0316, 2, 'Esto es una desciprcion para poder hacer pruebas de soli', 'Casa Pueblo', 8, 1),
-  )
+    new Solicitud(0316, 2, 'Desciprcion para poder hacer pruebas de soli', 'Puerto loco', 30, 1),
+    new Solicitud(0317, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Casa Pueblo', 8, 1),
+    new Solicitud(0323, 2, 'Desciprcion para poder hacer pruebas de solicitudes', 'Minas', 22, 1),
+    new Solicitud(0321, 1, 'Una desciprcion para poder hacer pruebas.', 'Casa Pueblo', 14, 1),
+    new Solicitud(0324, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 18, 1),
+    new Solicitud(0326, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 10, 1),
+  );
+
+  addSolicitudesToImportadores();
 
   Viajes.push(
     new Viaje(0134, 'BuqueAk-74', 20, '2022/02/15'),
     new Viaje(0237, 'BuquePurple', 15, '2022/01/10')
-  );  
+  );
 
   Empresas.push(
     new Empresa(0142, 'Administrador', 'Admin1', '123'),
@@ -66,6 +72,25 @@ function createPreUserInformation() {
   Empresas[0].supplierTrips = Viajes;
 
 }
+
+function addSolicitudesToImportadores() {
+  let index = 0;
+  let indexSolicitudes = 0;
+
+  while (index <= Importadores.length && indexSolicitudes < Solicitudes.length) {
+    if (index === Importadores.length) {
+      index = 0;     
+      Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
+      setPush(Importadores[index].userRequest, Solicitudes[indexSolicitudes]);//Se asigna una solicitud al impotador
+    } else {
+      Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
+      setPush(Importadores[index].userRequest, Solicitudes[indexSolicitudes]);
+      index++;
+    };
+    indexSolicitudes++;
+  };
+};
+
 
 /**
  * 
@@ -142,11 +167,11 @@ function getSolicitudById(requestToAsign) {
   let objSolicitud = null;
 
   while (index < Solicitudes.length && !isSolicitudFound) {
-      if (Solicitudes[index].id === requestToAsign) {
-          objSolicitud = Solicitudes[index];
-          isSolicitudFound = true;
-      }
-      index++;
+    if (Solicitudes[index].id === requestToAsign) {
+      objSolicitud = Solicitudes[index];
+      isSolicitudFound = true;
+    }
+    index++;
   }
 
   return objSolicitud;
@@ -161,15 +186,15 @@ function getRequestText(number) {
   let requestTypeText = '';
 
   switch (number) {
-      case 0:
-          requestTypeText = 'CARGA_GENERAL'
-          break;
-      case 1:
-          requestTypeText = 'REFRIGERADO'
-          break;
-      default:
-          requestTypeText = 'CARGA_PELIGROSA'
-          break;
+    case 0:
+      requestTypeText = 'CARGA_GENERAL'
+      break;
+    case 1:
+      requestTypeText = 'REFRIGERADO'
+      break;
+    default:
+      requestTypeText = 'CARGA_PELIGROSA'
+      break;
   }
 
   return requestTypeText;
