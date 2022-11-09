@@ -82,10 +82,10 @@ function addSolicitudesToImportadores() {
     if (index === Importadores.length) {
       index = 0;     
       Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
-      setPush(Importadores[index].userRequest, Solicitudes[indexSolicitudes]);//Se asigna una solicitud al impotador
+      setPush(Importadores[index].userRequests, Solicitudes[indexSolicitudes]);//Se asigna una solicitud al impotador
     } else {
       Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
-      setPush(Importadores[index].userRequest, Solicitudes[indexSolicitudes]);
+      setPush(Importadores[index].userRequests, Solicitudes[indexSolicitudes]);
       index++;
     };
     indexSolicitudes++;
@@ -256,3 +256,36 @@ function onSearchRequest() {
     return supplierName;
   });
 } */
+
+
+/*Testing*/
+function createRquestTable() {
+  const RequestPendingTable = getQuerySelector("#", "tabla-asignar-solicitud-de-carga", true);
+  OBJ1Selector["RequestPendingTable"] = RequestPendingTable;
+  RequestPendingTable.innerHTML = "";
+
+  Solicitudes.forEach(function (solicitud) {
+    let rquestStatus = solicitud.requestStatus;
+    let statusText = rquestStatus === 0 && "Pendiente";
+    let id = solicitud.id;
+    let requestTypeText = getRequestText();
+
+    if (id && rquestStatus === 0) {
+      RequestPendingTable.innerHTML += `
+                <tr data-id='${id}'>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al button-asignar-solicitud" data-id='${id}'>+</td>
+                    <td class="column-manifest-td">${solicitud.requestOrigin}</td>
+                    <td class="column-manifest-td">${solicitud.requestQuantity}</td>
+                    <td class="column-manifest-td">${statusText}</td>
+                    <td class="column-manifest-td">${solicitud.requestDescription}</td>
+                    <td class="column-manifest-td">${requestTypeText}</td>
+                </tr>
+            `;
+    }
+  });
+
+  const BtnsAsignarSolicitud = getQuerySelector(".", "button-asignar-solicitud", false);
+  BtnsAsignarSolicitud.forEach(function (btn) {
+    btn.addEventListener("click", onAsignarSolicitudClick);
+  });
+}

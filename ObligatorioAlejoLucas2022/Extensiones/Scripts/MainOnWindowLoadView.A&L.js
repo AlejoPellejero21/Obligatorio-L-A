@@ -20,7 +20,7 @@ function onWindowLoad() {
 
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
-  createRequestTable();
+  createRquestTable();
 }
 
 function onSelectChange() {
