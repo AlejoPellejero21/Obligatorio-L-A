@@ -1,4 +1,4 @@
-function createRquestTable() {
+function createRequestTable() {
   const RequestPendingTable = getQuerySelector("#", "tabla-asignar-solicitud-de-carga", true);
   OBJ1Selector["RequestPendingTable"] = RequestPendingTable;
   RequestPendingTable.innerHTML = "";
@@ -62,7 +62,7 @@ function onAsignarSolicitudClick() {
 function onCloseDropdownClick() {
   setDisplay(OBJ1Selector.DropdownViajes, false);
   //Se vuelve a crear la tabla para que no quede el dropdown escondido
-  createRquestTable();
+  createRequestTable();
 }
 
 //Crear la tabla de viajes
@@ -129,7 +129,7 @@ function onButtonViajeToAddClick() {
 
   if (isViajeAssigned) {
     alert("La solicitud fue agregada con exito");
-    createRquestTable();
+    createRequestTable();
   } else {
     alert("Imposible asignar la solicitud. Excedió cantidad disponible!");
   }
