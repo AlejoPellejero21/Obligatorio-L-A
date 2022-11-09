@@ -10,8 +10,11 @@ function onWindowLoad() {
   OBJ1Selector["HeaderWelcomeUser"] = getQuerySelector("#", "head-welcome-user", true);
   OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);
 
+
   getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);
   getQuerySelector("#", "button-on-register", "true").addEventListener("click", onRegisterUser);
+  OBJ1Selector["ProfilePictureSelector"] = getQuerySelector("#", "profile-icon-selector", "true")
+  OBJ1Selector.ProfilePictureSelector.addEventListener("click", onChangeProfilePicture);
   OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque);
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
 

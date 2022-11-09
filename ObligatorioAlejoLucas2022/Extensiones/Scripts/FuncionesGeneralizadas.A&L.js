@@ -165,8 +165,6 @@ function setId(value, newId) {
   return newId;
 }
 
-
-
 function validatePassword(password) {
   let i = 0;
   let cumplePassword = false;
@@ -174,35 +172,31 @@ function validatePassword(password) {
   let existeMinus = false;
   let existeNum = false;
   let alfNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  let upperPass = password.toUpperCase()
-  let lowerPass = password.toLowerCase()
+  let upperPass = password.toUpperCase();
+  let lowerPass = password.toLowerCase();
 
-  console.log(upperPass, lowerPass)
+  console.log(upperPass, lowerPass);
 
   while (i < password.length) {
-
-    let checkNumber = Number(alfNum[i])
+    let checkNumber = Number(alfNum[i]);
 
     if (password[i] === upperPass[i]) {
-
       existeMayus = true;
-      console.log(existeMayus, "mayus", password[i], upperPass[i])
+      console.log(existeMayus, "mayus", password[i], upperPass[i]);
     } else if (password[i] === lowerPass[i]) {
       existeMinus = true;
-      console.log(existeMinus, "minus", password[i])
+      console.log(existeMinus, "minus", password[i]);
     } /*else if (Number(password[i]) === checkNumber) {
       existeNum = true;
-      console.log()*/
-    /*}*/ else if (existeMayus && existeMinus /*&& existeNum*/) {
-      console.log("vapai")
+      console.log()*/ else if (existeMayus && existeMinus /*&& existeNum*/) {
+      /*}*/
+      console.log("vapai");
       return (cumplePassword = true);
     }
 
-
     i++;
-
   }
-  console.log(cumplePassword)
+  console.log(cumplePassword);
   return cumplePassword;
 }
 
