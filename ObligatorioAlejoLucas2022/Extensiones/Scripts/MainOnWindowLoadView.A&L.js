@@ -19,6 +19,7 @@ function onWindowLoad() {
 
 
   createRequestTable();
+  buildConsultarSolicitudes();
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
 }

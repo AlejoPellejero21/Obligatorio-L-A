@@ -29,6 +29,7 @@ function onCrearSolicitudDeCarga() {
 
     alert("La solicitud ha sido creada con exito");
     buildConsultarSolicitudes();
+    getCancelBtns();
   }
 
 }
