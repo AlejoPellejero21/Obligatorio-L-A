@@ -18,9 +18,9 @@ function onWindowLoad() {
   getQuerySelector("#", "input-request-search-button", "true").addEventListener("click", onSearchRequest);
 
 
+  createRequestTable();
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
-  createRquestTable();
 }
 
 function onSelectChange() {

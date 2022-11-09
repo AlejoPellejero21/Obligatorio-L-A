@@ -43,16 +43,16 @@ function createPreUserInformation() {
   );
 
   Solicitudes.push(
-    new Solicitud(0304, 2, 'Esto es una desciprcion que no es una prueba', 'Rocha Este', 10, 0),
-    new Solicitud(0305, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto Sur', 15, 0),
-    new Solicitud(0314, 0, 'Esto es una desciprcion de prueba', 'Rio Negro', 12, 2),
-    new Solicitud(0422, 1, 'Esto es una desciprcion y ademas es una prueba', 'Punta Del Este', 20, 0),
-    new Solicitud(0316, 2, 'Desciprcion para poder hacer pruebas de soli', 'Puerto loco', 30, 1),
-    new Solicitud(0317, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Casa Pueblo', 8, 1),
-    new Solicitud(0323, 2, 'Desciprcion para poder hacer pruebas de solicitudes', 'Minas', 22, 1),
-    new Solicitud(0321, 1, 'Una desciprcion para poder hacer pruebas.', 'Casa Pueblo', 14, 1),
-    new Solicitud(0324, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 18, 1),
-    new Solicitud(0326, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 10, 1),
+    new Solicitud(0304, 2, 'Esto es una desciprcion que no es una prueba', 'Rocha Este', 10, 0142, 0, 1222),
+    new Solicitud(0305, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto Sur', 15, 0142, 0, 1232),
+    new Solicitud(0314, 0, 'Esto es una desciprcion de prueba', 'Rio Negro', 12, 0142, 2, 8888),
+    new Solicitud(0422, 1, 'Esto es una desciprcion y ademas es una prueba', 'Punta Del Este', 20, 0142, 0, 2224),
+    new Solicitud(0316, 2, 'Desciprcion para poder hacer pruebas de soli', 'Puerto loco', 30, 0241, 1, 2422),
+    new Solicitud(0317, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Casa Pueblo', 8, 0241, 1, 1245),
+    new Solicitud(0323, 2, 'Desciprcion para poder hacer pruebas de solicitudes', 'Minas', 22, 0241, 1, 1283),
+    new Solicitud(0321, 1, 'Una desciprcion para poder hacer pruebas.', 'Casa Pueblo', 14, 0241, 1, 1274),
+    new Solicitud(0324, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 18, 0241, 1, 3844),
+    new Solicitud(0326, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 10, 0241, 1, 8383),
   );
 
   addSolicitudesToImportadores();
@@ -67,10 +67,6 @@ function createPreUserInformation() {
     new Empresa(0241, 'Lucas', 'LucasA', 'Lucas123')
   );
 
-  Viajes.push(new Viaje(0134, "BuqueAk-74", 20, "2022/02/15"), new Viaje(0237, "BuquePurple", 15, "2022/01/10"));
-
-  Empresas.push(new Empresa(0142, "Administrador", "Admin1", "123"), new Empresa(0241, "Lucas", "LucasA", "Lucas123"));
-
   Empresas[0].supplierTrips = Viajes;
 }
 
@@ -80,7 +76,7 @@ function addSolicitudesToImportadores() {
 
   while (index <= Importadores.length && indexSolicitudes < Solicitudes.length) {
     if (index === Importadores.length) {
-      index = 0;     
+      index = 0;
       Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
       setPush(Importadores[index].userRequests, Solicitudes[indexSolicitudes]);//Se asigna una solicitud al impotador
     } else {
@@ -241,7 +237,7 @@ function onSearchRequest() {
 
     console.log(requestDescriptionMinus.indexOf(requestSearchMinus));
 
-    if (requestDescriptionMinus.indexOf(requestSearchMinus) > -1) {      
+    if (requestDescriptionMinus.indexOf(requestSearchMinus) > -1) {
       buildConsultarSolicitudes(requestIdSearched);
       /* getLineOfChargeName(solicitud); */
     }
@@ -259,33 +255,3 @@ function onSearchRequest() {
 
 
 /*Testing*/
-function createRquestTable() {
-  const RequestPendingTable = getQuerySelector("#", "tabla-asignar-solicitud-de-carga", true);
-  OBJ1Selector["RequestPendingTable"] = RequestPendingTable;
-  RequestPendingTable.innerHTML = "";
-
-  Solicitudes.forEach(function (solicitud) {
-    let rquestStatus = solicitud.requestStatus;
-    let statusText = rquestStatus === 0 && "Pendiente";
-    let id = solicitud.id;
-    let requestTypeText = getRequestText();
-
-    if (id && rquestStatus === 0) {
-      RequestPendingTable.innerHTML += `
-                <tr data-id='${id}'>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al button-asignar-solicitud" data-id='${id}'>+</td>
-                    <td class="column-manifest-td">${solicitud.requestOrigin}</td>
-                    <td class="column-manifest-td">${solicitud.requestQuantity}</td>
-                    <td class="column-manifest-td">${statusText}</td>
-                    <td class="column-manifest-td">${solicitud.requestDescription}</td>
-                    <td class="column-manifest-td">${requestTypeText}</td>
-                </tr>
-            `;
-    }
-  });
-
-  const BtnsAsignarSolicitud = getQuerySelector(".", "button-asignar-solicitud", false);
-  BtnsAsignarSolicitud.forEach(function (btn) {
-    btn.addEventListener("click", onAsignarSolicitudClick);
-  });
-}

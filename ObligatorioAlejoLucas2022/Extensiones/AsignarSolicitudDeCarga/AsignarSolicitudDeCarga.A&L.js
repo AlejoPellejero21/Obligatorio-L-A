@@ -1,3 +1,34 @@
+function createRequestTable() {
+  const RequestPendingTable = getQuerySelector("#", "tabla-asignar-solicitud-de-carga", true);
+  OBJ1Selector["RequestPendingTable"] = RequestPendingTable;
+  RequestPendingTable.innerHTML = "";
+
+  Solicitudes.forEach(function (solicitud) {
+    let rquestStatus = solicitud.requestStatus;
+    let statusText = rquestStatus === 0 && "Pendiente";
+    let id = solicitud.id;
+    let requestTypeText = getRequestText();
+
+    if (id && rquestStatus === 0) {
+      RequestPendingTable.innerHTML += `
+                <tr data-id='${id}'>
+                    <td class="column-manifest-td unique-column-left-al add-plus-al button-asignar-solicitud" data-id='${id}'>+</td>
+                    <td class="column-manifest-td">${solicitud.requestOrigin}</td>
+                    <td class="column-manifest-td">${solicitud.requestQuantity}</td>
+                    <td class="column-manifest-td">${statusText}</td>
+                    <td class="column-manifest-td">${solicitud.requestDescription}</td>
+                    <td class="column-manifest-td">${requestTypeText}</td>
+                </tr>
+            `;
+    }
+  });
+
+  const BtnsAsignarSolicitud = getQuerySelector(".", "button-asignar-solicitud", false);
+  BtnsAsignarSolicitud.forEach(function (btn) {
+    btn.addEventListener("click", onAsignarSolicitudClick);
+  });
+}
+
 function onAsignarSolicitudClick() {
   const RequestPendingTable = OBJ1Selector.RequestPendingTable;
   let requestId = parseInt(this.dataset.id);
@@ -31,7 +62,7 @@ function onAsignarSolicitudClick() {
 function onCloseDropdownClick() {
   setDisplay(OBJ1Selector.DropdownViajes, false);
   //Se vuelve a crear la tabla para que no quede el dropdown escondido
-  createRquestTable();
+  createRequestTable();
 }
 
 //Crear la tabla de viajes
@@ -98,7 +129,7 @@ function onButtonViajeToAddClick() {
 
   if (isViajeAssigned) {
     alert("La solicitud fue agregada con exito");
-    createRquestTable();
+    createRequestTable();
   } else {
     alert("Imposible asignar la solicitud. Excedió cantidad disponible!");
   }
