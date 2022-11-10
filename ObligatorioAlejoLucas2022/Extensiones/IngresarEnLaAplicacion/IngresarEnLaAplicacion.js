@@ -7,12 +7,12 @@ function onLoginClick(e) {
 
   // Selector Empresa-Importador
   if (OBJ1Selector.selectAccount === 1) {
+    debugger;
     userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, Empresas);
     typeOfUser = OBJ1Selector.selectAccount;
   } else {
     userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, Importadores);
     typeOfUser = OBJ1Selector.selectAccount;
-
   }
 
 

@@ -1,35 +1,41 @@
 function onCrearSolicitudDeCarga() {
-  const TypeOfCharge = getQuerySelector("#", "select-type-shippment-2", true).value;
-  const QuantityOfContainers = getQuerySelector("#", "input-quantity-containers-2", true).value;
-  const ArrivePort = getQuerySelector("#", "arrive-point", true).value;
-  const LineOfChargeRequested = getQuerySelector("#", "select-line-of-charge", true).value;
-  const ShippmentDescription = getQuerySelector("#", "input-shippment-description", true).value;
+  const TypeOfChargeAttr = getQuerySelector("#", "select-type-shippment-importador", true);
+  const QuantityOfContainersAttr = getQuerySelector("#", "input-quantity-containers-importador", true);
+  const ArrivePortAttr = getQuerySelector("#", "arrive-point", true);
+  const LineOfChargeRequestedAttr = getQuerySelector("#", "select-line-of-charge", true);
+  const ShippmentDescriptionAttr = getQuerySelector("#", "input-shippment-description", true);
+  const CurrentUser = userLogged;
+  const TypeOfCharge = TypeOfChargeAttr.value;
+  const QuantityOfContainers = QuantityOfContainersAttr.value;
+  const ArrivePort = ArrivePortAttr.value;
+  const LineOfChargeRequested = LineOfChargeRequestedAttr.value;
+  const ShippmentDescription = ShippmentDescriptionAttr.value;
   let id = 0;
   let requestCreated = {};
-  let isTrue = true;
 
-  if (!isTrue) {
-    //Aca va la validacion contra los campos
+  if (isEmpty(QuantityOfContainers) || isEmpty(ShippmentDescription) || isNaN(parseInt(QuantityOfContainers)) || TypeOfCharge === 'X' || ArrivePort === 'X' || LineOfChargeRequested === 'X') {
+    alert('Complete los campos correctamente! por favor');
   } else {
-    getTypeOfCharge(TypeOfCharge);
-    id = getIdAutonumerico();
-    //agrega la informacion de la solicitud a una variable
+    if (userLogged.userEnabled) {
+      /* getTypeOfCharge(TypeOfCharge); */
+      id = getIdAutonumerico();
+      //agrega la informacion de la solicitud a una variable    
+      requestCreated = new Solicitud(id, parseInt(TypeOfCharge), ShippmentDescription, ArrivePort, parseInt(QuantityOfContainers), parseInt(LineOfChargeRequested), 0, CurrentUser.id);
 
-    requestCreated = new Solicitud(id, getTypeOfCharge(TypeOfCharge), ShippmentDescription, ArrivePort, parseInt(QuantityOfContainers), parseInt(LineOfChargeRequested), 0, userLogged.id);
-    //añade la solicitud a las solicitudes
-    setPush(Solicitudes, requestCreated);
-    //añade la solicitud a las solicitudes del importador logeado
-    setPush(userLogged.userRequests, requestCreated);
+      //añade la solicitud a las solicitudes del importador logeado    
+      setPush(Solicitudes, requestCreated);
+      setPush(CurrentUser.userRequests, requestCreated);
 
-    /*TypeOfCharge.value = "X";
-      QuantityOfContainers = "";
-      ArrivePort = "0";
-      LineOfChargeRequested = "0";
-      ShippmentDescription = "";*/
-
-    alert("La solicitud ha sido creada con exito");
-    buildConsultarSolicitudes();
-    getCancelBtns();
+      TypeOfChargeAttr.value = "X";
+      QuantityOfContainersAttr.value = "";
+      ArrivePortAttr.value = "X";
+      LineOfChargeRequestedAttr.value = "X";
+      ShippmentDescriptionAttr.value = "";
+      alert("La solicitud ha sido creada con exito");
+      onConsultarSolicitudes();
+    } else {
+      alert('Su usuario no esta habilitado');
+    }
   }
 
 }

@@ -35,4 +35,5 @@ function onLoggedImportador() {
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
   onDashboardLoad();
+  onConsultarSolicitudes();
 }

@@ -101,6 +101,7 @@ function findUser(username, pass, arr) {
   let user = null;
 
   arr.forEach(function (admin) {
+    debugger;
     if (admin.userAccess === username && admin.userPassword === pass) {
       user = admin;
     }
@@ -238,7 +239,7 @@ function onSearchRequest() {
     console.log(requestDescriptionMinus.indexOf(requestSearchMinus));
 
     if (requestDescriptionMinus.indexOf(requestSearchMinus) > -1) {
-      buildConsultarSolicitudes(requestIdSearched);
+      onConsultarSolicitudes();
       /* getLineOfChargeName(solicitud); */
     }
   });

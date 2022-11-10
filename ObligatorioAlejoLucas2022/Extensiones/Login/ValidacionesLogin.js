@@ -1,4 +1,4 @@
-function isEmpty(txt) {
+/* function isEmpty(txt) {
   return txt.length == 0;
 }
 
@@ -7,7 +7,7 @@ function isValidPass(txt) {
 }
 function isValidNumber(num) {
   return !isNaN(num);
-}
+} */
 
 
 
