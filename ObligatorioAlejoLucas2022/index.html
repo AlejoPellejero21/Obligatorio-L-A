@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="./Css/Estilos.Esconder.Containers.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="text/javascript" src="./Extensiones/VisualizarInformaciónEstadística/Dashboard.charts.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/GlobalVariablesConstant.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/VisualizarInformaciónEstadística/Dashboard.charts.js"></script>
   <script type="text/javascript" src="./Extensiones/IngresarEnLaAplicacion/IngresarEnLaAplicacion.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/MainOnWindowLoadView.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
@@ -39,8 +39,8 @@
         <div class="container-header-left">
           <h1 class="header-logo">A&L</h1>
           <h2 class="title-user">
-            <span id="head-welcome-user" class="header-welcoome-user">Bienvenido Importador:</span>
-            <span id="head-user-name" class="header-user-name-al">Lucas Ex</span>
+            <span id="head-welcome-user" class="header-welcoome-user"></span>
+            <span id="head-user-name" class="header-user-name-al"></span>
           </h2>
         </div>
         <div class="container-general-title-page change-color-0">
@@ -554,8 +554,7 @@
               <h2 class="table-title">Solicitudes Pendientes:</h2>
             </div>
             <div class="div-title-table-al">
-              <input type="text" id="input-request-search">
-              <input type="button" value="Buscar" id="input-request-search-button">
+              <input type="text" id="input-request-search-button">              
             </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
@@ -656,14 +655,18 @@
                 <h3 class="table-title text-title-grafics">Porcentaje de cancelaciones</h3>
                 <p class="p-description-informacion-estadistica">Se calculará a partir del total de solicitudes canceladas, contra las
                   solicitudes confirmadas, pendientes e ignoradas.</p>
-                <canvas id="chart-porcentaje-cancelaciones" style="width:200px;max-width:400px"></canvas>
+                  <canvas id="chart-porcentaje-cancelaciones" style="width:200px;max-width:400px"></canvas>
+                  <!-- <div id="add-chart-porcentaje-cancelaciones">
+                  </div> -->
               </div>
               <div class="container-grafics">
                 <h3 class="table-title text-title-grafics">Participación de las diferentes líneas de carga</h3>
                 <p class="p-description-informacion-estadistica">Se mostrará la información del porcentaje de las diferentes líneas con
                   las que ha cargado este Importador. Solo se cuentan envíos no
                   contenedores y se omiten las empresas con porcentaje cero.</p>
-                <canvas id="chart-lineas-de-carga" style="width:200px;max-width:400px"></canvas>
+                  <canvas id="chart-lineas-de-carga" style="width:200px;max-width:400px"></canvas>
+                  <!-- <div id="add-chart-lineas-de-carga">
+                  </div> -->
               </div>
             </div>
           </main>

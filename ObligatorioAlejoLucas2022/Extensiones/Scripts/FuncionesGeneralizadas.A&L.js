@@ -105,7 +105,7 @@ function addSolicitudesToImportadores() {
 function findUser(username, pass, arr) {
   let user = null;
 
-  arr.forEach(function (admin) {    
+  arr.forEach(function (admin) {
     if (admin.userAccess === username && admin.userPassword === pass) {
       user = admin;
     }
@@ -231,32 +231,37 @@ function getTypeOfCharge(TypeOfCharge) {
   return typeOfChargeExpressed;
 }
 
+/*All seach logic here*/
 function onSearchRequest() {
-  let requestSearch = getQuerySelector("#", "input-request-search", true).value;
-  let requestSearchMinus = requestSearch.toLowerCase();
-  let palabraCoincidente = "";
+  const InputSearch = OBJ1Selector.InputRequestSearch.value;
+  let generalSearchText = InputSearch.toLowerCase();
+  let largeToSearch = generalSearchText.length;
+  let isDescription = false; 
 
-  Solicitudes.forEach(function (solicitud) {
-    let requestDescriptionMinus = solicitud.requestDescription.toLowerCase();
-    let requestIdSearched = solicitud.id;
+  if (largeToSearch > 1 && InputSearch !== '') {
+    OBJ1Selector.requestTable.innerHTML = '';
+    userLogged.userRequests.forEach(function (solicitud) {
+      let description = solicitud.requestDescription;
 
-    console.log(requestDescriptionMinus.indexOf(requestSearchMinus));
+      if (solicitud.requestStatus === 0) {
+        let index = 0;
+        while (index < description.length && !isDescription) {
+          let sliceEnd = index + largeToSearch;
+          let slicePartDescription = description.slice(index, sliceEnd);
+          if (slicePartDescription.toLowerCase() === generalSearchText) {
+            createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, getSupplierName(solicitud), solicitud.requestDescription, solicitud.requestType, solicitud.id);
+            isDescription = true;
+          }
+          index++
+        }
+      }
+    });
 
-    if (requestDescriptionMinus.indexOf(requestSearchMinus) > -1) {
-      onConsultarSolicitudes();
-      /* getLineOfChargeName(solicitud); */
+    if (!isDescription) {
+      alert('No se han encontrado resultados a su busqueda')
     }
-  });
+  } else {
+    onConsultarSolicitudes();
+  }
 }
 
-/* function getLineOfChargeName(solicitud) {
-  Empresas.forEach(function (empresa) {
-    if (solicitud.requestSupplierId == empresa.id) {
-      return (supplierName = empresa.supplierName);
-    }
-    return supplierName;
-  });
-} */
-
-
-/*Testing*/

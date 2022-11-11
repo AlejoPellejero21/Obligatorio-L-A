@@ -1,6 +1,8 @@
 function onConsultarSolicitudes() {
   // Añade click a los botones generados por -> ConsultarSolicitudesPendientes
   buildConsultarSolicitudes();
+  //Crea nuevamente las graficas || Actualiza la informacion
+  onDashboardCancelaciones();
   getCancelBtns();
 }
 

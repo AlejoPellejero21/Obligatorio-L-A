@@ -1,7 +1,9 @@
 const AccountEmpresario = 'Account - Empresario';
 const AccountImportador = 'Account - Importador';
-const WelcomeEmpresario = 'Bienvenido Empresario!';
-const WelcomeImportador = 'Bienvenido Importador!';
+const WelcomeEmpresario = 'Bienvenido Empresario:';
+const WelcomeImportador = 'Bienvenido Importador:';
+const CrearUnViaje = 'CREAR UN VIAJE';
+const CrarUnaSolicitud = 'CREAR UNA SOLICITUD';
 const ErrorCamposCrearViaje = 'Por favor, complete todos los campos!';
 const ErrorFechaPasada = 'Sellecione una fecha a partir de los proximos 5 días';
 const SuccesViajeCreado = 'El Viaje fue creado de manera exitosa!';
@@ -25,3 +27,4 @@ let todayYear = String(date.getFullYear());
 let currentDate = todayYear + todayMonth + todayDay;
 let showQuantity = 1;
 let supplierName = "";
+let generalSearchText = "";

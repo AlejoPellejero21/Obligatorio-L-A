@@ -1,5 +1,5 @@
 function getCancelBtns() {
-  const CancelarSolicitudBtn = document.querySelectorAll(".cancelar-solicitud-btn");
+  const CancelarSolicitudBtn = getQuerySelector(".", "cancelar-solicitud-btn", false);
   CancelarSolicitudBtn.forEach(function (button) {
     button.addEventListener("click", onCancelarSolicitud);
   });
@@ -8,12 +8,12 @@ function getCancelBtns() {
 function onCancelarSolicitud() {
   const id = Number(this.getAttribute("data-id"));
   onCambiarEstado(id);
-  onConsultarSolicitudes();
+  onConsultarSolicitudes();  
 }
 
 function onCambiarEstado(id) {
   Solicitudes.forEach(function (solicitud) {
-    console.log(solicitud.id, id);
+
     if (solicitud.id === id) {
       solicitud.requestStatus = 2;
     }
