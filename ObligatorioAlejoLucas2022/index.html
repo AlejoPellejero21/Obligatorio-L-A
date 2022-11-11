@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./Css/Estilos.Esconder.Containers.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
+  <script type="text/javascript" src="./Extensiones/VisualizarInformaciónEstadística/Dashboard.charts.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/GlobalVariablesConstant.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/IngresarEnLaAplicacion/IngresarEnLaAplicacion.js"></script>
@@ -31,7 +31,7 @@
   <title>{A&L -by- L&A}</title>
 </head>
 
-<body>
+<body id="big-body-page">
   <div class="father-login-container-al">
     <!--FINAL HEADER STYLE-->
     <div class="login-white-container-al change-color-0 ">
@@ -468,11 +468,13 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">Proveerá el tipo de
+                  mercadería (CARGA_GENERAL, REFRIGERADO, CARGA_PELIGROSA), una
+                  descripción de la mercadería, el puerto de origen y la cantidad de
+                  contenedores. Además, a la solicitud se le deberá agregar el id de la empresa.
+                  Quedará pendiente de ser confirmada por la línea de carga con un viaje real;
+                  cuando sea confirmada se asignará también el número de viaje. A cada
+                  solicitud de carga se le asignará un número autogenerado.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
@@ -485,8 +487,9 @@
                 <div class="container-left-big-form">
                   <h2 class="table-title">Datos de solicitud:</h2>
                   <div class="container-select-big-al display-form-labels-al">
-                    <label class="label-big-al" for="select-type-shippment-2">Seleccione el tipo de carga:</label>
-                    <select name="type-of-shippment" id="select-type-shippment-2">
+                    <label class="label-big-al" for="select-type-shippment-importador">Seleccione el tipo de
+                      carga:</label>
+                    <select name="type-of-shippment" id="select-type-shippment-importador">
                       <option value="X" selected>-Tipos de carga-</option>
                       <option value="0">CARGA_GENERAL</option>
                       <option value="1">REFRIGERADO</option>
@@ -494,14 +497,15 @@
 
                     </select>
 
-                    <label class="label-big-al" for="input-quantity-containers-2">Cantidad de contenedores:</label>
-                    <input type="text" id="input-quantity-containers-2" />
+                    <label class="label-big-al" for="input-quantity-containers-importador">Cantidad de
+                      contenedores:</label>
+                    <input type="text" id="input-quantity-containers-importador" />
                   </div>
                   <!--Selector de puerto de origen-->
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese el puerto de origen:</label>
                     <select name="port-of-origin" id="arrive-point">
-                      <option value="0" selected>-Puerto de origen-</option>
+                      <option value="X" selected>-Puerto de origen-</option>
                       <option value="Beijin">Beijin</option>
                       <option value="Rio de Jainero">Rio de Jainero</option>
                       <option value="Ciudad del Cabo">Ciudad del Cabo</option>
@@ -512,7 +516,7 @@
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese linea de carga:</label>
                     <select name="line-of-charge" id="select-line-of-charge">
-                      <option value="0" selected>-Lineas de carga disponibles-</option>
+                      <option value="X" selected>-Lineas de carga disponibles-</option>
                     </select>
                   </div>
                 </div>
@@ -525,10 +529,10 @@
             </div>
             <!--FORM CREATE REQUEST-->
 
-            <div class="button">
+            <!-- <div class="button">
               <input class="button-create-request" type="button" value="Crear solicitud de carga"
                 id="send-shippment-request" />
-            </div>
+            </div> -->
           </main>
           <!--Main Crear una solicitud-->
 
@@ -538,11 +542,11 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">El Importador puede consultar sus solicitudes pendientes. Deberá poder
+                  además hacer una búsqueda parcial por la descripción de la
+                  mercadería. Esta búsqueda será case insensitive y filtrará los resultados
+                  mostrados. El Importador deberá poder cancelar una solicitud de carga pendiente que no
+                  ha sido confirmada todavía por una línea de carga.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
@@ -576,11 +580,10 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">El usuario podra ver el porcentaje de cancelaciones contra el total de
+                  cargas. Ademas podra ver el calendario de las próximas llegadas con su carga de importación por
+                  orden de llegada a Montevideo y tambien la participación de las diferentes líneas de carga en sus
+                  solicitudes </p>
               </div>
             </div>
 
@@ -588,7 +591,7 @@
               <h2 class="table-title">Informacion Estadistica:</h2>
             </div>
 
-            <div class="container-calendar-grafic-al">
+            <div class="first-manifest-container container-calendar-grafic-al">
               <div class="container-calendar-grafic">
                 <div class="month">
                   <ul>
@@ -645,8 +648,22 @@
                   <li>31</li>
                 </ul>
               </div>
+
+            </div>
+
+            <div class="first-manifest-container container-calendar-grafic-al container-frafics-align">
               <div class="container-grafics">
-                <canvas id="myChart" style="width:200px;max-width:400px"></canvas>
+                <h3 class="table-title text-title-grafics">Porcentaje de cancelaciones</h3>
+                <p class="p-description-informacion-estadistica">Se calculará a partir del total de solicitudes canceladas, contra las
+                  solicitudes confirmadas, pendientes e ignoradas.</p>
+                <canvas id="chart-porcentaje-cancelaciones" style="width:200px;max-width:400px"></canvas>
+              </div>
+              <div class="container-grafics">
+                <h3 class="table-title text-title-grafics">Participación de las diferentes líneas de carga</h3>
+                <p class="p-description-informacion-estadistica">Se mostrará la información del porcentaje de las diferentes líneas con
+                  las que ha cargado este Importador. Solo se cuentan envíos no
+                  contenedores y se omiten las empresas con porcentaje cero.</p>
+                <canvas id="chart-lineas-de-carga" style="width:200px;max-width:400px"></canvas>
               </div>
             </div>
           </main>

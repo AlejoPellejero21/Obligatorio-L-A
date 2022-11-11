@@ -42,30 +42,35 @@ function createPreUserInformation() {
     new Importador(0221, 'Lucas', 'Lucaaas', '232345')
   );
 
-  Solicitudes.push(
-    new Solicitud(0304, 2, 'Esto es una desciprcion que no es una prueba', 'Rocha Este', 10, 0142, 0, 1222),
-    new Solicitud(0305, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto Sur', 15, 0142, 0, 1232),
-    new Solicitud(0314, 0, 'Esto es una desciprcion de prueba', 'Rio Negro', 12, 0142, 2, 8888),
-    new Solicitud(0422, 1, 'Esto es una desciprcion y ademas es una prueba', 'Punta Del Este', 20, 0142, 0, 2224),
-    new Solicitud(0316, 2, 'Desciprcion para poder hacer pruebas de soli', 'Puerto loco', 30, 0241, 1, 2422),
-    new Solicitud(0317, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Casa Pueblo', 8, 0241, 1, 1245),
-    new Solicitud(0323, 2, 'Desciprcion para poder hacer pruebas de solicitudes', 'Minas', 22, 0241, 1, 1283),
-    new Solicitud(0321, 1, 'Una desciprcion para poder hacer pruebas.', 'Casa Pueblo', 14, 0241, 1, 1274),
-    new Solicitud(0324, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 18, 0241, 1, 3844),
-    new Solicitud(0326, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 10, 0241, 1, 8383),
-  );
-
-  addSolicitudesToImportadores();
-
   Viajes.push(
-    new Viaje(0134, 'BuqueAk-74', 20, '2022/02/15'),
-    new Viaje(0237, 'BuquePurple', 15, '2022/01/10')
+    new Viaje(getIdAutonumerico(), 'BuqueAk-74', 20, '2022/02/15'),
+    new Viaje(getIdAutonumerico(), 'BuquePurple', 15, '2022/01/10')
   );
 
   Empresas.push(
-    new Empresa(0142, 'Administrador', 'Admin1', '123'),
-    new Empresa(0241, 'Lucas', 'LucasA', 'Lucas123')
+    new Empresa(0142, 'UPS', 'Admin-UPS', 'ups123'),
+    new Empresa(0241, 'DHL', 'Admin-DHL', 'dhl123'),
+    new Empresa(0341, 'MECALUX', 'Admin-Mecalux', '1mecalux')
   );
+
+  Solicitudes.push(
+    new Solicitud(getIdAutonumerico(), 2, 'Esto es una desciprcion que no es una prueba', 'Rocha Este', 10, 0142, 0, 1222),
+    new Solicitud(getIdAutonumerico() + 1, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto Sur', 15, 0142, 0, 1232),
+    new Solicitud(getIdAutonumerico() + 2, 0, 'Esto es una desciprcion de prueba', 'Rio Negro', 12, 0142, 2, 8888),
+    new Solicitud(getIdAutonumerico() + 3, 1, 'Esto es una desciprcion y ademas es una prueba', 'Punta Del Este', 20, 0142, 0, 2224),
+    new Solicitud(getIdAutonumerico() + 4, 2, 'Desciprcion para poder hacer pruebas de soli', 'Puerto loco', 30, 0241, 1, 2422),
+    new Solicitud(getIdAutonumerico() + 5, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Casa Pueblo', 8, 0241, 1, 1245),
+    new Solicitud(getIdAutonumerico() + 6, 2, 'Desciprcion para poder hacer pruebas de solicitudes', 'Minas', 22, 0241, 1, 1283),
+    new Solicitud(getIdAutonumerico() + 7, 1, 'Una desciprcion para poder hacer pruebas.', 'Casa Pueblo', 14, 0241, 1, 1274),
+    new Solicitud(getIdAutonumerico() + 8, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 18, 0241, 1, 3844),
+    new Solicitud(getIdAutonumerico() + 9, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Punta Del Este', 10, 0241, 1, 8383),
+    new Solicitud(getIdAutonumerico() + 10, 0, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 12, 0341, 0, 8383),
+    new Solicitud(getIdAutonumerico() + 11, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 7, 0341, 2, 8383),
+    new Solicitud(getIdAutonumerico() + 12, 1, 'Esto es la desciprcion de pruebas numero me olvide.', 'Salto Sur', 30, 0341, 1, 8383),
+    new Solicitud(getIdAutonumerico() + 13, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Rocha Este', 25, 0341, 3, 8383),
+  );
+
+  addSolicitudesToImportadores();
 
   Empresas[0].supplierTrips = Viajes;
 }
@@ -100,7 +105,7 @@ function addSolicitudesToImportadores() {
 function findUser(username, pass, arr) {
   let user = null;
 
-  arr.forEach(function (admin) {
+  arr.forEach(function (admin) {    
     if (admin.userAccess === username && admin.userPassword === pass) {
       user = admin;
     }
@@ -238,7 +243,7 @@ function onSearchRequest() {
     console.log(requestDescriptionMinus.indexOf(requestSearchMinus));
 
     if (requestDescriptionMinus.indexOf(requestSearchMinus) > -1) {
-      buildConsultarSolicitudes(requestIdSearched);
+      onConsultarSolicitudes();
       /* getLineOfChargeName(solicitud); */
     }
   });

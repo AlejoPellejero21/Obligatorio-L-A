@@ -8,8 +8,7 @@ function getCancelBtns() {
 function onCancelarSolicitud() {
   const id = Number(this.getAttribute("data-id"));
   onCambiarEstado(id);
-  buildConsultarSolicitudes(); // Cambiar posiblemente
-  getCancelBtns();
+  onConsultarSolicitudes();
 }
 
 function onCambiarEstado(id) {

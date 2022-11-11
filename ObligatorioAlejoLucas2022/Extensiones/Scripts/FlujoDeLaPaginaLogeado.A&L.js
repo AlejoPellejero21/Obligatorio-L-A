@@ -31,8 +31,11 @@ function onLoggedEmpresa() {
 function onLoggedImportador() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateRequest = getQuerySelector(".", "dashboard-container-al-sky-blue", true);
+  getQuerySelector("#", "send-shippment-request", true).addEventListener("click", onCrearSolicitudDeCarga);  
 
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
   onDashboardLoad();
+  onConsultarSolicitudes();
+  onDashboardCancelaciones();
 }

@@ -10,16 +10,13 @@ function onWindowLoad() {
   OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);
 
 
-  getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);
+  getQuerySelector("#", "button-on-login", true).addEventListener("click", onLoginClick);
   OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque);
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
-  getQuerySelector("#", "send-shippment-request", "true").addEventListener("click", onCrearSolicitudDeCarga);
-  getQuerySelector("#", "pending-requests-button", "true").addEventListener("click", onConsultarSolicitudes);
-  getQuerySelector("#", "input-request-search-button", "true").addEventListener("click", onSearchRequest);
+  getQuerySelector("#", "input-request-search-button", true).addEventListener("click", onSearchRequest);
 
 
   createRequestTable();
-  buildConsultarSolicitudes();
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
 }
@@ -31,6 +28,9 @@ function onSelectChange() {
   const LoginRegisterButtons = getQuerySelector("#", "show-login-register-link", true);
   const RegisterLink = getQuerySelector("#", "go-to-register", true);
   const LoginLink = getQuerySelector("#", "go-to-login", true);
+  const BodyPage = getQuerySelector('#', 'big-body-page', true);
+  const ButtonCreateUnViaje = getQuerySelector("#", 'crear-un-viaje-button', true);
+  const ButtonCreateUnaSolicitud = getQuerySelector("#", 'send-shippment-request', true);
 
   /*Agregar Evento Para Register Page*/
   RegisterLink.addEventListener("click", onLinkRegisterClick);
@@ -41,8 +41,12 @@ function onSelectChange() {
   DivSkyBlueLight.forEach(function (value) {
     if (selectLoginValue === 2) {
       value.style = "background-color: #9ddeff;";
+      BodyPage.style = "background-color: #9ddeff;";
+      ButtonCreateUnViaje.id = 'send-shippment-request';
     } else {
       value.style = "background-color: #ff9df3;";
+      BodyPage.style = "background-color: #ff9df3;";
+      ButtonCreateUnaSolicitud.id = 'crear-un-viaje-button';
     }
   });
 
