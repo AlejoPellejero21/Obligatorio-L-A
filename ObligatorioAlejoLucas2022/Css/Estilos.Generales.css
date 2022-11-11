@@ -364,9 +364,22 @@ sky-blue:#9ddeff
 
 
 .container-grafics {
-    width: 40%;
-    margin: 0 auto;
-    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;    
+    padding: 15px;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.container-grafics:hover{
+    background-color: #ffffff45;
+}
+
+.container-frafics-align{
+    align-items: flex-start !important;    
 }
 
 /*Calendar Styles*/
@@ -587,4 +600,19 @@ body {
     color: #ffffff;    
     padding: 0px 12px;
     font-weight: bold;
+}
+
+/*Informacion Estadistica*/
+
+.p-description-informacion-estadistica{
+    color: #282828de;
+    text-align: center;
+    margin: 2% 0 4%;
+    font-size: 11px;
+}
+
+.text-title-grafics{
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
 }

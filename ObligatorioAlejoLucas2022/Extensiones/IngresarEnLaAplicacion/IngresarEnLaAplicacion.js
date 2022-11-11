@@ -6,8 +6,7 @@ function onLoginClick(e) {
   OBJ1Selector["selectAccount"] = parseInt(getQuerySelector("#", "select-type-login", "true").value);
 
   // Selector Empresa-Importador
-  if (OBJ1Selector.selectAccount === 1) {
-    debugger;
+  if (OBJ1Selector.selectAccount === 1) {    
     userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, Empresas);
     typeOfUser = OBJ1Selector.selectAccount;
   } else {
