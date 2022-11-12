@@ -13,6 +13,20 @@ const Viajes = [];
 const Solicitudes = [];
 const SuplierNamesText = [];
 const SuplierNames = {};
+const AllMonths = [
+    { name: 'Enero', quantity: 31, start: 5 },
+    { name: 'Febrero', quantity: 28, start: 1 },
+    { name: 'Marzo', quantity: 31, start: 1 },
+    { name: 'Abril', quantity: 30, start: 4 },
+    { name: 'Mayo', quantity: 31, start: 6 },
+    { name: 'Junio', quantity: 30, start: 2 },
+    { name: 'Julio', quantity: 31, start: 4 },
+    { name: 'Agosto', quantity: 31 },
+    { name: 'Septiembre', quantity: 30, start: 3 },
+    { name: 'Octubre', quantity: 31, start: 5 },
+    { name: 'Noviembre', quantity: 30, start: 1 },
+    { name: 'Diciembre', quantity: 31, start: 3 }
+]
 let requestToAsign;
 let OBJ1Selector = {};
 let generalSupliersLines = 0;

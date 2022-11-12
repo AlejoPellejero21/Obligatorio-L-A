@@ -45,4 +45,5 @@ function onLoggedImportador() {
   onDashboardLoad();
   onConsultarSolicitudes();
   onDashboardCancelaciones();
+  onCreateCalendarioLlegadas();
 }
