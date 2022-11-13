@@ -12,7 +12,7 @@ sky-blue:#9ddeff
 /*INICIO Login Page INICIO*/
 
 .father-login-container-al {
-    width: 100%;    
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -44,7 +44,7 @@ sky-blue:#9ddeff
 .login-container-al {
     width: 100%;
     display: flex;
-    
+
     background-color: #ff9df3;
     justify-content: flex-end;
 }
@@ -181,8 +181,8 @@ sky-blue:#9ddeff
     display: flex;
     width: 25%;
     border-radius: 0 30px 0 0;
-    background-color: #ffffff45;    
-    height: 100vh;    
+    background-color: #ffffff45;
+    height: 100vh;
     flex-direction: column;
 }
 
@@ -190,7 +190,7 @@ sky-blue:#9ddeff
 .dashboard-container-al {
     width: 100%;
     display: flex;
-    
+
     background-color: #ff9df3;
 }
 
@@ -271,6 +271,7 @@ sky-blue:#9ddeff
     padding: 18px 10px;
     color: #ffffffde;
 }
+
 
 .second-manifest-container {
     display: flex;
@@ -368,18 +369,18 @@ sky-blue:#9ddeff
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 50%;    
+    width: 50%;
     padding: 15px;
     border-radius: 20px;
     height: 100%;
 }
 
-.container-grafics:hover{
+.container-grafics:hover {
     background-color: #ffffff45;
 }
 
-.container-frafics-align{
-    align-items: flex-start !important;    
+.container-frafics-align {
+    align-items: flex-start !important;
 }
 
 /*Calendar Styles*/
@@ -437,7 +438,7 @@ body {
     display: inline-block;
     width: 100%;
     color: #666;
-    text-align: center;    
+    text-align: center;
 }
 
 .days {
@@ -466,10 +467,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;    
+    flex-direction: row;
 }
 
-.container-calendar-grafic{
+.container-calendar-grafic {
     width: 100% !important;
     margin: 10px 5px !important;
 }
@@ -504,7 +505,7 @@ body {
 }
 
 /*Dashboard pink*/
-.container-empresario-view{
+.container-empresario-view {
     width: 50%;
 }
 
@@ -564,7 +565,7 @@ body {
 
 /*Styles*/
 
-.background-tables-form{
+.background-tables-form {
     background-color: #ffffff45;
     border-radius: 30px 0 0 30px;
     padding: 10px;
@@ -572,53 +573,53 @@ body {
 
 /*Sky Blue Template*/
 
-.dashboard-container-al-sky-blue{
+.dashboard-container-al-sky-blue {
     background-color: #9ddeff;
 }
 
-.container-backgroud-suplier{
+.container-backgroud-suplier {
     background-color: #ffffff45 !important;
     padding: 10px !important;
 }
 
 /*Nav Bar*/
 
-.nav-create-new-trip{
+.nav-create-new-trip {
     display: flex;
     width: 100%;
     justify-content: center;
     height: 12%;
     cursor: pointer;
     align-items: center;
-    padding: 10px;    
+    padding: 10px;
     border-top: 2px solid #ffffff;
     border-top-right-radius: 30px;
 }
 
-.nav-create-new-trip:hover{
+.nav-create-new-trip:hover {
     background-color: #ff9df3;
 }
 
-.trip-sky-blue:hover{
+.trip-sky-blue:hover {
     background-color: #9ddeff;
 }
 
-.generals-nav-link-title{
-    color: #ffffff;    
+.generals-nav-link-title {
+    color: #ffffff;
     padding: 0px 12px;
     font-weight: bold;
 }
 
 /*Informacion Estadistica*/
 
-.p-description-informacion-estadistica{
+.p-description-informacion-estadistica {
     color: #282828de;
     text-align: center;
     margin: 2% 0 4%;
     font-size: 11px;
 }
 
-.text-title-grafics{
+.text-title-grafics {
     text-align: center;
     font-weight: bold;
     font-size: 28px;
@@ -626,8 +627,21 @@ body {
 
 /*Calendario*/
 
-.container-big-grafic-al{
+.container-big-grafic-al {
     flex-direction: column;
     justify-content: flex-start;
     align-items: baseline;
+}
+
+/*Lista de viajes*/
+
+.fila-show-carga-peligrosa {
+    cursor: pointer;    
+    height: 30px;
+  transition: height 0.8s;
+}
+
+.fila-show-carga-peligrosa:hover {
+    background-color: #9d2d8d;
+    height: 45px;
 }

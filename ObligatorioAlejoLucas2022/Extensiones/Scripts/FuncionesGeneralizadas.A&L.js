@@ -56,13 +56,13 @@ function createPreUserInformation() {
   Solicitudes.push(
     new Solicitud(getIdAutonumerico(), 2, 'Esto es una desciprcion que no es una prueba', 'Montevideo', 10, 0142, 0, 1222),
     new Solicitud(getIdAutonumerico() + 1, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto', 10, 0142, 0, 1232),
-    new Solicitud(getIdAutonumerico() + 4, 2, 'Desciprcion para poder hacer pruebas de soli', 'Montevide', 5, 0241, 1, 2422),
+    new Solicitud(getIdAutonumerico() + 4, 2, 'Desciprcion para poder hacer pruebas de soli', 'Montevideo', 5, 0241, 1, 2422),
     new Solicitud(getIdAutonumerico() + 2, 0, 'Esto es una desciprcion de prueba', 'Maldonado', 15, 0142, 2, 8888),
     new Solicitud(getIdAutonumerico() + 3, 1, 'Esto es una desciprcion y ademas es una prueba', 'Rocha', 8, 0142, 0, 2224),
-    new Solicitud(getIdAutonumerico() + 6, 2, 'Desciprcion para poder hacer pruebas de solicitudes', 'Salto', 4, 0241, 1, 1283),
+    new Solicitud(getIdAutonumerico() + 6, 1, 'Desciprcion para poder hacer pruebas de solicitudes', 'Salto', 4, 0241, 1, 1283),
     new Solicitud(getIdAutonumerico() + 5, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Maldonado', 3, 0241, 0, 1245),
     new Solicitud(getIdAutonumerico() + 7, 1, 'Una desciprcion para poder hacer pruebas.', 'Rocha', 2, 0241, 2, 1274),
-    new Solicitud(getIdAutonumerico() + 9, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Maldonado', 5, 0241, 3, 8383),
+    new Solicitud(getIdAutonumerico() + 9, 1, 'Esto es la desciprcion de pruebas numero me olvide.', 'Maldonado', 5, 0241, 3, 8383),
     new Solicitud(getIdAutonumerico() + 8, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 6, 0241, 1, 3844),
     new Solicitud(getIdAutonumerico() + 10, 0, 'Esto es la desciprcion de pruebas numero me olvide.', 'Salto', 12, 0341, 0, 8383),
     new Solicitud(getIdAutonumerico() + 11, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Rocha', 7, 0341, 2, 8383),
@@ -74,16 +74,18 @@ function createPreUserInformation() {
   addSolicitudesToViajes();
 
   Empresas[0].supplierTrips = Viajes;
+  Viajes[0].shipSupplierId = Empresas[0].id;
+  Viajes[1].shipSupplierId = Empresas[0].id;
 }
 
 function addSolicitudesToViajes() {
 
   Solicitudes.forEach(function (solicitud, index) {
     if (solicitud.requestStatus === 1) {
-      let paresNumber = index % 2;      
-      if (paresNumber === 0) {       
+      let paresNumber = index % 2;
+      if (paresNumber === 0) {
         setPush(Viajes[paresNumber].shipRequest, solicitud);
-      } else {        
+      } else {
         setPush(Viajes[paresNumber].shipRequest, solicitud)
       }
       solicitud.requestTravelNumber = Viajes[paresNumber].id;
@@ -231,22 +233,6 @@ function getLineOfChargeOnRequest() {
   Empresas.forEach(function (empresa) {
     lineOfChargeSelector.innerHTML += `<option value="${empresa.id}">${empresa.supplierName}</option>`;
   });
-}
-
-function getTypeOfCharge(TypeOfCharge) {
-  switch (TypeOfCharge) {
-    case "0":
-      typeOfChargeExpressed = "Carga_General";
-      break;
-    case "1":
-      typeOfChargeExpressed = "Refrigerado";
-      break;
-    case "2":
-      typeOfChargeExpressed = "Carga_Peligrosa";
-      break;
-  }
-
-  return typeOfChargeExpressed;
 }
 
 /*All seach logic here*/

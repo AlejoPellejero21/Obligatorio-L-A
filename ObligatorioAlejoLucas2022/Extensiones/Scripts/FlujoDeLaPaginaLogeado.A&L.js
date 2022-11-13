@@ -29,6 +29,7 @@ function onLoggedEmpresa() {
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
   onDashboardLoad();
+  onCreateCargaPeligrosa();
 }
 
 function onLoggedImportador() {
