@@ -1,4 +1,4 @@
-function onLoadLineasDeCarga(solicitud) {  
+function onLoadLineasDeCarga(solicitud) {
   Empresas.forEach(function (empresa) {
     if (empresa.id === solicitud.requestSupplierId) {
       if (SuplierNames[`${empresa.supplierName}`]) {
@@ -15,11 +15,23 @@ function onLoadLineasDeCarga(solicitud) {
 function onDashboardCancelaciones() {
   var xValues = ["%:Canceladas", "%:Aprobadas", "%:Ingoradas", "%:Pendientes"];
   const UserAlreadyLogged = userLogged && userLogged.userRequests;
+  var porcentajeId = "chart-porcentaje-cancelaciones";
+  var linesId = "chart-lineas-de-carga";
   var generalRequests = 0
   var canceladas = 0;
   var aprobadas = 0;
   var ignoradas = 0;
   var pendientes = 0;
+  var charAttributeId0 = OBJ1Selector[porcentajeId];
+  var charAttributeId1 = OBJ1Selector[linesId];
+
+  if (charAttributeId0 && charAttributeId1) {    
+    charAttributeId0.destroy();
+    charAttributeId1.destroy();
+  }
+
+
+
 
   UserAlreadyLogged.forEach(function (solicitud) {
     generalRequests++;
@@ -48,10 +60,9 @@ function onDashboardCancelaciones() {
   var yValues = [canceladas, aprobadas, ignoradas, pendientes];
   var barColors = ["#b91d47", "#00aba9", "#aaaaaa", "#e8c3b9"];
 
-  createNewChart("chart-porcentaje-cancelaciones", xValues, yValues, barColors);
+  createNewChart(porcentajeId, xValues, yValues, barColors);
 
-  if (SuplierNamesText.length > 0) {    
-    var linesId = "chart-lineas-de-carga";
+  if (SuplierNamesText.length > 0) {
     var lineColores = ["#fece7c", '#cb0200', '#034e91'];
     var xLineValues = [];
     var yLinesValues = [];
@@ -60,8 +71,8 @@ function onDashboardCancelaciones() {
         porcentaje: getPorcentajes(generalSupliersLines, SuplierNames[suplierName]),
         suplierName: suplierName
       };
-      setPush(xLineValues, SuplierAttributes.suplierName); 
-      setPush(yLinesValues, SuplierAttributes.porcentaje); 
+      setPush(xLineValues, SuplierAttributes.suplierName);
+      setPush(yLinesValues, SuplierAttributes.porcentaje);
     });
 
     createNewChart(linesId, xLineValues, yLinesValues, lineColores);
@@ -73,7 +84,7 @@ function getPorcentajes(general, value) {
 }
 
 function createNewChart(id, xValues, yValues, barColors) {
-  new Chart(id, {
+  OBJ1Selector[`${id}`] = new Chart(id, {
     type: "doughnut",
     data: {
       labels: xValues,
@@ -89,4 +100,13 @@ function createNewChart(id, xValues, yValues, barColors) {
       }
     }
   });
+
+  return
+}
+
+function createChartView(id) {
+  const newAttributo = getQuerySelector("#", 'add-' + id, true);
+  newAttributo.innerHTML = '';
+
+  return newAttributo.innerHTML += `<canvas id="${id}" style="width:200px;max-width:400px"></canvas>`
 }

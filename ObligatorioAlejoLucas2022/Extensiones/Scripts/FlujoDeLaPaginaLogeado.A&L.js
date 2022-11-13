@@ -23,6 +23,9 @@ function onLoggedEmpresa() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateTrip = getQuerySelector("#", "main-dashboard-container-empresario", true);
 
+  OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.supplierName;
+
+  setDisplay(OBJ1Selector.SetNameUserLogged, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
   onDashboardLoad();
@@ -31,11 +34,16 @@ function onLoggedEmpresa() {
 function onLoggedImportador() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateRequest = getQuerySelector(".", "dashboard-container-al-sky-blue", true);
-  getQuerySelector("#", "send-shippment-request", true).addEventListener("click", onCrearSolicitudDeCarga);  
+  const CrearUnaSolicitudAttr = getQuerySelector("#", "send-shippment-request", true);
+  CrearUnaSolicitudAttr.addEventListener("click", onCrearSolicitudDeCarga);  
 
+  OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.userAccess;
+
+  setDisplay(OBJ1Selector.SetNameUserLogged, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
   onDashboardLoad();
   onConsultarSolicitudes();
   onDashboardCancelaciones();
+  onCreateCalendarioLlegadas();
 }

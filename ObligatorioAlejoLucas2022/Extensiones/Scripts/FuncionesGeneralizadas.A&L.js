@@ -43,8 +43,8 @@ function createPreUserInformation() {
   );
 
   Viajes.push(
-    new Viaje(getIdAutonumerico(), 'BuqueAk-74', 20, '2022/02/15'),
-    new Viaje(getIdAutonumerico(), 'BuquePurple', 15, '2022/01/10')
+    new Viaje(getIdAutonumerico(), 'BuqueAk-74', 47, '2022-11-15'),
+    new Viaje(getIdAutonumerico() + 2, 'BuquePurple', 69, '2022-12-10')
   );
 
   Empresas.push(
@@ -54,25 +54,43 @@ function createPreUserInformation() {
   );
 
   Solicitudes.push(
-    new Solicitud(getIdAutonumerico(), 2, 'Esto es una desciprcion que no es una prueba', 'Rocha Este', 10, 0142, 0, 1222),
-    new Solicitud(getIdAutonumerico() + 1, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto Sur', 15, 0142, 0, 1232),
-    new Solicitud(getIdAutonumerico() + 2, 0, 'Esto es una desciprcion de prueba', 'Rio Negro', 12, 0142, 2, 8888),
-    new Solicitud(getIdAutonumerico() + 3, 1, 'Esto es una desciprcion y ademas es una prueba', 'Punta Del Este', 20, 0142, 0, 2224),
-    new Solicitud(getIdAutonumerico() + 4, 2, 'Desciprcion para poder hacer pruebas de soli', 'Puerto loco', 30, 0241, 1, 2422),
-    new Solicitud(getIdAutonumerico() + 5, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Casa Pueblo', 8, 0241, 1, 1245),
-    new Solicitud(getIdAutonumerico() + 6, 2, 'Desciprcion para poder hacer pruebas de solicitudes', 'Minas', 22, 0241, 1, 1283),
-    new Solicitud(getIdAutonumerico() + 7, 1, 'Una desciprcion para poder hacer pruebas.', 'Casa Pueblo', 14, 0241, 1, 1274),
-    new Solicitud(getIdAutonumerico() + 8, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 18, 0241, 1, 3844),
-    new Solicitud(getIdAutonumerico() + 9, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Punta Del Este', 10, 0241, 1, 8383),
-    new Solicitud(getIdAutonumerico() + 10, 0, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 12, 0341, 0, 8383),
-    new Solicitud(getIdAutonumerico() + 11, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 7, 0341, 2, 8383),
-    new Solicitud(getIdAutonumerico() + 12, 1, 'Esto es la desciprcion de pruebas numero me olvide.', 'Salto Sur', 30, 0341, 1, 8383),
-    new Solicitud(getIdAutonumerico() + 13, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Rocha Este', 25, 0341, 3, 8383),
+    new Solicitud(getIdAutonumerico(), 2, 'Esto es una desciprcion que no es una prueba', 'Montevideo', 10, 0142, 0, 1222),
+    new Solicitud(getIdAutonumerico() + 1, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto', 10, 0142, 0, 1232),
+    new Solicitud(getIdAutonumerico() + 4, 2, 'Desciprcion para poder hacer pruebas de soli', 'Montevide', 5, 0241, 1, 2422),
+    new Solicitud(getIdAutonumerico() + 2, 0, 'Esto es una desciprcion de prueba', 'Maldonado', 15, 0142, 2, 8888),
+    new Solicitud(getIdAutonumerico() + 3, 1, 'Esto es una desciprcion y ademas es una prueba', 'Rocha', 8, 0142, 0, 2224),
+    new Solicitud(getIdAutonumerico() + 6, 2, 'Desciprcion para poder hacer pruebas de solicitudes', 'Salto', 4, 0241, 1, 1283),
+    new Solicitud(getIdAutonumerico() + 5, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Maldonado', 3, 0241, 0, 1245),
+    new Solicitud(getIdAutonumerico() + 7, 1, 'Una desciprcion para poder hacer pruebas.', 'Rocha', 2, 0241, 2, 1274),
+    new Solicitud(getIdAutonumerico() + 9, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Maldonado', 5, 0241, 3, 8383),
+    new Solicitud(getIdAutonumerico() + 8, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 6, 0241, 1, 3844),
+    new Solicitud(getIdAutonumerico() + 10, 0, 'Esto es la desciprcion de pruebas numero me olvide.', 'Salto', 12, 0341, 0, 8383),
+    new Solicitud(getIdAutonumerico() + 11, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Rocha', 7, 0341, 2, 8383),
+    new Solicitud(getIdAutonumerico() + 12, 1, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 2, 0341, 1, 8383),
+    new Solicitud(getIdAutonumerico() + 13, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 9, 0341, 3, 8383),
   );
 
   addSolicitudesToImportadores();
+  addSolicitudesToViajes();
 
   Empresas[0].supplierTrips = Viajes;
+}
+
+function addSolicitudesToViajes() {
+
+  Solicitudes.forEach(function (solicitud, index) {
+    if (solicitud.requestStatus === 1) {
+      let paresNumber = index % 2;      
+      if (paresNumber === 0) {       
+        setPush(Viajes[paresNumber].shipRequest, solicitud);
+      } else {        
+        setPush(Viajes[paresNumber].shipRequest, solicitud)
+      }
+      solicitud.requestTravelNumber = Viajes[paresNumber].id;
+      Viajes[paresNumber].shipQuantityAvailable -= solicitud.requestQuantity;
+    }
+  });
+
 }
 
 function addSolicitudesToImportadores() {
@@ -105,7 +123,7 @@ function addSolicitudesToImportadores() {
 function findUser(username, pass, arr) {
   let user = null;
 
-  arr.forEach(function (admin) {    
+  arr.forEach(function (admin) {
     if (admin.userAccess === username && admin.userPassword === pass) {
       user = admin;
     }
@@ -231,32 +249,37 @@ function getTypeOfCharge(TypeOfCharge) {
   return typeOfChargeExpressed;
 }
 
+/*All seach logic here*/
 function onSearchRequest() {
-  let requestSearch = getQuerySelector("#", "input-request-search", true).value;
-  let requestSearchMinus = requestSearch.toLowerCase();
-  let palabraCoincidente = "";
+  const InputSearch = OBJ1Selector.InputRequestSearch.value;
+  let generalSearchText = InputSearch.toLowerCase();
+  let largeToSearch = generalSearchText.length;
+  let isDescription = false;
 
-  Solicitudes.forEach(function (solicitud) {
-    let requestDescriptionMinus = solicitud.requestDescription.toLowerCase();
-    let requestIdSearched = solicitud.id;
+  if (largeToSearch > 1 && InputSearch !== '') {
+    OBJ1Selector.requestTable.innerHTML = '';
+    userLogged.userRequests.forEach(function (solicitud) {
+      let description = solicitud.requestDescription;
 
-    console.log(requestDescriptionMinus.indexOf(requestSearchMinus));
+      if (solicitud.requestStatus === 0) {
+        let index = 0;
+        while (index < description.length && !isDescription) {
+          let sliceEnd = index + largeToSearch;
+          let slicePartDescription = description.slice(index, sliceEnd);
+          if (slicePartDescription.toLowerCase() === generalSearchText) {
+            createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, getSupplierName(solicitud), solicitud.requestDescription, solicitud.requestType, solicitud.id);
+            isDescription = true;
+          }
+          index++
+        }
+      }
+    });
 
-    if (requestDescriptionMinus.indexOf(requestSearchMinus) > -1) {
-      onConsultarSolicitudes();
-      /* getLineOfChargeName(solicitud); */
+    if (!isDescription) {
+      alert('No se han encontrado resultados a su busqueda')
     }
-  });
+  } else {
+    onConsultarSolicitudes();
+  }
 }
 
-/* function getLineOfChargeName(solicitud) {
-  Empresas.forEach(function (empresa) {
-    if (solicitud.requestSupplierId == empresa.id) {
-      return (supplierName = empresa.supplierName);
-    }
-    return supplierName;
-  });
-} */
-
-
-/*Testing*/
