@@ -89,21 +89,25 @@ function buildDifferntTables(AttrId, attr) {
 
 //Dependiendo de la view esta funcion arma la lista de solicitudes para un viaje
 function showTableForCargas(shipRequests, viaje, attr) {
-    const TitleCarga = CargaPeligrosaView ? OBJ1Selector.TitleCargaPeligrosa : OBJ1Selector.TitleManifiestoDeCarga;
+    const TitleCarga = currentView === CargaPeligrosaView ? OBJ1Selector.TitleCargaPeligrosa : OBJ1Selector.TitleManifiestoDeCarga;    
     let noExist = false;
     //Se recorren las solicitudes del viaje seleccionado
-    shipRequests.forEach(function (solicitud) {
+    shipRequests.forEach(function (solicitud, index) {
         if (currentView === CargaPeligrosaView) {
             if (solicitud.requestType === 2) {
                 noExist = true;
-                TitleCarga.innerHTML += ` ${viaje.shipName}`;
+                if (index === 0) {
+                    TitleCarga.innerHTML += ` ${viaje.shipName}`;                
+                }
                 setDisplay(OBJ1Selector.ListaDeViajesAttr, false);
                 setDisplay(OBJ1Selector.ListaCargaPeligrosa, true);
                 attr.innerHTML += tableRequestinnerHTML(attr, solicitud, 'dng');
             }
         } else {
             noExist = true;
-            TitleCarga.innerHTML += ` ${viaje.shipName}`;
+            if (index === 0) {
+                TitleCarga.innerHTML += ` ${viaje.shipName}`;                
+            }
             setDisplay(OBJ1Selector.ListaDeViajesManifestAttr, false);
             setDisplay(OBJ1Selector.ListaManifiestoDeCarga, true);            
             attr.innerHTML += tableRequestinnerHTML(attr, solicitud, 'dng');

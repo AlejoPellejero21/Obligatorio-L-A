@@ -73,9 +73,13 @@ function createPreUserInformation() {
   addSolicitudesToImportadores();
   addSolicitudesToViajes();
 
+  //Se le asignan a la empresa viajes
   Empresas[0].supplierTrips = Viajes;
   Viajes[0].shipSupplierId = Empresas[0].id;
   Viajes[1].shipSupplierId = Empresas[0].id;
+
+  //Se desabilita un usuario
+  Importadores[0].userEnabled = false;
 }
 
 function addSolicitudesToViajes() {
