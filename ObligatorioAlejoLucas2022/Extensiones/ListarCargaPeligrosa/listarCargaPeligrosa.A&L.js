@@ -1,4 +1,4 @@
-function onCreateCargaPeligrosa() {
+function onCreateCargaDeViajes() {
     OBJ1Selector['TitleCargaPeligrosa'] = getQuerySelector('#', 'title-carga-peligrosa', true);
     OBJ1Selector['TitleManifiestoDeCarga'] = getQuerySelector('#', 'title-manifiesto-de-carga', true);
     const TablaViajesCargaAttr = getQuerySelector('.', 'tabla-de-viajes-carga-p', false);
@@ -46,22 +46,6 @@ function onDangerViajeSelected() {
     ButtonGoBack.addEventListener('click', onGoBackClick);
 }
 
-//Esta funcion es para la vista ManifiestoDeCargaView
-function onViajeSelected() {
-    OBJ1Selector['ListaDeViajesManifestAttr'] = getQuerySelector("#", "lista-de-viajes-actuales-manifest", true);
-    OBJ1Selector['ListaManifiestoDeCarga'] = getQuerySelector('#', 'container-table-manifiesto-de-carga', true);    
-    const AttrId = parseInt(this.getAttribute("data-id"));
-    const ManifiestoDeCarga = getQuerySelector('#', 'tabla-manifiesto-de-carga', true);
-    const ButtonGoBack = getQuerySelector('#', 'on-click-back-to-manifiesto', true);
-    ManifiestoDeCarga.innerHTML = '';
-
-    //Esto se hace ya que hay dos view que muestran tabla de viajes
-    //AttrId es igual al viaje que se clickeo
-    buildDifferntTables(AttrId, ManifiestoDeCarga);
-
-    ButtonGoBack.addEventListener('click', onGoBackClick);
-}
-
 //Esta funcion te envia a la view anterior y setea el titulo
 function onGoBackClick() {
     if (currentView === CargaPeligrosaView) {
@@ -75,7 +59,6 @@ function onGoBackClick() {
         
     }
 }
-
 
 function createTableViajes(attr, viaje, index) {
     if (index === 0) {
@@ -99,13 +82,13 @@ function buildDifferntTables(AttrId, attr) {
     Viajes.forEach(function (viaje) {
         let shipRequests = viaje.shipRequest;
         if (viaje.id === AttrId && shipRequests.length > 0) {
-            showTableForCargaPeligrosa(shipRequests, viaje, attr);
+            showTableForCargas(shipRequests, viaje, attr);
         }
     });
 }
 
 //Dependiendo de la view esta funcion arma la lista de solicitudes para un viaje
-function showTableForCargaPeligrosa(shipRequests, viaje, attr) {
+function showTableForCargas(shipRequests, viaje, attr) {
     const TitleCarga = CargaPeligrosaView ? OBJ1Selector.TitleCargaPeligrosa : OBJ1Selector.TitleManifiestoDeCarga;
     let noExist = false;
     //Se recorren las solicitudes del viaje seleccionado

@@ -13,7 +13,7 @@ function onCrearUnViajeClick() {
   OBJ1Selector.ShowThisView.forEach(function (view) {
     if (viewToShowButtonClick === view.attributes[0].value) {
       currentView = viewToShowButtonClick;      
-      onCreateCargaPeligrosa();
+      onCreateCargaDeViajes();
       setDisplay(view, true);
     } else {
       setDisplay(view, false);
@@ -30,8 +30,7 @@ function onLoggedEmpresa() {
   setDisplay(OBJ1Selector.SetNameUserLogged, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
-  onDashboardLoad();
-  /* onCreateCargaPeligrosa(); */
+  onDashboardLoad(); 
 }
 
 function onLoggedImportador() {
