@@ -31,6 +31,7 @@ function onLoggedEmpresa() {
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
   onDashboardLoad(); 
+  onHabilitarUsuarios();
 }
 
 function onLoggedImportador() {
