@@ -5,21 +5,10 @@ function createRequestTable() {
 
   Solicitudes.forEach(function (solicitud) {
     let rquestStatus = solicitud.requestStatus;
-    let statusText = rquestStatus === 0 && "Pendiente";
     let id = solicitud.id;
-    let requestTypeText = getRequestText();
 
-    if (id && rquestStatus === 0) {
-      RequestPendingTable.innerHTML += `
-                <tr data-id='${id}'>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al button-asignar-solicitud" data-id='${id}'>+</td>
-                    <td class="column-manifest-td">${solicitud.requestOrigin}</td>
-                    <td class="column-manifest-td">${solicitud.requestQuantity}</td>
-                    <td class="column-manifest-td">${statusText}</td>
-                    <td class="column-manifest-td">${solicitud.requestDescription}</td>
-                    <td class="column-manifest-td">${requestTypeText}</td>
-                </tr>
-            `;
+    if (id && rquestStatus === 0) {      
+      RequestPendingTable.innerHTML += tableRequestinnerHTML(RequestPendingTable, solicitud, 'add');
     }
   });
 
@@ -27,6 +16,48 @@ function createRequestTable() {
   BtnsAsignarSolicitud.forEach(function (btn) {
     btn.addEventListener("click", onAsignarSolicitudClick);
   });
+}
+
+function tableRequestinnerHTML(attr, solicitud, type) {    
+  let newTableText = '';
+  newTableText += `<tr data-id='${solicitud.id}'>`;
+  
+  if (type === 'add') {    
+    newTableText += `                    
+      <td class="column-manifest-td unique-column-left-al add-plus-al button-asignar-solicitud" data-id='${solicitud.id}'>+</td>      
+`;
+  }
+  
+  newTableText += `
+      <td class="column-manifest-td">${solicitud.requestOrigin}</td>
+      <td class="column-manifest-td">${solicitud.requestQuantity}</td>
+      <td class="column-manifest-td">${getStatusText(solicitud.requestStatus)}</td>
+      <td class="column-manifest-td">${solicitud.requestDescription}</td>
+      <td class="column-manifest-td">${getRequestText(solicitud.requestType)}</td>
+  </tr>`
+
+  return newTableText;
+}
+
+function getStatusText(rquestStatus) {
+  let statusText = ''
+
+  switch (rquestStatus) {
+    case 0:
+      statusText += 'Pendiente'
+      break;
+    case 1:
+      statusText += 'Aprobada'
+      break;
+    case 2:
+      statusText += 'Cancelada'
+      break;
+    default:
+      statusText += 'Ignorada'
+      break;
+  }
+
+  return statusText;
 }
 
 function onAsignarSolicitudClick() {

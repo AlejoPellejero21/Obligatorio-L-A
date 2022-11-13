@@ -16,8 +16,7 @@ function onCrearSolicitudDeCarga() {
   if (isEmpty(QuantityOfContainers) || isEmpty(ShippmentDescription) || isNaN(parseInt(QuantityOfContainers)) || TypeOfCharge === 'X' || ArrivePort === 'X' || LineOfChargeRequested === 'X') {
     alert('Complete los campos correctamente! por favor');
   } else {
-    if (userLogged.userEnabled) {
-      /* getTypeOfCharge(TypeOfCharge); */
+    if (userLogged.userEnabled) {      
       id = getIdAutonumerico();
       //agrega la informacion de la solicitud a una variable    
       requestCreated = new Solicitud(id, parseInt(TypeOfCharge), ShippmentDescription, ArrivePort, parseInt(QuantityOfContainers), parseInt(LineOfChargeRequested), 0, CurrentUser.id);
