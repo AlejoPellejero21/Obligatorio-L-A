@@ -79,7 +79,7 @@ function createPreUserInformation() {
   Viajes[1].shipSupplierId = Empresas[0].id;
 
   //Se desabilita un usuario
-  Importadores[3].userEnabled = false;
+  Importadores[2].userEnabled = false;
 }
 
 function addSolicitudesToViajes() {
