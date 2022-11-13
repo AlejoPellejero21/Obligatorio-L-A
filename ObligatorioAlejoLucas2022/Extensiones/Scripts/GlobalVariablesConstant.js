@@ -2,6 +2,8 @@ const AccountEmpresario = 'Account - Empresario';
 const AccountImportador = 'Account - Importador';
 const WelcomeEmpresario = 'Bienvenido Empresario:';
 const WelcomeImportador = 'Bienvenido Importador:';
+const CargaPeligrosaView = 'CargaPeligrosaView';
+const ManifiestoDeCargaView = 'ManifiestoDeCargaView';
 const CrearUnViaje = 'CREAR UN VIAJE';
 const CrarUnaSolicitud = 'CREAR UNA SOLICITUD';
 const ErrorCamposCrearViaje = 'Por favor, complete todos los campos!';
@@ -27,6 +29,7 @@ const AllMonths = [
     { name: 'Noviembre', quantity: 30, start: 1 },
     { name: 'Diciembre', quantity: 31, start: 3 }
 ]
+let currentView = '';
 let requestToAsign;
 let OBJ1Selector = {};
 let generalSupliersLines = 0;
