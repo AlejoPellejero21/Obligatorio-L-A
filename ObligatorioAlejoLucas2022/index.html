@@ -29,6 +29,7 @@
   <script type="text/javascript" src="./Extensiones/CancelarSolucitudDeCarga/CancelarSolucitudDeCarga.js"></script>
   <script type="text/javascript" src="./Extensiones/CalendarioDeProximaLlegadas/calendarioDeProximaLlegadas.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/ListarCargaPeligrosa/listarCargaPeligrosa.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/ManifiestoDeCarga/manifiestoDeCarga.A&L.js"></script>
 
   <title>{A&L -by- L&A}</title>
 </head>
@@ -265,48 +266,34 @@
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="div-title-table-al">
-              <h2 class="table-title">Manifiesto de Carga:</h2>
+              <h2 id="title-manifiesto-de-carga" class="table-title">Manifiesto de Carga:</h2>
             </div>
-            <div class="second-manifest-container">
+                        
+            <div id="lista-de-viajes-actuales-manifest" class="second-manifest-container">
               <table class="body-table-manifest">
-                <thead class="thead-manifest">
+                <thead class="thead-manifest">                  
+                  <th class="column-manifest">Nombre</th>
+                  <th class="column-manifest">Cantidad Max.</th>
+                  <th class="column-manifest">Empresa</th>
+                  <th class="column-manifest">Fecha</th>                  
+                </thead>
+                <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
+              </table>
+            </div>
+
+            <div id="container-table-manifiesto-de-carga" class="second-manifest-container container-table-carga-peligrosa">
+              <div id="back-to-viajes" class="container-button-volver-viajes">
+                <span id="on-click-back-to-manifiesto" class="button-volver-viajes">--VOLVER--</span>
+              </div>
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">                  
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Status</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                </tbody>
+                <tbody id="tabla-manifiesto-de-carga" class="thead-manifest tbody-manifest"></tbody>
               </table>
             </div>
 
@@ -405,7 +392,7 @@
                   <th class="column-manifest">Empresa</th>
                   <th class="column-manifest">Fecha</th>                  
                 </thead>
-                <tbody id="tabla-de-viajes-carga-p" class="thead-manifest tbody-manifest"></tbody>
+                <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
               </table>
             </div>
             <div id="container-table-carga-peligrosa" class="second-manifest-container container-table-carga-peligrosa">

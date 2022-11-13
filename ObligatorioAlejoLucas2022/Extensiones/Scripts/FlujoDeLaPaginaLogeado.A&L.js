@@ -12,6 +12,8 @@ function onCrearUnViajeClick() {
 
   OBJ1Selector.ShowThisView.forEach(function (view) {
     if (viewToShowButtonClick === view.attributes[0].value) {
+      currentView = viewToShowButtonClick;      
+      onCreateCargaDeViajes();
       setDisplay(view, true);
     } else {
       setDisplay(view, false);
@@ -28,15 +30,14 @@ function onLoggedEmpresa() {
   setDisplay(OBJ1Selector.SetNameUserLogged, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
-  onDashboardLoad();
-  onCreateCargaPeligrosa();
+  onDashboardLoad(); 
 }
 
 function onLoggedImportador() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateRequest = getQuerySelector(".", "dashboard-container-al-sky-blue", true);
   const CrearUnaSolicitudAttr = getQuerySelector("#", "send-shippment-request", true);
-  CrearUnaSolicitudAttr.addEventListener("click", onCrearSolicitudDeCarga);  
+  CrearUnaSolicitudAttr.addEventListener("click", onCrearSolicitudDeCarga);
 
   OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.userAccess;
 
