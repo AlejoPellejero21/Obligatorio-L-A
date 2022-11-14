@@ -31,6 +31,7 @@
   <script type="text/javascript" src="./Extensiones/ListarCargaPeligrosa/listarCargaPeligrosa.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/ManifiestoDeCarga/manifiestoDeCarga.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/HabilitarUsuarios/habilitarUsuarios.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/LogOut/logOut.A&L.js"></script>
 
   <title>{A&L -by- L&A}</title>
 </head>
@@ -42,6 +43,9 @@
       <div class="main-header-container-al">
         <div class="container-header-left">
           <h1 class="header-logo">A&L</h1>
+          <div id="button-header-loggout" class="button-header-loggout">
+            <span id="button-loggout-now" class="button-loggout-now">Log out</span>
+          </div>
           <h2 class="title-user">
             <span id="head-welcome-user" class="header-welcoome-user"></span>
             <span id="head-user-name" class="header-user-name-al"></span>
@@ -184,20 +188,20 @@
                   <h2 class="table-title">Datos del viaje:</h2>
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-nombre-del-buque">Nombre del buque:</label>
-                    <input type="text" id="input-nombre-del-buque" />
+                    <input class="main-generals-inputs" type="text" id="input-nombre-del-buque" placeholder="Ingrese un nombre:"/>
 
                     <div class="container-origin-big-al display-form-labels-al">
                       <label class="label-big-al" for="input-cantidad-max-contenedores">Cantidad max de
                         contenedores:</label>
-                      <input type="text" id="input-cantidad-max-contenedores" maxlength="3" />
+                      <input class="main-generals-inputs" type="text" id="input-cantidad-max-contenedores" maxlength="3" placeholder="Ingrese una cantidad:"/>
                     </div>
 
                     <label class="label-big-al" for="select-line-de-carga">Empresa - Linea de carga:</label>
-                    <select name="type-of-shippment" id="select-line-de-carga">
+                    <select class="main-generals-inputs seleccione-una-empresa" name="type-of-shippment" id="select-line-de-carga">
                       <option value="0">Oasis</option>
                       <option value="1">Acuarius</option>
                       <option value="2">Flatland</option>
-                      <option value="X" selected>-Seleccione Empresa-</option>
+                      <option value="X" selected>--Seleccione una Empresa--</option>
                     </select>
 
                   </div>
@@ -206,7 +210,7 @@
 
                 <div class="container-description-big-a display-form-labels-al container-empresario-view">
                   <label class="label-big-al" for="input-fecha-de-llegada">Fecha de llegada:</label>
-                  <input id="input-fecha-de-llegada" type="date">
+                  <input class="main-generals-inputs" id="input-fecha-de-llegada" type="date">
                 </div>
               </form>
             </div>

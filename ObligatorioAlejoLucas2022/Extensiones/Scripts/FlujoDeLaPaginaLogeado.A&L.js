@@ -12,7 +12,7 @@ function onCrearUnViajeClick() {
 
   OBJ1Selector.ShowThisView.forEach(function (view) {
     if (viewToShowButtonClick === view.attributes[0].value) {
-      currentView = viewToShowButtonClick;      
+      currentView = viewToShowButtonClick;
       onCreateCargaDeViajes();
       setDisplay(view, true);
     } else {
@@ -24,13 +24,15 @@ function onCrearUnViajeClick() {
 function onLoggedEmpresa() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateTrip = getQuerySelector("#", "main-dashboard-container-empresario", true);
+  OBJ1Selector['LoggOutPage'] = getQuerySelector("#", "button-header-loggout", true);
 
   OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.supplierName;
 
   setDisplay(OBJ1Selector.SetNameUserLogged, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
-  onDashboardLoad(); 
+  setDisplay(OBJ1Selector.LoggOutPage, true);
+  onDashboardLoad();
   onHabilitarUsuarios();
 }
 
@@ -45,6 +47,7 @@ function onLoggedImportador() {
   setDisplay(OBJ1Selector.SetNameUserLogged, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
+  setDisplay(OBJ1Selector.LoggOutPage, true);
   onDashboardLoad();
   onConsultarSolicitudes();
   onDashboardCancelaciones();
