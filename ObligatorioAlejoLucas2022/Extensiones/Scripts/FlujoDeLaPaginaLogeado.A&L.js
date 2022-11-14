@@ -46,9 +46,9 @@ function onLoggedImportador() {
   OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.userAccess;
 
   setDisplay(OBJ1Selector.SetNameUserLogged, true);
+  setDisplay(OBJ1Selector.LoggOutPage, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
-  setDisplay(OBJ1Selector.LoggOutPage, true);
   onDashboardLoad();
   onConsultarSolicitudes();
   onDashboardCancelaciones();
