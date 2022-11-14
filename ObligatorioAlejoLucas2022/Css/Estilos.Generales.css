@@ -705,8 +705,34 @@ body {
     font-size: 17px;
     border-radius: 8px;
     border: none;
+    width: 100%;
+    outline: none;
 }
 
 .seleccione-una-empresa{
     text-align: center;
+}
+
+.container-left-big-form,
+.only-this-importador{
+    width: 50%;
+}
+
+.only-this-importador{
+    padding-left: 15px;
+}
+
+.only-this-importador #input-shippment-description{
+    height: 300px;
+    width: 100%;
+    font-size: 28px;
+    padding-top: 5px;
+}
+
+#input-request-search-button{
+    width: 50%;
+}
+
+.select-pointer{
+    cursor: pointer;
 }
