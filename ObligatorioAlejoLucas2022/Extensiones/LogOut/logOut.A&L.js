@@ -21,6 +21,6 @@ function onLogOutClick() {
         inputPassword.value = '';
         headUserName.innerHTML = '';
         userLogged = null;
-        userLoggedId = 0;
+        userLoggedId = 0;        
     }
 }

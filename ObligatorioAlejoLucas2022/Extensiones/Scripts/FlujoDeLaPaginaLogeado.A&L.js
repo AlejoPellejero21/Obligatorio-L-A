@@ -24,7 +24,8 @@ function onCrearUnViajeClick() {
 function onLoggedEmpresa() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateTrip = getQuerySelector("#", "main-dashboard-container-empresario", true);
-  OBJ1Selector['LoggOutPage'] = getQuerySelector("#", "button-header-loggout", true);  
+  const mainViewEmpresa = getQuerySelector("#", "main-view-empresa", true);
+  OBJ1Selector['LoggOutPage'] = getQuerySelector("#", "button-header-loggout", true);
 
   OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.supplierName;
 
@@ -32,6 +33,7 @@ function onLoggedEmpresa() {
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
   setDisplay(OBJ1Selector.LoggOutPage, true);
+  setDisplay(mainViewEmpresa, true);
   onDashboardLoad();
   onHabilitarUsuarios();
 }
@@ -39,9 +41,10 @@ function onLoggedEmpresa() {
 function onLoggedImportador() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateRequest = getQuerySelector(".", "dashboard-container-al-sky-blue", true);
-  const CrearUnaSolicitudAttr = getQuerySelector("#", "send-shippment-request", true);
+  const CrearUnaSolicitudAttr = getQuerySelector("#", "send-shippment-request", true);  
+  const mainViewImportador = getQuerySelector("#", "main-view-importador", true);
   OBJ1Selector['LoggOutPage'] = getQuerySelector("#", "button-header-loggout", true);
-  CrearUnaSolicitudAttr.addEventListener("click", onCrearSolicitudDeCarga);  
+  CrearUnaSolicitudAttr.addEventListener("click", onCrearSolicitudDeCarga);
 
   OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.userAccess;
 
@@ -49,6 +52,7 @@ function onLoggedImportador() {
   setDisplay(OBJ1Selector.LoggOutPage, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
+  setDisplay(mainViewImportador, true);  
   onDashboardLoad();
   onConsultarSolicitudes();
   onDashboardCancelaciones();
