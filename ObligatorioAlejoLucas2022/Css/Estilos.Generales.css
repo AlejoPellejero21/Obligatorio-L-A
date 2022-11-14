@@ -291,6 +291,29 @@ sky-blue:#9ddeff
     font-weight: 400;
 }
 
+.button-loggout-now {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 1005;
+    background-color: #ff2b2b;
+    margin-left: 53px;
+    font-weight: bold;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.button-header-loggout {
+    display: none;
+    width: 53;
+    height: 44px;
+    position: absolute;
+    left: 10px;
+    transition: width 1s;
+    z-index: 9999;
+    background-color: #ffffff3d;
+    border-radius: 0px 30px 30px 0px;
+}
+
 .header-logo {
     transform: rotate(180deg);
     margin: 0px;
@@ -301,6 +324,33 @@ sky-blue:#9ddeff
     text-align: center;
     margin-right: 10px;
     cursor: none;
+    z-index: 9980;
+}
+
+.button-header-loggout:hover {
+    width: 250px;
+}
+
+@keyframes newLoggout {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+        display: flex;    
+    }
+}
+
+.button-header-loggout:hover .button-loggout-now {
+    animation-name: newLoggout;
+    animation-duration: 1.7s;
+    display: flex;    
+    cursor: pointer;
+    color: #ffffff;
 }
 
 /*Extra css Third Class*/
@@ -636,12 +686,53 @@ body {
 /*Lista de viajes*/
 
 .fila-show-carga-peligrosa {
-    cursor: pointer;    
+    cursor: pointer;
     height: 30px;
-  transition: height 0.8s;
+    transition: height 0.8s;
 }
 
 .fila-show-carga-peligrosa:hover {
     background-color: #9d2d8d;
     height: 45px;
+}
+
+/*Generals Inputs*/
+
+.main-generals-inputs{
+    height: 34px;
+    margin-left: 5px;
+    padding-left: 5px;
+    font-size: 17px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+.seleccione-una-empresa{
+    text-align: center;
+}
+
+.container-left-big-form,
+.only-this-importador{
+    width: 50%;
+}
+
+.only-this-importador{
+    padding-left: 15px;
+}
+
+.only-this-importador #input-shippment-description{
+    height: 300px;
+    width: 100%;
+    font-size: 28px;
+    padding-top: 5px;
+}
+
+#input-request-search-button{
+    width: 50%;
+}
+
+.select-pointer{
+    cursor: pointer;
 }

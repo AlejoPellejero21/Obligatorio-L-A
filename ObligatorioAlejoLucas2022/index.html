@@ -31,6 +31,7 @@
   <script type="text/javascript" src="./Extensiones/ListarCargaPeligrosa/listarCargaPeligrosa.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/ManifiestoDeCarga/manifiestoDeCarga.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/HabilitarUsuarios/habilitarUsuarios.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/LogOut/logOut.A&L.js"></script>
 
   <title>{A&L -by- L&A}</title>
 </head>
@@ -42,6 +43,9 @@
       <div class="main-header-container-al">
         <div class="container-header-left">
           <h1 class="header-logo">A&L</h1>
+          <div id="button-header-loggout" class="button-header-loggout">
+            <span id="button-loggout-now" class="button-loggout-now">Log out</span>
+          </div>
           <h2 class="title-user">
             <span id="head-welcome-user" class="header-welcoome-user"></span>
             <span id="head-user-name" class="header-user-name-al"></span>
@@ -83,7 +87,7 @@
               placeholder="Username:" />
             <input class="general-input change-color-0" type="password" name="Password" id="input-password"
               placeholder="Password:" />
-            <select class="select-account-login" name="Select" id="select-type-login">
+            <select class="select-account-login select-pointer" name="Select" id="select-type-login">
               <option value="1" selected>Account - Empresario</option>
               <option value="2">Account - Importador</option>
             </select>
@@ -110,7 +114,7 @@
               placeholder="Password:" />
             <!--Div seleccionar foto de perfil-->
             <div>
-              <select class="register-blue login-title" id="profile-icon-selector">
+              <select class="register-blue login-title select-pointer" id="profile-icon-selector">
                 <option value="default-profile-icon">Seleccione una foto de perfil</option>
                 <option value="first-profile-icon">Foto de perfil 1</option>
                 <option value="second-profile-icon">Foto de perfil 2</o ption>
@@ -184,20 +188,20 @@
                   <h2 class="table-title">Datos del viaje:</h2>
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-nombre-del-buque">Nombre del buque:</label>
-                    <input type="text" id="input-nombre-del-buque" />
+                    <input class="main-generals-inputs" type="text" id="input-nombre-del-buque" placeholder="Ingrese un nombre:"/>
 
                     <div class="container-origin-big-al display-form-labels-al">
                       <label class="label-big-al" for="input-cantidad-max-contenedores">Cantidad max de
                         contenedores:</label>
-                      <input type="text" id="input-cantidad-max-contenedores" maxlength="3" />
+                      <input class="main-generals-inputs" type="text" id="input-cantidad-max-contenedores" maxlength="3" placeholder="Ingrese una cantidad:"/>
                     </div>
 
                     <label class="label-big-al" for="select-line-de-carga">Empresa - Linea de carga:</label>
-                    <select name="type-of-shippment" id="select-line-de-carga">
+                    <select class="main-generals-inputs seleccione-una-empresa" name="type-of-shippment" id="select-line-de-carga">
                       <option value="0">Oasis</option>
                       <option value="1">Acuarius</option>
                       <option value="2">Flatland</option>
-                      <option value="X" selected>-Seleccione Empresa-</option>
+                      <option value="X" selected>--Seleccione una Empresa--</option>
                     </select>
 
                   </div>
@@ -206,7 +210,7 @@
 
                 <div class="container-description-big-a display-form-labels-al container-empresario-view">
                   <label class="label-big-al" for="input-fecha-de-llegada">Fecha de llegada:</label>
-                  <input id="input-fecha-de-llegada" type="date">
+                  <input class="main-generals-inputs" id="input-fecha-de-llegada" type="date">
                 </div>
               </form>
             </div>
@@ -417,8 +421,8 @@
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="select-type-shippment-importador">Seleccione el tipo de
                       carga:</label>
-                    <select name="type-of-shippment" id="select-type-shippment-importador">
-                      <option value="X" selected>-Tipos de carga-</option>
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="type-of-shippment" id="select-type-shippment-importador">
+                      <option value="X" selected>--Tipos de carga--</option>
                       <option value="0">CARGA_GENERAL</option>
                       <option value="1">REFRIGERADO</option>
                       <option value="2">CARGA_PELIGROSA</option>
@@ -427,13 +431,13 @@
 
                     <label class="label-big-al" for="input-quantity-containers-importador">Cantidad de
                       contenedores:</label>
-                    <input type="text" id="input-quantity-containers-importador" />
+                    <input class="main-generals-inputs" type="text" id="input-quantity-containers-importador" maxlength="3" placeholder="Ingrese una cantidad:"/>
                   </div>
                   <!--Selector de puerto de origen-->
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese el puerto de origen:</label>
-                    <select name="port-of-origin" id="arrive-point">
-                      <option value="X" selected>-Puerto de origen-</option>
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="port-of-origin" id="arrive-point">
+                      <option value="X" selected>--Puerto de origen--</option>
                       <option value="Beijin">Beijin</option>
                       <option value="Rio de Jainero">Rio de Jainero</option>
                       <option value="Ciudad del Cabo">Ciudad del Cabo</option>
@@ -443,15 +447,15 @@
                   <!--Seleccionar empresa-->
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese linea de carga:</label>
-                    <select name="line-of-charge" id="select-line-of-charge">
-                      <option value="X" selected>-Lineas de carga disponibles-</option>
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="line-of-charge" id="select-line-of-charge">
+                      <option value="X" selected>--Lineas de carga disponibles--</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="container-description-big-a display-form-labels-al">
+                <div class="container-description-big-a display-form-labels-al only-this-importador">
                   <label class="label-big-al" for="input-shippment-description">Descripción de la mercadería:</label>
-                  <textarea name="shippment-description" id="input-shippment-description"></textarea>
+                  <textarea class="main-generals-inputs" name="shippment-description" id="input-shippment-description"></textarea>
                 </div>
               </form>
             </div>
@@ -482,7 +486,7 @@
               <h2 class="table-title">Solicitudes Pendientes:</h2>
             </div>
             <div class="div-title-table-al">
-              <input type="text" id="input-request-search-button">              
+              <input class="main-generals-inputs" type="text" id="input-request-search-button" placeholder="Buscar por descripción:">              
             </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
