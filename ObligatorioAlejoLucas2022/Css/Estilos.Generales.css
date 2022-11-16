@@ -12,7 +12,7 @@ sky-blue:#9ddeff
 /*INICIO Login Page INICIO*/
 
 .father-login-container-al {
-    width: 100%;    
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -44,7 +44,7 @@ sky-blue:#9ddeff
 .login-container-al {
     width: 100%;
     display: flex;
-    
+
     background-color: #ff9df3;
     justify-content: flex-end;
 }
@@ -181,8 +181,8 @@ sky-blue:#9ddeff
     display: flex;
     width: 25%;
     border-radius: 0 30px 0 0;
-    background-color: #ffffff45;    
-    height: 100vh;    
+    background-color: #ffffff45;
+    height: 100vh;
     flex-direction: column;
 }
 
@@ -190,7 +190,7 @@ sky-blue:#9ddeff
 .dashboard-container-al {
     width: 100%;
     display: flex;
-    
+
     background-color: #ff9df3;
 }
 
@@ -272,6 +272,7 @@ sky-blue:#9ddeff
     color: #ffffffde;
 }
 
+
 .second-manifest-container {
     display: flex;
     justify-content: flex-end;
@@ -290,6 +291,29 @@ sky-blue:#9ddeff
     font-weight: 400;
 }
 
+.button-loggout-now {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 1005;
+    background-color: #ff2b2b;
+    margin-left: 53px;
+    font-weight: bold;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.button-header-loggout {
+    display: none;
+    width: 53;
+    height: 44px;
+    position: absolute;
+    left: 10px;
+    transition: width 1s;
+    z-index: 9999;
+    background-color: #ffffff3d;
+    border-radius: 0px 30px 30px 0px;
+}
+
 .header-logo {
     transform: rotate(180deg);
     margin: 0px;
@@ -300,6 +324,33 @@ sky-blue:#9ddeff
     text-align: center;
     margin-right: 10px;
     cursor: none;
+    z-index: 9980;
+}
+
+.button-header-loggout:hover {
+    width: 250px;
+}
+
+@keyframes newLoggout {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+        display: flex;    
+    }
+}
+
+.button-header-loggout:hover .button-loggout-now {
+    animation-name: newLoggout;
+    animation-duration: 1.7s;
+    display: flex;    
+    cursor: pointer;
+    color: #ffffff;
 }
 
 /*Extra css Third Class*/
@@ -364,9 +415,22 @@ sky-blue:#9ddeff
 
 
 .container-grafics {
-    width: 40%;
-    margin: 0 auto;
-    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 15px;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.container-grafics:hover {
+    background-color: #ffffff45;
+}
+
+.container-frafics-align {
+    align-items: flex-start !important;
 }
 
 /*Calendar Styles*/
@@ -416,11 +480,13 @@ body {
     margin: 0;
     padding: 10px 0;
     background-color: #ddd;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .weekdays li {
     display: inline-block;
-    width: 13.6%;
+    width: 100%;
     color: #666;
     text-align: center;
 }
@@ -434,7 +500,7 @@ body {
 .days li {
     list-style-type: none;
     display: inline-block;
-    width: 13.6%;
+    width: 14.2%;
     text-align: center;
     margin-bottom: 5px;
     font-size: 12px;
@@ -452,6 +518,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+
+.container-calendar-grafic {
+    width: 100% !important;
+    margin: 10px 5px !important;
 }
 
 /* Add media queries for smaller screens */
@@ -484,7 +555,7 @@ body {
 }
 
 /*Dashboard pink*/
-.container-empresario-view{
+.container-empresario-view {
     width: 50%;
 }
 
@@ -544,7 +615,7 @@ body {
 
 /*Styles*/
 
-.background-tables-form{
+.background-tables-form {
     background-color: #ffffff45;
     border-radius: 30px 0 0 30px;
     padding: 10px;
@@ -552,39 +623,139 @@ body {
 
 /*Sky Blue Template*/
 
-.dashboard-container-al-sky-blue{
+.dashboard-container-al-sky-blue {
     background-color: #9ddeff;
 }
 
-.container-backgroud-suplier{
+.container-backgroud-suplier {
     background-color: #ffffff45 !important;
     padding: 10px !important;
 }
 
 /*Nav Bar*/
 
-.nav-create-new-trip{
+.nav-create-new-trip {
     display: flex;
     width: 100%;
     justify-content: center;
     height: 12%;
     cursor: pointer;
     align-items: center;
-    padding: 10px;    
+    padding: 10px;
     border-top: 2px solid #ffffff;
     border-top-right-radius: 30px;
 }
 
-.nav-create-new-trip:hover{
+.nav-create-new-trip:hover {
     background-color: #ff9df3;
 }
 
-.trip-sky-blue:hover{
+.trip-sky-blue:hover {
     background-color: #9ddeff;
 }
 
-.generals-nav-link-title{
-    color: #ffffff;    
+.generals-nav-link-title {
+    color: #ffffff;
     padding: 0px 12px;
     font-weight: bold;
+}
+
+/*Informacion Estadistica*/
+
+.p-description-informacion-estadistica {
+    color: #282828de;
+    text-align: center;
+    margin: 2% 0 4%;
+    font-size: 11px;
+}
+
+.text-title-grafics {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/*Calendario*/
+
+.container-big-grafic-al {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+/*Lista de viajes*/
+
+.fila-show-carga-peligrosa {
+    cursor: pointer;
+    height: 30px;
+    transition: height 0.8s;
+}
+
+.fila-show-carga-peligrosa:hover {
+    background-color: #9d2d8d;
+    height: 45px;
+}
+
+/*Generals Inputs*/
+
+.main-generals-inputs{
+    height: 34px;
+    margin-left: 5px;
+    padding-left: 5px;
+    font-size: 17px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+.seleccione-una-empresa{
+    text-align: center;
+}
+
+.container-left-big-form,
+.only-this-importador{
+    width: 50%;
+}
+
+.only-this-importador{
+    padding-left: 15px;
+}
+
+.only-this-importador #input-shippment-description{
+    height: 300px;
+    width: 100%;
+    font-size: 28px;
+    padding-top: 5px;
+}
+
+#input-request-search-button{
+    width: 50%;
+}
+
+.select-pointer{
+    cursor: pointer;
+}
+
+.rollover-de-carga-class{
+    flex-direction: column;
+    margin: 2% 0px;
+}
+
+#father-container-table-to-rollover-viajes{    
+    animation-name: animationRollover;
+    animation-duration: 1.2s;
+}
+
+
+@keyframes animationRollover {
+    from {        
+        margin: 0% 0px;
+        opacity: 0;                
+    }
+
+    to {    
+        margin: 2% 0px;
+        opacity: 1;        
+    }
 }

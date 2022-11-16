@@ -23,7 +23,7 @@
     background: radial-gradient(circle, rgb(255 255 255 / 20%) 40%, rgb(255 255 255 / 4%) 100%);
     width: 20%;
     text-align: center;
-    padding: 18px 10px;
+    padding: 4px 10px;
     color: #ffffffde;
 }
 
@@ -42,11 +42,35 @@
     margin-bottom: 20px;
 }
 
-/*PARA EL USUARIO TIPO EMPRESA 
+.container-table-carga-peligrosa{
+    display: none;
+    flex-direction: column;
+}
 
-.login-white-container-al,
-.container-general-title-page,
-.header-button-create-al,
-.dashboard-container-al {
-    background-color: #9ddeff;
-} */
+.container-button-volver-viajes{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;    
+    padding-right: 1%;
+    margin: 6px 0px;
+}
+
+.button-volver-viajes{
+    color: #ffffffde;
+    font-weight: bold;
+    background-color: #ffb8f7;
+    padding: 5px 11px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.button-volver-viajes:hover{
+    background-color: #9d2d8d;    
+}
+
+.ususario-desha-test-p{
+    text-align: center;
+    margin: 2px 0 10px;
+    font-weight: 900;
+    color: #ff2b2bd9;/*Rojo error*/
+}

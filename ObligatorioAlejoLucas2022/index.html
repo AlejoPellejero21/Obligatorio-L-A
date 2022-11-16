@@ -12,29 +12,52 @@
   <link rel="stylesheet" href="./Css/Estilos.Esconder.Containers.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/Dashboard.charts.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/GlobalVariablesConstant.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
-  <script type="text/javascript" src="./Extensiones/IngresarEnLaAplicación/login.js"></script>
+  
+  <!-- <script type="text/javascript" src="./Extensiones/IngresarEnLaAplicación"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/MainOnWindowLoadView.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/registrarseEnLaAplicacion/register.js"></script>
+  <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script> -->
+
+  <script type="text/javascript" src="./Extensiones/VisualizarInformaciónEstadística/Dashboard.charts.js"></script>
+  <script type="text/javascript" src="./Extensiones/IngresarEnLaAplicacion/IngresarEnLaAplicacion.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/MainOnWindowLoadView.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/registrarseEnLaAplicacion/registrarseEnLaAplicacion.js"></script>
   <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/AsignarSolicitudDeCarga/AsignarSolicitudDeCarga.A&L.js"></script>
+  <script type="text/javascript"
+    src="./Extensiones/CrearSolicitudDeCargaConMercaderia/CrearSolicitudDeCargaConMercaderia.js"></script>
+  <script type="text/javascript"
+    src="./Extensiones/ConsultarSolicitudesPendientes/ConsultarSolicitudesPendientes.js"></script>
+  <script type="text/javascript" src="./Extensiones/CancelarSolucitudDeCarga/CancelarSolucitudDeCarga.js"></script>
+  <script type="text/javascript" src="./Extensiones/CalendarioDeProximaLlegadas/calendarioDeProximaLlegadas.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/ListarCargaPeligrosa/listarCargaPeligrosa.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/ManifiestoDeCarga/manifiestoDeCarga.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/HabilitarUsuarios/habilitarUsuarios.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/RolloverDeCarga/rolloverDeCarga.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/LogOut/logOut.A&L.js"></script>
 
   <title>{A&L -by- L&A}</title>
 </head>
 
-<body>
+<body id="big-body-page">
   <div class="father-login-container-al">
     <!--FINAL HEADER STYLE-->
     <div class="login-white-container-al change-color-0 ">
       <div class="main-header-container-al">
         <div class="container-header-left">
           <h1 class="header-logo">A&L</h1>
+          <div id="button-header-loggout" class="button-header-loggout">
+            <span id="button-loggout-now" class="button-loggout-now">Log out</span>
+          </div>
           <h2 class="title-user">
-            <span id="head-welcome-user" class="header-welcoome-user">Bienvenido Importador:</span>
-            <span id="head-user-name" class="header-user-name-al">Lucas Ex</span>
+            <span id="head-welcome-user" class="header-welcoome-user"></span>
+            <span id="head-user-name" class="header-user-name-al"></span>
           </h2>
         </div>
         <div class="container-general-title-page change-color-0">
@@ -73,7 +96,7 @@
               placeholder="Username:" />
             <input class="general-input change-color-0" type="password" name="Password" id="input-password"
               placeholder="Password:" />
-            <select class="select-account-login" name="Select" id="select-type-login">
+            <select class="select-account-login select-pointer" name="Select" id="select-type-login">
               <option value="1" selected>Account - Empresario</option>
               <option value="2">Account - Importador</option>
             </select>
@@ -153,7 +176,7 @@
         <div id="show-table-manifest" class="table-container">
 
           <!--Main Crear Un Viaje-->
-          <main data-view="CrearUnViajeView" class="show-this-view main-table-manifest">
+          <main data-view="CrearUnViajeView" id="main-view-empresa" class="show-this-view main-table-manifest">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
@@ -174,20 +197,20 @@
                   <h2 class="table-title">Datos del viaje:</h2>
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-nombre-del-buque">Nombre del buque:</label>
-                    <input type="text" id="input-nombre-del-buque" />
+                    <input class="main-generals-inputs" type="text" id="input-nombre-del-buque" placeholder="Ingrese un nombre:"/>
 
                     <div class="container-origin-big-al display-form-labels-al">
                       <label class="label-big-al" for="input-cantidad-max-contenedores">Cantidad max de
                         contenedores:</label>
-                      <input type="text" id="input-cantidad-max-contenedores" maxlength="3" />
+                      <input class="main-generals-inputs" type="text" id="input-cantidad-max-contenedores" maxlength="3" placeholder="Ingrese una cantidad:"/>
                     </div>
 
                     <label class="label-big-al" for="select-line-de-carga">Empresa - Linea de carga:</label>
-                    <select name="type-of-shippment" id="select-line-de-carga">
+                    <select class="main-generals-inputs seleccione-una-empresa" name="type-of-shippment" id="select-line-de-carga">
                       <option value="0">Oasis</option>
                       <option value="1">Acuarius</option>
                       <option value="2">Flatland</option>
-                      <option value="X" selected>-Seleccione Empresa-</option>
+                      <option value="X" selected>--Seleccione una Empresa--</option>
                     </select>
 
                   </div>
@@ -196,7 +219,7 @@
 
                 <div class="container-description-big-a display-form-labels-al container-empresario-view">
                   <label class="label-big-al" for="input-fecha-de-llegada">Fecha de llegada:</label>
-                  <input id="input-fecha-de-llegada" type="date">
+                  <input class="main-generals-inputs" id="input-fecha-de-llegada" type="date">
                 </div>
               </form>
             </div>
@@ -231,45 +254,11 @@
                   <th class="column-manifest unique-column-left-al">Asignar</th>
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Status</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">+</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                </tbody>
+                <tbody id="tabla-asignar-solicitud-de-carga" class="thead-manifest tbody-manifest"></tbody>
               </table>
             </div>
           </main>
@@ -294,54 +283,35 @@
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="div-title-table-al">
-              <h2 class="table-title">Rollover de carga:</h2>
+              <h2 id="title-rollover-de-carga" class="table-title">Rollover de carga:</h2>
             </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
                 <thead class="thead-manifest">
-                  <th class="column-manifest unique-column-left-al">Rollover</th>
-                  <th class="column-manifest">Origen</th>
-                  <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
-                  <th class="column-manifest">Descripción</th>
-                  <th class="column-manifest">Tipo de mercadería</th>
+                  <th class="column-manifest">Nombre</th>
+                  <th class="column-manifest">Cantidad Max.</th>
+                  <th class="column-manifest">Empresa</th>
+                  <th class="column-manifest">Fecha</th>                       
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td unique-column-left-al add-plus-al">()</td>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                </tbody>
+                <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
               </table>
+            </div>
+            <div id="father-container-table-to-rollover-viajes" class="second-manifest-container rollover-de-carga-class login-no-display">
+              <div class="div-title-table-al">
+                <h2 id="title-rollover-de-carga" class="table-title">Seleccione un viaje:</h2>
+              </div>
+
+              <div id="container-table-to-rollover-viajes" class="second-manifest-container login-no-display">              
+                <table class="body-table-manifest">
+                  <thead class="thead-manifest">
+                    <th class="column-manifest">Nombre</th>
+                    <th class="column-manifest">Cantidad Max.</th>
+                    <th class="column-manifest">Empresa</th>
+                    <th class="column-manifest">Fecha</th>                       
+                  </thead>
+                  <tbody class="thead-manifest tbody-manifest tabla-de-viajes-rollover-de-carga"></tbody>
+                </table>
+              </div>              
             </div>
           </main>
           <!--Main Rollover de carga-->
@@ -362,48 +332,34 @@
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="div-title-table-al">
-              <h2 class="table-title">Manifiesto de Carga:</h2>
+              <h2 id="title-manifiesto-de-carga" class="table-title">Manifiesto de Carga:</h2>
             </div>
-            <div class="second-manifest-container">
+                        
+            <div id="lista-de-viajes-actuales-manifest" class="second-manifest-container">
               <table class="body-table-manifest">
-                <thead class="thead-manifest">
+                <thead class="thead-manifest">                  
+                  <th class="column-manifest">Nombre</th>
+                  <th class="column-manifest">Cantidad Max.</th>
+                  <th class="column-manifest">Empresa</th>
+                  <th class="column-manifest">Fecha</th>                  
+                </thead>
+                <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
+              </table>
+            </div>
+
+            <div id="container-table-manifiesto-de-carga" class="second-manifest-container container-table-carga-peligrosa">
+              <div id="back-to-viajes" class="container-button-volver-viajes">
+                <span id="on-click-back-to-manifiesto" class="button-volver-viajes">--VOLVER--</span>
+              </div>
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">                  
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Status</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                </tbody>
+                <tbody id="tabla-manifiesto-de-carga" class="thead-manifest tbody-manifest"></tbody>
               </table>
             </div>
 
@@ -425,56 +381,8 @@
               <h2 class="table-title">Habilitar Importadores deshabilitados:</h2>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
-            <div class="container-user-available-al">
-              <div class="user-container">
-                <div class="user-container-top-al">
-                  <div class="image-user-al"></div>
-                  <h3>User PeDERE</h3>
-                </div>
-                <div class="user-information-al">
-                  <span class="mini-title">Deshabilitado:</span>
-                  <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, ipsum minima! Veritatis, mollitia
-                    magnam! Sit incidunt nisi quaerat molestias nostrum tempore. Quis voluptas provident nam libero
-                    atque distinctio ullam ipsa.</P>
-                </div>
-              </div>
-              <div class="user-container">
-                <div class="user-container-top-al">
-                  <div class="image-user-al"></div>
-                  <h3>User PeDERE</h3>
-                </div>
-                <div class="user-information-al">
-                  <span class="mini-title">Deshabilitado:</span>
-                  <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, ipsum minima! Veritatis, mollitia
-                    magnam! Sit incidunt nisi quaerat molestias nostrum tempore. Quis voluptas provident nam libero
-                    atque distinctio ullam ipsa.</P>
-                </div>
-              </div>
-              <div class="user-container">
-                <div class="user-container-top-al">
-                  <div class="image-user-al"></div>
-                  <h3>User PeDERE</h3>
-                </div>
-                <div class="user-information-al">
-                  <span class="mini-title">Deshabilitado:</span>
-                  <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, ipsum minima! Veritatis, mollitia
-                    magnam! Sit incidunt nisi quaerat molestias nostrum tempore. Quis voluptas provident nam libero
-                    atque distinctio ullam ipsa.</P>
-                </div>
-              </div>
-            </div>
-
-            <div class="container-user-available-al only-button-available">
-              <div class="user-container button-enable-al">
-                <input class="user-enable-button" data-userId="1" type="button" value="Habilitar">
-              </div>
-              <div class="user-container button-enable-al">
-                <input class="user-enable-button" data-userId="2" type="button" value="Habilitar">
-              </div>
-              <div class="user-container button-enable-al">
-                <input class="user-enable-button" data-userId="3" type="button" value="Habilitar">
-              </div>
-            </div>
+            <div id="user-big-container" class="container-user-available-al"></div>
+            <div id="button-habilitar-user" class="container-user-available-al only-button-available"></div>
           </main>
           <!--Main Habilitar Usuario-->
 
@@ -492,46 +400,32 @@
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="div-title-table-al">
-              <h2 class="table-title">Lista de Carga Peligrosa:</h2>
+              <h2 id="title-carga-peligrosa" class="table-title">Lista de Carga Peligrosa:</h2>
             </div>
-            <div class="second-manifest-container">
+            <div id="lista-de-viajes-actuales" class="second-manifest-container">
               <table class="body-table-manifest">
-                <thead class="thead-manifest">
-                  <th class="column-manifest unique-column-left-al">Tipo</th>
-                  <th class="column-manifest">Descripcion</th>
-                  <th class="column-manifest">Origen</th>
-                  <th class="column-manifest">Contenedores</th>
+                <thead class="thead-manifest">                  
+                  <th class="column-manifest">Nombre</th>
+                  <th class="column-manifest">Cantidad Max.</th>
+                  <th class="column-manifest">Empresa</th>
+                  <th class="column-manifest">Fecha</th>                  
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr>
-                    <td class="column-manifest-td">CARGA PELIGROSA</td>
-                    <td class="column-manifest-td">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic unde
-                      labore.</td>
-                    <td class="column-manifest-td">Los dedos</td>
-                    <td class="column-manifest-td">7</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">CARGA PELIGROSA</td>
-                    <td class="column-manifest-td">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic unde
-                      labore.</td>
-                    <td class="column-manifest-td">Los dedos</td>
-                    <td class="column-manifest-td">12</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">CARGA PELIGROSA</td>
-                    <td class="column-manifest-td">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic unde
-                      labore.</td>
-                    <td class="column-manifest-td">Los dedos</td>
-                    <td class="column-manifest-td">3</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">CARGA PELIGROSA</td>
-                    <td class="column-manifest-td">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic unde
-                      labore.</td>
-                    <td class="column-manifest-td">Los dedos 5</td>
-                    <td class="column-manifest-td">10</td>
-                  </tr>
-                </tbody>
+                <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
+              </table>
+            </div>
+            <div id="container-table-carga-peligrosa" class="second-manifest-container container-table-carga-peligrosa">
+              <div id="back-to-viajes" class="container-button-volver-viajes">
+                <span id="on-click-back-to" class="button-volver-viajes">--VOLVER--</span>
+              </div>
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">                  
+                  <th class="column-manifest">Origen</th>
+                  <th class="column-manifest">Contenedor</th>
+                  <th class="column-manifest">Status</th>
+                  <th class="column-manifest">Descripción</th>
+                  <th class="column-manifest">Tipo de mercadería</th>
+                </thead>
+                <tbody id="tabla-carga-peligrosa" class="thead-manifest tbody-manifest"></tbody>
               </table>
             </div>
           </main>
@@ -549,7 +443,8 @@
           <span class="generals-icons-left">I[M</span>
         </div>
         <div data-view="ConsultarSolicitudesPendientes" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
-          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title">Solicitudes
+          <span class="generals-icons-left">I[M</span> <span class="generals-nav-link-title"
+            id="pending-requests-button">Solicitudes
             Pendientes</span><span class="generals-icons-left">I[M</span>
         </div>
         <div data-view="VisualizarInformacionEstadistica" class="nav-create-new-trip trip-sky-blue go-to-a-new-view">
@@ -561,16 +456,18 @@
 
         <div id="show-table-manifest" class="table-container">
           <!--Main Crear una solicitud-->
-          <main data-view="CrearUnaSolicitud" class="show-this-view main-table-manifest">
+          <main data-view="CrearUnaSolicitud" id="main-view-importador" class="show-this-view main-table-manifest">
             <!--FINAL DESCRIPTION STYLES-->
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">Proveerá el tipo de
+                  mercadería (CARGA_GENERAL, REFRIGERADO, CARGA_PELIGROSA), una
+                  descripción de la mercadería, el puerto de origen y la cantidad de
+                  contenedores. Además, a la solicitud se le deberá agregar el id de la empresa.
+                  Quedará pendiente de ser confirmada por la línea de carga con un viaje real;
+                  cuando sea confirmada se asignará también el número de viaje. A cada
+                  solicitud de carga se le asignará un número autogenerado.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
@@ -583,36 +480,52 @@
                 <div class="container-left-big-form">
                   <h2 class="table-title">Datos de solicitud:</h2>
                   <div class="container-select-big-al display-form-labels-al">
-                    <label class="label-big-al" for="select-type-shippment-2">Seleccione el tipo de carga:</label>
-                    <select name="type-of-shippment" id="select-type-shippment-2">
+                    <label class="label-big-al" for="select-type-shippment-importador">Seleccione el tipo de
+                      carga:</label>
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="type-of-shippment" id="select-type-shippment-importador">
+                      <option value="X" selected>--Tipos de carga--</option>
                       <option value="0">CARGA_GENERAL</option>
                       <option value="1">REFRIGERADO</option>
                       <option value="2">CARGA_PELIGROSA</option>
-                      <option value="X" selected>-tipos de carga-</option>
+
                     </select>
 
-                    <label class="label-big-al" for="input-quantity-containers-2">Cantidad de contenedores:</label>
-                    <input type="text" id="input-quantity-containers-2" />
+                    <label class="label-big-al" for="input-quantity-containers-importador">Cantidad de
+                      contenedores:</label>
+                    <input class="main-generals-inputs" type="text" id="input-quantity-containers-importador" maxlength="3" placeholder="Ingrese una cantidad:"/>
                   </div>
-
+                  <!--Selector de puerto de origen-->
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese el puerto de origen:</label>
-                    <input type="text" id="input-origin-port" maxlength="3" />
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="port-of-origin" id="arrive-point">
+                      <option value="X" selected>--Puerto de origen--</option>
+                      <option value="Montevideo">Montevideo</option>
+                      <option value="Rocha">Rocha</option>
+                      <option value="Salto">Salto</option>
+                      <option value="Maldonado">Maldonado</option>
+                    </select>
+                  </div>
+                  <!--Seleccionar empresa-->
+                  <div class="container-origin-big-al display-form-labels-al">
+                    <label class="label-big-al" for="input-origin-port">Ingrese linea de carga:</label>
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="line-of-charge" id="select-line-of-charge">
+                      <option value="X" selected>--Lineas de carga disponibles--</option>
+                    </select>
                   </div>
                 </div>
 
-                <div class="container-description-big-a display-form-labels-al">
+                <div class="container-description-big-a display-form-labels-al only-this-importador">
                   <label class="label-big-al" for="input-shippment-description">Descripción de la mercadería:</label>
-                  <textarea name="shippment-description" id="input-shippment-description"></textarea>
+                  <textarea class="main-generals-inputs" name="shippment-description" id="input-shippment-description"></textarea>
                 </div>
               </form>
             </div>
             <!--FORM CREATE REQUEST-->
 
-            <div class="button">
+            <!-- <div class="button">
               <input class="button-create-request" type="button" value="Crear solicitud de carga"
                 id="send-shippment-request" />
-            </div>
+            </div> -->
           </main>
           <!--Main Crear una solicitud-->
 
@@ -622,56 +535,31 @@
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">El Importador puede consultar sus solicitudes pendientes. Deberá poder
+                  además hacer una búsqueda parcial por la descripción de la
+                  mercadería. Esta búsqueda será case insensitive y filtrará los resultados
+                  mostrados. El Importador deberá poder cancelar una solicitud de carga pendiente que no
+                  ha sido confirmada todavía por una línea de carga.</p>
               </div>
             </div>
             <!--FINAL DESCRIPTION STYLES-->
             <div class="div-title-table-al">
               <h2 class="table-title">Solicitudes Pendientes:</h2>
             </div>
+            <div class="div-title-table-al">
+              <input class="main-generals-inputs" type="text" id="input-request-search-button" placeholder="Buscar por descripción:">              
+            </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
                 <thead class="thead-manifest">
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
-                  <th class="column-manifest">Importador</th>
+                  <th class="column-manifest">Empresa</th>
                   <th class="column-manifest">Descripción</th>
                   <th class="column-manifest">Tipo de mercadería</th>
                 </thead>
-                <tbody class="thead-manifest tbody-manifest">
-                  <tr class="space-between-al"></tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
-                  <tr>
-                    <td class="column-manifest-td">BUE</td>
-                    <td class="column-manifest-td">1</td>
-                    <td class="column-manifest-td">Juan Perez</td>
-                    <td class="column-manifest-td">Juguetes</td>
-                    <td class="column-manifest-td">CARGA_GENERAL</td>
-                  </tr>
+                <tbody class="thead-manifest tbody-manifest" id="user-requests-table">
+
                 </tbody>
               </table>
             </div>
@@ -679,16 +567,14 @@
           <!--Main Consultar Solicitudes Pendientes-->
 
           <!--Main Visualizar Informacion Estadistica-->
-          <main data-view="VisualizarInformacionEstadistica"
-            class="show-this-view main-table-manifest login-no-display">
+          <main data-view="VisualizarInformacionEstadistica" class="show-this-view main-table-manifest login-no-display">
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
-                <p class="description-manifest">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut
-                  commodi accusamus tempora, eveniet
-                  illum vero quisquam animi voluptatem. Fuga, blanditiis explicabo! Vitae cum, sit quo magni eveniet
-                  natus
-                  saepe!</p>
+                <p class="description-manifest">El usuario podra ver el porcentaje de cancelaciones contra el total de
+                  cargas. Ademas podra ver el calendario de las próximas llegadas con su carga de importación por
+                  orden de llegada a Montevideo y tambien la participación de las diferentes líneas de carga en sus
+                  solicitudes </p>
               </div>
             </div>
 
@@ -696,16 +582,14 @@
               <h2 class="table-title">Informacion Estadistica:</h2>
             </div>
 
-            <div class="container-calendar-grafic-al">
+            <div class="first-manifest-container container-calendar-grafic-al container-big-grafic-al">
+              <h2 class="table-title">Calendario de próximas llegadas</h2>
               <div class="container-calendar-grafic">
                 <div class="month">
                   <ul>
-                    <li class="prev">&#10094;</li>
-                    <li class="next">&#10095;</li>
-                    <li>
-                      August<br>
-                      <span style="font-size:18px">2021</span>
-                    </li>
+                    <li id="prev-month-click" class="prev">&#10094;</li>
+                    <li id="next-month-click" class="next">&#10095;</li>
+                    <li id="show-month-and-year"></li>
                   </ul>
                 </div>
 
@@ -719,42 +603,28 @@
                   <li>Su</li>
                 </ul>
 
-                <ul class="days">
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                  <li>5</li>
-                  <li>6</li>
-                  <li>7</li>
-                  <li>8</li>
-                  <li>9</li>
-                  <li><span class="active">10</span></li>
-                  <li>11</li>
-                  <li>12</li>
-                  <li>13</li>
-                  <li>14</li>
-                  <li>15</li>
-                  <li>16</li>
-                  <li>17</li>
-                  <li>18</li>
-                  <li>19</li>
-                  <li>20</li>
-                  <li>21</li>
-                  <li>22</li>
-                  <li>23</li>
-                  <li>24</li>
-                  <li>25</li>
-                  <li>26</li>
-                  <li>27</li>
-                  <li>28</li>
-                  <li>29</li>
-                  <li>30</li>
-                  <li>31</li>
-                </ul>
+                <ul id="add-every-day" class="days"></ul>                
+              </div>
+
+            </div>
+
+            <div class="first-manifest-container container-calendar-grafic-al container-frafics-align">
+              <div class="container-grafics">
+                <h3 class="table-title text-title-grafics">Porcentaje de cancelaciones</h3>
+                <p class="p-description-informacion-estadistica">Se calculará a partir del total de solicitudes canceladas, contra las
+                  solicitudes confirmadas, pendientes e ignoradas.</p>
+                  <canvas id="chart-porcentaje-cancelaciones" style="width:200px;max-width:400px"></canvas>
+                  <!-- <div id="add-chart-porcentaje-cancelaciones">
+                  </div> -->
               </div>
               <div class="container-grafics">
-                <canvas id="myChart" style="width:200px;max-width:400px"></canvas>
+                <h3 class="table-title text-title-grafics">Participación de las diferentes líneas de carga</h3>
+                <p class="p-description-informacion-estadistica">Se mostrará la información del porcentaje de las diferentes líneas con
+                  las que ha cargado este Importador. Solo se cuentan envíos no
+                  contenedores y se omiten las empresas con porcentaje cero.</p>
+                  <canvas id="chart-lineas-de-carga" style="width:200px;max-width:400px"></canvas>
+                  <!-- <div id="add-chart-lineas-de-carga">
+                  </div> -->
               </div>
             </div>
           </main>

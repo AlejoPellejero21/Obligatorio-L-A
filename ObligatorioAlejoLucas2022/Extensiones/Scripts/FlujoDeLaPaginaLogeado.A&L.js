@@ -12,6 +12,9 @@ function onCrearUnViajeClick() {
 
   OBJ1Selector.ShowThisView.forEach(function (view) {
     if (viewToShowButtonClick === view.attributes[0].value) {
+      //asigno la view actual a una variable global
+      currentView = viewToShowButtonClick;
+      onCreateCargaDeViajes();
       setDisplay(view, true);
     } else {
       setDisplay(view, false);
@@ -22,17 +25,44 @@ function onCrearUnViajeClick() {
 function onLoggedEmpresa() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateTrip = getQuerySelector("#", "main-dashboard-container-empresario", true);
+  const mainViewEmpresa = getQuerySelector("#", "main-view-empresa", true);
+  OBJ1Selector['LoggOutPage'] = getQuerySelector("#", "button-header-loggout", true);
 
+  OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.supplierName;
+
+  setDisplay(OBJ1Selector.SetNameUserLogged, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
+<<<<<<< HEAD
+=======
+  setDisplay(OBJ1Selector.LoggOutPage, true);
+  setDisplay(mainViewEmpresa, true);
+>>>>>>> staging
   onDashboardLoad();
+  createRequestTable();
+  onHabilitarUsuarios();
 }
 
 function onLoggedImportador() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateRequest = getQuerySelector(".", "dashboard-container-al-sky-blue", true);
+  const CrearUnaSolicitudAttr = getQuerySelector("#", "send-shippment-request", true);  
+  const mainViewImportador = getQuerySelector("#", "main-view-importador", true);
+  OBJ1Selector['LoggOutPage'] = getQuerySelector("#", "button-header-loggout", true);
+  CrearUnaSolicitudAttr.addEventListener("click", onCrearSolicitudDeCarga);
 
+  OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.userAccess;
+
+  setDisplay(OBJ1Selector.SetNameUserLogged, true);
+  setDisplay(OBJ1Selector.LoggOutPage, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
+<<<<<<< HEAD
+=======
+  setDisplay(mainViewImportador, true);  
+>>>>>>> staging
   onDashboardLoad();
+  onConsultarSolicitudes();
+  onDashboardCancelaciones();
+  onCreateCalendarioLlegadas();
 }

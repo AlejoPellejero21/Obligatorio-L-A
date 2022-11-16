@@ -4,20 +4,25 @@ window.addEventListener("load", onWindowLoad);
 
 function onWindowLoad() {
   createPreUserInformation();
-
   OBJ1Selector["SelectLogin"] = getQuerySelector("#", "select-type-login", true);
   OBJ1Selector["HeaderUserName"] = getQuerySelector("#", "head-user-name", true);
   OBJ1Selector["HeaderWelcomeUser"] = getQuerySelector("#", "head-welcome-user", true);
-  OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);
-
-  getQuerySelector("#", "button-on-login", "true").addEventListener("click", onLoginClick);
+  OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);  
+  OBJ1Selector["ButtonCreateForBoth"] = getQuerySelector(".", "header-button-create-al", true);
+  OBJ1Selector["InputRequestSearch"] = getQuerySelector("#", "input-request-search-button", true);
+  OBJ1Selector['SetNameUserLogged'] = getQuerySelector('#', 'head-user-name', true);
+  OBJ1Selector['LogOUT'] = getQuerySelector("#", 'button-loggout-now', true);
+  
   getQuerySelector("#", "button-on-register", "true").addEventListener("click", onRegisterUser);
+  getQuerySelector("#", "button-on-login", true).addEventListener("click", onLoginClick);
   OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque);
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
-
+  OBJ1Selector.InputRequestSearch.addEventListener("keyup", onSearchRequest);
+  OBJ1Selector.LogOUT.addEventListener('click', onLogOutClick);
+    
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
-
+  OBJ1Selector.ButtonCreateForBoth.innerHTML = CrearUnViaje;
 }
 
 function onSelectChange() {
@@ -27,6 +32,10 @@ function onSelectChange() {
   const LoginRegisterButtons = getQuerySelector("#", "show-login-register-link", true);
   const RegisterLink = getQuerySelector("#", "go-to-register", true);
   const LoginLink = getQuerySelector("#", "go-to-login", true);
+  const BodyPage = getQuerySelector('#', 'big-body-page', true);
+  const ButtonCreateUnViaje = getQuerySelector("#", 'crear-un-viaje-button', true);
+  const ButtonCreateUnaSolicitud = getQuerySelector("#", 'send-shippment-request', true);
+  const WelcomUser = getQuerySelector("#", 'head-welcome-user', true);
 
   /*Agregar Evento Para Register Page*/
   RegisterLink.addEventListener("click", onLinkRegisterClick);
@@ -37,8 +46,16 @@ function onSelectChange() {
   DivSkyBlueLight.forEach(function (value) {
     if (selectLoginValue === 2) {
       value.style = "background-color: #9ddeff;";
+      BodyPage.style = "background-color: #9ddeff;";
+      ButtonCreateUnViaje.id = 'send-shippment-request';
+      WelcomUser.innerHTML = WelcomeImportador;
+      OBJ1Selector.ButtonCreateForBoth.innerHTML = CrarUnaSolicitud;
     } else {
       value.style = "background-color: #ff9df3;";
+      BodyPage.style = "background-color: #ff9df3;";
+      ButtonCreateUnaSolicitud.id = 'crear-un-viaje-button';
+      WelcomUser.innerHTML = WelcomeEmpresario;
+      OBJ1Selector.ButtonCreateForBoth.innerHTML = CrearUnViaje;
     }
   });
 
