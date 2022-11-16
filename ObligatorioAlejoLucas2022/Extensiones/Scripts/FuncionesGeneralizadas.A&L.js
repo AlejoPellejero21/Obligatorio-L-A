@@ -85,14 +85,6 @@ function createPreUserInformation() {
   addSolicitudesToViajes();
   addViajesToEmpresas();
 
-<<<<<<< HEAD
-  Empresas.push(
-    new Empresa(0142, "Administrador", "Admin1", "123"),
-    new Empresa(0241, "Lucas", "LucasA", "Lucas123")
-  );
-
-  Empresas[0].supplierTrips = Viajes;
-=======
   //Se le asignan a la empresa viajes
   /* Empresas[0].supplierTrips = Viajes;
   Viajes[0].shipSupplierId = Empresas[0].id;
@@ -146,7 +138,6 @@ function addSolicitudesToViajes() {
     }
   });
 
->>>>>>> staging
 }
 
 function addSolicitudesToImportadores() {

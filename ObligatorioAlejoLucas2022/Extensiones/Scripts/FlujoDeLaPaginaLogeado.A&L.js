@@ -33,11 +33,8 @@ function onLoggedEmpresa() {
   setDisplay(OBJ1Selector.SetNameUserLogged, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
-<<<<<<< HEAD
-=======
   setDisplay(OBJ1Selector.LoggOutPage, true);
   setDisplay(mainViewEmpresa, true);
->>>>>>> staging
   onDashboardLoad();
   createRequestTable();
   onHabilitarUsuarios();
@@ -57,10 +54,7 @@ function onLoggedImportador() {
   setDisplay(OBJ1Selector.LoggOutPage, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
-<<<<<<< HEAD
-=======
   setDisplay(mainViewImportador, true);  
->>>>>>> staging
   onDashboardLoad();
   onConsultarSolicitudes();
   onDashboardCancelaciones();
