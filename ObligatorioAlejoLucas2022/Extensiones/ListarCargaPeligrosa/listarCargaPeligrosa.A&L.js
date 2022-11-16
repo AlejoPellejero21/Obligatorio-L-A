@@ -4,20 +4,12 @@ function onCreateCargaDeViajes() {
     OBJ1Selector['TitleManifiestoDeCarga'] = getQuerySelector('#', 'title-manifiesto-de-carga', true);
     OBJ1Selector['TitleRolloverDeCarga'] = getQuerySelector('#', 'title-rollover-de-carga', true);
     const TablaViajesCargaAttr = getQuerySelector('.', 'tabla-de-viajes-carga-p', false);
+    OBJ1Selector['TablaRollover'] = getQuerySelector("#", "container-table-to-rollover-viajes", true);
+    OBJ1Selector['FatherDivTable'] = getQuerySelector("#", "father-container-table-to-rollover-viajes", true);
 
 
     if (Viajes.length > 0) {
-        //Se recorren los viajes 
-        Viajes.forEach(function (viaje, index) {
-            //Se recorren los atributos tablas para viajes
-            //Si la empresa del viaje es la misma que la empresa que esta logeada
-            if (viaje.shipSupplierId === userLogged.id) {
-                TablaViajesCargaAttr.forEach(function (attr) {
-                    createTableViajes(attr, viaje, index);
-                });
-            }
-        });
-
+        forViajesCreateTable(TablaViajesCargaAttr);
 
         const FilaViajeAttr = getQuerySelector('.', "fila-show-carga-peligrosa", false);
         //Dependiendo de la view de viajes le asigno una funcion distinta
@@ -26,6 +18,8 @@ function onCreateCargaDeViajes() {
                 addAFunctionToAFila(FilaViajeAttr, onDangerViajeSelected);
                 break;
             case RolloverDeCargaView:
+                setDisplay(OBJ1Selector.FatherDivTable, false);
+                setDisplay(OBJ1Selector.TablaRollover, false);
                 addAFunctionToAFila(FilaViajeAttr, onRolloverDeCarga);
                 break;
             case ManifiestoDeCargaView:
@@ -39,9 +33,29 @@ function onCreateCargaDeViajes() {
 
 }
 
+function forViajesCreateTable(TablaViajesCargaAttr) {
+    //Se recorren los viajes 
+    Viajes.forEach(function (viaje, index) {
+        //Se recorren los atributos tablas para viajes
+        //Si la empresa del viaje es la misma que la empresa que esta logeada
+        if (viaje.shipSupplierId === userLogged.id) {
+            TablaViajesCargaAttr.forEach(function (attr) {
+                if (index === 0) {
+                    attr.innerHTML = '';
+                };
+                
+                if (viaje.shipRequest.length > 0) {
+                    createTableViajes(attr, viaje, index, '');
+                }
+            });
+        }
+    });
+
+}
+
 function addAFunctionToAFila(FilaViajeAttr, functionName) {
     FilaViajeAttr.forEach(function (attr) {
-        attr.addEventListener('click', functionName)
+        attr.addEventListener('click', functionName);
     });
 }
 
@@ -75,22 +89,41 @@ function onGoBackClick() {
     }
 }
 
-function createTableViajes(attr, viaje, index) {
+function createTableViajes(attr, viaje, index, rolloverId) {
+    debugger;
     let attrBuild = '';
     if (index === 0) {
-        attr.innerHTML = '';
+        attr.innerHTML = attrBuild;
     }
 
     attrBuild += `
-                <tr class='fila-show-carga-peligrosa' data-id='${viaje.id}'>                
+                <tr class='fila-show-carga-peligrosa ${rolloverId !== '' ? rolloverId : rolloverId}' data-id='${viaje.id}'>                
                     <td class="column-manifest-td">${viaje.shipName}</td>
                     <td class="column-manifest-td">${viaje.shipQuantity}</td>                
-                    <td class="column-manifest-td">${viaje.shipSupplierId}</td>
+                    <td class="column-manifest-td">${getSupplierName(viaje.shipSupplierId)}</td>
                     <td class="column-manifest-td">${viaje.shipDate}</td>                
                 `;
 
     attrBuild += '</tr>';
     return attr.innerHTML += attrBuild;
+}
+
+function getSupplierName(id) {
+    let companyName = '';
+    let isNameFound = false;
+    let index = 0;
+
+    while (index < Empresas.length && !isNameFound) {
+        let empresa = Empresas[index];
+
+        if (empresa.id === id) {
+            companyName = empresa.supplierName;
+            isNameFound = true;
+        }
+        index++;
+    }
+
+    return companyName;
 }
 
 //Esta funcion arma una tabla de viajes

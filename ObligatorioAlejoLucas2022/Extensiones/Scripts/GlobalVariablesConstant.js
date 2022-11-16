@@ -30,19 +30,21 @@ const AllMonths = [
     { name: 'Noviembre', quantity: 30, start: 1 },
     { name: 'Diciembre', quantity: 31, start: 3 }
 ]
-let currentView = '';
-let requestToAsign;
-let OBJ1Selector = {};
-let generalSupliersLines = 0;
-let userLogged = null;
-let userLoggedId = 0;
 let typeOfUser;
-let typeOfChargeExpressed = "";
+let requestToAsign;
+let viajeToRollSelected = null;
+let solicitudesToRollSelected = null;
+let userLogged = null;
+let OBJ1Selector = {};
 let date = new Date();
 let todayMonth = String(date.getMonth() + 1);
 let todayDay = String(date.getDay() + 5);
 let todayYear = String(date.getFullYear());
 let currentDate = todayYear + todayMonth + todayDay;
-let showQuantity = 1;
+let currentView = '';
+let typeOfChargeExpressed = "";
 let supplierName = "";
 let generalSearchText = "";
+let generalSupliersLines = 0;
+let userLoggedId = 0;
+let showQuantity = 1;
