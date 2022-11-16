@@ -253,6 +253,41 @@
               </table>
             </div>
           </main>
+          <!--Main Asignar un viaje-->
+
+          <!--Main Rollover de carga-->
+          <main data-view="RolloverDeCargaView" class="show-this-view main-table-manifest login-no-display">
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="first-manifest-container">
+              <h2 class="table-title">Descripción:</h2>
+              <div class="sub-manifest-container">
+                <p class="description-manifest">Muchas veces ocurre que una solicitud de carga confirmada inicialmente para
+                  un viaje, finalmente no se puede cargar y se debe “rollear” a otro viaje. La línea
+                  de carga tiene que poder cambiar de viaje a la carga de sus solicitudes para un
+                  viaje posterior. TODOS los contenedores asociados a una solicitud de carga se
+                  cambian de viaje. No se admite cambios parciales de una parte de la solicitud.
+                  Es decir, si la solicitud original tenía 4 contenedores, se deben mover los 4
+                  contenedores juntos a otro viaje. El rollover deberá prever también la
+                  verificación de que en el viaje destino haya cupos suficientes disponibles.</p>
+              </div>
+            </div>
+            <!--FINAL DESCRIPTION STYLES-->
+            <div class="div-title-table-al">
+              <h2 class="table-title">Rollover de carga:</h2>
+            </div>
+            <div class="second-manifest-container">
+              <table class="body-table-manifest">
+                <thead class="thead-manifest">
+                  <th class="column-manifest">Nombre</th>
+                  <th class="column-manifest">Cantidad Max.</th>
+                  <th class="column-manifest">Empresa</th>
+                  <th class="column-manifest">Fecha</th>     
+                  <th class="column-manifest unique-column-left-al">Rollover</th>
+                </thead>
+                <tbody id="" class="thead-manifest tbody-manifest"></tbody>
+              </table>
+            </div>
+          </main>
           <!--Main Rollover de carga-->
 
           <!--Main Manifiesto de carga-->
@@ -506,8 +541,7 @@
           <!--Main Consultar Solicitudes Pendientes-->
 
           <!--Main Visualizar Informacion Estadistica-->
-          <main data-view="VisualizarInformacionEstadistica"
-            class="show-this-view main-table-manifest login-no-display">
+          <main data-view="VisualizarInformacionEstadistica" class="show-this-view main-table-manifest login-no-display">
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">

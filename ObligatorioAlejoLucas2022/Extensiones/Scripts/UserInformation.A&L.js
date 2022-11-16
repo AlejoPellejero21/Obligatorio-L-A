@@ -36,13 +36,13 @@ class Solicitud {
 }
 
 class Viaje {
-    constructor(shipId, shipName, shipQuantity, shipDate) {
+    constructor(shipId, shipName, shipQuantity, shipDate, shipSupplierId) {
         this.id = shipId;
         this.shipName = shipName;
         this.shipQuantity = shipQuantity;
         this.shipQuantityAvailable = shipQuantity;
         this.shipDate = shipDate;
-        this.shipSupplierId = 0;
+        this.shipSupplierId = shipSupplierId;
         this.shipRollover = false;
         this.shipRequest = [];
     }

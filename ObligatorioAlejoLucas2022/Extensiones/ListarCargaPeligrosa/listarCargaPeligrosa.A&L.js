@@ -7,10 +7,13 @@ function onCreateCargaDeViajes() {
     if (Viajes.length > 0) {
         //Se recorren los viajes 
         Viajes.forEach(function (viaje, index) {
-            //Se recorren los atributos tablas para viajes          
-            TablaViajesCargaAttr.forEach(function (attr) {
-                createTableViajes(attr, viaje, index);
-            });
+            //Se recorren los atributos tablas para viajes
+            //Si la empresa del viaje es la misma que la empresa que esta logeada
+            if (viaje.shipSupplierId === userLogged.id) {
+                TablaViajesCargaAttr.forEach(function (attr) {
+                    createTableViajes(attr, viaje, index);
+                });
+            }
         });
         const FilaViajeAttr = getQuerySelector('.', "fila-show-carga-peligrosa", false);
 
@@ -32,7 +35,7 @@ function onCreateCargaDeViajes() {
 
 //Esta funcion es para la vista CargaPeligrosaView
 function onDangerViajeSelected() {
-    OBJ1Selector['ListaDeViajesAttr'] = getQuerySelector("#", 'lista-de-viajes-actuales', true);    
+    OBJ1Selector['ListaDeViajesAttr'] = getQuerySelector("#", 'lista-de-viajes-actuales', true);
     OBJ1Selector['ListaCargaPeligrosa'] = getQuerySelector('#', 'container-table-carga-peligrosa', true);
     const AttrId = parseInt(this.getAttribute("data-id"));
     const CargaPeligrosa = getQuerySelector('#', 'tabla-carga-peligrosa', true);
@@ -53,10 +56,10 @@ function onGoBackClick() {
         setDisplay(OBJ1Selector.ListaDeViajesAttr, true);
         setDisplay(OBJ1Selector.ListaCargaPeligrosa, false);
     } else {
-        OBJ1Selector.TitleManifiestoDeCarga.innerHTML = 'Manifiesto de Carga:';        
+        OBJ1Selector.TitleManifiestoDeCarga.innerHTML = 'Manifiesto de Carga:';
         setDisplay(OBJ1Selector.ListaManifiestoDeCarga, false);
         setDisplay(OBJ1Selector.ListaDeViajesManifestAttr, true);
-        
+
     }
 }
 
@@ -89,7 +92,7 @@ function buildDifferntTables(AttrId, attr) {
 
 //Dependiendo de la view esta funcion arma la lista de solicitudes para un viaje
 function showTableForCargas(shipRequests, viaje, attr) {
-    const TitleCarga = currentView === CargaPeligrosaView ? OBJ1Selector.TitleCargaPeligrosa : OBJ1Selector.TitleManifiestoDeCarga;    
+    const TitleCarga = currentView === CargaPeligrosaView ? OBJ1Selector.TitleCargaPeligrosa : OBJ1Selector.TitleManifiestoDeCarga;
     let noExist = false;
     //Se recorren las solicitudes del viaje seleccionado
     shipRequests.forEach(function (solicitud, index) {
@@ -97,20 +100,20 @@ function showTableForCargas(shipRequests, viaje, attr) {
             if (solicitud.requestType === 2) {
                 noExist = true;
                 if (index === 0) {
-                    TitleCarga.innerHTML += ` ${viaje.shipName}`;                
+                    TitleCarga.innerHTML += ` ${viaje.shipName}`;
                 }
                 setDisplay(OBJ1Selector.ListaDeViajesAttr, false);
                 setDisplay(OBJ1Selector.ListaCargaPeligrosa, true);
-                attr.innerHTML += tableRequestinnerHTML(attr, solicitud, 'dng');
+                attr.innerHTML += tableRequestinnerHTML(solicitud, 'dng');
             }
         } else {
             noExist = true;
             if (index === 0) {
-                TitleCarga.innerHTML += ` ${viaje.shipName}`;                
+                TitleCarga.innerHTML += ` ${viaje.shipName}`;
             }
             setDisplay(OBJ1Selector.ListaDeViajesManifestAttr, false);
-            setDisplay(OBJ1Selector.ListaManifiestoDeCarga, true);            
-            attr.innerHTML += tableRequestinnerHTML(attr, solicitud, 'dng');
+            setDisplay(OBJ1Selector.ListaManifiestoDeCarga, true);
+            attr.innerHTML += tableRequestinnerHTML(solicitud, 'dng');
         }
     });
 

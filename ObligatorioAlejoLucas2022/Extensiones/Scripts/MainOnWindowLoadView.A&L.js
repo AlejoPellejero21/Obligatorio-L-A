@@ -18,8 +18,7 @@ function onWindowLoad() {
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
   OBJ1Selector.InputRequestSearch.addEventListener("keyup", onSearchRequest);
   OBJ1Selector.LogOUT.addEventListener('click', onLogOutClick);
-
-  createRequestTable();
+    
   setDisplay(OBJ1Selector.HeaderUserName, false);
   OBJ1Selector.HeaderWelcomeUser.innerHTML = WelcomeEmpresario;
   OBJ1Selector.ButtonCreateForBoth.innerHTML = CrearUnViaje;
