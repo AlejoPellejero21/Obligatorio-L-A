@@ -1,9 +1,12 @@
 // Cambiar foto de perfil
 function onChangeProfilePicture() {
+
+
   const FirstProfilePicture = getQuerySelector("#", "first-profile-icon", true);
   const SecondProfilePicture = getQuerySelector("#", "second-profile-icon", true);
   const ThirdProfilePicture = getQuerySelector("#", "third-profile-icon", true);
   const FourthProfilePicture = getQuerySelector("#", "fourth-profile-icon", true);
+
 
   let ProfilePictureSelectorValue = OBJ1Selector.ProfilePictureSelector.value;
 
@@ -41,12 +44,12 @@ function onRegisterUser(e) {
   OBJ1Selector["userName"] = getQuerySelector("#", "input-register-name", true);
   OBJ1Selector["userAccess"] = getQuerySelector("#", "input-register-username", true);
   OBJ1Selector["userPassword"] = getQuerySelector("#", "input-register-password", true);
-  OBJ1Selector["profilePicture"] = getQuerySelector("#", "profile-icon-selector", true);
+
 
   const userName = OBJ1Selector.userName.value;
   const userAccess = OBJ1Selector.userAccess.value;
   const userPassword = OBJ1Selector.userPassword.value;
-  const profilePicture = OBJ1Selector.profilePicture.value;
+  const profilePicture = OBJ1Selector.ProfilePictureSelector.value;
 
 
   let id = 0;
@@ -60,23 +63,11 @@ function onRegisterUser(e) {
     alert("Por favor ingrese una contraseña");
   } else {
 
-
-    if (!validatePassword(userPassword)) {
-      alert(
-        "bueno que pinto a ver si pones bien la contraseña la concha de tu madre"
-      );
-    } else {
-      id = getIdAutonumerico();
-      registredImportador = new Importador(id, userName, userAccess, userPassword,/*profilePicture,*/ true, 0, 0, []);
-
-      setPush(Importadores, registredImportador)
-
-      onLoggedImportador()
-
-      console.log(Importadores)
-
-
-    }
+    id = getIdAutonumerico();
+    registredImportador = new Importador(id, userName, userAccess, userPassword, profilePicture, true, 0, 0, []);
+    setPush(Importadores, registredImportador);    
 
   }
+
 }
+

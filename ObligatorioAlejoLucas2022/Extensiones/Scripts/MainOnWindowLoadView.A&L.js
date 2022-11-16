@@ -12,7 +12,7 @@ function onWindowLoad() {
   OBJ1Selector["InputRequestSearch"] = getQuerySelector("#", "input-request-search-button", true);
   OBJ1Selector['SetNameUserLogged'] = getQuerySelector('#', 'head-user-name', true);
   OBJ1Selector['LogOUT'] = getQuerySelector("#", 'button-loggout-now', true);
-  OBJ1Selector["ProfilePictureSelector"] = getQuerySelector("#", "profile-icon-selector", "true")
+  OBJ1Selector["ProfilePictureSelector"] = getQuerySelector("#", "profile-icon-selector", "true");
         
   getQuerySelector("#", "button-on-register", "true").addEventListener("click", onRegisterUser);
   getQuerySelector("#", "button-on-login", true).addEventListener("click", onLoginClick);
