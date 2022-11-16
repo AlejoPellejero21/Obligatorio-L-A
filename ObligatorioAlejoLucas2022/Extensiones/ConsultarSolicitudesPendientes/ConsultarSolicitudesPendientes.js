@@ -12,7 +12,7 @@ function buildConsultarSolicitudes() {
   
   if (userLogged.userEnabled) {
     Solicitudes.forEach(function (solicitud) {    
-      let supplierName = getSupplierName(solicitud);  
+      let supplierName = getSupplierName(solicitud.requestSupplierId);  
       if (solicitud.requestUserId === userLoggedId && solicitud.requestStatus === 0) { 
         createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, supplierName, solicitud.requestDescription, solicitud.requestType, solicitud.id)
       }
@@ -21,18 +21,6 @@ function buildConsultarSolicitudes() {
     alert('Su usuario no esta habilitado');//Consultar si este mensaje va
   }
 
-}
-
-function getSupplierName(solicitud) {
-  let supplierName = "";
-
-  Empresas.forEach(function (empresa) {
-    if (solicitud.requestSupplierId === empresa.id) {      
-      supplierName = empresa.supplierName
-    }
-  });
-
-  return supplierName;
 }
 
 function createPendingRequestTable(requestOrigin, requestQuantity, supplierName, requestDescription, requestType, id) {  
