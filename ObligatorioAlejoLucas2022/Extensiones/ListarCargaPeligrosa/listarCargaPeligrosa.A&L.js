@@ -1,6 +1,8 @@
 function onCreateCargaDeViajes() {
+    //Tomo los titulos que quiero agregarle el nombre del viaje
     OBJ1Selector['TitleCargaPeligrosa'] = getQuerySelector('#', 'title-carga-peligrosa', true);
     OBJ1Selector['TitleManifiestoDeCarga'] = getQuerySelector('#', 'title-manifiesto-de-carga', true);
+    OBJ1Selector['TitleRolloverDeCarga'] = getQuerySelector('#', 'title-rollover-de-carga', true);
     const TablaViajesCargaAttr = getQuerySelector('.', 'tabla-de-viajes-carga-p', false);
 
 
@@ -15,22 +17,32 @@ function onCreateCargaDeViajes() {
                 });
             }
         });
-        const FilaViajeAttr = getQuerySelector('.', "fila-show-carga-peligrosa", false);
 
-        if (currentView === CargaPeligrosaView) {
-            FilaViajeAttr.forEach(function (attr) {
-                attr.addEventListener('click', onDangerViajeSelected)
-            });
-        } else {
-            FilaViajeAttr.forEach(function (attr) {
-                attr.addEventListener('click', onViajeSelected)
-            });
+
+        const FilaViajeAttr = getQuerySelector('.', "fila-show-carga-peligrosa", false);
+        //Dependiendo de la view de viajes le asigno una funcion distinta
+        switch (currentView) {
+            case CargaPeligrosaView:
+                addAFunctionToAFila(FilaViajeAttr, onDangerViajeSelected);
+                break;
+            case RolloverDeCargaView:
+                addAFunctionToAFila(FilaViajeAttr, onRolloverDeCarga);
+                break;
+            case ManifiestoDeCargaView:
+                addAFunctionToAFila(FilaViajeAttr, onViajeSelected);
+                break;
         }
 
     } else {
         alert('No existen ningun viaje creado')
     }
 
+}
+
+function addAFunctionToAFila(FilaViajeAttr, functionName) {
+    FilaViajeAttr.forEach(function (attr) {
+        attr.addEventListener('click', functionName)
+    });
 }
 
 //Esta funcion es para la vista CargaPeligrosaView
@@ -42,7 +54,7 @@ function onDangerViajeSelected() {
     const ButtonGoBack = getQuerySelector('#', 'on-click-back-to', true);
     CargaPeligrosa.innerHTML = '';
 
-    //Esto se hace ya que hay dos view que muestran tabla de viajes
+    //Esto se hace ya que hay varias views que muestran tabla de viajes
     //AttrId es igual al viaje que se clickeo
     buildDifferntTables(AttrId, CargaPeligrosa);
 
@@ -64,20 +76,21 @@ function onGoBackClick() {
 }
 
 function createTableViajes(attr, viaje, index) {
+    let attrBuild = '';
     if (index === 0) {
         attr.innerHTML = '';
     }
 
-    attr.innerHTML += `
+    attrBuild += `
                 <tr class='fila-show-carga-peligrosa' data-id='${viaje.id}'>                
                     <td class="column-manifest-td">${viaje.shipName}</td>
                     <td class="column-manifest-td">${viaje.shipQuantity}</td>                
                     <td class="column-manifest-td">${viaje.shipSupplierId}</td>
-                    <td class="column-manifest-td">${viaje.shipDate}</td>
-                </tr>
-                `
+                    <td class="column-manifest-td">${viaje.shipDate}</td>                
+                `;
 
-    return attr.innerHTML;
+    attrBuild += '</tr>';
+    return attr.innerHTML += attrBuild;
 }
 
 //Esta funcion arma una tabla de viajes
@@ -96,28 +109,38 @@ function showTableForCargas(shipRequests, viaje, attr) {
     let noExist = false;
     //Se recorren las solicitudes del viaje seleccionado
     shipRequests.forEach(function (solicitud, index) {
+        //View de carga peligrosa
         if (currentView === CargaPeligrosaView) {
             if (solicitud.requestType === 2) {
-                noExist = true;
-                if (index === 0) {
-                    TitleCarga.innerHTML += ` ${viaje.shipName}`;
-                }
-                setDisplay(OBJ1Selector.ListaDeViajesAttr, false);
-                setDisplay(OBJ1Selector.ListaCargaPeligrosa, true);
-                attr.innerHTML += tableRequestinnerHTML(solicitud, 'dng');
+                noExist = setValuesForTables(index, TitleCarga, viaje, attr, solicitud, CargaPeligrosaView);
             }
+        } else if (currentView === ManifiestoDeCargaView) {
+            noExist = setValuesForTables(index, TitleCarga, viaje, attr, solicitud, ManifiestoDeCargaView);
         } else {
-            noExist = true;
-            if (index === 0) {
-                TitleCarga.innerHTML += ` ${viaje.shipName}`;
-            }
-            setDisplay(OBJ1Selector.ListaDeViajesManifestAttr, false);
-            setDisplay(OBJ1Selector.ListaManifiestoDeCarga, true);
-            attr.innerHTML += tableRequestinnerHTML(solicitud, 'dng');
+            console.log('No existen tablas en esta view');
         }
     });
 
     if (!noExist) {
         alert('Este viaje no cuenta con cargas de tipo: CARGA_PELIGROSA');
     }
+}
+
+function setValuesForTables(index, TitleCarga, viaje, attr, solicitud, view) {
+    if (index === 0) {
+        TitleCarga.innerHTML += ` ${viaje.shipName}`;
+    }
+
+    if (view === ManifiestoDeCargaView) {
+        setDisplay(OBJ1Selector.ListaDeViajesManifestAttr, false);
+        setDisplay(OBJ1Selector.ListaManifiestoDeCarga, true);
+    } else {
+        setDisplay(OBJ1Selector.ListaDeViajesAttr, false);
+        setDisplay(OBJ1Selector.ListaCargaPeligrosa, true);
+    }
+
+    attr.innerHTML += tableRequestinnerHTML(solicitud, 'dng');
+
+
+    return true;
 }

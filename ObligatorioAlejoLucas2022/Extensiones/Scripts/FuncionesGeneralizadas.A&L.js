@@ -75,8 +75,8 @@ function createPreUserInformation() {
     new Solicitud(getIdAutonumerico() + 13, 2, 'Esto es la desciprcion de pruebas numero 1000/8 es probable que no sea la misma que 10% de $200', 'Montevideo', 9, 0341, 1, 8383),
     new Solicitud(getIdAutonumerico() + 14, 1, 'Esto es la desciprcion de pruebas numero me olvide para hacer pruebas que no me acuerdo.', 'Montevideo', 9, 0341, 3, 8383),
     new Solicitud(getIdAutonumerico() + 15, 2, 'Esto es la desciprcion de pruebas numero me olvide ya que voy haciendo tantas pruebas que me pesan las ideas.', 'Rocha', 7, 0341, 1, 8383),
-    new Solicitud(getIdAutonumerico() + 16, 3, 'Esto es la desciprcion de pruebas numero 100, ahora me acorde cuatas eran XD.', 'Maldonado', 12, 0341, 1, 8383),
-    new Solicitud(getIdAutonumerico() + 17, 3, 'Esto es la desciprcion que se creo en un comienzo del siglo actual para poder hacer pruebas.', 'Salto', 8, 0341, 1, 8383),
+    new Solicitud(getIdAutonumerico() + 16, 0, 'Esto es la desciprcion de pruebas numero 100, ahora me acorde cuatas eran XD.', 'Maldonado', 12, 0341, 1, 8383),
+    new Solicitud(getIdAutonumerico() + 17, 1, 'Esto es la desciprcion que se creo en un comienzo del siglo actual para poder hacer pruebas.', 'Salto', 8, 0341, 1, 8383),
     new Solicitud(getIdAutonumerico() + 18, 2, 'Esto es la desciprcion de pruebas numero treinta creada antes de cristo en minuscula.', 'Rocha', 11, 0341, 1, 8383),
     new Solicitud(getIdAutonumerico() + 19, 2, 'Esta descripcion cuenta como una descripcion quizas no es la mejor pero igual sirve para buscar.', 'Montevideo', 3, 0341, 1, 8383),
   );
