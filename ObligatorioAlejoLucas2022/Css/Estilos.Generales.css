@@ -736,3 +736,8 @@ body {
 .select-pointer{
     cursor: pointer;
 }
+
+.rollover-de-carga-class{
+    flex-direction: column;
+    margin: 2% 0px;
+}
