@@ -1,0 +1,3 @@
+function onRolloverDeCarga() {
+    debugger;
+}

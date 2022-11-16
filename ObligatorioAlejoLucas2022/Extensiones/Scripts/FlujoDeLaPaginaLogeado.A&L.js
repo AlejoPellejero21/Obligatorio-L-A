@@ -12,6 +12,7 @@ function onCrearUnViajeClick() {
 
   OBJ1Selector.ShowThisView.forEach(function (view) {
     if (viewToShowButtonClick === view.attributes[0].value) {
+      //asigno la view actual a una variable global
       currentView = viewToShowButtonClick;
       onCreateCargaDeViajes();
       setDisplay(view, true);
@@ -35,6 +36,7 @@ function onLoggedEmpresa() {
   setDisplay(OBJ1Selector.LoggOutPage, true);
   setDisplay(mainViewEmpresa, true);
   onDashboardLoad();
+  createRequestTable();
   onHabilitarUsuarios();
 }
 

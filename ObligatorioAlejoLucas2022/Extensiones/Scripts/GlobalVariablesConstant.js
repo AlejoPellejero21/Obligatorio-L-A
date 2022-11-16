@@ -4,6 +4,7 @@ const WelcomeEmpresario = 'Bienvenido Empresario:';
 const WelcomeImportador = 'Bienvenido Importador:';
 const CargaPeligrosaView = 'CargaPeligrosaView';
 const ManifiestoDeCargaView = 'ManifiestoDeCargaView';
+const RolloverDeCargaView = 'RolloverDeCargaView';
 const CrearUnViaje = 'CREAR UN VIAJE';
 const CrarUnaSolicitud = 'CREAR UNA SOLICITUD';
 const ErrorCamposCrearViaje = 'Por favor, complete todos los campos!';

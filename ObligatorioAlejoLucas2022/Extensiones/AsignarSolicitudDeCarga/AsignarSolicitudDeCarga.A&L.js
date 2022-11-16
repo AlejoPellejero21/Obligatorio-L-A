@@ -7,8 +7,9 @@ function createRequestTable() {
     let rquestStatus = solicitud.requestStatus;
     let id = solicitud.id;
 
-    if (id && rquestStatus === 0) {      
-      RequestPendingTable.innerHTML += tableRequestinnerHTML(RequestPendingTable, solicitud, 'add');
+    //Si existe la solicitud y es de tipo pendiente, ademas el usuario loggeado es el asignado
+    if (id && rquestStatus === 0 && solicitud.requestSupplierId === userLogged.id) {
+      RequestPendingTable.innerHTML += tableRequestinnerHTML(solicitud, 'add');
     }
   });
 
@@ -18,16 +19,16 @@ function createRequestTable() {
   });
 }
 
-function tableRequestinnerHTML(attr, solicitud, type) {    
+function tableRequestinnerHTML(solicitud, type) {
   let newTableText = '';
   newTableText += `<tr data-id='${solicitud.id}'>`;
-  
-  if (type === 'add') {    
+
+  if (type === 'add') {
     newTableText += `                    
       <td class="column-manifest-td unique-column-left-al add-plus-al button-asignar-solicitud" data-id='${solicitud.id}'>+</td>      
 `;
   }
-  
+
   newTableText += `
       <td class="column-manifest-td">${solicitud.requestOrigin}</td>
       <td class="column-manifest-td">${solicitud.requestQuantity}</td>
@@ -101,7 +102,9 @@ function createViajesTable() {
   let table = "";
 
   Viajes.forEach(function (viaje) {
-    if (viaje.shipQuantityAvailable > 0) {
+    //Valido de que la cantidad sea mayor a 0
+    //Valido de que los viajes esten asignado al usuario actual
+    if (viaje.shipQuantityAvailable > 0 && viaje.shipSupplierId === userLogged.id) {
       table += `
             <div class="container-data-info-viajes" data-id='${viaje.id}'>            
                 <span class="column-manifest-td">${viaje.shipName}</span>
