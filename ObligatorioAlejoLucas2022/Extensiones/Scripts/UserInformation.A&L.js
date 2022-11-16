@@ -1,9 +1,10 @@
 class Importador {
-    constructor(userId, userName, userAccess, userPassword) {
+    constructor(userId, userName, userAccess, userPassword, userProfilePicture) {
         this.id = userId;
         this.userName = userName;
         this.userAccess = userAccess;
         this.userPassword = userPassword;
+        this.userProfilePicture = userProfilePicture;
         this.userEnabled = true;
         this.userCancelInfo = 0;
         this.userLinesInfo = 0;
