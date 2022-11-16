@@ -1,53 +1,52 @@
 class Importador {
-    constructor(userId, userName, userAccess, userPassword) {
-        this.id = userId;
-        this.userName = userName;
-        this.userAccess = userAccess;
-        this.userPassword = userPassword;
-        this.userEnabled = true;
-        this.userCancelInfo = 0;
-        this.userLinesInfo = 0;
-        this.userRequests = [];
-    }
+  constructor(userId, userName, userAccess, userPassword) {
+    this.id = userId;
+    this.userName = userName;
+    this.userAccess = userAccess;
+    this.userPassword = userPassword;
+    this.userEnabled = true;
+    this.userCancelInfo = 0;
+    this.userLinesInfo = 0;
+    this.userRequests = [];
+  }
 }
 
 class Empresa {
-    constructor(supplierId, supplierName, supplierAccess, supplierPassword) {
-        this.id = supplierId;
-        this.supplierName = supplierName;
-        this.userAccess = supplierAccess;
-        this.userPassword = supplierPassword;
-        this.supplierTrips = [];
-    }
+  constructor(supplierId, supplierName, supplierAccess, supplierPassword) {
+    this.id = supplierId;
+    this.supplierName = supplierName;
+    this.userAccess = supplierAccess;
+    this.userPassword = supplierPassword;
+    this.supplierTrips = [];
+  }
 }
 
 class Solicitud {
-    constructor(requestId, requestType, requestDescription, requestOrigin, requestQuantity, requestSupplierId, requestStatus, requestUserId) {
-        this.id = requestId;
-        this.requestType = requestType;
-        this.requestDescription = requestDescription;
-        this.requestOrigin = requestOrigin;
-        this.requestQuantity = requestQuantity;
-        this.requestSupplierId = requestSupplierId;
-        this.requestStatus = requestStatus;
-        this.requestTravelNumber = 0;
-        this.requestUserId = requestUserId;
-    }
+  constructor(requestId, requestType, requestDescription, requestOrigin, requestQuantity, requestSupplierId, requestStatus, requestUserId) {
+    this.id = requestId;
+    this.requestType = requestType;
+    this.requestDescription = requestDescription;
+    this.requestOrigin = requestOrigin;
+    this.requestQuantity = requestQuantity;
+    this.requestSupplierId = requestSupplierId;
+    this.requestStatus = requestStatus;
+    this.requestTravelNumber = 0;
+    this.requestUserId = requestUserId;
+  }
 }
 
 class Viaje {
-    constructor(shipId, shipName, shipQuantity, shipDate) {
-        this.id = shipId;
-        this.shipName = shipName;
-        this.shipQuantity = shipQuantity;
-        this.shipQuantityAvailable = shipQuantity;
-        this.shipDate = shipDate;
-        this.shipSupplierId = 0;
-        this.shipRollover = false;
-        this.shipRequest = [];
-    }
+  constructor(shipId, shipName, shipQuantity, shipDate) {
+    this.id = shipId;
+    this.shipName = shipName;
+    this.shipQuantity = shipQuantity;
+    this.shipQuantityAvailable = shipQuantity;
+    this.shipDate = shipDate;
+    this.shipSupplierId = 0;
+    this.shipRollover = false;
+    this.shipRequest = [];
+  }
 }
-
 
 /*EJEMPLO DE USUASRIOS Y DATOS
 

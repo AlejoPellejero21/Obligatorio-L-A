@@ -1,16 +1,16 @@
 function onHabilitarUsuarios() {
-    const UserContainer = getQuerySelector('#', 'user-big-container', true);
-    const ButtonUser = getQuerySelector('#', 'button-habilitar-user', true);
-    UserContainer.innerHTML = '';
-    ButtonUser.innerHTML = '';
-    userNotFound = false;
+  const UserContainer = getQuerySelector("#", "user-big-container", true);
+  const ButtonUser = getQuerySelector("#", "button-habilitar-user", true);
+  UserContainer.innerHTML = "";
+  ButtonUser.innerHTML = "";
+  userNotFound = false;
 
-    if (Importadores.length > 0) {
-        Importadores.forEach(function (importador) {
-            if (!importador.userEnabled) {
-                userNotFound = true;
-                //Falta Agregar la imagen correspondiente
-                UserContainer.innerHTML += `
+  if (Importadores.length > 0) {
+    Importadores.forEach(function (importador) {
+      if (!importador.userEnabled) {
+        userNotFound = true;
+        //Falta Agregar la imagen correspondiente
+        UserContainer.innerHTML += `
                 <div class="user-container">
                     <div class="user-container-top-al">
                         <div class="image-user-al"></div>
@@ -23,39 +23,37 @@ function onHabilitarUsuarios() {
                 </div> 
                 `;
 
-                ButtonUser.innerHTML += `
+        ButtonUser.innerHTML += `
                 <div class="user-container button-enable-al">
                     <input class="user-enable-button" data-userId="${importador.id}" type="button" value="Habilitar">
                 </div>        
-                `
-            }            
-        });
+                `;
+      }
+    });
 
-        const ButtonHabilitarUser = getQuerySelector('.', "user-enable-button", false);
+    const ButtonHabilitarUser = getQuerySelector(".", "user-enable-button", false);
 
-        ButtonHabilitarUser.forEach(function (button) {
-            button.addEventListener('click', onHabilitarUserClick)
-        });
+    ButtonHabilitarUser.forEach(function (button) {
+      button.addEventListener("click", onHabilitarUserClick);
+    });
 
-
-        if (!userNotFound){
-            setDisplay(ButtonUser, false);
-            UserContainer.innerHTML += `
+    if (!userNotFound) {
+      setDisplay(ButtonUser, false);
+      UserContainer.innerHTML += `
             <p class="description-manifest ususario-desha-test-p">No existe ningun usuario DESHABILITADO en este momento.</p>
-            `
-        }
+            `;
     }
+  }
 }
 
-
 function onHabilitarUserClick() {
-    const userId = parseInt(this.getAttribute("data-userId"));
+  const userId = parseInt(this.getAttribute("data-userId"));
 
-    Importadores.forEach(function (importador) {
-        if (importador.id === userId) {
-            importador.userEnabled = true;
-            alert(`El usuario ${importador.userAccess} fue habilitado correctamente`);
-        }
-    });        
-    onHabilitarUsuarios();
+  Importadores.forEach(function (importador) {
+    if (importador.id === userId) {
+      importador.userEnabled = true;
+      alert(`El usuario ${importador.userAccess} fue habilitado correctamente`);
+    }
+  });
+  onHabilitarUsuarios();
 }

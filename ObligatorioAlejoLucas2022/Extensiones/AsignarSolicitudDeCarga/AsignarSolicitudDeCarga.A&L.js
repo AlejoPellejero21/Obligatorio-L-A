@@ -7,8 +7,8 @@ function createRequestTable() {
     let rquestStatus = solicitud.requestStatus;
     let id = solicitud.id;
 
-    if (id && rquestStatus === 0) {      
-      RequestPendingTable.innerHTML += tableRequestinnerHTML(RequestPendingTable, solicitud, 'add');
+    if (id && rquestStatus === 0) {
+      RequestPendingTable.innerHTML += tableRequestinnerHTML(RequestPendingTable, solicitud, "add");
     }
   });
 
@@ -18,42 +18,42 @@ function createRequestTable() {
   });
 }
 
-function tableRequestinnerHTML(attr, solicitud, type) {    
-  let newTableText = '';
+function tableRequestinnerHTML(attr, solicitud, type) {
+  let newTableText = "";
   newTableText += `<tr data-id='${solicitud.id}'>`;
-  
-  if (type === 'add') {    
+
+  if (type === "add") {
     newTableText += `                    
       <td class="column-manifest-td unique-column-left-al add-plus-al button-asignar-solicitud" data-id='${solicitud.id}'>+</td>      
 `;
   }
-  
+
   newTableText += `
       <td class="column-manifest-td">${solicitud.requestOrigin}</td>
       <td class="column-manifest-td">${solicitud.requestQuantity}</td>
       <td class="column-manifest-td">${getStatusText(solicitud.requestStatus)}</td>
       <td class="column-manifest-td">${solicitud.requestDescription}</td>
       <td class="column-manifest-td">${getRequestText(solicitud.requestType)}</td>
-  </tr>`
+  </tr>`;
 
   return newTableText;
 }
 
 function getStatusText(rquestStatus) {
-  let statusText = ''
+  let statusText = "";
 
   switch (rquestStatus) {
     case 0:
-      statusText += 'Pendiente'
+      statusText += "Pendiente";
       break;
     case 1:
-      statusText += 'Aprobada'
+      statusText += "Aprobada";
       break;
     case 2:
-      statusText += 'Cancelada'
+      statusText += "Cancelada";
       break;
     default:
-      statusText += 'Ignorada'
+      statusText += "Ignorada";
       break;
   }
 

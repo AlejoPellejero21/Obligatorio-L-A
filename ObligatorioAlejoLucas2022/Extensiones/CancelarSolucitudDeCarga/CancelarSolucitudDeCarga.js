@@ -8,12 +8,11 @@ function getCancelBtns() {
 function onCancelarSolicitud() {
   const id = Number(this.getAttribute("data-id"));
   onCambiarEstado(id);
-  onConsultarSolicitudes();  
+  onConsultarSolicitudes();
 }
 
 function onCambiarEstado(id) {
   Solicitudes.forEach(function (solicitud) {
-
     if (solicitud.id === id) {
       solicitud.requestStatus = 2;
     }

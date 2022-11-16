@@ -1,14 +1,14 @@
 function onDashboardLoad() {
-  OBJ1Selector['NavBarCrearUnViaje'] = getQuerySelector('.', 'go-to-a-new-view', false);
-  OBJ1Selector['ShowThisView'] = getQuerySelector('.', 'show-this-view', false);
+  OBJ1Selector["NavBarCrearUnViaje"] = getQuerySelector(".", "go-to-a-new-view", false);
+  OBJ1Selector["ShowThisView"] = getQuerySelector(".", "show-this-view", false);
 
   OBJ1Selector.NavBarCrearUnViaje.forEach(function (button) {
-    button.addEventListener('click', onCrearUnViajeClick);
-  });;
+    button.addEventListener("click", onCrearUnViajeClick);
+  });
 }
 
 function onCrearUnViajeClick() {
-  var viewToShowButtonClick = this.attributes[0].value;//data-view
+  var viewToShowButtonClick = this.attributes[0].value; //data-view
 
   OBJ1Selector.ShowThisView.forEach(function (view) {
     if (viewToShowButtonClick === view.attributes[0].value) {
@@ -25,11 +25,11 @@ function onLoggedEmpresa() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateTrip = getQuerySelector("#", "main-dashboard-container-empresario", true);
   const mainViewEmpresa = getQuerySelector("#", "main-view-empresa", true);
-  OBJ1Selector['LoggOutPage'] = getQuerySelector("#", "button-header-loggout", true);
+  OBJ1Selector["LoggOutPage"] = getQuerySelector("#", "button-header-loggout", true);
 
-  OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.supplierName;
+  OBJ1Selector.HeaderUserName.innerHTML += userLogged.supplierName;
 
-  setDisplay(OBJ1Selector.SetNameUserLogged, true);
+  setDisplay(OBJ1Selector.HeaderUserName, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateTrip, true);
   setDisplay(OBJ1Selector.LoggOutPage, true);
@@ -41,18 +41,18 @@ function onLoggedEmpresa() {
 function onLoggedImportador() {
   const LoginMainView = getQuerySelector(".", "main-login-container-al", true);
   const CreateRequest = getQuerySelector(".", "dashboard-container-al-sky-blue", true);
-  const CrearUnaSolicitudAttr = getQuerySelector("#", "send-shippment-request", true);  
+  const CrearUnaSolicitudAttr = getQuerySelector("#", "send-shippment-request", true);
   const mainViewImportador = getQuerySelector("#", "main-view-importador", true);
-  OBJ1Selector['LoggOutPage'] = getQuerySelector("#", "button-header-loggout", true);
+  OBJ1Selector["LoggOutPage"] = getQuerySelector("#", "button-header-loggout", true);
   CrearUnaSolicitudAttr.addEventListener("click", onCrearSolicitudDeCarga);
 
-  OBJ1Selector.SetNameUserLogged.innerHTML += userLogged.userAccess;
+  //console.log((OBJ1Selector.HeaderUserName.innerHTML += userLogged.userAccess));
 
-  setDisplay(OBJ1Selector.SetNameUserLogged, true);
+  setDisplay(OBJ1Selector.HeaderUserName, true);
   setDisplay(OBJ1Selector.LoggOutPage, true);
   setDisplay(LoginMainView, false);
   setDisplay(CreateRequest, true);
-  setDisplay(mainViewImportador, true);  
+  setDisplay(mainViewImportador, true);
   onDashboardLoad();
   onConsultarSolicitudes();
   onDashboardCancelaciones();

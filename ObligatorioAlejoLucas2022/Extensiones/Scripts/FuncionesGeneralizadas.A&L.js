@@ -36,38 +36,27 @@ function setDisplay(attr, display) {
  * Se crean los usuarios pre-cargados
  */
 function createPreUserInformation() {
-  Importadores.push(
-    new Importador(0101, 'Alfredo', 'Alfredito21', '12345'),
-    new Importador(0124, 'Rafael', 'RafaEl1', '113355'),
-    new Importador(0221, 'Lucas', 'Lucaaas', '232345')
-  );
+  Importadores.push(new Importador(0101, "Alfredo", "Alfredito21", "12345"), new Importador(0124, "Rafael", "RafaEl1", "113355"), new Importador(0221, "Lucas", "Lucaaas", "232345"));
 
-  Viajes.push(
-    new Viaje(getIdAutonumerico(), 'BuqueAk-74', 47, '2022-11-15'),
-    new Viaje(getIdAutonumerico() + 2, 'BuquePurple', 69, '2022-12-10')
-  );
+  Viajes.push(new Viaje(getIdAutonumerico(), "BuqueAk-74", 47, "2022-11-15"), new Viaje(getIdAutonumerico() + 2, "BuquePurple", 69, "2022-12-10"));
 
-  Empresas.push(
-    new Empresa(0142, 'UPS', 'Admin-UPS', 'ups123'),
-    new Empresa(0241, 'DHL', 'Admin-DHL', 'dhl123'),
-    new Empresa(0341, 'MECALUX', 'Admin-Mecalux', '1mecalux')
-  );
+  Empresas.push(new Empresa(0142, "UPS", "Admin-UPS", "ups123"), new Empresa(0241, "DHL", "Admin-DHL", "dhl123"), new Empresa(0341, "MECALUX", "Admin-Mecalux", "1mecalux"));
 
   Solicitudes.push(
-    new Solicitud(getIdAutonumerico(), 2, 'Esto es una desciprcion que no es una prueba', 'Montevideo', 10, 0142, 0, 1222),
-    new Solicitud(getIdAutonumerico() + 1, 1, 'Esto es una desciprcion distinta pero de prueba', 'Salto', 10, 0142, 0, 1232),
-    new Solicitud(getIdAutonumerico() + 4, 2, 'Desciprcion para poder hacer pruebas de soli', 'Montevideo', 5, 0241, 1, 2422),
-    new Solicitud(getIdAutonumerico() + 2, 0, 'Esto es una desciprcion de prueba', 'Maldonado', 15, 0142, 2, 8888),
-    new Solicitud(getIdAutonumerico() + 3, 1, 'Esto es una desciprcion y ademas es una prueba', 'Rocha', 8, 0142, 0, 2224),
-    new Solicitud(getIdAutonumerico() + 6, 1, 'Desciprcion para poder hacer pruebas de solicitudes', 'Salto', 4, 0241, 1, 1283),
-    new Solicitud(getIdAutonumerico() + 5, 2, 'Una desciprcion para poder hacer pruebas de soli', 'Maldonado', 3, 0241, 0, 1245),
-    new Solicitud(getIdAutonumerico() + 7, 1, 'Una desciprcion para poder hacer pruebas.', 'Rocha', 2, 0241, 2, 1274),
-    new Solicitud(getIdAutonumerico() + 9, 1, 'Esto es la desciprcion de pruebas numero me olvide.', 'Maldonado', 5, 0241, 3, 8383),
-    new Solicitud(getIdAutonumerico() + 8, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 6, 0241, 1, 3844),
-    new Solicitud(getIdAutonumerico() + 10, 0, 'Esto es la desciprcion de pruebas numero me olvide.', 'Salto', 12, 0341, 0, 8383),
-    new Solicitud(getIdAutonumerico() + 11, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Rocha', 7, 0341, 2, 8383),
-    new Solicitud(getIdAutonumerico() + 12, 1, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 2, 0341, 1, 8383),
-    new Solicitud(getIdAutonumerico() + 13, 2, 'Esto es la desciprcion de pruebas numero me olvide.', 'Montevideo', 9, 0341, 3, 8383),
+    new Solicitud(getIdAutonumerico(), 2, "Esto es una desciprcion que no es una prueba", "Montevideo", 10, 0142, 0, 1222),
+    new Solicitud(getIdAutonumerico() + 1, 1, "Esto es una desciprcion distinta pero de prueba", "Salto", 10, 0142, 0, 1232),
+    new Solicitud(getIdAutonumerico() + 4, 2, "Desciprcion para poder hacer pruebas de soli", "Montevideo", 5, 0241, 1, 2422),
+    new Solicitud(getIdAutonumerico() + 2, 0, "Esto es una desciprcion de prueba", "Maldonado", 15, 0142, 2, 8888),
+    new Solicitud(getIdAutonumerico() + 3, 1, "Esto es una desciprcion y ademas es una prueba", "Rocha", 8, 0142, 0, 2224),
+    new Solicitud(getIdAutonumerico() + 6, 1, "Desciprcion para poder hacer pruebas de solicitudes", "Salto", 4, 0241, 1, 1283),
+    new Solicitud(getIdAutonumerico() + 5, 2, "Una desciprcion para poder hacer pruebas de soli", "Maldonado", 3, 0241, 0, 1245),
+    new Solicitud(getIdAutonumerico() + 7, 1, "Una desciprcion para poder hacer pruebas.", "Rocha", 2, 0241, 2, 1274),
+    new Solicitud(getIdAutonumerico() + 9, 1, "Esto es la desciprcion de pruebas numero me olvide.", "Maldonado", 5, 0241, 3, 8383),
+    new Solicitud(getIdAutonumerico() + 8, 0, "Esto es una desciprcion para poder hacer pruebas.", "Montevideo", 6, 0241, 1, 3844),
+    new Solicitud(getIdAutonumerico() + 10, 0, "Esto es la desciprcion de pruebas numero me olvide.", "Salto", 12, 0341, 0, 8383),
+    new Solicitud(getIdAutonumerico() + 11, 2, "Esto es la desciprcion de pruebas numero me olvide.", "Rocha", 7, 0341, 2, 8383),
+    new Solicitud(getIdAutonumerico() + 12, 1, "Esto es la desciprcion de pruebas numero me olvide.", "Montevideo", 2, 0341, 1, 8383),
+    new Solicitud(getIdAutonumerico() + 13, 2, "Esto es la desciprcion de pruebas numero me olvide.", "Montevideo", 9, 0341, 3, 8383)
   );
 
   addSolicitudesToImportadores();
@@ -83,20 +72,18 @@ function createPreUserInformation() {
 }
 
 function addSolicitudesToViajes() {
-
   Solicitudes.forEach(function (solicitud, index) {
     if (solicitud.requestStatus === 1) {
       let paresNumber = index % 2;
       if (paresNumber === 0) {
         setPush(Viajes[paresNumber].shipRequest, solicitud);
       } else {
-        setPush(Viajes[paresNumber].shipRequest, solicitud)
+        setPush(Viajes[paresNumber].shipRequest, solicitud);
       }
       solicitud.requestTravelNumber = Viajes[paresNumber].id;
       Viajes[paresNumber].shipQuantityAvailable -= solicitud.requestQuantity;
     }
   });
-
 }
 
 function addSolicitudesToImportadores() {
@@ -107,16 +94,15 @@ function addSolicitudesToImportadores() {
     if (index === Importadores.length) {
       index = 0;
       Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
-      setPush(Importadores[index].userRequests, Solicitudes[indexSolicitudes]);//Se asigna una solicitud al impotador
+      setPush(Importadores[index].userRequests, Solicitudes[indexSolicitudes]); //Se asigna una solicitud al impotador
     } else {
       Solicitudes[indexSolicitudes].requestUserId = Importadores[index].id;
       setPush(Importadores[index].userRequests, Solicitudes[indexSolicitudes]);
       index++;
-    };
+    }
     indexSolicitudes++;
-  };
-};
-
+  }
+}
 
 /**
  *
@@ -246,8 +232,8 @@ function onSearchRequest() {
   let largeToSearch = generalSearchText.length;
   let isDescription = false;
 
-  if (largeToSearch > 1 && InputSearch !== '') {
-    OBJ1Selector.requestTable.innerHTML = '';
+  if (largeToSearch > 1 && InputSearch !== "") {
+    OBJ1Selector.requestTable.innerHTML = "";
     userLogged.userRequests.forEach(function (solicitud) {
       let description = solicitud.requestDescription;
 
@@ -260,16 +246,15 @@ function onSearchRequest() {
             createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, getSupplierName(solicitud), solicitud.requestDescription, solicitud.requestType, solicitud.id);
             isDescription = true;
           }
-          index++
+          index++;
         }
       }
     });
 
     if (!isDescription) {
-      alert('No se han encontrado resultados a su busqueda')
+      alert("No se han encontrado resultados a su busqueda");
     }
   } else {
     onConsultarSolicitudes();
   }
 }
-

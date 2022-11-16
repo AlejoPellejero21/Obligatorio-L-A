@@ -48,7 +48,6 @@ function onRegisterUser(e) {
   const userPassword = OBJ1Selector.userPassword.value;
   const profilePicture = OBJ1Selector.profilePicture.value;
 
-
   let id = 0;
   let registredImportador = [];
 
@@ -59,24 +58,19 @@ function onRegisterUser(e) {
   } else if (isValidPass(userPassword)) {
     alert("Por favor ingrese una contraseña");
   } else {
-
-
-    if (!validatePassword(userPassword)) {
+    /* if (!validatePassword(userPassword)) {
       alert(
         "bueno que pinto a ver si pones bien la contraseña la concha de tu madre"
       );
-    } else {
-      id = getIdAutonumerico();
-      registredImportador = new Importador(id, userName, userAccess, userPassword,/*profilePicture,*/ true, 0, 0, []);
+    } else {*/
+    id = getIdAutonumerico();
+    registredImportador = new Importador(id, userName, userAccess, userPassword, /*profilePicture,*/ true, 0, 0, []);
 
-      setPush(Importadores, registredImportador)
+    setPush(Importadores, registredImportador);
 
-      onLoggedImportador()
+    onLoggedImportador();
 
-      console.log(Importadores)
-
-
-    }
-
+    console.log(Importadores);
   }
 }
+//}
