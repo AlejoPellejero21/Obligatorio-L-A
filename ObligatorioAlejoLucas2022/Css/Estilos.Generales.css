@@ -741,3 +741,21 @@ body {
     flex-direction: column;
     margin: 2% 0px;
 }
+
+#father-container-table-to-rollover-viajes{    
+    animation-name: animationRollover;
+    animation-duration: 1.2s;
+}
+
+
+@keyframes animationRollover {
+    from {        
+        margin: 0% 0px;
+        opacity: 0;                
+    }
+
+    to {    
+        margin: 2% 0px;
+        opacity: 1;        
+    }
+}

@@ -40,7 +40,13 @@ function forViajesCreateTable(TablaViajesCargaAttr) {
         //Si la empresa del viaje es la misma que la empresa que esta logeada
         if (viaje.shipSupplierId === userLogged.id) {
             TablaViajesCargaAttr.forEach(function (attr) {
-                createTableViajes(attr, viaje, index, '');
+                if (index === 0) {
+                    attr.innerHTML = '';
+                };
+                
+                if (viaje.shipRequest.length > 0) {
+                    createTableViajes(attr, viaje, index, '');
+                }
             });
         }
     });
@@ -84,21 +90,40 @@ function onGoBackClick() {
 }
 
 function createTableViajes(attr, viaje, index, rolloverId) {
+    debugger;
     let attrBuild = '';
     if (index === 0) {
-        attr.innerHTML = '';
+        attr.innerHTML = attrBuild;
     }
 
     attrBuild += `
                 <tr class='fila-show-carga-peligrosa ${rolloverId !== '' ? rolloverId : rolloverId}' data-id='${viaje.id}'>                
                     <td class="column-manifest-td">${viaje.shipName}</td>
                     <td class="column-manifest-td">${viaje.shipQuantity}</td>                
-                    <td class="column-manifest-td">${viaje.shipSupplierId}</td>
+                    <td class="column-manifest-td">${getSupplierName(viaje.shipSupplierId)}</td>
                     <td class="column-manifest-td">${viaje.shipDate}</td>                
                 `;
 
     attrBuild += '</tr>';
     return attr.innerHTML += attrBuild;
+}
+
+function getSupplierName(id) {
+    let companyName = '';
+    let isNameFound = false;
+    let index = 0;
+
+    while (index < Empresas.length && !isNameFound) {
+        let empresa = Empresas[index];
+
+        if (empresa.id === id) {
+            companyName = empresa.supplierName;
+            isNameFound = true;
+        }
+        index++;
+    }
+
+    return companyName;
 }
 
 //Esta funcion arma una tabla de viajes
