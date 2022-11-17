@@ -50,6 +50,7 @@ let supplierName = "";
 let generalSearchText = "";
 let showThisMonth = 0;
 let showThisYear = 0
+let generalFilaSaved = 0;
 let generalSupliersLines = 0;
 let userLoggedId = 0;
 let showQuantity = 1;

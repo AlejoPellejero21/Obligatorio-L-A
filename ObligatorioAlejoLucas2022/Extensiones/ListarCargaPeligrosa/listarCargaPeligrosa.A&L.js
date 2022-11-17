@@ -28,7 +28,7 @@ function onCreateCargaDeViajes() {
         }
 
     } else {
-        alert('No existen ningun viaje creado')
+        alert('No existen ningun viaje creado');
     }
 
 }
