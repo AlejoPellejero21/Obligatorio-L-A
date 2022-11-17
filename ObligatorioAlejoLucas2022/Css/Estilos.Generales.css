@@ -762,3 +762,20 @@ body {
         opacity: 1;        
     }
 }
+
+.show-this-view{
+    overflow: auto;
+    height: 82%;
+}
+
+#habilitar-usuario-view-overflow{    
+    height: 72%;
+}
+
+#main-view-importador{
+    height: 92%;
+}
+
+#visualizar-informacion-estadistica-overflow{
+    height: 47%;
+}

@@ -363,7 +363,7 @@ function onSearchRequest() {
     let isDescription = false;
     let userRequestsTable;
 
-    if (largeToSearch > 1 && InputSearch !== '') {
+    if (largeToSearch > 1 && InputSearch !== '' || largeToSearch === 0) {
         OBJ1Selector.requestTable.innerHTML = '';
         userLogged.userRequests.forEach(function (solicitud) {
             let description = solicitud.requestDescription;
@@ -374,7 +374,7 @@ function onSearchRequest() {
                 while (index < description.length && !isDescription) {
                     let sliceEnd = index + largeToSearch;
                     let slicePartDescription = description.slice(index, sliceEnd);
-
+                    debugger;
                     if (slicePartDescription.toLowerCase() === generalSearchText) {
                         createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, getSupplierName(solicitud.requestSupplierId), solicitud.requestDescription, solicitud.requestType, solicitud.id);
                         isDescription = true;
