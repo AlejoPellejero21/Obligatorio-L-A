@@ -66,7 +66,9 @@ function onRegisterUser(e) {
     } else if (isValidPass(userPassword)) {
         alert('Por favor ingrese una contraseña');
     } else if (!isValidPassword(userPassword)) {
-        alert('La contraseña debe contener al menos: 1 mayuscula, 1 minuscula, 1 numero');
+        alert('La contraseña debe contener al menos: 1 mayuscula, 1 minuscula, 1 numero y 8 caracteres');
+    } else if (userPassword.length < 8) {
+        alert('La contraseña debe contener al menos: 1 mayuscula, 1 minuscula, 1 numero y 8 caracteres');
     } else if (!isNotValidPicture(profilePicture)) {
         alert('Debe seleccionar una foto de perfil');
     } else {
