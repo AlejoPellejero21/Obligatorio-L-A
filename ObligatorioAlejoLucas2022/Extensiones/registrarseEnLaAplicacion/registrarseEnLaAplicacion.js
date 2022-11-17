@@ -32,6 +32,12 @@ function onChangeProfilePicture() {
       setDisplay(ThirdProfilePicture, false);
       setDisplay(FourthProfilePicture, true);
       break;
+    default:
+      setDisplay(FirstProfilePicture, false);
+      setDisplay(SecondProfilePicture, false);
+      setDisplay(ThirdProfilePicture, false);
+      setDisplay(FourthProfilePicture, false);
+      break;
   }
 }
 
@@ -47,6 +53,7 @@ function onRegisterUser(e) {
   const userPassword = OBJ1Selector.userPassword.value;
   const profilePicture = OBJ1Selector.ProfilePictureSelector.value;
 
+  console.log(findUser(userAccess, Importadores));
   let id = 0;
   let registredImportador = [];
 
@@ -54,8 +61,14 @@ function onRegisterUser(e) {
     alert("Por favor complete el nombre");
   } else if (isEmpty(userAccess)) {
     alert("Por favor complete el nombre de usuario");
+  } else if (findUser(userAccess, Importadores) || findUser(userAccess, Empresas)) {
+    alert("El nombre de usuario ya existe");
   } else if (isValidPass(userPassword)) {
     alert("Por favor ingrese una contraseña");
+  } else if (!isValidPassword(userPassword)) {
+    alert("La contraseña debe contener al menos: 1 mayuscula, 1 minuscula, 1 numero");
+  } else if (!isNotValidPicture(profilePicture)) {
+    alert("Debe seleccionar una foto de perfil");
   } else {
     id = getIdAutonumerico();
     registredImportador = new Importador(id, userName, userAccess, userPassword, profilePicture, true, 0, 0, []);
