@@ -13,13 +13,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/GlobalVariablesConstant.js"></script>
-  <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>           
+  <script type="text/javascript" src="./Extensiones/Scripts/UserInformation.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/VisualizarInformaciónEstadística/Dashboard.charts.js"></script>
   <script type="text/javascript" src="./Extensiones/IngresarEnLaAplicacion/IngresarEnLaAplicacion.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/MainOnWindowLoadView.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FuncionesGeneralizadas.A&L.js"></script>
-  <script type="text/javascript" src="./Extensiones/registrarseEnLaAplicacion/registrarseEnLaAplicacion.js"></script>
   <script type="text/javascript" src="./Extensiones/Scripts/FlujoDeLaPaginaLogeado.A&L.js"></script>
+  <script type="text/javascript" src="./Extensiones/registrarseEnLaAplicacion/registrarseEnLaAplicacion.js"></script>
   <script type="text/javascript" src="./Extensiones/CrearViajeDeUnBuque/CrearViajeDeUnBuque.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/AsignarSolicitudDeCarga/AsignarSolicitudDeCarga.A&L.js"></script>
   <script type="text/javascript"
@@ -27,7 +27,8 @@
   <script type="text/javascript"
     src="./Extensiones/ConsultarSolicitudesPendientes/ConsultarSolicitudesPendientes.js"></script>
   <script type="text/javascript" src="./Extensiones/CancelarSolucitudDeCarga/CancelarSolucitudDeCarga.js"></script>
-  <script type="text/javascript" src="./Extensiones/CalendarioDeProximaLlegadas/calendarioDeProximaLlegadas.A&L.js"></script>
+  <script type="text/javascript"
+    src="./Extensiones/CalendarioDeProximaLlegadas/calendarioDeProximaLlegadas.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/ListarCargaPeligrosa/listarCargaPeligrosa.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/ManifiestoDeCarga/manifiestoDeCarga.A&L.js"></script>
   <script type="text/javascript" src="./Extensiones/HabilitarUsuarios/habilitarUsuarios.A&L.js"></script>
@@ -189,16 +190,19 @@
                   <h2 class="table-title">Datos del viaje:</h2>
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-nombre-del-buque">Nombre del buque:</label>
-                    <input class="main-generals-inputs" type="text" id="input-nombre-del-buque" placeholder="Ingrese un nombre:"/>
+                    <input class="main-generals-inputs" type="text" id="input-nombre-del-buque"
+                      placeholder="Ingrese un nombre:" />
 
                     <div class="container-origin-big-al display-form-labels-al">
                       <label class="label-big-al" for="input-cantidad-max-contenedores">Cantidad max de
                         contenedores:</label>
-                      <input class="main-generals-inputs" type="text" id="input-cantidad-max-contenedores" maxlength="3" placeholder="Ingrese una cantidad:"/>
+                      <input class="main-generals-inputs" type="text" id="input-cantidad-max-contenedores" maxlength="3"
+                        placeholder="Ingrese una cantidad:" />
                     </div>
 
                     <label class="label-big-al" for="select-line-de-carga">Empresa - Linea de carga:</label>
-                    <select class="main-generals-inputs seleccione-una-empresa" name="type-of-shippment" id="select-line-de-carga">
+                    <select class="main-generals-inputs seleccione-una-empresa" name="type-of-shippment"
+                      id="select-line-de-carga">
                       <option value="0">Oasis</option>
                       <option value="1">Acuarius</option>
                       <option value="2">Flatland</option>
@@ -283,27 +287,28 @@
                   <th class="column-manifest">Nombre</th>
                   <th class="column-manifest">Cantidad Max.</th>
                   <th class="column-manifest">Empresa</th>
-                  <th class="column-manifest">Fecha</th>                       
+                  <th class="column-manifest">Fecha</th>
                 </thead>
                 <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
               </table>
             </div>
-            <div id="father-container-table-to-rollover-viajes" class="second-manifest-container rollover-de-carga-class login-no-display">
+            <div id="father-container-table-to-rollover-viajes"
+              class="second-manifest-container rollover-de-carga-class login-no-display">
               <div class="div-title-table-al">
                 <h2 id="title-rollover-de-carga" class="table-title">Seleccione un viaje:</h2>
               </div>
 
-              <div id="container-table-to-rollover-viajes" class="second-manifest-container login-no-display">              
+              <div id="container-table-to-rollover-viajes" class="second-manifest-container login-no-display">
                 <table class="body-table-manifest">
                   <thead class="thead-manifest">
                     <th class="column-manifest">Nombre</th>
                     <th class="column-manifest">Cantidad Max.</th>
                     <th class="column-manifest">Empresa</th>
-                    <th class="column-manifest">Fecha</th>                       
+                    <th class="column-manifest">Fecha</th>
                   </thead>
                   <tbody class="thead-manifest tbody-manifest tabla-de-viajes-rollover-de-carga"></tbody>
                 </table>
-              </div>              
+              </div>
             </div>
           </main>
           <!--Main Rollover de carga-->
@@ -326,25 +331,26 @@
             <div class="div-title-table-al">
               <h2 id="title-manifiesto-de-carga" class="table-title">Manifiesto de Carga:</h2>
             </div>
-                        
+
             <div id="lista-de-viajes-actuales-manifest" class="second-manifest-container">
               <table class="body-table-manifest">
-                <thead class="thead-manifest">                  
+                <thead class="thead-manifest">
                   <th class="column-manifest">Nombre</th>
                   <th class="column-manifest">Cantidad Max.</th>
                   <th class="column-manifest">Empresa</th>
-                  <th class="column-manifest">Fecha</th>                  
+                  <th class="column-manifest">Fecha</th>
                 </thead>
                 <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
               </table>
             </div>
 
-            <div id="container-table-manifiesto-de-carga" class="second-manifest-container container-table-carga-peligrosa">
+            <div id="container-table-manifiesto-de-carga"
+              class="second-manifest-container container-table-carga-peligrosa">
               <div id="back-to-viajes" class="container-button-volver-viajes">
                 <span id="on-click-back-to-manifiesto" class="button-volver-viajes">--VOLVER--</span>
               </div>
               <table class="body-table-manifest">
-                <thead class="thead-manifest">                  
+                <thead class="thead-manifest">
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
                   <th class="column-manifest">Status</th>
@@ -396,11 +402,11 @@
             </div>
             <div id="lista-de-viajes-actuales" class="second-manifest-container">
               <table class="body-table-manifest">
-                <thead class="thead-manifest">                  
+                <thead class="thead-manifest">
                   <th class="column-manifest">Nombre</th>
                   <th class="column-manifest">Cantidad Max.</th>
                   <th class="column-manifest">Empresa</th>
-                  <th class="column-manifest">Fecha</th>                  
+                  <th class="column-manifest">Fecha</th>
                 </thead>
                 <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
               </table>
@@ -410,7 +416,7 @@
                 <span id="on-click-back-to" class="button-volver-viajes">--VOLVER--</span>
               </div>
               <table class="body-table-manifest">
-                <thead class="thead-manifest">                  
+                <thead class="thead-manifest">
                   <th class="column-manifest">Origen</th>
                   <th class="column-manifest">Contenedor</th>
                   <th class="column-manifest">Status</th>
@@ -474,7 +480,8 @@
                   <div class="container-select-big-al display-form-labels-al">
                     <label class="label-big-al" for="select-type-shippment-importador">Seleccione el tipo de
                       carga:</label>
-                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="type-of-shippment" id="select-type-shippment-importador">
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="type-of-shippment"
+                      id="select-type-shippment-importador">
                       <option value="X" selected>--Tipos de carga--</option>
                       <option value="0">CARGA_GENERAL</option>
                       <option value="1">REFRIGERADO</option>
@@ -484,12 +491,14 @@
 
                     <label class="label-big-al" for="input-quantity-containers-importador">Cantidad de
                       contenedores:</label>
-                    <input class="main-generals-inputs" type="text" id="input-quantity-containers-importador" maxlength="3" placeholder="Ingrese una cantidad:"/>
+                    <input class="main-generals-inputs" type="text" id="input-quantity-containers-importador"
+                      maxlength="3" placeholder="Ingrese una cantidad:" />
                   </div>
                   <!--Selector de puerto de origen-->
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese el puerto de origen:</label>
-                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="port-of-origin" id="arrive-point">
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="port-of-origin"
+                      id="arrive-point">
                       <option value="X" selected>--Puerto de origen--</option>
                       <option value="Montevideo">Montevideo</option>
                       <option value="Rocha">Rocha</option>
@@ -500,7 +509,8 @@
                   <!--Seleccionar empresa-->
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese linea de carga:</label>
-                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="line-of-charge" id="select-line-of-charge">
+                    <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="line-of-charge"
+                      id="select-line-of-charge">
                       <option value="X" selected>--Lineas de carga disponibles--</option>
                     </select>
                   </div>
@@ -508,7 +518,8 @@
 
                 <div class="container-description-big-a display-form-labels-al only-this-importador">
                   <label class="label-big-al" for="input-shippment-description">Descripción de la mercadería:</label>
-                  <textarea class="main-generals-inputs" name="shippment-description" id="input-shippment-description"></textarea>
+                  <textarea class="main-generals-inputs" name="shippment-description"
+                    id="input-shippment-description"></textarea>
                 </div>
               </form>
             </div>
@@ -539,7 +550,8 @@
               <h2 class="table-title">Solicitudes Pendientes:</h2>
             </div>
             <div class="div-title-table-al">
-              <input class="main-generals-inputs" type="text" id="input-request-search-button" placeholder="Buscar por descripción:">              
+              <input class="main-generals-inputs" type="text" id="input-request-search-button"
+                placeholder="Buscar por descripción:">
             </div>
             <div class="second-manifest-container">
               <table class="body-table-manifest">
@@ -559,7 +571,8 @@
           <!--Main Consultar Solicitudes Pendientes-->
 
           <!--Main Visualizar Informacion Estadistica-->
-          <main data-view="VisualizarInformacionEstadistica" class="show-this-view main-table-manifest login-no-display">
+          <main data-view="VisualizarInformacionEstadistica"
+            class="show-this-view main-table-manifest login-no-display">
             <div class="first-manifest-container">
               <h2 class="table-title">Descripción:</h2>
               <div class="sub-manifest-container">
@@ -595,7 +608,7 @@
                   <li>Su</li>
                 </ul>
 
-                <ul id="add-every-day" class="days"></ul>                
+                <ul id="add-every-day" class="days"></ul>
               </div>
 
             </div>
@@ -603,19 +616,21 @@
             <div class="first-manifest-container container-calendar-grafic-al container-frafics-align">
               <div class="container-grafics">
                 <h3 class="table-title text-title-grafics">Porcentaje de cancelaciones</h3>
-                <p class="p-description-informacion-estadistica">Se calculará a partir del total de solicitudes canceladas, contra las
+                <p class="p-description-informacion-estadistica">Se calculará a partir del total de solicitudes
+                  canceladas, contra las
                   solicitudes confirmadas, pendientes e ignoradas.</p>
-                  <canvas id="chart-porcentaje-cancelaciones" style="width:200px;max-width:400px"></canvas>
-                  <!-- <div id="add-chart-porcentaje-cancelaciones">
+                <canvas id="chart-porcentaje-cancelaciones" style="width:200px;max-width:400px"></canvas>
+                <!-- <div id="add-chart-porcentaje-cancelaciones">
                   </div> -->
               </div>
               <div class="container-grafics">
                 <h3 class="table-title text-title-grafics">Participación de las diferentes líneas de carga</h3>
-                <p class="p-description-informacion-estadistica">Se mostrará la información del porcentaje de las diferentes líneas con
+                <p class="p-description-informacion-estadistica">Se mostrará la información del porcentaje de las
+                  diferentes líneas con
                   las que ha cargado este Importador. Solo se cuentan envíos no
                   contenedores y se omiten las empresas con porcentaje cero.</p>
-                  <canvas id="chart-lineas-de-carga" style="width:200px;max-width:400px"></canvas>
-                  <!-- <div id="add-chart-lineas-de-carga">
+                <canvas id="chart-lineas-de-carga" style="width:200px;max-width:400px"></canvas>
+                <!-- <div id="add-chart-lineas-de-carga">
                   </div> -->
               </div>
             </div>
