@@ -19,8 +19,7 @@ function crearUnViajeDeUnBuque() {
             const splitFechaDeLLegada = FechaDeLlegada.split('-');
             const monthSelected = splitFechaDeLLegada[1];
             const yearSelected = splitFechaDeLLegada[0];
-            let fechaLlegadaSplited = parseInt(yearSelected + monthSelected + String(parseFloat(splitFechaDeLLegada[2])));
-            debugger;
+            let fechaLlegadaSplited = parseInt(yearSelected + monthSelected + String(parseFloat(splitFechaDeLLegada[2])));            
             if (fechaLlegadaSplited <= parseInt(currentDate) || monthSelected < todayMonth || yearSelected < todayYear) {
                 alert(ErrorFechaPasada);//Cambiar por un <p>
             } else {

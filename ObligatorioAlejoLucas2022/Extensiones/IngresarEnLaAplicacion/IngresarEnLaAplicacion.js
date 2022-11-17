@@ -29,7 +29,7 @@ function onLoginClick(e) {
         onLoggedEmpresa();
       } else {
         userLoggedId = userLogged.id
-        getLineOfChargeOnRequest()
+        addSupplierOptions();
         onLoggedImportador();
       }
     } else {

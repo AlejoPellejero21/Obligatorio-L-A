@@ -35,9 +35,8 @@ function onCreateCalendarioLlegadas(monthToShow, yearToShow) {
                     mesLlegada = parseInt(fecha.split('-')[1]);
                     diaLlegada = parseInt(fecha.split('-')[2]);
                     //Valido de que la fecha sea en este mes de este año
-                    debugger;
-                    if (parseInt(añoLlegada) === parseInt(showThisYear) && mesLlegada === showThisMonth && diaLlegada === days) {
-                        debugger;
+                    //Este mes, este año me refiero al año y al mes que esta mostrando actualemnte en el calendario
+                    if (parseInt(añoLlegada) === parseInt(showThisYear) && mesLlegada === showThisMonth && diaLlegada === days) {                        
                         DaysAttr.innerHTML += `<li><span class="active">${days}</span></li>`
                     }
                 })

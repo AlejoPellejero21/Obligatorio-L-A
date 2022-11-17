@@ -8,15 +8,7 @@ function onLogOutClick() {
         const inputPassword = getQuerySelector("#", "input-password", true);
         const headUserName = getQuerySelector("#", "head-user-name", true);
         const mainsViews = getQuerySelector(".", "show-this-view", false);
-        let lastViewOpened = null;
-
-
-        //Esto es para el caso de que se haga log in y enseguida log out
-        if (currentView === '' && typeOfUser === 1) {
-            currentView = CrearUnViajeView;
-        } else {
-            currentView = CrearUnaSolicitud;
-        }
+        let lastViewOpened = null;        
 
         mainsViews.forEach(function (view) {
             let lastView = view.getAttribute("data-view");
