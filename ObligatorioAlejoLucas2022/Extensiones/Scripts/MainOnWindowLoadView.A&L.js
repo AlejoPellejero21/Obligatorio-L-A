@@ -7,13 +7,16 @@ function onWindowLoad() {
   OBJ1Selector["SelectLogin"] = getQuerySelector("#", "select-type-login", true);
   OBJ1Selector["HeaderUserName"] = getQuerySelector("#", "head-user-name", true);
   OBJ1Selector["HeaderWelcomeUser"] = getQuerySelector("#", "head-welcome-user", true);
-  OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);
+  OBJ1Selector["CrearUnViaje"] = getQuerySelector("#", "crear-un-viaje-button", true);  
   OBJ1Selector["ButtonCreateForBoth"] = getQuerySelector(".", "header-button-create-al", true);
   OBJ1Selector["InputRequestSearch"] = getQuerySelector("#", "input-request-search-button", true);
   OBJ1Selector['SetNameUserLogged'] = getQuerySelector('#', 'head-user-name', true);
   OBJ1Selector['LogOUT'] = getQuerySelector("#", 'button-loggout-now', true);
-  
+  OBJ1Selector["ProfilePictureSelector"] = getQuerySelector("#", "profile-icon-selector", "true");
+        
+  getQuerySelector("#", "button-on-register", "true").addEventListener("click", onRegisterUser);
   getQuerySelector("#", "button-on-login", true).addEventListener("click", onLoginClick);
+  OBJ1Selector.ProfilePictureSelector.addEventListener("click", onChangeProfilePicture);
   OBJ1Selector.CrearUnViaje.addEventListener("click", crearUnViajeDeUnBuque);
   OBJ1Selector.SelectLogin.addEventListener("change", onSelectChange);
   OBJ1Selector.InputRequestSearch.addEventListener("keyup", onSearchRequest);
