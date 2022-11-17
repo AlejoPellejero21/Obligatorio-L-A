@@ -1,9 +1,5 @@
-let showThisMonth = 0;
-let showThisYear = 0
-let dateViajes = [];
-
 function onCreateCalendarioLlegadas(monthToShow, yearToShow) {
-    const YearAttr = getQuerySelector('#', "show-month-and-year", true);
+    const YearAttr = getQuerySelector('#', 'show-month-and-year', true);
     const DaysAttr = getQuerySelector('#', 'add-every-day', true);
     const PrevMonth = getQuerySelector('#', 'prev-month-click', true);
     const NextMonth = getQuerySelector('#', 'next-month-click', true);
@@ -18,12 +14,11 @@ function onCreateCalendarioLlegadas(monthToShow, yearToShow) {
             YearAttr.innerHTML = `${month.name}
             <br>
             <span style="font-size:18px">${showThisYear}</span>
-            `
+            `;
             //Dias en los que empieza el mes
             if (month.start) {
                 for (let daysNo = 0; daysNo < month.start; daysNo++) {
-                    DaysAttr.innerHTML += `<li>-x-</li>`
-
+                    DaysAttr.innerHTML += `<li>-x-</li>`;
                 }
             }
 
@@ -31,23 +26,23 @@ function onCreateCalendarioLlegadas(monthToShow, yearToShow) {
             let currentUser = userLogged;
             let fechas = getFechasProximas(currentUser);
 
-            for (let days = 1; days <= month.quantity; days++) {                
+            for (let days = 1; days <= month.quantity; days++) {
                 let añoLlegada, mesLlegada, diaLlegada;
-                //Recorro las solicitudes del ususario logged                             
+                //Recorro las solicitudes del ususario logged
                 fechas.forEach(function (fecha) {
                     añoLlegada = fecha.split('-')[0];
                     mesLlegada = parseInt(fecha.split('-')[1]);
                     diaLlegada = parseInt(fecha.split('-')[2]);
                     //Valido de que la fecha sea en este mes de este año
-                    if (añoLlegada === showThisYear && mesLlegada === showThisMonth && diaLlegada === days) {
+                    //Este mes, este año me refiero al año y al mes que esta mostrando actualemnte en el calendario
+                    if (parseInt(añoLlegada) === parseInt(showThisYear) && mesLlegada === showThisMonth && diaLlegada === days) {                        
                         DaysAttr.innerHTML += `<li><span class="active">${days}</span></li>`
                     }
-                })
-                
-                if (diaLlegada !== days) {
-                    DaysAttr.innerHTML += `<li>${days}</li>`                    
-                }
+                });
 
+                if (diaLlegada !== days) {
+                    DaysAttr.innerHTML += `<li>${days}</li>`;
+                }
             }
         }
     });
@@ -60,7 +55,7 @@ function getFechasProximas(currentUser) {
     //Recorro los viajes
     Viajes.forEach(function (viaje) {
         let viajeShipRequests = viaje.shipRequest; //Solicitudes del viaje
-        //Recorro las solicitudes que tiene asignadas el viaje                            
+        //Recorro las solicitudes que tiene asignadas el viaje
         viajeShipRequests.forEach(function (solicitud) {
             if (solicitud.requestUserId === currentUser.id && solicitud.requestOrigin.toLowerCase() === 'montevideo') {
                 setPush(dateViajes, viaje.shipDate);

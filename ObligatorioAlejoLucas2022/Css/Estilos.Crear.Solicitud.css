@@ -40,3 +40,13 @@
     display: flex;
     flex-direction: column;    
 }
+
+.cancelar-solicitud-btn{
+    border-radius: 30px;
+    border: none;
+    padding: 5px 11px;
+    background-color: #ff2b2bd9;
+    color: #f5fbff;
+    cursor: pointer;
+    font-weight: bold;
+}

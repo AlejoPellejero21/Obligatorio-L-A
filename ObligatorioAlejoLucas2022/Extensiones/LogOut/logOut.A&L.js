@@ -8,16 +8,14 @@ function onLogOutClick() {
         const inputPassword = getQuerySelector("#", "input-password", true);
         const headUserName = getQuerySelector("#", "head-user-name", true);
         const mainsViews = getQuerySelector(".", "show-this-view", false);
-        let lastViewOpened = null;
+        let lastViewOpened = null;        
 
         mainsViews.forEach(function (view) {
-            let lastView = view.getAttribute("data-view");
+            let lastView = view.getAttribute('data-view');
             if (currentView === lastView) {
                 lastViewOpened = view;
             }
-        });
-
-
+        });        
 
         if (userLogged.userName) {
             setDisplay(CreateRequest, false);
@@ -26,12 +24,12 @@ function onLogOutClick() {
         }
         setDisplay(BtnLogOut, false);
         setDisplay(LoginMainView, true);
-        setDisplay(lastViewOpened, false)
+        setDisplay(lastViewOpened, false);
 
         inputUsername.value = '';
         inputPassword.value = '';
         headUserName.innerHTML = '';
         userLogged = null;
-        userLoggedId = 0;        
+        userLoggedId = 0;
     }
 }

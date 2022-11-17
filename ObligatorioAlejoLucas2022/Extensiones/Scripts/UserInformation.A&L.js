@@ -49,7 +49,6 @@ class Viaje {
     }
 }
 
-
 /*EJEMPLO DE USUASRIOS Y DATOS
 
 let importadores = [
