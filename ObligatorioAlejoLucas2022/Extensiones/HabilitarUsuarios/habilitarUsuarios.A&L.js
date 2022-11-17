@@ -27,35 +27,33 @@ function onHabilitarUsuarios() {
                 <div class="user-container button-enable-al">
                     <input class="user-enable-button" data-userId="${importador.id}" type="button" value="Habilitar">
                 </div>        
-                `
-            }            
+                `;
+            }
         });
 
-        const ButtonHabilitarUser = getQuerySelector('.', "user-enable-button", false);
+        const ButtonHabilitarUser = getQuerySelector('.', 'user-enable-button', false);
 
         ButtonHabilitarUser.forEach(function (button) {
-            button.addEventListener('click', onHabilitarUserClick)
+            button.addEventListener('click', onHabilitarUserClick);
         });
 
-
-        if (!userNotFound){
+        if (!userNotFound) {
             setDisplay(ButtonUser, false);
             UserContainer.innerHTML += `
             <p class="description-manifest ususario-desha-test-p">No existe ningun usuario DESHABILITADO en este momento.</p>
-            `
+            `;
         }
     }
 }
 
-
 function onHabilitarUserClick() {
-    const userId = parseInt(this.getAttribute("data-userId"));
+    const userId = parseInt(this.getAttribute('data-userId'));
 
     Importadores.forEach(function (importador) {
         if (importador.id === userId) {
             importador.userEnabled = true;
             alert(`El usuario ${importador.userAccess} fue habilitado correctamente`);
         }
-    });        
+    });
     onHabilitarUsuarios();
 }
