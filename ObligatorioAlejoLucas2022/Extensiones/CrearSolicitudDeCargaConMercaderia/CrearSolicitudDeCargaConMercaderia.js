@@ -38,19 +38,4 @@ function onCrearSolicitudDeCarga() {
     }
   }
 
-            //añade la solicitud a las solicitudes del importador logeado
-            setPush(Solicitudes, requestCreated);
-            setPush(CurrentUser.userRequests, requestCreated);
-
-            TypeOfChargeAttr.value = 'X';
-            QuantityOfContainersAttr.value = '';
-            ArrivePortAttr.value = 'X';
-            LineOfChargeRequestedAttr.value = 'X';
-            ShippmentDescriptionAttr.value = '';
-            alert('La solicitud ha sido creada con exito');
-            onConsultarSolicitudes();
-        } else {
-            alert('Su usuario no esta habilitado');
-        }
-    }
 }

@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-let showThisMonth = 0;
-let showThisYear = 0;
-let dateViajes = [];
-
-=======
->>>>>>> issues/resolviendoFuncionalidadesGenerales
 function onCreateCalendarioLlegadas(monthToShow, yearToShow) {
     const YearAttr = getQuerySelector('#', 'show-month-and-year', true);
     const DaysAttr = getQuerySelector('#', 'add-every-day', true);

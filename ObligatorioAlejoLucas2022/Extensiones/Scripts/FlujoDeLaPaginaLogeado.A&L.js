@@ -2,18 +2,12 @@ function onDashboardLoad() {
     OBJ1Selector['NavBarCrearUnViaje'] = getQuerySelector('.', 'go-to-a-new-view', false);
     OBJ1Selector['ShowThisView'] = getQuerySelector('.', 'show-this-view', false);
 
-<<<<<<< HEAD
-    OBJ1Selector.NavBarCrearUnViaje.forEach(function (button) {
-        button.addEventListener('click', onCrearUnViajeClick);
-    });
-=======
   addSupplierOptions();
 
   //Aca se le asigna al
   OBJ1Selector.NavBarCrearUnViaje.forEach(function (button) {
     button.addEventListener('click', onCrearUnViajeClick);
   });
->>>>>>> issues/resolviendoFuncionalidadesGenerales
 }
 
 //Esta funcion se encarga de obtener la view y setearla en una variable global
