@@ -20,12 +20,12 @@ function crearUnViajeDeUnBuque() {
             const monthSelected = splitFechaDeLLegada[1];
             const yearSelected = splitFechaDeLLegada[0];
             let fechaLlegadaSplited = parseInt(yearSelected + monthSelected + String(parseFloat(splitFechaDeLLegada[2])));
-
+            debugger;
             if (fechaLlegadaSplited <= parseInt(currentDate) || monthSelected < todayMonth || yearSelected < todayYear) {
                 alert(ErrorFechaPasada);//Cambiar por un <p>
             } else {
                 id = getIdAutonumerico();
-                viajeCreated = new Viaje(id, NombreBuque, CantidadMaxContenedores, FechaDeLlegada, userLogged.id);
+                viajeCreated = new Viaje(id, NombreBuque, CantidadMaxContenedores, FechaDeLlegada, parseInt(LineaDeCarga));
 
                 /*Agregar nuevo viaje */
                 setPush(CurrentUser.supplierTrips, viajeCreated);

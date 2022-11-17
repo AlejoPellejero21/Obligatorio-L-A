@@ -2,11 +2,15 @@ function onDashboardLoad() {
   OBJ1Selector['NavBarCrearUnViaje'] = getQuerySelector('.', 'go-to-a-new-view', false);
   OBJ1Selector['ShowThisView'] = getQuerySelector('.', 'show-this-view', false);
 
+  addSupplierOptions();
+
+  //Aca se le asigna al
   OBJ1Selector.NavBarCrearUnViaje.forEach(function (button) {
     button.addEventListener('click', onCrearUnViajeClick);
-  });;
+  });
 }
 
+//Esta funcion se encarga de obtener la view y setearla en una variable global
 function onCrearUnViajeClick() {
   var viewToShowButtonClick = this.attributes[0].value;//data-view
 
@@ -20,6 +24,15 @@ function onCrearUnViajeClick() {
       setDisplay(view, false);
     }
   });
+}
+
+function addSupplierOptions() {
+  const SipplierOptions = getQuerySelector("#", "select-line-de-carga", true);
+
+  Empresas.forEach(function (empresa) {
+    SipplierOptions.innerHTML += `<option value="${empresa.id}">${empresa.supplierName}</option>`    
+  });
+   
 }
 
 function onLoggedEmpresa() {

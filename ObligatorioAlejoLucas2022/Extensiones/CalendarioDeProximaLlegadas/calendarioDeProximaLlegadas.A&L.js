@@ -1,7 +1,3 @@
-let showThisMonth = 0;
-let showThisYear = 0
-let dateViajes = [];
-
 function onCreateCalendarioLlegadas(monthToShow, yearToShow) {
     const YearAttr = getQuerySelector('#', "show-month-and-year", true);
     const DaysAttr = getQuerySelector('#', 'add-every-day', true);
@@ -39,7 +35,9 @@ function onCreateCalendarioLlegadas(monthToShow, yearToShow) {
                     mesLlegada = parseInt(fecha.split('-')[1]);
                     diaLlegada = parseInt(fecha.split('-')[2]);
                     //Valido de que la fecha sea en este mes de este año
-                    if (añoLlegada === showThisYear && mesLlegada === showThisMonth && diaLlegada === days) {
+                    debugger;
+                    if (parseInt(añoLlegada) === parseInt(showThisYear) && mesLlegada === showThisMonth && diaLlegada === days) {
+                        debugger;
                         DaysAttr.innerHTML += `<li><span class="active">${days}</span></li>`
                     }
                 })

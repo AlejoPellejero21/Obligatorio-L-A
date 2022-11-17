@@ -10,14 +10,20 @@ function onLogOutClick() {
         const mainsViews = getQuerySelector(".", "show-this-view", false);
         let lastViewOpened = null;
 
+
+        //Esto es para el caso de que se haga log in y enseguida log out
+        if (currentView === '' && typeOfUser === 1) {
+            currentView = CrearUnViajeView;
+        } else {
+            currentView = CrearUnaSolicitud;
+        }
+
         mainsViews.forEach(function (view) {
             let lastView = view.getAttribute("data-view");
             if (currentView === lastView) {
                 lastViewOpened = view;
             }
-        });
-
-
+        });        
 
         if (userLogged.userName) {
             setDisplay(CreateRequest, false);
@@ -32,6 +38,6 @@ function onLogOutClick() {
         inputPassword.value = '';
         headUserName.innerHTML = '';
         userLogged = null;
-        userLoggedId = 0;        
+        userLoggedId = 0;
     }
 }

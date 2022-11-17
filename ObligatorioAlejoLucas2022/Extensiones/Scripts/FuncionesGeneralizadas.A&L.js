@@ -321,6 +321,7 @@ function onSearchRequest() {
   let generalSearchText = InputSearch.toLowerCase();
   let largeToSearch = generalSearchText.length;
   let isDescription = false;
+  let userRequestsTable;
 
   if (largeToSearch > 1 && InputSearch !== '') {
     OBJ1Selector.requestTable.innerHTML = '';
@@ -328,12 +329,14 @@ function onSearchRequest() {
       let description = solicitud.requestDescription;
 
       if (solicitud.requestStatus === 0) {
-        let index = 0;
+        isDescription = false;
+        let index = 0;        
         while (index < description.length && !isDescription) {
           let sliceEnd = index + largeToSearch;
           let slicePartDescription = description.slice(index, sliceEnd);
+
           if (slicePartDescription.toLowerCase() === generalSearchText) {
-            createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, getSupplierName(solicitud), solicitud.requestDescription, solicitud.requestType, solicitud.id);
+            createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, getSupplierName(solicitud.requestSupplierId), solicitud.requestDescription, solicitud.requestType, solicitud.id);                        
             isDescription = true;
           }
           index++
@@ -341,7 +344,7 @@ function onSearchRequest() {
       }
     });
 
-    if (!isDescription) {
+    if (!isDescription && OBJ1Selector.requestTable.innerHTML === '') {
       alert('No se han encontrado resultados a su busqueda')
     }
   } else {

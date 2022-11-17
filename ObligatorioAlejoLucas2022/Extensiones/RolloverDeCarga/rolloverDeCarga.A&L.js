@@ -46,6 +46,7 @@ function addToThisViaje() {
                     setPush(viaje.shipRequest, solicitud);                    
                 });
                 setDisplay(TableToRollover, false);
+                viajeToRollSelected.shipQuantityAvailable = viajeToRollSelected.shipQuantity;
                 viajeToRollSelected.shipRequest.splice(0, viaje.shipRequest.length - 1);
                 alert('La carga fue rolleada con exito');
             } else {
