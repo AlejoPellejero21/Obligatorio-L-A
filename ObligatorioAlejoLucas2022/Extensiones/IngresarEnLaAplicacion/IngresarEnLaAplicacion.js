@@ -6,16 +6,13 @@ function onLoginClick(e) {
   OBJ1Selector["selectAccount"] = parseInt(getQuerySelector("#", "select-type-login", "true").value);
 
   // Selector Empresa-Importador
-  if (OBJ1Selector.selectAccount === 1) {    
-    userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, Empresas);
+  if (OBJ1Selector.selectAccount === 1) {
+    userLogged = findUser(OBJ1Selector.inputUserAccess, Empresas);
     typeOfUser = OBJ1Selector.selectAccount;
   } else {
-    userLogged = findUser(OBJ1Selector.inputUserAccess, OBJ1Selector.inputPassword, Importadores);
+    userLogged = findUser(OBJ1Selector.inputUserAccess, Importadores);
     typeOfUser = OBJ1Selector.selectAccount;
   }
-
-
-
 
   //Validaciones funcionando con cambio de view
   if (isEmpty(OBJ1Selector.inputUserAccess)) {
@@ -28,12 +25,12 @@ function onLoginClick(e) {
       if (typeOfUser === 1) {
         onLoggedEmpresa();
       } else {
-        userLoggedId = userLogged.id
-        getLineOfChargeOnRequest()
+        userLoggedId = userLogged.id;
+        getLineOfChargeOnRequest();
         onLoggedImportador();
       }
     } else {
-      alert("proba denuevo macarron");
+      alert("Los datos son invalidos");
     }
   }
 }
