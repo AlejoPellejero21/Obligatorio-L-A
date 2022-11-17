@@ -84,8 +84,7 @@ function onGoBackClick() {
     }
 }
 
-function createTableViajes(attr, viaje, index, rolloverId) {
-    debugger;
+function createTableViajes(attr, viaje, index, rolloverId) {    
     let attrBuild = '';
     if (index === 0) {
         attr.innerHTML = attrBuild;

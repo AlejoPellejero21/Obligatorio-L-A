@@ -305,44 +305,47 @@ function getRequestText(number) {
     return requestTypeText;
 }
 
-function getLineOfChargeOnRequest() {
-    const lineOfChargeSelector = getQuerySelector('#', 'select-line-of-charge', true);
+function addSupplierOptions() {
+  const SipplierOptions = typeOfUser === 1 ? getQuerySelector("#", "select-line-de-carga", true) : getQuerySelector("#", "select-line-of-charge", true);
+  SipplierOptions.innerHTML = `<option value="X" selected>${typeOfUser === 1 ? '--Seleccione su empresa--' : '--Seleccione linea de carga--'}</option>`;
 
-    Empresas.forEach(function (empresa) {
-        lineOfChargeSelector.innerHTML += `<option value="${empresa.id}">${empresa.supplierName}</option>`;
-    });
+
+  Empresas.forEach(function (empresa) {
+    SipplierOptions.innerHTML += `<option value="${empresa.id}">${empresa.supplierName}</option>`;
+  });
+
 }
 
 /*All seach logic here*/
 function onSearchRequest() {
-    const InputSearch = OBJ1Selector.InputRequestSearch.value;
-    let generalSearchText = InputSearch.toLowerCase();
-    let largeToSearch = generalSearchText.length;
-    let isDescription = false;
+  const InputSearch = OBJ1Selector.InputRequestSearch.value;
+  let generalSearchText = InputSearch.toLowerCase();
+  let largeToSearch = generalSearchText.length;
+  let isDescription = false;
+  let userRequestsTable;
 
     if (largeToSearch > 1 && InputSearch !== '') {
         OBJ1Selector.requestTable.innerHTML = '';
         userLogged.userRequests.forEach(function (solicitud) {
             let description = solicitud.requestDescription;
 
-            if (solicitud.requestStatus === 0) {
-                let index = 0;
-                while (index < description.length && !isDescription) {
-                    let sliceEnd = index + largeToSearch;
-                    let slicePartDescription = description.slice(index, sliceEnd);
-                    if (slicePartDescription.toLowerCase() === generalSearchText) {
-                        createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, getSupplierName(solicitud), solicitud.requestDescription, solicitud.requestType, solicitud.id);
-                        isDescription = true;
-                    }
-                    index++;
-                }
-            }
-        });
+      if (solicitud.requestStatus === 0) {
+        isDescription = false;
+        let index = 0;
+        while (index < description.length && !isDescription) {
+          let sliceEnd = index + largeToSearch;
+          let slicePartDescription = description.slice(index, sliceEnd);
 
-        if (!isDescription) {
-            alert('No se han encontrado resultados a su busqueda');
+          if (slicePartDescription.toLowerCase() === generalSearchText) {
+            createPendingRequestTable(solicitud.requestOrigin, solicitud.requestQuantity, getSupplierName(solicitud.requestSupplierId), solicitud.requestDescription, solicitud.requestType, solicitud.id);
+            isDescription = true;
+          }
+          index++
         }
-    } else {
-        onConsultarSolicitudes();
+      }
+    });
+
+    if (!isDescription && OBJ1Selector.requestTable.innerHTML === '') {
+      alert('No se han encontrado resultados a su busqueda')
     }
 }

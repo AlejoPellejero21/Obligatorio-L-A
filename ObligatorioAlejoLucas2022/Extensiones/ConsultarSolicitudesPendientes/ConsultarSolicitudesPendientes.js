@@ -29,7 +29,7 @@ function createPendingRequestTable(requestOrigin, requestQuantity, supplierName,
                   <td class="column-manifest-td">${requestQuantity}</td>
                   <td class="column-manifest-td">${supplierName}</td>
                   <td class="column-manifest-td">${requestDescription}</td>
-                  <td class="column-manifest-td">${requestType}</td>
+                  <td class="column-manifest-td">${getRequestText(requestType)}</td>
                   <td class="column-manifest-td">
                   <input type="button" class="cancelar-solicitud-btn" data-id="${id}" value="Cancelar"/>
                   </td>

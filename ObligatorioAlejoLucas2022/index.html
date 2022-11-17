@@ -201,12 +201,8 @@
                     </div>
 
                     <label class="label-big-al" for="select-line-de-carga">Empresa - Linea de carga:</label>
-                    <select class="main-generals-inputs seleccione-una-empresa" name="type-of-shippment"
-                      id="select-line-de-carga">
-                      <option value="0">Oasis</option>
-                      <option value="1">Acuarius</option>
-                      <option value="2">Flatland</option>
-                      <option value="X" selected>--Seleccione una Empresa--</option>
+                    <select class="main-generals-inputs seleccione-una-empresa" name="type-of-shippment" id="select-line-de-carga">
+                      <option value="X" selected>--Seleccione su Empresa--</option>
                     </select>
 
                   </div>
@@ -292,8 +288,11 @@
                 <tbody class="thead-manifest tbody-manifest tabla-de-viajes-carga-p"></tbody>
               </table>
             </div>
-            <div id="father-container-table-to-rollover-viajes"
-              class="second-manifest-container rollover-de-carga-class login-no-display">
+            <div id="father-container-table-to-rollover-viajes" class="second-manifest-container rollover-de-carga-class login-no-display">
+              <div id="back-to-viajes" class="container-button-volver-viajes">
+                <span id="on-click-back-to-rollover-de-carga" class="button-volver-viajes">--CANCELAR--</span>
+              </div>
+
               <div class="div-title-table-al">
                 <h2 id="title-rollover-de-carga" class="table-title">Seleccione un viaje:</h2>
               </div>
@@ -510,8 +509,7 @@
                   <div class="container-origin-big-al display-form-labels-al">
                     <label class="label-big-al" for="input-origin-port">Ingrese linea de carga:</label>
                     <select class="main-generals-inputs seleccione-una-empresa select-pointer" name="line-of-charge"
-                      id="select-line-of-charge">
-                      <option value="X" selected>--Lineas de carga disponibles--</option>
+                      id="select-line-of-charge">                      
                     </select>
                   </div>
                 </div>
