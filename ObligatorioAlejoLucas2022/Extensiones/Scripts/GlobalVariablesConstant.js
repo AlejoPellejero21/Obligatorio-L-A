@@ -17,19 +17,19 @@ const Solicitudes = [];
 const SuplierNamesText = [];
 const SuplierNames = {};
 const AllMonths = [
-    { name: 'Enero', quantity: 31, start: 5 },
-    { name: 'Febrero', quantity: 28, start: 1 },
-    { name: 'Marzo', quantity: 31, start: 1 },
-    { name: 'Abril', quantity: 30, start: 4 },
-    { name: 'Mayo', quantity: 31, start: 6 },
-    { name: 'Junio', quantity: 30, start: 2 },
-    { name: 'Julio', quantity: 31, start: 4 },
-    { name: 'Agosto', quantity: 31 },
-    { name: 'Septiembre', quantity: 30, start: 3 },
-    { name: 'Octubre', quantity: 31, start: 5 },
-    { name: 'Noviembre', quantity: 30, start: 1 },
-    { name: 'Diciembre', quantity: 31, start: 3 }
-]
+    {name: 'Enero', quantity: 31, start: 5},
+    {name: 'Febrero', quantity: 28, start: 1},
+    {name: 'Marzo', quantity: 31, start: 1},
+    {name: 'Abril', quantity: 30, start: 4},
+    {name: 'Mayo', quantity: 31, start: 6},
+    {name: 'Junio', quantity: 30, start: 2},
+    {name: 'Julio', quantity: 31, start: 4},
+    {name: 'Agosto', quantity: 31},
+    {name: 'Septiembre', quantity: 30, start: 3},
+    {name: 'Octubre', quantity: 31, start: 5},
+    {name: 'Noviembre', quantity: 30, start: 1},
+    {name: 'Diciembre', quantity: 31, start: 3},
+];
 let typeOfUser;
 let requestToAsign;
 let viajeToRollSelected = null;
@@ -42,9 +42,9 @@ let todayDay = String(date.getDay() + 5);
 let todayYear = String(date.getFullYear());
 let currentDate = todayYear + todayMonth + todayDay;
 let currentView = '';
-let typeOfChargeExpressed = "";
-let supplierName = "";
-let generalSearchText = "";
+let typeOfChargeExpressed = '';
+let supplierName = '';
+let generalSearchText = '';
 let generalSupliersLines = 0;
 let userLoggedId = 0;
 let showQuantity = 1;

@@ -4,14 +4,13 @@ function onCreateCargaDeViajes() {
     OBJ1Selector['TitleManifiestoDeCarga'] = getQuerySelector('#', 'title-manifiesto-de-carga', true);
     OBJ1Selector['TitleRolloverDeCarga'] = getQuerySelector('#', 'title-rollover-de-carga', true);
     const TablaViajesCargaAttr = getQuerySelector('.', 'tabla-de-viajes-carga-p', false);
-    OBJ1Selector['TablaRollover'] = getQuerySelector("#", "container-table-to-rollover-viajes", true);
-    OBJ1Selector['FatherDivTable'] = getQuerySelector("#", "father-container-table-to-rollover-viajes", true);
-
+    OBJ1Selector['TablaRollover'] = getQuerySelector('#', 'container-table-to-rollover-viajes', true);
+    OBJ1Selector['FatherDivTable'] = getQuerySelector('#', 'father-container-table-to-rollover-viajes', true);
 
     if (Viajes.length > 0) {
         forViajesCreateTable(TablaViajesCargaAttr);
 
-        const FilaViajeAttr = getQuerySelector('.', "fila-show-carga-peligrosa", false);
+        const FilaViajeAttr = getQuerySelector('.', 'fila-show-carga-peligrosa', false);
         //Dependiendo de la view de viajes le asigno una funcion distinta
         switch (currentView) {
             case CargaPeligrosaView:
@@ -26,15 +25,13 @@ function onCreateCargaDeViajes() {
                 addAFunctionToAFila(FilaViajeAttr, onViajeSelected);
                 break;
         }
-
     } else {
-        alert('No existen ningun viaje creado')
+        alert('No existen ningun viaje creado');
     }
-
 }
 
 function forViajesCreateTable(TablaViajesCargaAttr) {
-    //Se recorren los viajes 
+    //Se recorren los viajes
     Viajes.forEach(function (viaje, index) {
         //Se recorren los atributos tablas para viajes
         //Si la empresa del viaje es la misma que la empresa que esta logeada
@@ -42,15 +39,14 @@ function forViajesCreateTable(TablaViajesCargaAttr) {
             TablaViajesCargaAttr.forEach(function (attr) {
                 if (index === 0) {
                     attr.innerHTML = '';
-                };
-                
+                }
+
                 if (viaje.shipRequest.length > 0) {
                     createTableViajes(attr, viaje, index, '');
                 }
             });
         }
     });
-
 }
 
 function addAFunctionToAFila(FilaViajeAttr, functionName) {
@@ -61,9 +57,9 @@ function addAFunctionToAFila(FilaViajeAttr, functionName) {
 
 //Esta funcion es para la vista CargaPeligrosaView
 function onDangerViajeSelected() {
-    OBJ1Selector['ListaDeViajesAttr'] = getQuerySelector("#", 'lista-de-viajes-actuales', true);
+    OBJ1Selector['ListaDeViajesAttr'] = getQuerySelector('#', 'lista-de-viajes-actuales', true);
     OBJ1Selector['ListaCargaPeligrosa'] = getQuerySelector('#', 'container-table-carga-peligrosa', true);
-    const AttrId = parseInt(this.getAttribute("data-id"));
+    const AttrId = parseInt(this.getAttribute('data-id'));
     const CargaPeligrosa = getQuerySelector('#', 'tabla-carga-peligrosa', true);
     const ButtonGoBack = getQuerySelector('#', 'on-click-back-to', true);
     CargaPeligrosa.innerHTML = '';
@@ -85,7 +81,6 @@ function onGoBackClick() {
         OBJ1Selector.TitleManifiestoDeCarga.innerHTML = 'Manifiesto de Carga:';
         setDisplay(OBJ1Selector.ListaManifiestoDeCarga, false);
         setDisplay(OBJ1Selector.ListaDeViajesManifestAttr, true);
-
     }
 }
 
@@ -105,7 +100,7 @@ function createTableViajes(attr, viaje, index, rolloverId) {
                 `;
 
     attrBuild += '</tr>';
-    return attr.innerHTML += attrBuild;
+    return (attr.innerHTML += attrBuild);
 }
 
 function getSupplierName(id) {
@@ -173,7 +168,6 @@ function setValuesForTables(index, TitleCarga, viaje, attr, solicitud, view) {
     }
 
     attr.innerHTML += tableRequestinnerHTML(solicitud, 'dng');
-
 
     return true;
 }
