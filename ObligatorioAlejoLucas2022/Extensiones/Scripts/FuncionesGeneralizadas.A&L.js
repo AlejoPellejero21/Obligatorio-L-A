@@ -36,7 +36,10 @@ function setDisplay(attr, display) {
  * Se crean los usuarios pre-cargados
  */
 function createPreUserInformation() {
-    Importadores.push(new Importador(0101, 'Alfredo', 'Alfredito21', '12345'), new Importador(0124, 'Rafael', 'RafaEl1', '113355'), new Importador(0221, 'Lucas', 'Lucaaas', '232345'));
+    Importadores.push(
+        new Importador(0101, 'Alfredo', 'Alfredito21', '12345'),
+        new Importador(0124, 'Rafael', 'RafaEl1', '113355'), new Importador(0221, 'Lucas', 'Lucaaas', '232345')
+    );
 
     Viajes.push(
         new Viaje(getIdAutonumerico(), 'BuqueAk-74', 47, '2022-11-29', 0),
@@ -48,7 +51,11 @@ function createPreUserInformation() {
         new Viaje(getIdAutonumerico() + 7, 'BuqueAmnesiaOriginal', 96, '2022-11-30', 0)
     );
 
-    Empresas.push(new Empresa(0142, 'UPS', 'Admin-UPS', 'ups123'), new Empresa(0241, 'DHL', 'Admin-DHL', 'dhl123'), new Empresa(0341, 'MECALUX', 'Admin-Mecalux', '1mecalux'));
+    Empresas.push(
+        new Empresa(0142, 'UPS', 'Admin-UPS', 'ups123'),
+        new Empresa(0241, 'DHL', 'Admin-DHL', 'dhl123'),
+        new Empresa(0341, 'MECALUX', 'Admin-Mecalux', '1mecalux')
+    );
 
     Solicitudes.push(
         new Solicitud(getIdAutonumerico(), 2, 'Esto es una desciprcion que no es una prueba', 'Montevideo', 10, 0142, 0, 1222),
@@ -62,16 +69,7 @@ function createPreUserInformation() {
         new Solicitud(getIdAutonumerico() + 9, 1, 'Esto es la desciprcion de pruebas numero me olvide.', 'Maldonado', 5, 0241, 3, 8383),
         new Solicitud(getIdAutonumerico() + 8, 0, 'Esto es una desciprcion para poder hacer pruebas.', 'Montevideo', 6, 0241, 1, 3844),
         new Solicitud(getIdAutonumerico() + 10, 0, 'Esto es la desciprcion de pruebas numero me olvide.', 'Salto', 12, 0341, 0, 8383),
-        new Solicitud(
-            getIdAutonumerico() + 11,
-            2,
-            'Esto es la desciprcion de pruebas para poder buscar resultados, es necesario contar con numeros tambien como el 1 o el 3.',
-            'Rocha',
-            7,
-            0341,
-            1,
-            8383
-        ),
+        new Solicitud(getIdAutonumerico() + 11, 2, 'Esto es la desciprcion de pruebas para poder buscar resultados, es necesario contar con numeros tambien como el 1 o el 3.', 'Rocha', 7, 0341, 1, 8383),
         new Solicitud(getIdAutonumerico() + 12, 1, 'Esto es la desciprcion, ya que voy haciendo tantas pruebas que me olvide de como seguia.', 'Montevideo', 2, 0341, 1, 8383),
         new Solicitud(getIdAutonumerico() + 13, 2, 'Esto es la desciprcion de pruebas numero 1000/8 es probable que no sea la misma que 10% de $200', 'Montevideo', 9, 0341, 1, 8383),
         new Solicitud(getIdAutonumerico() + 14, 1, 'Esto es la desciprcion de pruebas numero me olvide para hacer pruebas que no me acuerdo.', 'Montevideo', 9, 0341, 3, 8383),
@@ -86,10 +84,7 @@ function createPreUserInformation() {
     addSolicitudesToViajes();
     addViajesToEmpresas();
 
-    //Se le asignan a la empresa viajes
-    /* Empresas[0].supplierTrips = Viajes;
-  Viajes[0].shipSupplierId = Empresas[0].id;
-  Viajes[1].shipSupplierId = Empresas[0].id; */
+    //Se le asignan a la empresa viajes    
 
     //Se desabilita un usuario
     Importadores[2].userEnabled = false;
@@ -164,29 +159,73 @@ function addSolicitudesToImportadores() {
  * @param {object} arr
  * @returns null || object
  */
-
-function findUser(username, pass, arr) {
+// Busca el username
+function findUser(username, arr) {
     let user = null;
 
     arr.forEach(function (admin) {
-        if (admin.userAccess === username && admin.userPassword === pass) {
+        if (admin.userAccess === username) {
             user = admin;
         }
     });
     return user;
 }
 
+//Valida que el campo no este vacio
 function isEmpty(txt) {
     return txt.length == 0;
 }
 
+//Valida que el campo no este vacio
 function isValidPass(txt) {
     return txt.length == 0;
 }
+
+// Valida que sea un numero
 function isValidNumber(num) {
     return !isNaN(num);
 }
 
+// Valida que la foto no sea el texto default
+function isNotValidPicture(txt) {
+    let validPicture = true;
+    if (txt == 'default-profile-icon') {
+        validPicture = false;
+    }
+    return validPicture;
+}
+
+// Valida la contraseña contra el código ASCII --- Mayusculas(65-90) - Minusculas(97-122) - numeros(48-57)
+function isValidPassword(txt) {
+    i = 0;
+    let existMayus = false;
+    let existMinus = false;
+    let existNum = false;
+    let cumpleReq = false;
+
+    while (i < txt.length) {
+        let numTxt = parseInt(txt[i]);
+
+        if (txt.charCodeAt(i) >= 65 && txt.charCodeAt(i) <= 90) {
+            existMayus = true;
+        } else if (txt.charCodeAt(i) >= 97 && txt.charCodeAt(i) <= 122) {
+            existMinus = true;
+        } else if (txt.charCodeAt(i) >= 48 && txt.charCodeAt(i) <= 57) {
+            existNum = true;
+        }
+
+        if (existMayus && existMinus && existNum) {
+            cumpleReq = true;
+        }
+
+        console.log(i);
+
+        i++;
+    }
+    return cumpleReq;
+}
+
+//Obtiene un ID al azar
 function getIdAutonumerico() {
     let newId;
 
